@@ -1,0 +1,10 @@
+# Exclusiones de seguridad para despliegue web en GitHub Pages
+backups_y_archivo/
+assets/cinemagraphs/CINEMAGRAPH NEWS/
+*.bak*
+*.tmp
+~$*
+*.rar
+*.zip
+*.tar
+*.gz

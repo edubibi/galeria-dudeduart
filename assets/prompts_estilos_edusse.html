@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompts Técnicos EDUSSE</title>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #1a1d24;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --border: #334155;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        p.subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+        }
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+            position: relative;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"]:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            border-color: #475569;
+        }
+        .card h2 {
+            margin: 0 0 1rem 0;
+            font-size: 1.25rem;
+            color: #f8fafc;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.75rem;
+            font-weight: 500;
+        }
+        .prompt-text {
+            background-color: #0b0c0f;
+            padding: 1.25rem;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            border: 1px solid #1e293b;
+            word-break: break-word;
+            line-height: 1.5;
+        }
+        .prompt-text .variable {
+            color: #fbbf24;
+            font-weight: bold;
+        }
+        .copy-btn {
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            text-align: center;
+            width: 100%;
+        }
+        .copy-btn:hover {
+            background-color: var(--accent);
+            color: #0f1115;
+        }
+        .copy-btn.copied {
+            background-color: #10b981;
+            border-color: #10b981;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CATÁLOGO TÉCNICO EDUSSE</h1>
+    <p class="subtitle">Prompts generados a partir de las carpetas físicas de la galería (Copia, rellena el tema y pega en IA)</p>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar por número o estilo (ej. 10OLEOCUBBO)..." onkeyup="filterStyles()">
+    </div>
+
+    <div class="grid" id="promptGrid">
+        <!-- Los prompts se inyectan por JS -->
+    </div>
+
+    <script>
+        // Array con todos los estilos de la carpeta local
+        const prompts = [
+            { name: "00EDUSSE", text: "<span class='variable'>[tema]</span>, pincelada fundida, equilibrio tonal clásico, luz direccional suave, paleta atenuada, textura de lienzo fino, estilo 00EDUSSE." },
+            { name: "00FURSONA GENESIS", text: "<span class='variable'>[tema]</span>, trazo orgánico, fusión de formas humanas y animales, claroscuro dramático, anatomía sugerida, textura cálida, estilo 00FURSONA GENESIS." },
+            { name: "01EXP_NEOCIRC", text: "<span class='variable'>[tema]</span>, trazos circulares concéntricos gruesos, técnica de empaste visible (impasto), paleta de colores pastel suaves y luminosos, luz difusa, post-impresionismo moderno, estilo 01EXP_NEOCIRC." },
+            { name: "02CUBESSE stilo", text: "<span class='variable'>[tema]</span>, fragmentación geométrica, cubismo cálido, textura de pintura al óleo visible, pinceladas orgánicas, planos facetados con relieve pictórico, evitar aspecto vectorial plano, estilo 02CUBESSE." },
+            { name: "03EXPNEOPLUS", text: "<span class='variable'>[tema]</span>, gesto pictórico extremo, saturación cromática alta, empaste grueso, dinamismo direccional, bordes rotos, estilo 03EXPNEOPLUS." },
+            { name: "04APLICC", text: "<span class='variable'>[tema]</span>, pintura al óleo con espátula gruesa, textura tridimensional (impasto pesado), pinceladas dinámicas en remolino, paleta cálida hipersaturada, expresionismo vibrante, estilo 04APLICC." },
+            { name: "05PLUMINK", text: "<span class='variable'>[tema]</span>, línea profunda en tinta negra, contraste seco, trazo gestual, sombras por hachurado, sin color, sin rellenos, estilo 05PLUMINK." },
+            { name: "06IDE_CLASSIC", text: "<span class='variable'>[tema]</span>, pintura al óleo tradicional, pinceladas sueltas y visibles, luz natural suave, paleta de colores terrosos y apagados, realismo impresionista, estilo 06IDE_CLASSIC." },
+            { name: "07NEOINK stilo", text: "<span class='variable'>[tema]</span>, tinta digital gruesa, líneas de contorno marcadas, colores planos vibrantes estilo cómic noir, sombras duras, estilo 07NEOINK." },
+            { name: "08BORACARBON", text: "<span class='variable'>[tema]</span>, dibujo detallado a lápiz, tono sepia monocromático cálido, sombreado por hachurado, textura de papel antiguo, marco oscuro dibujado, ilustración vintage, estilo 08BORACARBON." },
+            { name: "09FRACNEO", text: "<span class='variable'>[tema]</span>, pintura matérica, técnica mixta hipertexturizada, paisaje fragmentado en celdas geométricas, texturas orgánicas complejas (espuma, burbujas, arena), zonas de empaste grueso contrastando con color raspado, finas líneas estructurales superpuestas, neo-cubismo caótico, paleta de ocres, óxidos y azules profundos, estilo 09FRACNEO." },
+            { name: "10OLEOCUBBO", text: "<span class='variable'>[tema]</span>, óleo espeso, fragmentación geométrica volumétrica, aspecto tridimensional esculpido, paleta clásica saturada, estilo 10OLEOCUBBO." },
+            { name: "11URBANSPHERIC", text: "<span class='variable'>[tema]</span>, atmósfera urbana invernal, desenfoque de movimiento (motion blur), iluminación cinemática, textura granulada, sensación de frío, estilo 11URBANSPHERIC." },
+            { name: "12CRISTAL_CUBICO", text: "<span class='variable'>[tema]</span>, planos poliédricos transparentes, refracción de luz, geometría de cristal, reflejos prismáticos, fondo oscuro, estilo 12CRISTAL_CUBICO." },
+            { name: "13RECTESSE", text: "<span class='variable'>[tema]</span>, composición ortogonal, líneas rectas estrictas, bloques de color primario, abstracción geométrica pura, estilo 13RECTESSE." },
+            { name: "14TEREXSE", text: "<span class='variable'>[tema]</span>, materia terrosa, textura mineral arenosa, pigmento seco, tonos ocres y óxidos, acabado mate profundo, estilo 14TEREXSE." },
+            { name: "15CUBESSEPLUS", text: "<span class='variable'>[tema]</span>, cubismo hiper-detallado, multiplicidad de planos cálidos, luz volumétrica aumentada, entrelazado de formas, estilo 15CUBESSEPLUS." },
+            { name: "16EXPNEO", text: "<span class='variable'>[tema]</span>, pincelada rápida y furiosa, colores flúor sobre lienzo negro, energía cinética, dripping controlado, estilo 16EXPNEO." },
+            { name: "17FUZZTESS", text: "<span class='variable'>[tema]</span>, pincelada impresionista visible y borrosa (fuzz), mar de colores contrastantes, textura empastada suave, bordes indefinidos, estilo 17FUZZTESS." },
+            { name: "18ABSTRACTO_CONFLUENCIA", text: "<span class='variable'>[tema]</span>, manchas de color líquido convergiendo, fusión de aguadas, fluidez orgánica, sin líneas duras, estilo 18ABSTRACTO_CONFLUENCIA." },
+            { name: "19FUZZLINE_ABS", text: "<span class='variable'>[tema]</span>, líneas peludas o difuminadas, abstracción de contornos, vibración óptica, contraste simultáneo de colores, estilo 19FUZZLINE_ABS." },
+            { name: "20BORASSIE", text: "<span class='variable'>[tema]</span>, borrones de carboncillo húmedo, atmósfera grisácea melancólica, luz borrada a goma, textura de papel mojado, estilo 20BORASSIE." },
+            { name: "21OCE-BURST", text: "<span class='variable'>[tema]</span>, explosión de pintura líquida, dinámica de fluidos, tonos marinos y cian, salpicaduras direccionales, estilo 21OCE-BURST." },
+            { name: "22NEO-LUMINA", text: "<span class='variable'>[tema]</span>, luz emitida desde el interior de la pintura, fosforescencia, pincelada etérea, contraste sobre negro profundo, estilo 22NEO-LUMINA." },
+            { name: "23TRIDIM-BURST", text: "<span class='variable'>[tema]</span>, relieve pictórico tridimensional, materia proyectada hacia el espectador, sombras arrojadas de la propia pintura, estilo 23TRIDIM-BURST." },
+            { name: "24BORACARBON MONUMENTOS", text: "<span class='variable'>[tema]</span>, perspectiva arquitectónica, trazo fuerte de carbón, claroscuro monumental, textura de piedra rugosa en blanco y negro, estilo 24BORACARBON MONUMENTOS." },
+            { name: "25CAPLIVE", text: "<span class='variable'>[tema]</span>, capas de pintura transparentes superpuestas, veladuras vivas, profundidad óptica, colores que se mezclan en el ojo, estilo 25CAPLIVE." },
+            { name: "26CARL_LINE", text: "<span class='variable'>[tema]</span>, línea de contorno continua y limpia, estética de cómic franco-belga claro, colores planos puros sin sombra, estilo 26CARL_LINE." },
+            { name: "27LINEVORT", text: "<span class='variable'>[tema]</span>, vórtice de líneas dinámicas, perspectiva absorbente, trazos que giran hacia un punto de fuga, energía en espiral, estilo 27LINEVORT." },
+            { name: "28ESPATAC", text: "<span class='variable'>[tema]</span>, aplicación exclusiva con espátula, rasguños en la pintura fresca, materia densa, aristas afiladas de óleo, estilo 28ESPATAC." },
+            { name: "29ESPATAC-MAT", text: "<span class='variable'>[tema]</span>, espátula ancha, colores mate sin brillo, superficie plana pero texturizada, bloques sólidos de color apagado, estilo 29ESPATAC-MAT." },
+            { name: "30OLONATUR-COLOR", text: "<span class='variable'>[tema]</span>, óleo tradicional al aire libre, luz natural brillante, pincelada suelta y fresca, colores de la naturaleza saturados, estilo 30OLONATUR-COLOR." },
+            { name: "31OLENATUR", text: "<span class='variable'>[tema]</span>, paleta tierra y verdes crudos, óleo mate, textura de paisaje realista, pincelada descriptiva pero no hiperrealista, estilo 31OLENATUR." },
+            { name: "32SINNOIR", text: "<span class='variable'>[tema]</span>, estética de cine negro, alto contraste puro (blanco y negro), siluetas recortadas, sombras dramáticas sin grises, estilo 32SINNOIR." },
+            { name: "33MINIGESTPOETIC", text: "<span class='variable'>[tema]</span>, micro-pinceladas, gesto íntimo y delicado, mucho espacio negativo (lienzo en blanco), composición poética sutil, estilo 33MINIGESTPOETIC." },
+            { name: "34EXPTERICO", text: "<span class='variable'>[tema]</span>, gesto pictórico agresivo, pintura directa, energía sin corrección, dripping y raspones, estilo 34EXPTERICO." },
+            { name: "35PAPERCHIN", text: "<span class='variable'>[tema]</span>, imitación de recorte de papel (papercut), bordes blancos rasgados, sombras de papel superpuesto, estética de collage, estilo 35PAPERCHIN." },
+            { name: "36LINEART", text: "<span class='variable'>[tema]</span>, solo líneas vectoriales o de tiralíneas, grosor uniforme, sin sombreado, diseño limpio y esquemático, estilo 36LINEART." },
+            { name: "37IMPASTUS PAINT", text: "<span class='variable'>[tema]</span>, técnica de empaste extremo (impasto), grumos de pintura gruesa tridimensional, marcas de las cerdas del pincel, relieve escultórico, estilo 37IMPASTUS PAINT." },
+            { name: "39MATERDIGISSE", text: "<span class='variable'>[tema]</span>, pintura digital que imita materia táctil, escaneado 3D de pinceladas, reflejos de luz sobre pintura fresca, estilo 39MATERDIGISSE." },
+            { name: "40MECHPASTOSSE", text: "<span class='variable'>[tema]</span>, estética mecánica o industrial hecha con óleo espeso, grises y óxidos empastados, formas angulosas pesadas, estilo 40MECHPASTOSSE." },
+            { name: "41GESSOLUX", text: "<span class='variable'>[tema]</span>, imprimación blanca visible (gesso), luz rebotando en el fondo, colores aplicados en aguadas luminosas, estilo 41GESSOLUX." },
+            { name: "42GESSOLUX_EXTREMUM", text: "<span class='variable'>[tema]</span>, blanco cegador de fondo, contrastes cromáticos aislados muy saturados, luz sobreexpuesta, estilo 42GESSOLUX_EXTREMUM." },
+            { name: "43GESSOLUX_MONOCHROMA", text: "<span class='variable'>[tema]</span>, pintura monocromática sobre gesso brillante, estudio de valores tonales de un solo color, luz pura, estilo 43GESSOLUX_MONOCHROMA." },
+            { name: "44GESSOLUX_AZURITE", text: "<span class='variable'>[tema]</span>, predominio absoluto del pigmento azul azurita, veladuras azules sobre blanco brillante, frío y luminoso, estilo 44GESSOLUX_AZURITE." },
+            { name: "45GESSOLUX_IRIS", text: "<span class='variable'>[tema]</span>, espectro arcoíris descompuesto, luz prismática sobre fondo blanco de gesso, transiciones suaves, estilo 45GESSOLUX_IRIS." },
+            { name: "46ESPATAC-EXTREME", text: "<span class='variable'>[tema]</span>, espátula agresiva, materia levantada, luz fracturada en los bordes de la pintura seca, contraste violento, estilo 46ESPATAC-EXTREME." },
+            { name: "47NEBULÍNICO", text: "<span class='variable'>[tema]</span>, pincelada gruesa pero suave, atmósfera difusa y gaseosa, luz suspendida, contornos totalmente disueltos, estilo 47NEBULÍNICO." },
+            { name: "48BESSELUXY_L", text: "<span class='variable'>[tema]</span>, lujo cromático, uso de pigmentos dorados y metálicos, pincelada fluida elegante, iluminación cálida de galería, estilo 48BESSELUXY_L." },
+            { name: "49 ARTE_CIBERNETICO_NATURE", text: "<span class='variable'>[tema]</span>, fusión de flora/fauna orgánica con circuitos biomecánicos, trazo limpio, paleta neón sobre orgánico, estilo 49 ARTE_CIBERNETICO_NATURE." },
+            { name: "50NEO_FAUVE", text: "<span class='variable'>[tema]</span>, uso arbitrario del color, colores puros sacados del tubo (fauvismo), contraste complementario radical, pincelada plana, estilo 50NEO_FAUVE." },
+            { name: "51NEO-CLASICC", text: "<span class='variable'>[tema]</span>, técnica académica antigua aplicada a temas modernos, veladuras de óleo clásico, barniz envejecido, luz de claroscuro de museo, estilo 51NEO-CLASICC." },
+            { name: "52EDUSSE_CLASSIC", text: "<span class='variable'>[tema]</span>, hiperrealismo naturalista estilo 52EDUSSE_CLASSIC, luz suave envolvente, fondo difuminado, enfoque detallado en textura y color, atmósfera atemporal y elegante." },
+            { name: "53MONETESSE", text: "<span class='variable'>[tema]</span>, impresionismo vibrante de luz y pincelada suelta estilo 53MONETESSE, paleta luminosa al aire libre, reflexiones de color y atmósfera poética de museo." },
+            { name: "B2B_MAGNA", text: "<span class='variable'>[tema]</span>, composición monumental, escala épica, trazo grueso y seguro, paleta dominada por rojos y negros, estilo B2B_MAGNA." }
+        ];
+
+        const grid = document.getElementById('promptGrid');
+
+        function renderPrompts(promptsToRender) {
+            grid.innerHTML = '';
+            promptsToRender.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h2>${p.name}</h2>
+                    <div class="prompt-text" id="text-${p.name}">${p.text}</div>
+                    <button class="copy-btn" onclick="copyPrompt('${p.name}', this)">📋 Copiar Prompt</button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterStyles() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = prompts.filter(p => p.name.toLowerCase().includes(input));
+            renderPrompts(filtered);
+        }
+
+        function copyPrompt(id, btn) {
+            // Recoger solo el texto sin etiquetas HTML
+            const textEl = document.getElementById(`text-${id}`);
+            const textToCopy = textEl.innerText;
+            
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✓ ¡Copiado!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        }
+
+        // Renderizado inicial
+        renderPrompts(prompts);
+    </script>
+</body>
+</html>

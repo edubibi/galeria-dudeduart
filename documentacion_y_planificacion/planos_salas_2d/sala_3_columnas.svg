@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#0d4b94" />
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1b5eb3" stroke-width="1.2" />
+      <path d="M 20 0 L 20 40 M 0 20 L 40 20" fill="none" stroke="#1252a1" stroke-dasharray="2,2" stroke-width="0.5" />
+    </pattern>
+    <marker id="tick" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 10 L 10 0" stroke="#ffffff" stroke-width="2.5" />
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  <rect x="20" y="20" width="960" height="660" fill="none" stroke="#ffffff" stroke-width="3" />
+  
+  <!-- WALLS (White base 16px, blue overlay 10px to make double CAD lines) -->
+  <g stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16">
+    <rect x="100" y="100" width="800" height="450" />
+  </g>
+  <g stroke="#0d4b94" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="10">
+    <rect x="100" y="100" width="800" height="450" />
+  </g>
+  
+  <!-- 8 Pillars -->
+  <g fill="#ffffff" stroke="none">
+    <rect x="250" y="180" width="28" height="28" />
+    <rect x="250" y="280" width="28" height="28" />
+    <rect x="250" y="380" width="28" height="28" />
+    <rect x="250" y="480" width="28" height="28" />
+    
+    <rect x="722" y="180" width="28" height="28" />
+    <rect x="722" y="280" width="28" height="28" />
+    <rect x="722" y="380" width="28" height="28" />
+    <rect x="722" y="480" width="28" height="28" />
+  </g>
+
+  <!-- Dimensions -->
+  <g stroke="#ffffff" fill="none" stroke-width="1.5" marker-start="url(#tick)" marker-end="url(#tick)">
+    <line x1="100" y1="600" x2="900" y2="600" />
+    <line x1="940" y1="100" x2="940" y2="550" />
+    <g stroke-dasharray="3,3" stroke-width="1" marker-start="none" marker-end="none">
+      <line x1="100" y1="550" x2="100" y2="620" />
+      <line x1="900" y1="550" x2="900" y2="620" />
+      <line x1="900" y1="100" x2="960" y2="100" />
+      <line x1="900" y1="550" x2="960" y2="550" />
+    </g>
+  </g>
+
+  <g fill="#ffffff" font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle">
+    <text x="500" y="625" font-size="16">8.10 m</text>
+    <text x="965" y="325" font-size="16" transform="rotate(90 965 325)">6.00 m</text>
+    
+    <text x="500" y="320" font-size="28">ROOM 3</text>
+    <text x="500" y="350" font-size="18" font-weight="normal" fill="#e0e0e0">(PILLARS PAVILION)</text>
+  </g>
+</svg>

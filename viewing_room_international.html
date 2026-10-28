@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Viewing | Dudeduart</title>
+    <!-- SEO Meta Tags for International Art Market -->
+    <meta name="description" content="Exclusive private viewing room of Dudeduart. Tactile, large-format abstract art and Gessolux textures for luxury interior design and elite collectors.">
+    <meta name="keywords" content="luxury abstract art, textured paintings, Gessolux, Espatac-Extreme, large format art, interior design art, contemporary abstract, Dudeduart">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-main: #f0f0f0;
+            --text-muted: #7a7a7a;
+            --accent: #cba358;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-serif: 'Playfair Display', 'Didot', 'Bodoni MT', serif;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Top Header */
+        header {
+            width: 100%;
+            padding: 40px 0;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards 1s;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            letter-spacing: 8px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        /* Video Container */
+        .video-wrapper {
+            width: 90%;
+            max-width: 1200px;
+            aspect-ratio: 16 / 9;
+            background-color: #111;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border: 1px solid #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards 0.5s;
+        }
+
+        /* Placeholder text (to be removed when Eduardo adds the video tag) */
+        .video-placeholder {
+            font-family: var(--font-serif);
+            color: #333;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        /* Actual video styling for when he adds it */
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Content Section */
+        .content {
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            margin-top: 50px;
+            padding-bottom: 80px;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards 1.5s;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--accent);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        /* Footer & Contact */
+        .inquiry {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #222;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 35px;
+            border: 1px solid var(--text-muted);
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .logo { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">D U D E D U A R T</div>
+    </header>
+
+    <!-- VIDEO PLAYER: Eduardo, just replace this div with your <video> tag when ready -->
+    <div class="video-wrapper">
+        <div class="video-placeholder">VIDEO PLAYER (PENDING CAPCUT EXPORT)</div>
+        <!-- 
+        Ejemplo de código para cuando tengas el vídeo listo:
+        <video controls controlsList="nodownload" poster="assets/tu_foto_de_portada.jpg">
+            <source src="assets/tu_video_maestro.mp4" type="video/mp4">
+        </video> 
+        -->
+    </div>
+
+    <div class="content">
+        <h1>Beyond the Visual</h1>
+        <div class="subtitle">The Sensory Art Collection</div>
+        
+        <p>A private exhibition showcasing a revolutionary approach to tactile aesthetics. Created by Eduardo Ramirez, a veteran music producer turned texture pioneer, this collection features 48 unique structural styles including the signature <i>Gessolux</i> and <i>Espatac-Extreme</i>.</p>
+        
+        <p>Designed exclusively for high-end interior spaces, these large-format abstracts break the boundary between the visual and the physical, commanding presence through deep, aggressive textures and sober elegance.</p>
+
+        <div class="inquiry">
+            <p style="font-size: 0.85rem; letter-spacing: 1px;">For commissions, gallery representation, or acquisitions:</p>
+            <a href="mailto:eduardoramirez@edusse.es?subject=Private%20Viewing%20Inquiry" class="contact-btn">Request Prospectus</a>
+        </div>
+    </div>
+
+</body>
+</html>

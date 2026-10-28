@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorándum EDUSSE | Universo Pictórico</title>
+    <link rel="stylesheet" href="main.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: #e0e0e0;
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- UNIFIED NAVBAR FOR MEMORANDUM --- */
+        @media (min-width: 901px) {
+            .navbar {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 1.5rem 5% !important;
+                background-color: #000000 !important;
+                border-bottom: 1px solid #1a1a1a !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 1000 !important;
+            }
+
+            .nav-links {
+                display: flex !important;
+                gap: 2rem !important;
+                list-style: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .nav-links a {
+                text-decoration: none !important;
+                color: #e0e0e0 !important;
+                font-family: 'Lato', sans-serif !important;
+                font-size: 0.9rem !important;
+                font-weight: 400 !important;
+                letter-spacing: 1px !important;
+                transition: color 0.3s ease !important;
+                text-transform: none !important;
+            }
+
+            .nav-links a.active,
+            .nav-links a:hover {
+                color: #D4AF37 !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 0.75rem 1.25rem !important;
+                background-color: #0a0a0a !important;
+                border-bottom: 1px solid #1a1a1a !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 1000 !important;
+            }
+            .logo img {
+                max-height: 46px !important;
+                width: auto !important;
+            }
+            .navbar-mobile-actions {
+                display: flex !important;
+                align-items: center !important;
+                gap: 12px !important;
+            }
+            .mobile-cart-btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                gap: 5px !important;
+                background: rgba(212, 175, 55, 0.15) !important;
+                border: 1px solid rgba(212, 175, 55, 0.4) !important;
+                color: #ffffff !important;
+                text-decoration: none !important;
+                padding: 7px 12px !important;
+                border-radius: 20px !important;
+                font-size: 0.88rem !important;
+            }
+            .nav-toggle-btn {
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-around !important;
+                width: 44px !important;
+                height: 44px !important;
+                background: #111111 !important;
+                border: 1px solid rgba(212, 175, 55, 0.4) !important;
+                border-radius: 8px !important;
+                cursor: pointer !important;
+                padding: 10px !important;
+                box-sizing: border-box !important;
+            }
+            .nav-toggle-btn .bar {
+                width: 100% !important;
+                height: 2px !important;
+                background: #D4AF37 !important;
+                border-radius: 2px !important;
+                pointer-events: none !important;
+            }
+            .nav-toggle-btn.open .bar-1 { transform: translateY(8px) rotate(45deg) !important; }
+            .nav-toggle-btn.open .bar-2 { opacity: 0 !important; transform: scaleX(0) !important; }
+            .nav-toggle-btn.open .bar-3 { transform: translateY(-8px) rotate(-45deg) !important; }
+            .nav-links {
+                display: none !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                width: 100% !important;
+                background: #0f0f14 !important;
+                flex-direction: column !important;
+                gap: 0 !important;
+                padding: 0.8rem 1.2rem 1.4rem 1.2rem !important;
+                border-bottom: 3px solid #D4AF37 !important;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85) !important;
+                box-sizing: border-box !important;
+                z-index: 999 !important;
+            }
+            .nav-links.open {
+                display: flex !important;
+                animation: slideNavDark 0.25s ease forwards !important;
+            }
+            @keyframes slideNavDark {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .nav-links li { width: 100% !important; list-style: none !important; }
+            .nav-links a {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                font-family: 'Playfair Display', serif !important;
+                font-size: 1.15rem !important;
+                color: #e2e8f0 !important;
+                padding: 13px 16px !important;
+                text-decoration: none !important;
+                border-radius: 6px !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+                background: transparent !important;
+            }
+            .nav-links a.active,
+            .nav-links a:hover {
+                background: rgba(212, 175, 55, 0.15) !important;
+                color: #D4AF37 !important;
+                padding-left: 20px !important;
+            }
+            .nav-links a::after {
+                content: '›' !important;
+                font-size: 1.3rem !important;
+                color: #D4AF37 !important;
+                opacity: 0.7 !important;
+            }
+            .nav-links a.active::after {
+                content: '✓' !important;
+                font-size: 1rem !important;
+                opacity: 1;
+            }
+            .desktop-cart-item { display: none !important; }
+        }
+
+        /* --- EDITORIAL MEMORANDUM STYLES --- */
+        .memo-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            color: #e0e0e0;
+            line-height: 1.65;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .memo-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 2rem;
+        }
+
+        .memo-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            color: #D4AF37;
+            letter-spacing: 2px;
+        }
+
+        .memo-header .subtitle {
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #c5a034;
+            font-weight: 400;
+        }
+
+        .memo-intro {
+            font-size: 1.08rem;
+            line-height: 1.65;
+            margin-bottom: 4rem;
+            text-align: justify;
+            color: #e0e0e0;
+        }
+
+        .memo-intro strong {
+            color: #ffffff;
+        }
+
+        .family-index {
+            background: #0a0a0a;
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin-bottom: 4rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-left: 4px solid #D4AF37 !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .family-index h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.8rem;
+            font-size: 1.9rem;
+            color: #D4AF37;
+            letter-spacing: 1px;
+        }
+
+        .family-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .family-group h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: #D4AF37;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .family-group ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .family-group li {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .family-group li::before {
+            content: "\2022";
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+        }
+
+        .style-card {
+            margin-bottom: 4rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .style-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .style-card h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 2px;
+            background: #D4AF37;
+        }
+
+        .style-def {
+            font-style: italic;
+            color: #d0d0d0;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            border-left: 3px solid #D4AF37;
+            padding-left: 1rem;
+            line-height: 1.65;
+        }
+
+        .style-detail p {
+            color: #e0e0e0;
+            line-height: 1.65;
+        }
+
+        .style-detail h4 {
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            color: #D4AF37;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: #D4AF37;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 6px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .back-to-top:hover {
+            background: #D4AF37;
+            color: #000000;
+        }
+
+        .nav-anchor {
+            text-decoration: none;
+            color: #e0e0e0 !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-anchor:hover {
+            color: #D4AF37 !important;
+        }
+
+        .style-flash {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-left: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .memo-container {
+                padding: 2rem 1rem;
+            }
+            .memo-header h1 {
+                font-size: 2rem;
+            }
+            .memo-header .subtitle {
+                font-size: 0.9rem;
+            }
+            .style-card h2 {
+                font-size: 1.5rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .style-flash {
+                float: none;
+                width: 100%;
+                height: 200px;
+                margin: 10px 0;
+            }
+            .memo-intro {
+                font-size: 1rem;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><img src="assets/logo_banner.png" alt="Logo"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre Mí</a></li>
+            <li><a href="memorandum.html" class="active">Universo EDUSSE</a></li>
+            <li><a href="colecciones.html">Colecciones</a></li>
+            <li><a href="compra.html">Cómo Comprar</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html">Carrito <span class="cart-badge"></span></a></li>
+        </ul>
+    </nav>
+
+    <div class="memo-container">
+        <header class="memo-header">
+            <img src="assets/EDUSSE_MEMO_COVER_HZ.jpg" alt="Universo Pictórico EDUSSE"
+                style="width:100%; aspect-ratio:16/9; object-fit:cover; object-position:center; border-radius:4px; margin-bottom:2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <h1>Memorándum EDUSSE</h1>
+            <div class="subtitle">Universo Pictórico y Clasificación de Estilos</div>
+            <div style="margin-top: 1rem; font-size: 0.9rem; color: #888;">Edición Año I (2025) &mdash;
+                Consolidación del Universo</div>
+        </header>
+
+        <section class="memo-intro">
+            <p><strong>EDUSSE</strong> es un universo pictórico en expansión, una constelación de
+                estilos que comparten un principio fundamental: <em>la figura no representa; la figura permite</em>. En
+                EDUSSE, cada obra se construye desde el tratamiento pictórico &mdash;el trazo, la energía,
+                la atmósfera, la estructura&mdash; y no desde el motivo. La pintura deja de ser ventana y se
+                convierte en campo de acción, donde el color, la materia y el gesto definen la identidad de cada
+                pieza.</p>
+            <p>Este universo se organiza en familias estilísticas que dialogan entre sí: líneas de
+                energía, de estructura, de atmósfera, de intervención y de claridad formal. Cada
+                estilo es una rama autónoma, pero todos comparten una misma raíz conceptual: <strong>la
+                    libertad absoluta para redefinir la pintura desde dentro</strong>.</p>
+            <p>EDUSSE no es un estilo &uacute;nico, sino un ecosistema. Un territorio donde conviven la vibración
+                gestual, la geometría facetada, la atmósfera suspendida, la intervención
+                gráfica y la materia erosionada. Un espacio donde cada obra es una variación, una
+                expansión o una mutación del mismo principio: <strong>pintar no lo que se ve, sino lo que
+                    vibra</strong>.</p>
+        </section>
+
+        
+        
+        <!-- INDICE NUMERICO -->
+        <section class="family-index" id="indice" style="border-left: 5px solid var(--primary);">
+            <h2>Índice Numérico del Universo EDUSSE</h2>
+            <div class="family-group">
+                <ul style="columns: 2; -webkit-columns: 2; -moz-columns: 2; column-gap: 2rem; list-style-type: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="#edusse-macro" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>00</strong> EDUSSE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-01" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>01</strong> EXP NEOCIRC</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-02" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>02</strong> CUBESSE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-03" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>03</strong> EXPNEOPLUS</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-04" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>04</strong> APLICC</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-05" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>05</strong> PLUMINK</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-06" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>06</strong> IDE CLASSIC</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-07" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>07</strong> NEOINK</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-08" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>08</strong> BORACARBON</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-09" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>09</strong> FRACNEO</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-10" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>10</strong> OLEOCUBBO</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-11" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>11</strong> URBANSPHERIC</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-12" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>12</strong> CRISTAL CUBICO</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-13" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>13</strong> RECTESSE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-14" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>14</strong> TEREXSE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-15" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>15</strong> CUBESSEPLUS</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-16" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>16</strong> EXPNEO</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-17" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>17</strong> FUZZTESS</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-18" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>18</strong> ABSTRACTO CONFLUENCIA</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-19" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>19</strong> FUZZLINE ABS</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-20" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>20</strong> BORASSIE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-21" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>21</strong> OCE-BURST</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-22" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>22</strong> NEO-LUMINA</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-23" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>23</strong> TRIDIM-BURST</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-24" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>24</strong> BORACARBON MONUMENTOS</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-25" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>25</strong> CAPLIVE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-26" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>26</strong> CARL LINE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-27" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>27</strong> LINEVORT</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-28" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>28</strong> ESPATAC</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-29" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>29</strong> ESPATAC-MAT</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-30" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>30</strong> OLONATUR-COLOR</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-31" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>31</strong> OLENATUR</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-32" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>32</strong> SINNOIR</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-33" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>33</strong> MINIGESTPOETIC</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-34" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>34</strong> EXPTERICO</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-35" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>35</strong> PAPERCHIN</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-36" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>36</strong> LINEART</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-37" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>37</strong> IMPASTUS PAINT</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-39" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>39</strong> MATERDIGISSE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-40" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>40</strong> MECHPASTOSSE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-41" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>41</strong> GESSOLUX</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-42" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>42</strong> GESSOLUX EXTREMUM</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-43" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>43</strong> GESSOLUX MONOCHROMA</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-44" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>44</strong> GESSOLUX AZURITE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-45" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>45</strong> GESSOLUX IRIS</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-46" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>46</strong> ESPATAC-EXTREME</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-47" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>47</strong> NEBULÍNICO</a></li>
+                                        <li style="margin-bottom: 0.5rem;"><a href="#style-48" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>48</strong> BESSELUXY L</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-49" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>49</strong> ARTE CIBERNÉTICO NATURE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-50" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>50</strong> NEO FAUVE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-51" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>51</strong> NEO-CLÁSICO</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-52" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>52</strong> EDUSSE CLASSIC</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-53" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>53</strong> MONETESSE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-54" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>54</strong> LUNIORNAT PORTADAS DE DISCOS</a></li>
+                                        <li style="margin-bottom: 0.5rem;"><a href="#style-55" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>55</strong> VORGGIPAH</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-56" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>56</strong> NATURALEXSSE</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-57" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>57</strong> STUCKEDU (PINTOR DE AUTOR)</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-b2b"  class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>B2B</strong> B2B MAGNA (SUPER LUJO)</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#style-cincelada" class="nav-anchor" style="text-decoration:none; color:inherit;"><strong>---</strong> HISTORIA CINCELADA</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FICHAS DETALLADAS -->
+<div class="style-card" id="edusse-macro">
+            <h2>00 EDUSSE<img src="assets/00EDUSSE/00edusse_001.png" class="style-flash" alt="Muestra de EDUSSE"></h2>
+            <div class="style-def">
+                Universo visual que fusiona elementos naturales, cósmicos, arquitectónicos y abstractos en
+                una narrativa simbólica continua.
+            </div>
+            <div class="style-detail">
+                <p>EDUSSE funciona como marco conceptual, identidad estética y territorio simbólico donde
+                    se articulan todas las líneas creativas del artista. Es un lenguaje total donde figura y
+                    fondo, materia y significado, emoción y estructura conviven sin jerarquías.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Hibridación de lenguajes, narrativa simbólica, color expresivo y composición
+                    total donde no existe "fondo".</p>
+                <h4>Tratamiento Visual</h4>
+                <p>Libertad técnica absoluta. La unidad no viene de la técnica, sino del significado.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-01">
+            <h2>01 EXP NEOCIRC<img src="assets/01EXP_NEOCIRC/01exp_neocirc_001.jpg" class="style-flash"
+                    alt="Muestra"></h2>
+            <div class="style-def">
+                Estilo pictórico narrativo y envolvente basado en la energía circular, la pincelada
+                expresiva y la emoción visual.
+            </div>
+            <div class="style-detail">
+                <p>Nace de la idea de que una escena puede girar, vibrar y respirar alrededor de un eje. El color es
+                    vibrante, la pincelada es visible y dinámica, y las escenas suelen tener un tono emocional,
+                    casi de postal poética.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Composición circular, pincelada suelta y color saturado. Motivos de puertos, barcos, pueblos.
+                </p>
+                <h4>Función</h4>
+                <p>Aporta al universo EDUSSE su vertiente más luminosa, narrativa y emocional.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-02">
+            <h2>02 CUBESSE<img src="assets/02CUBESSE stilo/02cubesse_stilo_001.jpeg" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                El rostro cubista del universo EDUSSE. Construcción pictórica basada en geometría
+                facetada y presencia sólida.
+            </div>
+            <div class="style-detail">
+                <p>Más que un estilo técnico, CUBESSE es una identidad visual. Las obras se construyen por
+                    planos, color y volumen, sin atmósfera difusa: todo es materia pictórica firme.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Geometría angular, planos facetados, pincelada gruesa tipo óleo impasto. Motivos
+                    animales o humanos estructurales.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-03">
+            <h2>03 EXPNEOPLUS<img src="assets/03EXPNEOPLUS/03expneoplus_001.png" class="style-flash"
+                    alt="Muestra"></h2>
+            <div class="style-def">
+                Evolución monumental de EXP NEOCIRC. Teatralidad y escala para lugares icónicos.
+            </div>
+            <div class="style-detail">
+                <p>Mantiene la pincelada envolvente pero amplifica la escala y la energía. Ideal para representar
+                    grandes monumentos, ciudades icónicas o escenas históricas con fuerza visual.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Composición radial o centrífuga, escala monumental, luz envolvente. Motivos
+                    arquitectónicos como símbolos.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-04">
+            <h2>04 APLICC<img src="assets/04APLICC/04aplicc_001.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Aplicación simbólica de energía, poder y presencia en forma de figura
+                totémica.
+            </div>
+            <div class="style-detail">
+                <p>Combina color vibrante y composición escénica para transmitir fuerza y libertad. Es un
+                    estilo que aplica una fuerza, como una afirmación visual.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Figura central con carga simbólica (águila, león), color vibrante, fondo dramático.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-05">
+            <h2>05 PLUMINK<img src="assets/05PLUMINK/05plumink_001.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Fluidez, transparencia y expresividad del trazo acuarelado, sin perder estructura.
+            </div>
+            <div class="style-detail">
+                <p>Se apoya en la ligereza del pigmento y la espontaneidad del gesto. Las obras no buscan representar,
+                    sino evocar. El trazo es líquido y el color diluido.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Pincelada acuarelada, bordes difusos, luz atmosférica, composición abierta.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-06">
+            <h2>06 IDE CLASSIC<img src="assets/06IDE_CLASSIC/06ide_classic_001.png" class="style-flash"
+                    alt="Muestra"></h2>
+            <div class="style-def">
+                Claridad formal, equilibrio compositivo y elegancia pictórica.
+            </div>
+            <div class="style-detail">
+                <p>Representación cuidada con trazo limpio y color armónico. La figura no representa:
+                    permite. Lo que importa es la elegancia de la ejecución.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Composición centrada y equilibrada. Pincelada contenida, estética de claridad y belleza
+                    formal.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-07">
+            <h2>07 NEOINK<img src="assets/07NEOINK stilo/07neoink_stilo_001.jpg" class="style-flash"
+                    alt="Muestra"></h2>
+            <div class="style-def">
+                Energía ascendente, atmósfera espiritual y luz radial.
+            </div>
+            <div class="style-detail">
+                <p>La figura central se trata como estructura de fuerza para aplicar gesto y color. Transmite
+                    elevación y atmósfera sin depender de lo figurativo.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Composición vertical o radiante. Luz envolvente (halos, rayos). Paletas de violetas, dorados,
+                    azules.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-08">
+            <h2>08 BORACARBON<img src="assets/08BORACARBON/08boracarbon_001.png" class="style-flash"
+                    alt="Muestra"></h2>
+            <div class="style-def">
+                Atmósfera monocroma, trazo contenido y carga emocional suspendida.
+            </div>
+            <div class="style-detail">
+                <p>Sobriedad visual y textura narrativa. Transmite introspección, pausa y memoria mediante una
+                    paleta reducida a lo esencial.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Paleta monocroma (grises, sepias). Composición silenciosa, textura suave, luces tenues.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-09">
+            <h2>09 FRACNEO<img src="assets/09FRACNEO/09fracneo_001.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Fragmentación pictórica y arquitectura emocional.
+            </div>
+            <div class="style-detail">
+                <p>Construye escenas mediante bloques, planos y color. Las figuras no importan por lo que son, sino por
+                    cómo vibran al ser fragmentadas.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Composición densa de bloques superpuestos. Color saturado en tensión. Ritmo visual
+                    arquitectónico.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-10">
+            <h2>10 OLEOCUBBO<img src="assets/10OLEOCUBBO/10oleocubbo_001.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Estructura pictórica facetada, pincelada gruesa y volumen expresivo.
+            </div>
+            <div class="style-detail">
+                <p>Aplica geometría visual sobre figuras que permiten la construcción. Todo es materia
+                    pictórica: planos angulares, trazo visible y solidez.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Geometría facetada, pincelada impasto, figura como bloque pictórico. Ausencia de
+                    atmósfera difusa.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-11">
+            <h2>11 URBANSPHERIC<img src="assets/11URBANSPHERIC/11urbanspheric_001.png" class="style-flash"
+                    alt="Muestra"></h2>
+            <div class="style-def">
+                Atmósfera urbana, niebla y silencio emocional.
+            </div>
+            <div class="style-detail">
+                <p>Estilo visual atmosférico que representa escenas suspendidas en un silencio emocional. No
+                    depende del motivo, sino de la atmósfera: niebla, luz difusa, pincelada envolvente.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Paleta fría/desaturada, luz difusa desde la niebla, composición que sugiere
+                    melancolía o pausa.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-12">
+            <h2>12 CRISTAL CUBICO<img src="assets/12CRISTAL_CUBICO/12cristal_cubico_001.png"
+                    class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Verticalidad estructural, luz facetada y ciudad como cristal pictórico.
+            </div>
+            <div class="style-detail">
+                <p>Construye la urbe desde el color y el plano vibrante. Transmite monumentalidad y ritmo sin depender
+                    de la representación arquitectónica realista.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Verticalidad, luz facetada (reflejos, brillos), tonos m&etallic;licos o vibrantes. Composición
+                    densa.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-13">
+            <h2>13 RECTESSE<img src="assets/13RECTESSE/13rectesse_001.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Segmentación geométrica y tensión estructural mediante líneas rectas.
+            </div>
+            <div class="style-detail">
+                <p>La línea recta act&uacute;a como gesto compositivo que corta y organiza el plano
+                    pictórico. Tensión entre lo orgánico del color y lo rígido de la
+                    estructura.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Segmentación por líneas rectas. Bloques de materia pictórica separados
+                    geométricamente.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-14">
+            <h2>14 TEREXSE<img src="assets/14TEREXSE/14terexse_001.jpg" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Materia terrestre, erosión y vibración mineral.
+            </div>
+            <div class="style-detail">
+                <p>Evoca formaciones naturales tratadas como pura materia pictórica. Transmite el peso de la
+                    tierra, el viento y el tiempo geológico.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Textura erosionada, colores minerales (ocres, tierras), relieve pictórico.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-15">
+            <h2>15 CUBESSEPLUS</h2>
+            <div class="style-def">
+                La versión mitológica, monumental y narrativa del lenguaje estructural de CUBESSE.
+            </div>
+            <div class="style-detail">
+                <p>Combina geometría pictórica con iconografía simbólica. Representa figuras
+                    míticas, divinas o heroicas construidas por planos pictóricos con presencia
+                    escénica absoluta.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Geometría facetada aplicada a mitología. Luz dramática y composición
+                    monumental.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-16">
+            <h2>16 EXPNEO<img src="assets/16EXPNEO/16expneo_001.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Atmósfera suspendida, pincelada vibrante y composición emocional.
+            </div>
+            <div class="style-detail">
+                <p>Evoca pausa, luz y textura. La figura es un vehículo de estilo para transmitir serenidad o
+                    nostalgia, con un ritmo visual contenido.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Luz cálida suspendida, pincelada texturizada, atmósfera suave pero vibrante.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-17">
+            <h2>17 FUZZTESS<img src="assets/17FUZZTESS/17fuzztess_001.jpg" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Textura vibrante, energía líquida y gesto pictórico expansivo.
+            </div>
+            <div class="style-detail">
+                <p>Distorsión rítmica sobre superficies naturales o abstractas. La obra es un campo de
+                    vibración donde la textura define la experiencia.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Pincelada ondulante, composición sin centro (expansiva), color saturado.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-18">
+            <h2>18 ABSTRACTO CONFLUENCIA<img src="assets/18ABSTRACTO_CONFLUENCIA/18abstracto_confluencia_001.jpg" class="style-flash"
+                    alt="Muestra"></h2>
+            <div class="style-def">
+                Intersección de gestos, colisión y energía circular.
+            </div>
+            <div class="style-detail">
+                <p>Composiciones dinámicas donde la pincelada libre genera caos armónico. No hay
+                    figuración, solo confluencia de fuerzas.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Movimiento circular o espiral, colisión de trazos, energía visual pura.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-19">
+            <h2>19 FUZZLINE ABS<img src="assets/19FUZZLINE_ABS/19fuzzline_abs_001.jpg" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Línea vibrante y trazo flotante sobre atmósfera intervenida.
+            </div>
+            <div class="style-detail">
+                <p>Composiciones pictóricas intervenidas con elementos gráficos (líneas, espirales)
+                    para generar una capa de energía visual extra.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Intervención gráfica (líneas blancas, puntos) sobre base pictórica.
+                    Contraste entre lo gráfico y lo pictórico.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+        <div class="style-card" id="style-20">
+            <h2>20 BORASSIE<img src="assets/20BORASSIE/20borassie_001.png" class="style-flash" alt="Muestra de BORASSIE"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-21">
+            <h2>21 OCE-BURST<img src="assets/21OCE-BURST/21oce_burst_001.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Pincelada escultórica, paleta audaz y dinamismo abstracto casi emocional.
+            </div>
+            <div class="style-detail">
+                <p><strong>Pincelada Escultórica:</strong> No solo hay color, hay "materia". Los trazos
+                    blancos de la
+                    espuma parecen tener relieve, aportando una textura táctil.</p>
+                <p><strong>Paleta Cromática Audaz:</strong> Rompe con el azul tradicional del mar
+                    integrando verdes
+                    esmeralda, p&uacute;rpuras profundos y destellos anaranjados/rosáceos que sugieren
+                    una luz de
+                    atardecer muy dramática.</p>
+                <p><strong>Dinamismo Abstracto:</strong> La fuerza de la pincelada roza la abstracción,
+                    de una forma
+                    casi emocional, no solo visual.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Textura táctil (relieve), contraste cromático inusual, energía en el
+                    borde de la
+                    abstracción.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+        <div class="style-card" id="style-22">
+            <h2>22 NEO-LUMINA<img src="assets/22NEO-LUMINA/22neo_lumina_001.png" class="style-flash" alt="Muestra de NEO-LUMINA"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-23">
+            <h2>23 TRIDIM-BURST<img src="assets/23TRIDIM-BURST/23tridim_burst_001.png" class="style-flash" alt="Muestra de TRIDIM-BURST"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-24">
+            <h2>24 BORACARBON MONUMENTOS<img src="assets/24BORACARBON MONUMENTOS/boracarbon_mon_001.png" class="style-flash" alt="Muestra de BORACARBON MONUMENTOS"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-25">
+            <h2>25 CAPLIVE<img src="assets/25CAPLIVE/Ajustador.png" class="style-flash" alt="Muestra de CAPLIVE"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-26">
+            <h2>26 CARL LINE<img src="assets/26CARL_LINE/Muchacho estudiante.png" class="style-flash" alt="Muestra de CARL LINE"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-27">
+            <h2>27 LINEVORT<img src="assets/27LINEVORT/Carnero.png" class="style-flash" alt="Muestra de LINEVORT"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-28">
+            <h2>28 ESPATAC<img src="assets/28ESPATAC/aldea china.png" class="style-flash" alt="Muestra de ESPATAC"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-29">
+            <h2>29 ESPATAC-MAT<img src="assets/29ESPATAC-MAT/altamar_espatac-mat.png" class="style-flash" alt="Muestra de ESPATAC-MAT"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-30">
+            <h2>30 OLONATUR-COLOR<img src="assets/30OLONATUR-COLOR/colmar_francia.png" class="style-flash" alt="Muestra de OLONATUR-COLOR"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-31">
+            <h2>31 OLENATUR<img src="assets/31OLENATUR/acantilado_escocia.png" class="style-flash" alt="Muestra de OLENATUR"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-32">
+            <h2>32 SINNOIR<img src="assets/32SINNOIR/banco de piedra.png" class="style-flash" alt="Muestra de SINNOIR"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-33">
+            <h2>33 MINIGESTPOETIC<img src="assets/33MINIGESTPOETIC/amor_y_perdida.png" class="style-flash" alt="Muestra de MINIGESTPOETIC"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-34">
+            <h2>34 EXPTERICO<img src="assets/34EXPTERICO/EXPTERICO manchas.png" class="style-flash" alt="Muestra de EXPTERICO"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-35">
+            <h2>35 PAPERCHIN<img src="assets/35PAPERCHIN/admiracion.png" class="style-flash" alt="Muestra de PAPERCHIN"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-36">
+            <h2>36 LINEART<img src="assets/36LINEART/chica joven posando.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Vórtice de línea minimalista. Técnica de trazado vectorial de alta precisión que captura la esencia de la forma.
+            </div>
+            <div class="style-detail">
+                <p>Nace de la intersección de líneas dinámicas y geometría emocional. Busca la máxima expresión con el mínimo trazo, dejando que el vacío sea parte activa de la composición.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Trazado continuo, elegancia lineal, equilibrio entre forma y vacío. 19,99€</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-37">
+            <h2>37 IMPASTUS PAINT<img src="assets/37IMPASTUS PAINT/MANHATTAN.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Materia y memoria. Óleo con técnica de impasto matérico, donde la pincelada densa genera un relieve táctil.
+            </div>
+            <div class="style-detail">
+                <p>Celebra la fuerza física de la pintura. La materia se acumula en el lienzo digital simulando el relieve del óleo real, capturando la luz en cada arista del trazo.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Relieve matérico, pincelada densa, vibración de color. 19,99€</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-39">
+            <h2>39 MATERDIGISSE<img src="assets/39MATERDIGISSE/albane dog.png" class="style-flash" alt="Muestra de MATERDIGISSE"></h2>
+            <div class="style-def">
+                Estilo en proceso de catalogación.
+            </div>
+            <div class="style-detail">
+                <p><em>En proceso de clasificación. Análisis técnico y conceptual de este estilo en desarrollo para el Universo EDUSSE.</em></p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-40">
+            <h2>40 MECHPASTOSSE<img src="assets/40MECHPASTOSSE/bufalo.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Estilo pictórico-mecánico autónomo donde la materia densa se comporta como ingeniería viva. La pintura encarna tecnología y estructura.
+            </div>
+            <div class="style-detail">
+                <p>La máquina es piel, la pintura es circuito, el error es belleza. En este estilo, la pincelada se trata como una pieza mecánica y las grietas doradas tipo kintsugi revelan una energía interna latente.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Materia densa, espátula constructiva, grietas doradas y núcleo de rojo vital. Luz quebrada sobre metal erosionado.</p>
+                <h4>Lema</h4>
+                <p>Materia que respira. Máquina que siente.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-41">
+            <h2>41 GESSOLUX<img src="assets/41GESSOLUX/amanecer.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Técnica pictórica basada en la fusión de yeso, espátula e impasto suave. La luz nace de la materia y no del color.
+            </div>
+            <div class="style-detail">
+                <p>El yeso fino actúa como piel mineral sobre la que la espátula suave moldea la luz. Es un estilo donde la materia tiene la primacía sobre el pigmento, buscando una pureza táctil.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Uso de yeso como base, espátula suave, luz mineral emergente.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-42">
+            <h2>42 GESSOLUX EXTREMUM<img src="assets/42GESSOLUX_EXTREMUM/mont blanc.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Versión radical de GESSOLUX enfocada en la luz seca y el relieve mineral extremo.
+            </div>
+            <div class="style-detail">
+                <p>La pintura se convierte en luz seca. Se caracteriza por un relieve de yeso pulido y una paleta dominada por blancos y grises pálidos, casi cegadores.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Blanco dominante, relieve pulido, estética mineral radical.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-43">
+            <h2>43 GESSOLUX MONOCHROMA</h2>
+            <div class="style-def">
+                Variante monocroma absoluta donde el yeso actúa como único pigmento.
+            </div>
+            <div class="style-detail">
+                <p>El silencio blanco. La luz es revelada únicamente por el ritual del gesto silencioso sobre la materia. No hay color, solo la vibración del relieve en blanco y grises neutros.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Monocromía mineral, pigmento de yeso, ritual del gesto.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-44">
+            <h2>44 GESSOLUX AZURITE<img src="assets/44GESSOLUX_AZURITE/barca_gessolux_azurite.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Luz azul mineral, fría y cristalina, integrada en la estructura del yeso.
+            </div>
+            <div class="style-detail">
+                <p>Sustitución del blanco tradicional por el azul mineral. La materia respira frío, evocando paisajes de cristal y minerales profundos.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Azul estructural, luz fría, atmósfera mineral cristalina.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-45">
+            <h2>45 GESSOLUX IRIS<img src="assets/45GESSOLUX_IRIS/barca arco.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Expansión cromática del sistema GESSOLUX mediante luz prismática.
+            </div>
+            <div class="style-detail">
+                <p>La luz mineral se descompone en un espectro vibrante. Combina la pincelada rítmica espiralada con amarillos, rojos y azules que emergen del relieve de yeso.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Luz prismática, espectro vibrante, pincelada rítmica.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-46">
+            <h2>46 ESPATAC-EXTREME<img src="assets/46ESPATAC-EXTREME/Ait Benhaddou_ Marruecos.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Expresionismo matérico total. El límite físico del impasto donde la pintura se convierte en escultura de bulto redondo.
+            </div>
+            <div class="style-detail">
+                <p>Grito matérico. En este estilo, la pintura abandona su bidimensionalidad para proyectarse en el espacio realandona su bidimensionalidad para proyectarse en el espacio real. Las sombras no son pintadas, son sombras arrojadas reales generadas por el relieve masivo de la espátula.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Relieve tridimensional masivo, iluminación brutalista, honestidad matérica brutal.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-47">
+            <h2>47 NEBULÍNICO<img src="assets/47NEBULÍNICO/Puma_Torres pine_Chile.png" class="style-flash" alt="Muestra"></h2>
+            <div class="style-def">
+                Estilo pictórico basado en la atmósfera difusa, la materia densa y la figuración deshecha.
+            </div>
+            <div class="style-detail">
+                <p>La identidad de la niebla. El trazo se aplica con carga gruesa y casi escultórica, dejando surcos visibles que atrapan la luz. La forma se disuelve en el ambiente brumoso, pero la materia reclama su presencia a través del relieve táctil.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Paleta gris-azulada, acentos cálidos (rojo/naranja), atmósfera húmeda, relieve táctil sobre bruma.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-48">
+            <h2>48 BESSELUXY L<img src="assets/48BESSELUXY_L/hay carmela li.png" class="style-flash" alt="Muestra de BESSELUXY L"></h2>
+            <div class="style-def">
+                Modelado tridimensional orgánico de transiciones suaves, ejecutado en óleo alla prima sobre lino expuesto.
+            </div>
+            <div class="style-detail">
+                <p>Estructura un volumen complejo y orgánico con un acabado completamente mate, conservando una fuerte sensación de peso arquitectónico mediante la fusión sutil de luces y sombras.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Óleo húmedo sobre húmedo (alla prima), paleta terrosa y figura recortada sobre lienzo crudo expuesto.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+        
+        <div class="style-card" id="style-49">
+            <h2>49 ARTE CIBERNÉTICO NATURE<img src="assets/49 ARTE_CIBERNETICO_NATURE/Caballo del Caos Dulce.jpg" class="style-flash" alt="Muestra de ARTE CIBERNÉTICO NATURE"></h2>
+            <div class="style-def">
+                Exploración orgánica y matemática donde la naturaleza salvaje dialoga con la precisión cibernética.
+            </div>
+            <div class="style-detail">
+                <p>Capas de energía bioluminiscente y fluidos sintéticos sobre formas animales y vegetales. La materia orgánica se transforma en circuitos visuales vivos que palpitan con luz propia.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Cianes lumínicos, verdes selváticos saturados, trazo vectorial fluido sobre materia pictórica densa.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+        <div class="style-card" id="style-50">
+            <h2>50 NEO FAUVE<img src="assets/50NEO_FAUVE/daigo ji templo en kioto matise.png" class="style-flash" alt="Muestra de NEO FAUVE"></h2>
+            <div class="style-def">
+                Explosión cromática desinhibida que libera al color de toda atadura figurativa o naturalista.
+            </div>
+            <div class="style-detail">
+                <p>Inspirado en la libertad salvaje de los fauvistas, replanteado desde el lenguaje contemporáneo EDUSSE. Masas puras de pigmento encendido que estructuran el espacio y la atmósfera.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Contraste vibrante, pincelada ancha gestual, luminosidad saturada sobre fondos dramáticos.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+        <div class="style-card" id="style-51">
+            <h2>51 NEO-CLÁSICO<img src="assets/51NEO-CLASICC/mujer_sentada_posando.jpeg" class="style-flash" alt="Muestra de NEO-CLÁSICO"></h2>
+            <div class="style-def">
+                Reinterpretation de la elegancia académica desde la textura pictórica del siglo XXI.
+            </div>
+            <div class="style-detail">
+                <p>Modelado sereno de la figura humana y la arquitectura, suspendido en una atmósfera de penumbra velada y dorados antiguos que evocan la serenidad atemporal.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Claroscuro velado, estudio minucioso de la luz sobre drapeados y piel, acabado aterciopelado sobrio.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+        <div class="style-card" id="style-52">
+            <h2>52 EDUSSE CLASSIC<img src="assets/52EDUSSE_CLASSIC/Ardilla roja_Sciurus vulgaris.jpeg" class="style-flash" alt="Muestra de EDUSSE CLASSIC"></h2>
+            <div class="style-def">
+                El pilar fundacional del taller; la figura naturalista envuelta en la lírica cromática del autor.
+            </div>
+            <div class="style-detail">
+                <p>Estudio de la fauna y flora donde el realismo impecable de la forma coexiste con la vibración abstracta del fondo pictórico y el trazo suelto.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Detalle naturalista en el sujeto principal, fondo erosionado gestual, uso de pigmentos orgánicos terrosos.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+        <div class="style-card" id="style-53">
+            <h2>53 MONETESSE<img src="assets/53MONETESSE/bateria.jpeg" class="style-flash" alt="Muestra de MONETESSE"></h2>
+            <div class="style-def">
+                La disolución de la forma sólida en vibraciones impetuosas de luz y reflejos impresionistas.
+            </div>
+            <div class="style-detail">
+                <p>Una mirada contemporánea al impresionismo lumínico donde los objetos y escenarios se fragmentan en pequeños toques de color puro que el ojo del espectador reconstituye en movimiento.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Pincelada dividida, luz atmosférica cambiante, superposición de capas húmedas de color.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+        <div class="style-card" id="style-54">
+            <h2>54 LUNIORNAT PORTADAS DE DISCOS<img src="assets/54 LUNIORNAT/Running Apes.jpeg" class="style-flash" alt="Muestra de LUNIORNAT PORTADAS DE DISCOS"></h2>
+            <div class="style-def">
+                Estética icónica de gran formato diseñada para el universo de la música, la cubierta y la portada artística.
+            </div>
+            <div class="style-detail">
+                <p>Composiciones de alto impacto simbólico pensadas como portadas emblemáticas. Fusiona el diseño gráfico de vanguardia con la textura densa de la pintura al óleo.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Formato cuadrado/icónico, composición central de fuerte presencia, lenguaje conceptual directo.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+                <div class="style-card" id="style-55">
+            <h2>55 VORGGIPAH<img src="assets/55VORGGIPAH/autum_in_the_street_vorggipah.jpg" class="style-flash" alt="Muestra de VORGGIPAH"></h2>
+            <div class="style-def">
+                Geometría orgánica y arquitectura monumental donde el paisaje y la estructura urbana adquieren relieve escultural.
+            </div>
+            <div class="style-detail">
+                <p>Una exploración tridimensional del entorno donde las montañas, los cuerpos de agua y las edificaciones tradicionales se sintetizan en volúmenes compactos y planos de color denso.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Materia pictórica escultórica, arquitectura integrada en el paisaje, paleta atmosférica de alta presencia.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+        <div class="style-card" id="style-56">
+            <h2>56 NATURALEXSSE<img src="assets/56NATURALEXSSE/pianista_mineral_naturalexsse.jpg" class="style-flash" alt="Muestra de NATURALEXSSE"></h2>
+            <div class="style-def">
+                Fusión botánica, mineral y humana donde el arte, la música y la memoria viva dialogan con la tierra.
+            </div>
+            <div class="style-detail">
+                <p>Una serie orgánica de profunda carga sensorial. Integra la figura humana, los instrumentos musicales y los elementos de la naturaleza (maíz, roca, fósiles) en una textura viva y táctil de gran calidez plástica.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Textura terrenal y mineral, simbiosis figura-naturaleza, paleta orgánica con matices ocres, dorados y pétreos.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+                        <div class="style-card" id="style-57">
+            <h2>57 STUCKEDU<img src="assets/57STUCKEDU/mujer_en_la_habitacion.jpg" class="style-flash" alt="Muestra de STUCKEDU"></h2>
+            <div class="style-def">
+                Pintor de autor creado por Eduardo Ramírez de Cartagena. Composición asimétrica minimalista inspirada en el vacío (ma) japonés (60-80% de espacio negativo atmosférico) y óleo directo alla prima con empaste grueso, vivo y táctil en el tercio inferior.
+            </div>
+            <div class="style-detail">
+                <p>Una de las series más emotivas y singulares de la galería. Representa al pintor interior creado por el artista: fondos sombríos y densos (verde-grisáceo, carbón, pizarra) rotos por pigmentos puros de alta vibración (cobalto, ocres cadmio, naranjas tostados, blanco titanio), con contornos que se funden suavemente en la atmósfera sobre lienzo de lino.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p><strong>Estructura:</strong> 60-80% espacio negativo continuo, motivos en franja inferior.<br>
+                <strong>Cromática:</strong> Claroscuro sobrio, fondos quebrados y pigmentos puros en contraste térmico.<br>
+                <strong>Materia:</strong> Óleo alla prima, empaste grueso rítmico, cerda y espátula.<br>
+                <strong>Soporte:</strong> Lino con trama visible y relieve matérico palpable.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+<div class="style-card" id="style-b2b">
+            <h2>B2B MAGNA (ACCESO EXCLUSIVO)<img src="assets/B2B_MAGNA/Trilogía Argéntea.png" class="style-flash" alt="Muestra de B2B MAGNA"></h2>
+            <div class="style-def">
+                Colección de super lujo de gran formato concebida para proyectos de alta arquitectura e interiorismo institucional.
+            </div>
+            <div class="style-detail">
+                <p>Obras de escala colosal y acabado magistral creadas expresamente para espacios de representación, cadenas hoteleras de lujo y colecciones corporativas privadas.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Gran formato monumental, pigmentos dorados y metálicos preciosos, certificación y dossier de proyecto singular.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+        <div class="style-card" id="style-cincelada">
+            <h2>HISTORIA CINCELADA<img src="assets/SELLOS_MAGICOS/sello_magico_001.png" class="style-flash" alt="Muestra de HISTORIA CINCELADA"></h2>
+            <div class="style-def">
+                La piedra histórica y el sello numismático elevados a la categoría de filatelia artística monumental.
+            </div>
+            <div class="style-detail">
+                <p>Un viaje por el patrimonio arquitectónico y la memoria a través de incisiones profundas, texturas graníticas y relieves cincelados que emulan la imprenta histórica.</p>
+                <h4>Rasgos Esenciales</h4>
+                <p>Relieve en alta definición, texturas de grabado clásico, tono sepia y piedra tallada.</p>
+            </div>
+            <a href="#indice" class="back-to-top">&uarr; Volver al índice</a>
+        </div>
+
+        </div> <!-- Cierre de memo-container -->
+
+    <footer style="text-align: center; padding: 3rem 1rem; background-color: #000000; color: #aaaaaa; border-top: 1px solid #1a1a1a; margin-top: 4rem;">
+        <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #888888;">&copy; e.ramirez 2026. Todos los derechos reservados. |
+            PRODUCED BY <a href="https://khem.es" target="_blank"
+                style="color: #D4AF37; text-decoration: none; font-weight: bold;">KHEM</a></p>
+        <p style="font-size:0.85rem; margin-top:0.5rem;">
+            <a href="condiciones.html" style="color: #D4AF37; text-decoration: none; opacity: 0.85;">Términos y Condiciones</a>
+        </p>
+    </footer>
+    <script src="js/cart.js"></script>
+    <script src="js/protection.js"></script>
+</body>
+</html>

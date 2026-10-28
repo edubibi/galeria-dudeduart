@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación Minimalista | EduArt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        /* --- CONTROL BAR --- */
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-control {
+            background: #1a1a1a;
+            color: #D4AF37;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 0.7rem 1.4rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-control:hover,
+        .btn-control.active {
+            background: #D4AF37;
+            color: #000000;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- CARD WRAPPER & CONTAINER --- */
+        .card-perspective {
+            perspective: 1000px;
+            margin-bottom: 2rem;
+        }
+
+        .card-container {
+            width: 700px;
+            height: 400px;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.1);
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+        }
+
+        /* --- BACKGROUND VARIATIONS --- */
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            padding: 2.8rem 3.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backface-visibility: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        /* Blanco Roto Style */
+        .theme-blanco-roto {
+            background-color: #f5f4ef;
+            background-image: 
+                radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 0),
+                linear-gradient(to bottom, #f7f6f1 0%, #efeee8 100%);
+            background-size: 20px 20px, 100% 100%;
+        }
+
+        /* Gris Cemento Claro Style */
+        .theme-cemento-claro {
+            background-color: #e2e1dc;
+            background-image: 
+                radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 0),
+                linear-gradient(to bottom, #e6e5e0 0%, #deddd8 100%);
+            background-size: 24px 24px, 100% 100%;
+        }
+
+        /* --- CARD ZONES (ASYMMETRICAL THREE-ZONE LAYOUT) --- */
+
+        /* 1. TOP LEFT: LA IDENTIDAD */
+        .zone-top-left {
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        .identity-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #b89628; /* Dorado fino sobre claro */
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+            margin-bottom: 3px;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        }
+
+        .identity-author {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #111111;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.9;
+        }
+
+        /* 2. CENTER: EL GRAN PROTAGONISTA */
+        .zone-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .hero-web {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.4rem;
+            font-weight: 700;
+            color: #000000;
+            letter-spacing: 8px;
+            text-transform: lowercase;
+            line-height: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 3. BOTTOM RIGHT: EL CONTACTO */
+        .zone-bottom-right {
+            align-self: flex-end;
+            text-align: right;
+        }
+        .contact-email {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #111111;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-email:hover {
+            color: #b89628;
+        }
+
+        /* --- BACK FACE (DORSO REVERSO OPCIONAL) --- */
+        .card-back {
+            transform: rotateY(180deg);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .card-container.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .back-slogan {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.4rem;
+            color: #111111;
+            line-height: 1.8;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .back-author {
+            margin-top: 1.5rem;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #b89628;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* --- PRINT MEDIA STYLES (FLATTEN 3D & EXACT RATIO MATCHING) --- */
+        @media print {
+            html {
+                font-size: 16px !important;
+            }
+
+            body {
+                background: #ffffff !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .controls,
+            .instructions {
+                display: none !important;
+            }
+
+            .card-perspective {
+                perspective: none !important;
+                margin: 0 !important;
+            }
+
+            .card-container {
+                transform: none !important;
+                transform-style: flat !important;
+                box-shadow: none !important;
+                width: 700px !important;
+                height: 400px !important;
+                border-radius: 8px !important;
+            }
+
+            .card-face {
+                border: 1px solid #cccccc !important;
+                padding: 2.8rem 3.2rem !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .identity-brand {
+                font-size: 2rem !important;
+            }
+
+            .identity-author {
+                font-size: 0.75rem !important;
+            }
+
+            .hero-web {
+                font-size: 3.4rem !important;
+                letter-spacing: 8px !important;
+            }
+
+            .contact-email {
+                font-size: 1.15rem !important;
+                font-weight: 700 !important;
+                color: #111111 !important;
+                letter-spacing: 1.5px !important;
+            }
+
+            /* PRINT FRONT MODE */
+            body.printing-front #cardFront {
+                display: flex !important;
+                transform: none !important;
+                position: relative !important;
+            }
+            body.printing-front #cardBack {
+                display: none !important;
+            }
+
+            /* PRINT BACK MODE */
+            body.printing-back #cardFront {
+                display: none !important;
+            }
+            body.printing-back #cardBack {
+                display: flex !important;
+                transform: none !important;
+                position: relative !important;
+            }
+        }}
+
+        @media (max-width: 740px) {
+            .card-container {
+                width: 90vw;
+                height: calc(90vw * 0.57);
+            }
+
+            .identity-brand {
+                font-size: 1.4rem;
+            }
+
+            .identity-author {
+                font-size: 0.6rem;
+            }
+
+            .hero-web {
+                font-size: 2.1rem;
+                letter-spacing: 4px;
+            }
+
+            .contact-email {
+                font-size: 0.72rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BARRA DE CONTROL DE ACABADO -->
+    <div class="controls">
+        <button class="btn-control active" id="btnBlancoRoto" onclick="setTheme('blanco-roto')">
+            📄 Blanco Roto
+        </button>
+        <button class="btn-control" id="btnCementoClaro" onclick="setTheme('cemento-claro')">
+            🏛️ Gris Cemento Claro
+        </button>
+        <button class="btn-control" id="btnFlip" onclick="flipCard()">
+            🔄 Girar a Reverso (Lema)
+        </button>
+        <button class="btn-control" onclick="printCard('front')">
+            🖨️ Imprimir Cara Principal
+        </button>
+        <button class="btn-control" onclick="printCard('back')">
+            🖨️ Imprimir Reverso
+        </button>
+    </div>
+
+    <!-- TARJETA EN 3D -->
+    <div class="card-perspective">
+        <div class="card-container" id="cardContainer">
+            
+            <!-- CARA FRONTAL -->
+            <div class="card-face theme-blanco-roto" id="cardFront">
+                
+                <!-- ZONA 1: ARRIBA A LA IZQUIERDA (LA IDENTIDAD) -->
+                <div class="zone-top-left">
+                    <div class="identity-brand">EduArt</div>
+                    <div class="identity-author">por Eduardo Ramírez</div>
+                </div>
+
+                <!-- ZONA 2: EN EL CENTRO (EL GRAN PROTAGONISTA) -->
+                <div class="zone-center">
+                    <div class="hero-web">eduart.es</div>
+                </div>
+
+                <!-- ZONA 3: ABAJO A LA DERECHA (EL CONTACTO) -->
+                <div class="zone-bottom-right">
+                    <a href="mailto:eduardoramirez@edusse.es" class="contact-email">eduardoramirez@edusse.es</a>
+                </div>
+
+            </div>
+
+            <!-- CARA TRASERA (DORSO OPCIONAL) -->
+            <div class="card-face theme-blanco-roto card-back" id="cardBack">
+                <div>
+                    <div class="back-slogan">
+                        «La imaginación abre el camino,<br>la técnica lo vuelve arte»
+                    </div>
+                    <div class="back-author">
+                        Eduardo Ramírez de Cartagena
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- EXPLICACIÓN / GUÍA -->
+    <div class="instructions" style="max-width: 650px; text-align: center; color: #888888; font-size: 0.9rem; line-height: 1.6;">
+        <p>Prueba de concepto maquetada exactamente según tus especificaciones de distribución en 3 zonas (Identidad arriba a la izquierda, Protagonista en el centro con máximo cuerpo y espaciado, y Contacto fino abajo a la derecha).</p>
+    </div>
+
+    <script>
+        let isFlipped = false;
+
+        function setTheme(theme) {
+            const front = document.getElementById('cardFront');
+            const back = document.getElementById('cardBack');
+            const btn1 = document.getElementById('btnBlancoRoto');
+            const btn2 = document.getElementById('btnCementoClaro');
+
+            if (theme === 'blanco-roto') {
+                front.className = 'card-face theme-blanco-roto';
+                back.className = 'card-face theme-blanco-roto card-back';
+                btn1.classList.add('active');
+                btn2.classList.remove('active');
+            } else {
+                front.className = 'card-face theme-cemento-claro';
+                back.className = 'card-face theme-cemento-claro card-back';
+                btn2.classList.add('active');
+                btn1.classList.remove('active');
+            }
+        }
+
+        function flipCard() {
+            const container = document.getElementById('cardContainer');
+            const btnFlip = document.getElementById('btnFlip');
+
+            isFlipped = !isFlipped;
+            if (isFlipped) {
+                container.classList.add('flipped');
+                btnFlip.innerText = '🔄 Girar a Cara Principal';
+            } else {
+                container.classList.remove('flipped');
+                btnFlip.innerText = '🔄 Girar a Reverso (Lema)';
+            }
+        }
+
+        function printCard(side) {
+            document.body.classList.remove('printing-front', 'printing-back');
+            
+            if (side === 'front') {
+                document.body.classList.add('printing-front');
+            } else if (side === 'back') {
+                document.body.classList.add('printing-back');
+            }
+
+            window.print();
+
+            setTimeout(() => {
+                document.body.classList.remove('printing-front', 'printing-back');
+            }, 500);
+        }
+    </script>
+</body>
+
+</html>
+        }
+    </script>
+</body>
+
+</html>

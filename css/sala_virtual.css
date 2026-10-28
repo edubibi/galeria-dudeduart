@@ -1,0 +1,1100 @@
+:root {
+    --bg-color: #080810;
+    --wall-color: #121218;
+    --wall-border: #1f1f2e;
+    --primary: #cba358; /* Gold accent */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: #fff;
+    font-family: var(--font-sans);
+    overflow: hidden; /* We handle scrolling manually for 3D camera movement */
+    height: 100vh;
+    width: 100vw;
+    perspective: 1000px; /* Crucial for 3D depth */
+}
+
+/* --- HEADER --- */
+.gallery-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(8, 8, 16, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1rem 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.header-left {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: #8c8c9a;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+    text-shadow: 0 0 8px rgba(203, 163, 88, 0.4);
+}
+
+.header-center h1 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    letter-spacing: 4px;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.header-center h1 span {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.header-right {
+    font-size: 0.85rem;
+    color: #8c8c9a;
+}
+
+/* --- 3D VIEWPORT CONTAINER --- */
+.viewport-3d {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    /* Create a 3D context */
+    perspective: 1200px;
+    perspective-origin: 50% 40%; /* Slightly looking down to show floor */
+}
+
+/* The actual 3D space/hallway containing walls, floor, ceiling */
+.hallway-3d {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    /* This will be translated along Z-axis by scrolling */
+    transform: translateZ(0px);
+    transition: transform 0.1s ease-out; /* Smooth inertia */
+}
+
+/* Base style for any flat surface in 3D (ceiling, floor, walls) */
+.surface-3d {
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+/* --- FLOOR: Realistic Wood Planks --- */
+.floor-3d {
+    width: 3000px;
+    height: 6000px; /* Very deep hallway */
+    left: 50%;
+    margin-left: -1500px; /* Centered width of 3000px */
+    top: 50%;
+    margin-top: 400px; /* Aligned with the bottom of the walls at +400px */
+    transform: rotateX(90deg) translateZ(0); /* Horizontal floor plane */
+    transform-origin: 50% 0%;
+    
+    /* Elegant Dark Oak wood planks rendered in CSS */
+    background: 
+        /* Board seams (vertical dark lines) */
+        repeating-linear-gradient(90deg, transparent, transparent 120px, rgba(0,0,0,0.85) 120px, rgba(0,0,0,0.85) 122px),
+        /* Board plank colors (fine horizontal variations) */
+        repeating-linear-gradient(0deg, #1b0e06 0px, #24140b 150px, #180c05 300px, #2a180e 450px);
+    
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
+}
+
+/* Reflection/glossy overlay on the wooden floor */
+.floor-reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(8, 8, 16, 0.95), transparent 15%, transparent 85%, rgba(8, 8, 16, 0.95)),
+                radial-gradient(ellipse at center, transparent 30%, rgba(8,8,16,0.8) 100%);
+    pointer-events: none;
+}
+
+/* --- CEILING: Industrial Dark Gallery Ceiling --- */
+.ceiling-3d {
+    width: 3000px;
+    height: 6000px;
+    left: 50%;
+    margin-left: -1500px; /* Centered width of 3000px */
+    top: 50%;
+    margin-top: -400px; /* Aligned with the top of the walls at -400px */
+    transform: rotateX(-90deg) translateZ(0); /* Horizontal ceiling plane */
+    transform-origin: 50% 0%;
+    background-color: #06060a;
+    background-image: 
+        /* Ceiling panels / beams */
+        repeating-linear-gradient(90deg, transparent, transparent 200px, #111 200px, #111 204px),
+        repeating-linear-gradient(0deg, transparent, transparent 500px, #111 500px, #111 505px);
+    box-shadow: inset 0 0 150px rgba(0,0,0,0.95);
+}
+
+/* --- WALLS: Modern Gallery Graphite Walls --- */
+.left-wall-3d {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 6000px;
+    height: 800px;
+    margin-left: -3000px;
+    margin-top: -400px;
+    transform: rotateY(90deg) translateZ(-500px); /* Rotated 90deg, shifted 500px to the left */
+    background: linear-gradient(90deg, #14141c, #1f1f2a, #101017);
+    border-top: 2px solid var(--wall-border);
+    border-bottom: 2px solid var(--wall-border);
+    box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
+}
+
+.right-wall-3d {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 6000px;
+    height: 800px;
+    margin-left: -3000px;
+    margin-top: -400px;
+    transform: rotateY(-90deg) translateZ(-500px); /* Rotated -90deg, shifted 500px to the right */
+    background: linear-gradient(-90deg, #14141c, #1f1f2a, #101017);
+    border-top: 2px solid var(--wall-border);
+    border-bottom: 2px solid var(--wall-border);
+    box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
+}
+
+/* Far end wall to close the hallway visual depth */
+.back-wall-3d {
+    width: 1000px;
+    height: 800px;
+    left: 50%;
+    margin-left: -500px;
+    top: 50%;
+    margin-top: -400px;
+    transform: translateZ(-5990px); /* Positioned at the very end of hallway */
+    background: #08080c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 150px rgba(0,0,0,0.95);
+    border: 1px solid #111;
+}
+
+.back-wall-logo {
+    width: 300px;
+    opacity: 0.3;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+}
+
+/* --- SPOTLIGHTS AND SHADOWS --- */
+/* Ceiling lights that project glow on walls */
+.ceiling-spotlight {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 235, 180, 0.45) 0%, rgba(255, 235, 180, 0.05) 50%, transparent 100%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Wall spot lights positioned above paintings */
+.wall-spotlight-glow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 450px;
+    height: 400px;
+    margin-left: -225px;
+    margin-top: -400px; /* Start from the top of the wall (translateY -400px in JS) */
+    background: radial-gradient(ellipse at top, rgba(255, 230, 160, 0.4) 0%, rgba(255, 230, 160, 0.08) 40%, transparent 75%);
+    pointer-events: none;
+    transform-style: preserve-3d;
+}
+
+/* Floor painting reflection */
+.painting-floor-reflection {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translate(-50%, 0) rotateX(180deg) scaleY(0.4);
+    opacity: 0.08;
+    filter: blur(4px);
+    pointer-events: none;
+}
+
+/* --- 3D EXHIBITION FRAMES --- */
+.exhibit-frame {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 320px;
+    height: 360px;
+    margin-left: -160px;
+    margin-top: -180px; /* Centered vertically at translateY(0) */
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s;
+    filter: brightness(0.75); /* Moody gallery lighting by default */
+}
+
+.exhibit-frame:hover {
+    filter: brightness(1.15);
+}
+
+/* Fine wooden/metallic frame detail */
+.painting-mount {
+    padding: 16px;
+    background-color: #fff; /* White passe-partout matting */
+    border: 10px solid #1c140e; /* Dark wood frame border */
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.65), 
+        0 1px 5px rgba(255, 255, 255, 0.15) inset,
+        inset 0 0 10px rgba(0,0,0,0.15); /* Shadow inside frame */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.exhibit-frame img {
+    max-height: 280px;
+    max-width: 320px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none; /* Let parent frame handle clicks */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.exhibit-title {
+    color: #fff;
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+    margin-top: 12px;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.exhibit-price {
+    color: var(--primary);
+    font-size: 0.75rem;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+    margin-top: 2px;
+}
+
+/* --- NAVIGATION GUIDE / TOOLTIP --- */
+.navigation-guide {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    z-index: 100;
+    pointer-events: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mouse-icon {
+    width: 20px;
+    height: 30px;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    position: relative;
+}
+
+.mouse-icon::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -2px;
+    width: 4px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 2px;
+    animation: scrollWheel 1.5s infinite;
+}
+
+@keyframes scrollWheel {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(8px); opacity: 0; }
+}
+
+/* --- OVERLAY DETAIL PANEL --- */
+#exhibit-detail-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 4, 8, 0.9);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+#exhibit-detail-panel.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.detail-content {
+    display: flex;
+    max-width: 1100px;
+    width: 90%;
+    height: 75vh;
+    background: #0c0c12;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.9);
+    transform: scale(0.92);
+    transition: transform 0.4s ease;
+}
+
+#exhibit-detail-panel.active .detail-content {
+    transform: scale(1);
+}
+
+.detail-image-side {
+    flex: 5;
+    background: #050508;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    position: relative;
+    border-right: 1px solid rgba(255,255,255,0.05);
+}
+
+.detail-image-side img {
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    border: 8px solid #fff;
+    outline: 5px solid #1a120c;
+}
+
+.detail-info-side {
+    flex: 4;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #0e0e16 0%, #060609 100%);
+}
+
+.detail-title {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+}
+
+.detail-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+    align-items: center;
+}
+
+.detail-tag {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    color: #a0a0b0;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.detail-price {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.detail-desc {
+    color: #9494a6;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.detail-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-buy {
+    flex: 1;
+    background-color: var(--primary);
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.btn-buy:hover {
+    background-color: #ffd27a;
+    box-shadow: 0 0 15px rgba(203,163,88,0.4);
+    transform: translateY(-2px);
+}
+
+.btn-try {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #444;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.btn-try:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+#close-detail {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1010;
+    transition: transform 0.2s;
+}
+
+#close-detail:hover {
+    transform: rotate(90deg);
+    color: var(--primary);
+}
+
+/* Pie de página con estadísticas de visitas */
+.visitor-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(8, 8, 16, 0.9);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 2rem;
+    font-size: 0.75rem;
+    color: #64748b;
+    text-align: center;
+    z-index: 90;
+    letter-spacing: 1px;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .viewport-3d {
+        perspective: 800px;
+    }
+    
+    .left-wall-3d {
+        transform: rotateY(90deg) translateZ(-350px);
+    }
+    .right-wall-3d {
+        transform: rotateY(-90deg) translateZ(-350px);
+    }
+    
+    .exhibit-frame img {
+        max-height: 180px;
+        max-width: 200px;
+    }
+    
+    .detail-content {
+        flex-direction: column;
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .detail-image-side {
+        min-height: 35vh;
+        padding: 1.5rem;
+    }
+    
+    .detail-info-side {
+        padding: 2rem;
+    }
+    
+    .detail-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* ==========================================================================
+   NEW MULTI-ROOM INTERACTIVE TOUR STYLES
+   ========================================================================== */
+
+/* --- WELCOME ENTRANCE SCREEN --- */
+#welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+}
+
+#welcome-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.welcome-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(16, 16, 24, 0.94) 0%, rgba(8, 8, 12, 0.99) 100%),
+                url('../assets/00EDUSSE/00edusse_001.png') no-repeat center center;
+    background-size: cover;
+    filter: blur(8px);
+    transform: scale(1.05);
+}
+
+.welcome-box {
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    padding: 3.5rem;
+    background: rgba(12, 12, 18, 0.8);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.7);
+    animation: welcomeEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.welcome-logo {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    letter-spacing: 6px;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(203, 163, 88, 0.3);
+}
+
+.welcome-box h1 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.welcome-box p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #9494a6;
+    margin-bottom: 2.2rem;
+}
+
+#btn-start-visit {
+    background: var(--primary);
+    color: #08080c;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(203, 163, 88, 0.25);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#btn-start-visit:hover {
+    background: #ffd27a;
+    box-shadow: 0 8px 30px rgba(203, 163, 88, 0.5);
+    transform: translateY(-2px);
+}
+
+@keyframes welcomeEntrance {
+    0% { transform: translateY(40px) scale(0.95); opacity: 0; filter: blur(10px); }
+    100% { transform: translateY(0) scale(1); opacity: 1; filter: blur(0); }
+}
+
+/* --- INTERACTIVE MINIMAP UI --- */
+#minimap-container {
+    position: fixed;
+    bottom: 2.5rem;
+    left: 2rem;
+    width: 210px;
+    background: rgba(12, 12, 20, 0.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 12px;
+    z-index: 100;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    transition: transform 0.4s, opacity 0.4s;
+    user-select: none;
+}
+
+.minimap-header {
+    font-family: var(--font-serif);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--primary);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 6px;
+}
+
+.minimap-graphic {
+    width: 100%;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#minimap-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.map-line {
+    stroke: rgba(255, 255, 255, 0.15);
+    stroke-width: 1.5;
+    stroke-dasharray: 2 2;
+}
+
+.map-node {
+    fill: rgba(30, 30, 45, 0.85);
+    stroke: rgba(255, 255, 255, 0.3);
+    stroke-width: 1.5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.map-node:hover {
+    fill: rgba(203, 163, 88, 0.25);
+    stroke: var(--primary);
+    filter: drop-shadow(0 0 5px rgba(203, 163, 88, 0.5));
+}
+
+.map-node.active-room {
+    fill: var(--primary);
+    stroke: #fff;
+    filter: drop-shadow(0 0 8px rgba(203, 163, 88, 0.8));
+    animation: mapNodeGlow 2s infinite alternate;
+}
+
+@keyframes mapNodeGlow {
+    0% { filter: drop-shadow(0 0 3px rgba(203, 163, 88, 0.5)); }
+    100% { filter: drop-shadow(0 0 10px rgba(203, 163, 88, 1)); }
+}
+
+.map-label {
+    fill: rgba(255, 255, 255, 0.65);
+    font-family: var(--font-sans);
+    font-size: 8px;
+    font-weight: 700;
+    text-anchor: middle;
+    pointer-events: none;
+}
+
+.map-node.active-room + .map-label {
+    fill: #000;
+}
+
+.minimap-footer {
+    font-size: 0.65rem;
+    color: #64748b;
+    text-align: center;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* --- STREET-VIEW FLOOR CONTROLS --- */
+#floor-controls {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2rem;
+    display: flex;
+    gap: 8px;
+    background: rgba(12, 12, 20, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 14px;
+    border-radius: 50px;
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.floor-btn {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floor-btn:hover {
+    background: var(--primary);
+    color: #08080c;
+    border-color: var(--primary);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* --- ROOM TRANSITION FADE OVERLAY --- */
+#room-fade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 95;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#room-fade-overlay.fading {
+    opacity: 1;
+}
+
+/* --- ROOM-SPECIFIC WALL, FLOOR & CEILING DESIGNS --- */
+
+/* 1. ROOM 1: BRUTALIST RECIBIDOR (CARBONERAS 1996) */
+.room-style-1 .ceiling-3d {
+    background-color: #555562;
+    background-image: 
+        repeating-linear-gradient(90deg, transparent, transparent 150px, rgba(0,0,0,0.15) 150px, rgba(0,0,0,0.15) 154px),
+        linear-gradient(0deg, rgba(255,255,255,0.08), rgba(0,0,0,0.25)),
+        repeating-linear-gradient(0deg, #44444c, #5a5a66 200px, #3a3a42 400px); /* Concrete texture */
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.5); /* Less oppressive, lighter feel */
+}
+.room-style-1 .floor-3d {
+    background: repeating-linear-gradient(90deg, transparent, transparent 300px, rgba(0,0,0,0.1) 300px, rgba(0,0,0,0.1) 302px),
+                linear-gradient(0deg, #4d4d57, #5c5c68 150px, #3d3d45 300px); /* Smooth polished concrete */
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+}
+.room-style-1 .left-wall-3d, 
+.room-style-1 .right-wall-3d {
+    background: linear-gradient(90deg, #383840, #4c4c56, #2d2d34); /* Brutalist grey panels */
+    border-top: 3px solid #6e6e7d;
+    border-bottom: 3px solid #6e6e7d;
+}
+.room-style-1 .wall-spotlight-glow {
+    background: radial-gradient(ellipse at top, rgba(255, 235, 180, 0.35) 0%, rgba(255, 235, 180, 0.05) 50%, transparent 75%);
+}
+
+/* 2. ROOM 2: LA GRAN ROTONDA (CIRCULAR GALLERY) */
+.room-style-2 .floor-3d {
+    width: 3000px;
+    height: 6000px;
+    left: 50%;
+    margin-left: -1500px;
+    top: 50%;
+    margin-top: 400px;
+    border-radius: 0;
+    transform: rotateX(90deg) translateZ(0);
+    transform-origin: 50% 0%;
+    background: repeating-linear-gradient(90deg, transparent, transparent 150px, rgba(255,255,255,0.02) 150px, rgba(255,255,255,0.02) 152px), 
+                repeating-linear-gradient(0deg, #101014, #191922 250px);
+    box-shadow: inset 0 0 120px rgba(0,0,0,0.9);
+}
+.room-style-2 .ceiling-3d {
+    width: 3000px;
+    height: 6000px;
+    left: 50%;
+    margin-left: -1500px;
+    top: 50%;
+    margin-top: -400px;
+    border-radius: 0;
+    transform: rotateX(-90deg) translateZ(0);
+    transform-origin: 50% 0%;
+    background-color: #0b0b0e;
+    box-shadow: inset 0 0 180px rgba(0,0,0,0.95);
+}
+.room-style-2 .left-wall-3d, 
+.room-style-2 .right-wall-3d {
+    background: linear-gradient(90deg, #09090c, #131317, #070709); /* Dark curved shadows */
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.room-style-2 .wall-spotlight-glow {
+    background: radial-gradient(ellipse at top, rgba(200, 215, 255, 0.25) 0%, rgba(200, 215, 255, 0.03) 60%, transparent 80%); /* Cold light */
+}
+
+/* 3. ROOM 3: PILLARS PAVILION */
+.room-style-3 .ceiling-3d {
+    background-color: #fafafc;
+    background-image: 
+        repeating-linear-gradient(90deg, transparent, transparent 150px, #e4e4e9 150px, #e4e4e9 152px),
+        repeating-linear-gradient(0deg, #f0f0f5, #ffffff 400px); /* Clean white gallery ceilings */
+    box-shadow: inset 0 0 120px rgba(0,0,0,0.2);
+}
+.room-style-3 .floor-3d {
+    background: repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(0,0,0,0.1) 100px, rgba(0,0,0,0.1) 102px),
+                repeating-linear-gradient(0deg, #dfd0be, #e9ddcf 200px); /* Light oak planks */
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.3);
+}
+.room-style-3 .left-wall-3d, 
+.room-style-3 .right-wall-3d {
+    background: linear-gradient(90deg, #f4f4f7, #ffffff, #eaeaea); /* Clean white plaster */
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.1);
+}
+.room-style-3 .wall-spotlight-glow {
+    background: radial-gradient(ellipse at top, rgba(255, 235, 180, 0.35) 0%, rgba(255, 235, 180, 0.05) 50%, transparent 75%);
+}
+.room-style-3 .exhibit-title {
+    color: #111;
+}
+
+/* 4. ROOM 4: YELLOW WALL WING */
+.room-style-4 .ceiling-3d {
+    background-color: #0b0b0e;
+    box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
+}
+.room-style-4 .floor-3d {
+    background: repeating-linear-gradient(90deg, transparent, transparent 150px, rgba(255,255,255,0.02) 150px, rgba(255,255,255,0.02) 152px),
+                repeating-linear-gradient(0deg, #14141a, #08080c 200px); /* Dark flooring with tiles */
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.95);
+}
+.room-style-4 .left-wall-3d, 
+.room-style-4 .right-wall-3d {
+    background: linear-gradient(90deg, #cca842, #dbb64c, #ba9936); /* Solid Mustard Yellow Gallery Accent Wall */
+    border-top: 2px solid #997c23;
+    border-bottom: 2px solid #997c23;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+}
+.room-style-4 .wall-spotlight-glow {
+    background: radial-gradient(ellipse at top, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.08) 50%, transparent 80%); /* Bright white spots */
+}
+
+/* 5. ROOM 5: EXTERNAL LEFT (TALLER EXPOSICION CABALLETES) */
+.room-style-5 .ceiling-3d {
+    background-color: #eaeaea;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.25);
+}
+.room-style-5 .floor-3d {
+    background: repeating-linear-gradient(90deg, transparent, transparent 120px, rgba(0,0,0,0.05) 120px, rgba(0,0,0,0.05) 122px),
+                repeating-linear-gradient(0deg, #e4e4e9, #f2f2f7 200px); /* Light grey stone tiles with grid lines */
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.25);
+}
+.room-style-5 .left-wall-3d, 
+.room-style-5 .right-wall-3d {
+    background: linear-gradient(90deg, #f9f9fb, #f3f3f5);
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+.room-style-5 .wall-spotlight-glow {
+    background: radial-gradient(ellipse at top, rgba(255, 235, 180, 0.3) 0%, rgba(255, 235, 180, 0.05) 50%, transparent 75%);
+}
+.room-style-5 .exhibit-title {
+    color: #111;
+}
+
+/* 6. ROOM 6: WOOD BEAMS (ALA RUSTICA) */
+.room-style-6 .ceiling-3d {
+    background-color: #f7f7f9;
+    /* Simulate wooden beams on the ceiling */
+    background-image: 
+        repeating-linear-gradient(90deg, transparent, transparent 180px, #725235 180px, #725235 210px), /* exposed wood beams */
+        repeating-linear-gradient(0deg, #e4e4e9, #ffffff);
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.3);
+}
+.room-style-6 .floor-3d {
+    background: repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(0,0,0,0.1) 80px, rgba(0,0,0,0.1) 82px), 
+                repeating-linear-gradient(0deg, #ded0be, #eedfce 250px);
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.4);
+}
+.room-style-6 .left-wall-3d, 
+.room-style-6 .right-wall-3d {
+    background: linear-gradient(90deg, #fafafa, #ffffff, #f0f0f0); /* Plastered white walls */
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.room-style-6 .wall-spotlight-glow {
+    background: radial-gradient(ellipse at top, rgba(255, 230, 160, 0.45) 0%, rgba(255, 230, 160, 0.08) 50%, transparent 75%);
+}
+.room-style-6 .exhibit-title {
+    color: #111;
+}
+
+/* 7. ROOM 7: ATRIO DE LUJO (GRAND CENTRAL HALL) */
+.room-style-7 .ceiling-3d {
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, #06060a 70%); /* Glass dome glow */
+    box-shadow: inset 0 0 200px rgba(0,0,0,0.95);
+}
+.room-style-7 .floor-3d {
+    background: repeating-linear-gradient(90deg, transparent, transparent 200px, rgba(0,0,0,0.3) 200px, rgba(0,0,0,0.3) 203px), 
+                repeating-linear-gradient(0deg, #111318, #22252e 300px);
+    box-shadow: inset 0 0 130px rgba(0,0,0,0.95);
+}
+.room-style-7 .left-wall-3d, 
+.room-style-7 .right-wall-3d {
+    background: linear-gradient(90deg, #0f172a, #1e293b, #0f172a); /* Royal dark blue walls */
+    border-top: 3px solid #d97706; /* Golden trim */
+    border-bottom: 3px solid #d97706;
+}
+.room-style-7 .wall-spotlight-glow {
+    background: radial-gradient(ellipse at top, rgba(245, 158, 11, 0.3) 0%, rgba(245, 158, 11, 0.05) 50%, transparent 75%); /* Golden spotlight */
+}
+
+/* 8. ROOM 8: VIP LOUNGE */
+.room-style-8 .ceiling-3d {
+    background-color: #0b0b0e;
+    box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
+}
+.room-style-8 .floor-3d {
+    background: repeating-linear-gradient(90deg, transparent, transparent 150px, rgba(0,0,0,0.15) 150px, rgba(0,0,0,0.15) 152px),
+                repeating-linear-gradient(0deg, #2c1d11, #3c2a1b 150px, #201308 300px); /* Walnut parquet floor with seams */
+    box-shadow: inset 0 0 90px rgba(0,0,0,0.7);
+}
+.room-style-8 .left-wall-3d, 
+.room-style-8 .right-wall-3d {
+    background: linear-gradient(90deg, #2b2b35, #353540, #22222a);
+    border-top: 2px solid #555566;
+    border-bottom: 2px solid #555566;
+}
+.room-style-8 .wall-spotlight-glow {
+    background: radial-gradient(ellipse at top, rgba(230, 200, 255, 0.25) 0%, rgba(230, 200, 255, 0.03) 60%, transparent 80%);
+}
+
+/* --- DYNAMIC WALL PANELS FOR CIRCULAR ROOMS (3D CYLINDER - DEACTIVATED) --- */
+.wall-panel-3d {
+    display: none;
+}
+
+/* --- VOLUMETRIC RELIEF FOR ROOM 1 TEST --- */
+/* 3D Concrete Pilasters protruding from the walls */
+.room-style-1 .pilaster-3d {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 140px; /* Width of the pilaster */
+    height: 800px;
+    margin-left: -70px;
+    margin-top: -400px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    background: linear-gradient(90deg, #303038, #45454e 50%, #2a2a32);
+    border-left: 2px solid #555562;
+    border-right: 2px solid #1a1a22;
+    box-shadow: 
+        15px 0 35px rgba(0, 0, 0, 0.8), 
+        -15px 0 35px rgba(0, 0, 0, 0.8),
+        inset 0 0 25px rgba(0, 0, 0, 0.4); /* Protrusion shadow on wall */
+}
+
+/* Concrete top cornices and bottom baseboard moldings to seal gaps */
+.room-style-1 .left-wall-3d::before,
+.room-style-1 .right-wall-3d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background: #25252c;
+    border-bottom: 3px solid #15151c;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.85);
+    z-index: 5;
+}
+.room-style-1 .left-wall-3d::after,
+.room-style-1 .right-wall-3d::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background: #18181e;
+    border-top: 4px solid #33333d;
+    box-shadow: 0 -8px 25px rgba(0,0,0,0.9);
+    z-index: 5;
+}
+
+

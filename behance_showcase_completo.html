@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>UNIVERSO EDUSSE — Retrospectiva Cronológica Completa</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap');
+
+        :root {
+            --bg-color: #F9F8F6; /* Premium Alabaster / French Art Paper */
+            --card-bg: #111111;  /* High contrast black cards kept */
+            --card-border: #222222;
+            --text-color: #111111; /* Sharp dark text */
+            --text-muted: #555555; /* Sophisticated gray description */
+            --accent: #C5A059;    /* Eduardo's Pristine Champagne Gold */
+            --accent-glow: rgba(197, 160, 89, 0.05);
+            --frame-border: rgba(154, 122, 62, 0.25); /* Watermark soft bronze border color (Foto 2) */
+            --paspartu-color: #ffffff; /* Pure White paspartú matboard restored */
+            --width: 1400px;
+        }
+
+        body {
+            background-color: #f2f1ed; /* Soft grey outer wrap for paper elevation */
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Container designed for seamless Behance layout stitch */
+        .showcase-container {
+            width: var(--width);
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 80px rgba(0,0,0,0.06);
+        }
+
+        /* Universal Slide Base */
+        .slide {
+            width: 100%;
+            min-height: 1080px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 120px 100px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #eae7e1;
+            position: relative;
+            background-color: var(--bg-color);
+            overflow: hidden;
+        }
+
+        /* Ambient spotlight behind each artwork using CSS Variables */
+        .slide::before {
+            content: '';
+            position: absolute;
+            width: 850px;
+            height: 850px;
+            background: radial-gradient(circle, var(--glow-color, rgba(197, 160, 89, 0.04)) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            pointer-events: none;
+            filter: blur(50px);
+            opacity: 0.35; /* Scale down the inline glow opacity automatically to look incredibly soft on light background */
+        }
+
+        /* Outlined giant background number for high-end catalog design */
+        .bg-number {
+            position: absolute;
+            font-family: 'Playfair Display', serif;
+            font-size: 16rem; /* Sophisticated text watermark size */
+            font-weight: 700;
+            font-style: italic;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(154, 122, 62, 0.07); /* Extremely soft gold outline watermark */
+            bottom: -35px;
+            right: 0px;
+            z-index: -1; /* Always floats safely behind the text inside relative text blocks */
+            pointer-events: none;
+            line-height: 1;
+        }
+        
+        .layout-inverted .bg-number {
+            left: 0px;
+            right: auto;
+        }
+
+        /* COVER / PORTADA */
+        .cover {
+            height: 1800px;
+            background: radial-gradient(circle at center, #ffffff 0%, #F9F8F6 80%);
+            text-align: center;
+            justify-content: flex-start;
+            padding-top: 140px;
+            box-sizing: border-box;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .cover::before {
+            display: none;
+        }
+
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 6.8rem;
+            color: #111111; /* Sharp editorial black title like Vogue/Louvre */
+            margin: 0;
+            letter-spacing: -2px;
+            font-weight: 700;
+            text-shadow: none;
+        }
+
+        .cover h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 16px;
+            margin-top: 30px;
+            color: var(--accent); /* Luxurious Gold subtitle */
+            font-weight: 400;
+            padding-left: 16px; /* Offset spacing */
+        }
+
+        .cover-divider {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
+            margin: 50px auto;
+        }
+
+        .cover p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .red-easel-container {
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .red-easel-svg {
+            width: 800px;
+            height: 800px;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+
+        .red-easel-svg:hover {
+            transform: translateY(-10px) scale(1.01);
+        }
+
+        /* CHAPTER WALLS / MUROS DE EXPOSICIÓN */
+        .chapter-wall {
+            min-height: 900px;
+            background: linear-gradient(135deg, #f7f6f3 0%, #f1efe9 100%);
+            border-left: 4px solid var(--accent);
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            padding: 150px;
+        }
+
+        .chapter-wall::before {
+            display: none;
+        }
+
+        .chapter-content {
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .chapter-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent);
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .chapter-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            color: #111111;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .chapter-divider {
+            width: 150px;
+            height: 1px;
+            background: var(--accent);
+            margin: 40px auto;
+        }
+
+        .chapter-desc {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #444444;
+            font-weight: 300;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+        
+        .chapter-cross {
+            font-family: 'Montserrat', sans-serif;
+            color: rgba(197, 160, 89, 0.4);
+            font-size: 1.2rem;
+            margin-top: 50px;
+            font-weight: 200;
+        }
+
+        /* PICTURE FRAME SYSTEM (MUSEUM DESIGN ON WHITE WALLS) */
+        .museum-frame {
+            position: relative;
+            background: var(--paspartu-color); /* Paspartú solid background under the image */
+            border: 1px solid var(--frame-border); /* Solid champagne gold inner border */
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.12), 
+                        0 0 0 12px var(--paspartu-color),       /* Archival Warm Linen/Ivory inner paspartú mount board */
+                        0 0 0 13px var(--frame-border); /* Fine outer solid champagne gold frame lip */
+            border-radius: 1px;
+            overflow: hidden;
+            display: inline-flex; /* Lets the container shrink-wrap exactly to the image's dimensions! */
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            max-width: 100%;
+            width: fit-content;
+            height: fit-content;
+        }
+        
+        .museum-frame:hover {
+            transform: scale(1.015);
+        }
+
+        /* ------------------------------------------------------------- */
+        /* PLANTILLA A Y B: ESQUEMA SPLIT (STANDARD / INVERTED)         */
+        /* ------------------------------------------------------------- */
+        .art-layout {
+            display: flex;
+            width: 100%;
+            gap: 100px;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .layout-inverted .art-layout {
+            flex-direction: row-reverse;
+        }
+
+        .art-preview-wrapper {
+            flex: 1.25;
+            display: flex;
+            justify-content: center;
+        }
+
+        .art-img {
+            max-height: 750px; /* Standardize vertical height for all artworks */
+            width: auto;
+            max-width: 100%;
+            display: block; /* Eliminates the default inline spacing at the bottom */
+            object-fit: contain;
+        }
+
+        .art-info {
+            flex: 0.75;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 20px;
+            position: relative; /* Stacking context anchor for bg-number watermark */
+            z-index: 1;
+        }
+        
+        .layout-inverted .art-info {
+            padding-right: 0;
+            padding-left: 20px;
+        }
+
+        .art-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .art-number-inline {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--accent);
+            font-style: italic;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .art-badge {
+            padding: 4px 12px;
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            border-radius: 2px;
+            background-color: rgba(197, 160, 89, 0.04);
+            font-weight: 600;
+        }
+
+        .art-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #111111;
+            margin: 0 0 25px 0;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            font-weight: 700;
+        }
+
+        .divider-gold {
+            width: 60px;
+            height: 1px;
+            background: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        .art-description {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin: 0 0 45px 0;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        /* Technical Grid Specs for Premium Catalog feel */
+        .art-metadata-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            border-top: 1px solid #eae7e1;
+            padding-top: 30px;
+        }
+
+        .meta-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .meta-label {
+            color: #777777;
+            font-weight: 400;
+        }
+
+        .meta-val {
+            color: #111111;
+            font-weight: 600;
+        }
+
+        /* FOOTER / CIERRE */
+        .footer-slide {
+            height: 900px;
+            background: linear-gradient(to top, #f9f8f6 0%, #f1efe9 100%);
+            text-align: center;
+            justify-content: center;
+            border-top: 2px solid var(--accent);
+        }
+        
+        .footer-slide::before {
+            display: none;
+        }
+
+        .footer-slide h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: #111111;
+            margin: 0 0 20px 0;
+            letter-spacing: -1px;
+            font-weight: 700;
+        }
+
+        .footer-slide p {
+            font-size: 1.4rem;
+            color: #444444;
+            max-width: 750px;
+            margin: 0 auto 60px auto;
+            line-height: 1.8;
+            font-weight: 300;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 50px;
+            border: 1px solid #111111;
+            color: #111111;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 4px;
+            transition: all 0.4s ease;
+            font-size: 0.85rem;
+            background: transparent;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        }
+
+        .btn:hover {
+            background-color: #111111;
+            color: #ffffff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* UNFRAMED CANVAS STYLE FOR MASTER COVER */
+        .unframed-canvas {
+            width: 100%;
+            max-width: 650px;
+            box-shadow: 0 45px 95px rgba(0, 0, 0, 0.16); /* Thick, soft, realistic floating shadow */
+            border-radius: 4px; /* Soft canvas-wrapped corners */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000000;
+            z-index: 2;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        
+        .unframed-canvas:hover {
+            transform: scale(1.015);
+        }
+        
+        .unframed-canvas img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ------------------------------------------------------------- */
+        /* FULL BLEED LAYOUT                                             */
+        /* ------------------------------------------------------------- */
+        .layout-full-bleed {
+            padding: 120px 100px;
+            box-sizing: border-box;
+        }
+
+        .full-bleed-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the giant shrink-wrapped bleed frame! */
+            gap: 60px;
+            z-index: 2;
+        }
+
+        .full-bleed-frame {
+            display: inline-flex; /* Shrink-wrap the image dimensions! */
+            background: var(--paspartu-color);
+            box-shadow: 0 45px 90px rgba(0, 0, 0, 0.15), 
+                        0 0 0 16px var(--paspartu-color), 
+                        0 0 0 17px var(--frame-border);
+            max-height: 850px;
+            max-width: 100%;
+            width: fit-content;
+            height: fit-content;
+        }
+
+        .art-img-full {
+            max-height: 850px;
+            width: auto;
+            max-width: 100%;
+            display: block;
+            object-fit: contain;
+        }
+
+        .full-bleed-info {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative; /* Stacking context anchor for bg-number watermark */
+            z-index: 1;
+        }
+
+        /* ------------------------------------------------------------- */
+        /* DOUBLE COLUMN GRID LAYOUT                                     */
+        /* ------------------------------------------------------------- */
+        .layout-double-column {
+            padding: 120px 100px;
+            box-sizing: border-box;
+        }
+
+        .double-column-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .double-column-card {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-color: var(--bg-color);
+        }
+
+        .double-column-card .museum-frame {
+            align-self: center; /* Center the frame itself inside the left-aligned text column! */
+            margin-bottom: 35px;
+        }
+
+        .double-column-card .art-img {
+            max-height: 600px; /* Slightly more compact for side-by-side elegant layouts */
+        }
+
+        .double-column-card .bg-number {
+            font-size: 10rem; /* Perfectly scaled down watermark for double column cards */
+            bottom: -15px;
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="showcase-container">
+
+        <!-- PORTADA PRINCIPAL -->
+        <div class="slide cover">
+            <div>
+                <h1>UNIVERSO EDUSSE</h1>
+                <h2>The Archive of Creative Movements</h2>
+                <div class="cover-divider"></div>
+                <p>Eduardo Ramírez — Retrospective Exhibition</p>
+                <div class="red-easel-container">
+                    <!-- Giant sharp abstract easel in electric blue -->
+                    <svg class="red-easel-svg" viewBox="0 0 500 500">
+                        <!-- 3 Vertical Center Posts -->
+                        <line x1="225" y1="20" x2="225" y2="480" stroke="#0052FF" stroke-width="5" stroke-linecap="round" />
+                        <line x1="250" y1="20" x2="250" y2="480" stroke="#0052FF" stroke-width="5" stroke-linecap="round" />
+                        <line x1="275" y1="20" x2="275" y2="480" stroke="#0052FF" stroke-width="5" stroke-linecap="round" />
+
+                        <!-- 2 Slanted Legs -->
+                        <line x1="210" y1="30" x2="60" y2="460" stroke="#0052FF" stroke-width="5.5" stroke-linecap="round" />
+                        <line x1="290" y1="30" x2="440" y2="460" stroke="#0052FF" stroke-width="5.5" stroke-linecap="round" />
+
+                        <!-- 1 Top Horizontal Bar -->
+                        <line x1="130" y1="90" x2="370" y2="90" stroke="#0052FF" stroke-width="6" stroke-linecap="round" />
+
+                        <!-- 2 Bottom Horizontal Bars -->
+                        <line x1="80" y1="335" x2="420" y2="335" stroke="#0052FF" stroke-width="6" stroke-linecap="round" />
+                        <line x1="70" y1="350" x2="430" y2="350" stroke="#0052FF" stroke-width="6" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- MURO DE EXPOSICIÓN I -->
+        <div class="slide chapter-wall" style="--glow-color: rgba(197, 160, 89, 0.02)">
+            <div class="chapter-content">
+                <span class="chapter-number">Capítulo I</span>
+                <h2 class="chapter-title">Los Cimientos del Alma</h2>
+                <div class="chapter-divider"></div>
+                <p class="chapter-desc">Exploraciones cromáticas y figurativas iniciales. La transición desde el simbolismo poético hacia los primeros carboncillos y grabados expresionistas que forjaron la identidad visual del Universo Edusse.</p>
+                <div class="chapter-cross">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; +</div>
+            </div>
+        </div>
+
+        <!-- 00 EDUSSE [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(230, 70, 20, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/00EDUSSE/00edusse_001.png" class="art-img" alt="EDUSSE">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">00</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">00</p>
+                        <span class="art-badge">FAMILIA: ENERGÍA</span>
+                    </div>
+                    <h3 class="art-title">EDUSSE</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Surrealismo Simbólico. Fusión poética donde la figura orgánica trasciende su propia presencia física para albergar un paisaje interior. Una narrativa onírica continua donde lo terrenal y lo infinito dialogan a través de siluetas cargadas de misterio.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ENERGÍA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 00 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 01 EXP NEOCIRC [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(230, 70, 20, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/01EXP_NEOCIRC/01exp_neocirc_001.jpg" class="art-img" alt="EXP NEOCIRC">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">01</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">01</p>
+                        <span class="art-badge">FAMILIA: ENERGÍA</span>
+                    </div>
+                    <h3 class="art-title">EXP NEOCIRC</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Circularismo Lumínico. Vórtice visual y distorsión radial de enorme fuerza expresiva. Curva la materia y el horizonte alrededor de un punto de fuga central intensamente luminoso, dotando a la obra de un ritmo cósmico envolvente.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ENERGÍA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 01 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 02 CUBESSE STILO [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(100, 80, 240, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/02CUBESSE stilo/02cubesse_stilo_001.jpeg" class="art-img" alt="CUBESSE STILO">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">02</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">02</p>
+                        <span class="art-badge">FAMILIA: ESTRUCTURA</span>
+                    </div>
+                    <h3 class="art-title">CUBESSE STILO</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Cubismo Prismático. Descomposición geométrica en la que el sujeto se fragmenta en aristas y planos facetados de óleo denso. Una construcción sólida y volumétrica que rechaza la curva en favor de la pureza estructural.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ESTRUCTURA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 02 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 03 EXPNEOPLUS [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(100, 80, 240, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/03EXPNEOPLUS/03expneoplus_001.png" class="art-img" alt="EXPNEOPLUS">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">03</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">03</p>
+                        <span class="art-badge">FAMILIA: ESTRUCTURA</span>
+                    </div>
+                    <h3 class="art-title">EXPNEOPLUS</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Neo-Impresionismo Épico. Paisajismo solemne de escala monumental. Destaca por una teatralidad lumínica sobrecogedora, cielos enérgicos y atmósferas encendidas que elevan el motivo a una categoría heroica.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ESTRUCTURA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 03 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 04 APLICC [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [FULL-BLEED] [FULL-BLEED] [FULL-BLEED] -->
+        <div class="slide layout-full-bleed" style="--glow-color: rgba(100, 80, 240, 0.03)">
+            <div class="full-bleed-wrapper">
+                <div class="museum-frame full-bleed-frame">
+                    <img src="assets/04APLICC/04aplicc_001.png" class="art-img-full" alt="APLICC">
+                </div>
+                <div class="full-bleed-info">
+                    <div class="bg-number">04</div>
+                    <div class="art-header" style="justify-content: center; margin-bottom: 20px;">
+                        <p class="art-number-inline">04</p>
+                        <span class="art-badge">FAMILIA: ESTRUCTURA</span>
+                    </div>
+                    <h3 class="art-title" style="text-align: center; font-size: 3.5rem; margin-bottom: 30px;">APLICC</h3>
+                    <p class="art-description" style="text-align: center; max-width: 900px; margin: 0 auto 40px auto; font-size: 1.2rem; line-height: 1.8;">Efecto Vitral. Mosaico de luz segmentada donde cada bloque cromático vibra con una pureza saturada, delimitado por rigurosas y solemnes líneas oscuras, emulando la mística de los vitrales góticos.</p>
+                    <div class="art-metadata-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 40px; max-width: 900px; margin: 0 auto; border-top: 1px solid #eae7e1; padding-top: 30px;">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ESTRUCTURA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 04 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 05 PLUMINK [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(100, 100, 120, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/05PLUMINK/05plumink_001.png" class="art-img" alt="PLUMINK">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">05</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">05</p>
+                        <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                    </div>
+                    <h3 class="art-title">PLUMINK</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Ilustración a Pluma y Tinta. Grabado clásico de corte académico basado en la elegancia del trazo negro fino y la economía de las tramas cruzadas sobre fondos cálidos y limpios.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 05 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 06 IDE CLASSIC [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(100, 100, 120, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/06IDE_CLASSIC/06ide_classic_001.png" class="art-img" alt="IDE CLASSIC">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">06</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">06</p>
+                        <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                    </div>
+                    <h3 class="art-title">IDE CLASSIC</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Realismo Pictórico Clásico. Óleo tradicional de pincelada sutil, atmósfera equilibrada y transiciones armónicas. Un homenaje a la sobriedad compositiva y la belleza naturalista de los maestros del siglo XIX.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 06 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOUBLE COLUMN GROUP: 07 & 08 -->
+        <!-- 07 ATMÓSFERA -->
+        <div class="slide layout-double-column" style="--glow-color: rgba(100, 100, 120, 0.03)">
+            <div class="double-column-grid">
+                <!-- Column 1 -->
+                <div class="double-column-card">
+                    <div class="museum-frame">
+                        <img src="assets/07NEOINK stilo/07neoink_stilo_001.jpg" class="art-img" alt="NEOINK">
+                    </div>
+                    <div class="art-info" style="padding: 0;">
+                        <div class="bg-number">07</div>
+                        <div class="art-header">
+                            <p class="art-number-inline">07</p>
+                            <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                        </div>
+                        <h3 class="art-title" style="font-size: 2.2rem; margin-bottom: 15px;">NEOINK</h3>
+                        <p class="art-description" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">Línea Clara Contemporánea. Ilustración moderna caracterizada por contornos negros definidos de gran finura y rellenos de color planos de alta vibración, con un aire de elegante sobriedad.</p>
+                        <div class="art-metadata-grid" style="padding-top: 20px;">
+                            <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                            <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 07 &bull; Pintura</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column 2 -->
+                <!-- 08 ATMÓSFERA -->
+                <div class="double-column-card">
+                    <div class="museum-frame">
+                        <img src="assets/08BORACARBON/08boracarbon_001.png" class="art-img" alt="BORACARBON">
+                    </div>
+                    <div class="art-info" style="padding: 0;">
+                        <div class="bg-number">08</div>
+                        <div class="art-header">
+                            <p class="art-number-inline">08</p>
+                            <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                        </div>
+                        <h3 class="art-title" style="font-size: 2.2rem; margin-bottom: 15px;">BORACARBON</h3>
+                        <p class="art-description" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">Carboncillo Atmosférico. Monocromías de grises y sepias de grano denso y bordes vaporosos. Transmite una melancolía silenciosa y una carga emocional suspendida, como un fragmento de memoria desvanecida.</p>
+                        <div class="art-metadata-grid" style="padding-top: 20px;">
+                            <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                            <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 08 &bull; Pintura</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 09 FRACNEO [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(100, 80, 240, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/09FRACNEO/09fracneo_001.png" class="art-img" alt="FRACNEO">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">09</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">09</p>
+                        <span class="art-badge">FAMILIA: ESTRUCTURA</span>
+                    </div>
+                    <h3 class="art-title">FRACNEO</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Fractalidad Orgánica. Estructuras donde la naturaleza se disuelve en patrones geométricos recursivos. Una mirada hipnótica donde el detalle formal sigue una armonía de repetición matemática.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ESTRUCTURA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 09 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MURO DE EXPOSICIÓN II -->
+        <div class="slide chapter-wall" style="--glow-color: rgba(100, 120, 255, 0.02)">
+            <div class="chapter-content">
+                <span class="chapter-number">Capítulo II</span>
+                <h2 class="chapter-title">La Conquista del Volumen</h2>
+                <div class="chapter-divider"></div>
+                <p class="chapter-desc">La llegada de las geometrías complejas, el cubismo constructivista, los prismas de refracción de vidrio macizo y el ordenamiento matemático en estructuras fractales.</p>
+                <div class="chapter-cross">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; +</div>
+            </div>
+        </div>
+
+        <!-- 10 OLEOCUBBO [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(100, 80, 240, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/10OLEOCUBBO/10oleocubbo_001.png" class="art-img" alt="OLEOCUBBO">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">10</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">10</p>
+                        <span class="art-badge">FAMILIA: ESTRUCTURA</span>
+                    </div>
+                    <h3 class="art-title">OLEOCUBBO</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Óleo Constructivista. Planos angulares muy marcados y volumen expresivo a base de bloques e impastos cuadrados de gran relieve táctil, prescindiendo de toda atmósfera difusa.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ESTRUCTURA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 10 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11 URBANSPHERIC [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(100, 100, 120, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/11URBANSPHERIC/11urbanspheric_001.png" class="art-img" alt="URBANSPHERIC">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">11</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">11</p>
+                        <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                    </div>
+                    <h3 class="art-title">URBANSPHERIC</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Distorsión Atmosférica. Perspectiva gran angular extrema que envuelve la escena en una neblina de partículas suspendidas, evocando quietud, humedad o un clima melancólico en primer plano.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 11 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12 CRISTAL CÚBICO [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(0, 120, 255, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/12CRISTAL_CUBICO/12cristal_cubico_001.png" class="art-img" alt="CRISTAL CÚBICO">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">12</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">12</p>
+                        <span class="art-badge">FAMILIA: ESTRUCTURA</span>
+                    </div>
+                    <h3 class="art-title">CRISTAL CÚBICO</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Geometría Cristalina. Transforma el motivo en un prisma de refracción monumental. Los objetos adquieren el aspecto de vidrio macizo tallado con brillos especulares y múltiples transparencias internas.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ESTRUCTURA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 12 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 13 RECTESSE [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [FULL-BLEED] [FULL-BLEED] [FULL-BLEED] -->
+        <div class="slide layout-full-bleed" style="--glow-color: rgba(0, 120, 255, 0.03)">
+            <div class="full-bleed-wrapper">
+                <div class="museum-frame full-bleed-frame">
+                    <img src="assets/13RECTESSE/13rectesse_001.png" class="art-img-full" alt="RECTESSE">
+                </div>
+                <div class="full-bleed-info">
+                    <div class="bg-number">13</div>
+                    <div class="art-header" style="justify-content: center; margin-bottom: 20px;">
+                        <p class="art-number-inline">13</p>
+                        <span class="art-badge">FAMILIA: ESTRUCTURA</span>
+                    </div>
+                    <h3 class="art-title" style="text-align: center; font-size: 3.5rem; margin-bottom: 30px;">RECTESSE</h3>
+                    <p class="art-description" style="text-align: center; max-width: 900px; margin: 0 auto 40px auto; font-size: 1.2rem; line-height: 1.8;">Abstracción Lineal Rectilínea. Segmentación de las formas orgánicas bajo una armadura de líneas rectas rígidas y planos secos de aristas duras, suprimiendo la curva por completo.</p>
+                    <div class="art-metadata-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 40px; max-width: 900px; margin: 0 auto; border-top: 1px solid #eae7e1; padding-top: 30px;">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ESTRUCTURA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 13 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 14 TEREXSE [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(100, 80, 240, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/14TEREXSE/14terexse_001.jpg" class="art-img" alt="TEREXSE">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">14</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">14</p>
+                        <span class="art-badge">FAMILIA: ESTRUCTURA</span>
+                    </div>
+                    <h3 class="art-title">TEREXSE</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Relieve Topográfico y Textura Mineral. Dota a la obra de un peso geológico, donde los cambios tonales se extruyen imitando grietas y el desgaste táctil de la piedra expuesta al tiempo.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ESTRUCTURA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 14 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 15 CUBESSEPLUS [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(0, 120, 255, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/15CUBESSEPLUS/15cubesseplus_001.png" class="art-img" alt="CUBESSEPLUS">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">15</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">15</p>
+                        <span class="art-badge">FAMILIA: ESTRUCTURA</span>
+                    </div>
+                    <h3 class="art-title">CUBESSEPLUS</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Sinfonía Cromática Facetada. Evolución densa de la fragmentación prismática. Compuesta por miles de pequeñas teselas geométricas rebosantes de vibrantes variaciones de color y luz.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ESTRUCTURA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 15 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOUBLE COLUMN GROUP: 16 & 17 -->
+        <!-- 16 ENERGÍA -->
+        <div class="slide layout-double-column" style="--glow-color: rgba(230, 70, 20, 0.04)">
+            <div class="double-column-grid">
+                <!-- Column 1 -->
+                <div class="double-column-card">
+                    <div class="museum-frame">
+                        <img src="assets/16EXPNEO/16expneo_001.png" class="art-img" alt="EXPNEO">
+                    </div>
+                    <div class="art-info" style="padding: 0;">
+                        <div class="bg-number">16</div>
+                        <div class="art-header">
+                            <p class="art-number-inline">16</p>
+                            <span class="art-badge">FAMILIA: ENERGÍA</span>
+                        </div>
+                        <h3 class="art-title" style="font-size: 2.2rem; margin-bottom: 15px;">EXPNEO</h3>
+                        <p class="art-description" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">Pincelada Vibrante. Composición al óleo mediante pinceladas secas cortas y discontinuas sobre fondos en penumbra, logrando una luz íntima de ritmo contenido y pausado.</p>
+                        <div class="art-metadata-grid" style="padding-top: 20px;">
+                            <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ENERGÍA</span></div>
+                            <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 16 &bull; Pintura</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column 2 -->
+                <!-- 17 ENERGÍA -->
+                <div class="double-column-card">
+                    <div class="museum-frame">
+                        <img src="assets/17FUZZTESS/17fuzztess_001.jpg" class="art-img" alt="FUZZTESS">
+                    </div>
+                    <div class="art-info" style="padding: 0;">
+                        <div class="bg-number">17</div>
+                        <div class="art-header">
+                            <p class="art-number-inline">17</p>
+                            <span class="art-badge">FAMILIA: ENERGÍA</span>
+                        </div>
+                        <h3 class="art-title" style="font-size: 2.2rem; margin-bottom: 15px;">FUZZTESS</h3>
+                        <p class="art-description" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">Onirismo Difuso. Ausencia de contornos duros en favor de una textura algodonosa y etérea. Las formas se desvanecen en tránsitos de color de extrema suavidad, como en un estado de duermevela.</p>
+                        <div class="art-metadata-grid" style="padding-top: 20px;">
+                            <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ENERGÍA</span></div>
+                            <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 17 &bull; Pintura</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 18 ABSTRACTO CONFLUENCIA [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(230, 70, 20, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/18ABSTRACTO_CONFLUENCIA/18abstracto_confluencia_001.jpg" class="art-img" alt="ABSTRACTO CONFLUENCIA">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">18</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">18</p>
+                        <span class="art-badge">FAMILIA: ENERGÍA</span>
+                    </div>
+                    <h3 class="art-title">ABSTRACTO CONFLUENCIA</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Abstracción Líquida. Dinámicas de color en constante fluidez orgánica. Remolinos, vetas y celdas de esmalte brillante que dialogan sin fundirse del todo, capturando la confluencia de fuerzas puras.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ENERGÍA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 18 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 19 FUZZLINE ABS [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(230, 70, 20, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/19FUZZLINE_ABS/19fuzzline_abs_001.jpg" class="art-img" alt="FUZZLINE ABS">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">19</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">19</p>
+                        <span class="art-badge">FAMILIA: ENERGÍA</span>
+                    </div>
+                    <h3 class="art-title">FUZZLINE ABS</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Bocetaje Gestual. Red de líneas rápidas y enérgicas de tinta que flotan con gran dinamismo sobre una base cromática más difusa, confiriendo ligereza e imperfección natural al plano.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ENERGÍA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 19 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 20 BORASSIE [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(100, 100, 120, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/20BORASSIE/20borassie_001.png" class="art-img" alt="BORASSIE">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">20</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">20</p>
+                        <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                    </div>
+                    <h3 class="art-title">BORASSIE</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Tinta Expresionista. Siluetas negras de gran potencia e impacto que se quiebran o estallan en sus bordes mediante manchas espontáneas, salpicaduras y goteos de alta carga emocional.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 20 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 21 OCE-BURST [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(100, 100, 120, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/21OCE-BURST/21oce_burst_001.png" class="art-img" alt="OCE-BURST">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">21</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">21</p>
+                        <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                    </div>
+                    <h3 class="art-title">OCE-BURST</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Óleo Escultórico. Relieve tridimensional curvo y crestas ásperas con brillo de óleo fresco. Capta la fuerza turbulenta y el dinamismo de la materia en su estado más indómito.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 21 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 22 NEO-LUMINA [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [FULL-BLEED] [FULL-BLEED] [FULL-BLEED] -->
+        <div class="slide layout-full-bleed" style="--glow-color: rgba(255, 0, 128, 0.04)">
+            <div class="full-bleed-wrapper">
+                <div class="museum-frame full-bleed-frame">
+                    <img src="assets/22NEO-LUMINA/22neo_lumina_001.png" class="art-img-full" alt="NEO-LUMINA">
+                </div>
+                <div class="full-bleed-info">
+                    <div class="bg-number">22</div>
+                    <div class="art-header" style="justify-content: center; margin-bottom: 20px;">
+                        <p class="art-number-inline">22</p>
+                        <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                    </div>
+                    <h3 class="art-title" style="text-align: center; font-size: 3.5rem; margin-bottom: 30px;">NEO-LUMINA</h3>
+                    <p class="art-description" style="text-align: center; max-width: 900px; margin: 0 auto 40px auto; font-size: 1.2rem; line-height: 1.8;">Cyberpunk Lineal. Definición estructural de la forma a través de filamentos de luz de neón de gran potencia y brillo (cianes, magentas y púrpuras) sobre fondos de negro absoluto.</p>
+                    <div class="art-metadata-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 40px; max-width: 900px; margin: 0 auto; border-top: 1px solid #eae7e1; padding-top: 30px;">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 22 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 23 TRIDIM-BURST [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(100, 80, 240, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/23TRIDIM-BURST/23tridim_burst_001.png" class="art-img" alt="TRIDIM-BURST">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">23</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">23</p>
+                        <span class="art-badge">FAMILIA: ESTRUCTURA</span>
+                    </div>
+                    <h3 class="art-title">TRIDIM-BURST</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Efecto Pop-Out. Volumetría explosiva que simula la salida de los elementos del plano del lienzo hacia el espectador mediante sombras de oclusión y distorsión de perspectiva.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ESTRUCTURA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 23 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 24 BORACARBON MONUMENTOS [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(100, 100, 120, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/24BORACARBON MONUMENTOS/boracarbon_mon_001.png" class="art-img" alt="BORACARBON MONUMENTOS">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">24</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">24</p>
+                        <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                    </div>
+                    <h3 class="art-title">BORACARBON MONUMENTOS</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Carboncillo Arquitectónico. Dibujo académico de gran rigor formal que exalta la solidez estructural y la belleza de la piedra labrada, prescindiendo por completo del color.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 24 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOUBLE COLUMN GROUP: 25 & 26 -->
+        <!-- 25 ATMÓSFERA -->
+        <div class="slide layout-double-column" style="--glow-color: rgba(212, 175, 55, 0.06)">
+            <div class="double-column-grid">
+                <!-- Column 1 -->
+                <div class="double-column-card">
+                    <div class="museum-frame">
+                        <img src="assets/25CAPLIVE/Ajustador.png" class="art-img" alt="CAPLIVE">
+                    </div>
+                    <div class="art-info" style="padding: 0;">
+                        <div class="bg-number">25</div>
+                        <div class="art-header">
+                            <p class="art-number-inline">25</p>
+                            <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                        </div>
+                        <h3 class="art-title" style="font-size: 2.2rem; margin-bottom: 15px;">CAPLIVE</h3>
+                        <p class="art-description" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">Claroscuro Rembrandt. Atmósfera de gran solemnidad y costumbrismo pictórico. El motivo emerge en ocres cálidos bajo un haz de luz dorada muy concentrado, perdiendo el fondo en una profunda penumbra.</p>
+                        <div class="art-metadata-grid" style="padding-top: 20px;">
+                            <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                            <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 25 &bull; Pintura</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column 2 -->
+                <!-- 26 ATMÓSFERA -->
+                <div class="double-column-card">
+                    <div class="museum-frame">
+                        <img src="assets/26CARL_LINE/Muchacho estudiante.png" class="art-img" alt="CARL_LINE">
+                    </div>
+                    <div class="art-info" style="padding: 0;">
+                        <div class="bg-number">26</div>
+                        <div class="art-header">
+                            <p class="art-number-inline">26</p>
+                            <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                        </div>
+                        <h3 class="art-title" style="font-size: 2.2rem; margin-bottom: 15px;">CARL_LINE</h3>
+                        <p class="art-description" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">Línea Clara Humanista. Retratos e ideas descritas con la sutil elegancia de un grafito fino, con tramas suaves de sombreado y respetando el espacio del lienzo de grano rústico.</p>
+                        <div class="art-metadata-grid" style="padding-top: 20px;">
+                            <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                            <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 26 &bull; Pintura</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 27 LINEVORT [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(230, 70, 20, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/27LINEVORT/Carnero.png" class="art-img" alt="LINEVORT">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">27</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">27</p>
+                        <span class="art-badge">FAMILIA: ENERGÍA</span>
+                    </div>
+                    <h3 class="art-title">LINEVORT</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Vorticismo Lineal. Los volúmenes se describen mediante la vibración de una trama de espirales concéntricas continuas que emulan huellas dactilares o vetas de madera noble.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ENERGÍA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 27 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 28 ESPATAC [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(200, 130, 40, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/28ESPATAC/aldea china.png" class="art-img" alt="ESPATAC">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">28</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">28</p>
+                        <span class="art-badge">FAMILIA: SPATULA & MATERIA</span>
+                    </div>
+                    <h3 class="art-title">ESPATAC</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Espátula Impresionista Oriental. Composición estructurada en planos y cortes secos de espátula plana con color puro, evocando la calma contemplativa y el equilibrio del arte zen.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">SPATULA & MATERIA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 28 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 29 ESPATAC-MAT [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(200, 130, 40, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/29ESPATAC-MAT/altamar_espatac-mat.png" class="art-img" alt="ESPATAC-MAT">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">29</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">29</p>
+                        <span class="art-badge">FAMILIA: SPATULA & MATERIA</span>
+                    </div>
+                    <h3 class="art-title">ESPATAC-MAT</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Espátula de Relieve. Suma a la técnica de planos del anterior una textura rugosa muy acusada, imitando costras de yeso envejecido y lienzo rústico de saco con relieve físico.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">SPATULA & MATERIA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 29 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 30 OLONATUR-COLOR [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(200, 130, 40, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/30OLONATUR-COLOR/colmar_francia.png" class="art-img" alt="OLONATUR-COLOR">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">30</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">30</p>
+                        <span class="art-badge">FAMILIA: SPATULA & MATERIA</span>
+                    </div>
+                    <h3 class="art-title">OLONATUR-COLOR</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Óleo Naturalista Vibrante. Óleo húmedo de gran realismo y fidelidad formal que potencia y eleva la saturación cromática del motivo bajo una intensa luz de mediodía.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">SPATULA & MATERIA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 30 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 31 OLENATUR [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [FULL-BLEED] [FULL-BLEED] [FULL-BLEED] -->
+        <div class="slide layout-full-bleed" style="--glow-color: rgba(200, 130, 40, 0.04)">
+            <div class="full-bleed-wrapper">
+                <div class="museum-frame full-bleed-frame">
+                    <img src="assets/31OLENATUR/ARC DU TRIUMPH.png" class="art-img-full" alt="OLENATUR">
+                </div>
+                <div class="full-bleed-info">
+                    <div class="bg-number">31</div>
+                    <div class="art-header" style="justify-content: center; margin-bottom: 20px;">
+                        <p class="art-number-inline">31</p>
+                        <span class="art-badge">FAMILIA: SPATULA & MATERIA</span>
+                    </div>
+                    <h3 class="art-title" style="text-align: center; font-size: 3.5rem; margin-bottom: 30px;">OLENATUR</h3>
+                    <p class="art-description" style="text-align: center; max-width: 900px; margin: 0 auto 40px auto; font-size: 1.2rem; line-height: 1.8;">Óleo Realista Sobrio. Paisajismo clásico de pincelada discreta y paleta de colores contenida y fiel a la realidad, inspirada en la tradición académica europea del naturalismo.</p>
+                    <div class="art-metadata-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 40px; max-width: 900px; margin: 0 auto; border-top: 1px solid #eae7e1; padding-top: 30px;">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">SPATULA & MATERIA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 31 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 32 SINNOIR [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(100, 100, 120, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/32SINNOIR/banco de piedra.png" class="art-img" alt="SINNOIR">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">32</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">32</p>
+                        <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                    </div>
+                    <h3 class="art-title">SINNOIR</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Clave Alta sin Negros. Atmósfera diáfana, luminosa y etérea donde se suprimen por completo las sombras duras, transformándolas en tonos grises o azules celestes muy suaves.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 32 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 33 MINIGESTPOETIC [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(100, 100, 120, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/33MINIGESTPOETIC/amor_y_perdida.png" class="art-img" alt="MINIGESTPOETIC">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">33</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">33</p>
+                        <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                    </div>
+                    <h3 class="art-title">MINIGESTPOETIC</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Minimalismo Gestual. Abstracción lírica basada en la economía absoluta del trazo. Pinceladas caligráficas de tinta sobre grandes áreas de lienzo vacío (espacio negativo).</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 33 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOUBLE COLUMN GROUP: 34 & 35 -->
+        <!-- 34 ENERGÍA -->
+        <div class="slide layout-double-column" style="--glow-color: rgba(230, 70, 20, 0.04)">
+            <div class="double-column-grid">
+                <!-- Column 1 -->
+                <div class="double-column-card">
+                    <div class="museum-frame">
+                        <img src="assets/34EXPTERICO/EXPTERICO manchas.png" class="art-img" alt="EXPTERICO">
+                    </div>
+                    <div class="art-info" style="padding: 0;">
+                        <div class="bg-number">34</div>
+                        <div class="art-header">
+                            <p class="art-number-inline">34</p>
+                            <span class="art-badge">FAMILIA: ENERGÍA</span>
+                        </div>
+                        <h3 class="art-title" style="font-size: 2.2rem; margin-bottom: 15px;">EXPTERICO</h3>
+                        <p class="art-description" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">Expresionismo Esotérico. Descomposición del plano y los rostros mediante manchas de óleo denso, texturas agrietadas de óxido y cal sucia, evocando desintegración matérica.</p>
+                        <div class="art-metadata-grid" style="padding-top: 20px;">
+                            <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ENERGÍA</span></div>
+                            <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 34 &bull; Pintura</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column 2 -->
+                <!-- 35 ESTRUCTURA -->
+                <div class="double-column-card">
+                    <div class="museum-frame">
+                        <img src="assets/35PAPERCHIN/admiracion.png" class="art-img" alt="PAPERCHIN">
+                    </div>
+                    <div class="art-info" style="padding: 0;">
+                        <div class="bg-number">35</div>
+                        <div class="art-header">
+                            <p class="art-number-inline">35</p>
+                            <span class="art-badge">FAMILIA: ESTRUCTURA</span>
+                        </div>
+                        <h3 class="art-title" style="font-size: 2.2rem; margin-bottom: 15px;">PAPERCHIN</h3>
+                        <p class="art-description" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">Grabado de Papel. Marquetería tridimensional que describe el volumen mediante planos superpuestos y calados de papel, evocando la delicadeza del troquelado oriental.</p>
+                        <div class="art-metadata-grid" style="padding-top: 20px;">
+                            <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ESTRUCTURA</span></div>
+                            <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 35 &bull; Pintura</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 36 LINEART [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(100, 100, 120, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/36LINEART/chica joven posando.png" class="art-img" alt="LINEART">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">36</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">36</p>
+                        <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                    </div>
+                    <h3 class="art-title">LINEART</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Tormenta Lineal. Minimalismo orgánico en el que la elegancia de la silueta se describe a través de un único y sinuoso trazo continuo de tinta negra, sin fondos ni color.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 36 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 37 IMPASTUS PAINT [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(200, 130, 40, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/37IMPASTUS PAINT/MANHATTAN.png" class="art-img" alt="IMPASTUS PAINT">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">37</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">37</p>
+                        <span class="art-badge">FAMILIA: SPATULA & MATERIA</span>
+                    </div>
+                    <h3 class="art-title">IMPASTUS PAINT</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Óleo de Relieve Extremo. Escultura pictórica de gran espesor tridimensional. Las pinceladas de óleo húmedo se acumulan creando crestas físicas reales que proyectan sombras.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">SPATULA & MATERIA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 37 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MURO DE EXPOSICIÓN IV -->
+        <div class="slide chapter-wall" style="--glow-color: rgba(255, 230, 180, 0.02)">
+            <div class="chapter-content">
+                <span class="chapter-number">Capítulo IV</span>
+                <h2 class="chapter-title">La Trascendencia del Yeso y la Neblina</h2>
+                <div class="chapter-divider"></div>
+                <p class="chapter-desc">La madurez artística absoluta. Texturas agrietadas de yeso calcáreo (stucco), sutiles refracciones de prismas irisados, pigmentos de azurita mineral y la bruma introspectiva final.</p>
+                <div class="chapter-cross">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; +</div>
+            </div>
+        </div>
+
+        <!-- 38 15CUBESSEPLUS [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(100, 80, 240, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/15CUBESSEPLUS/15cubesseplus_002.png" class="art-img" alt="15CUBESSEPLUS">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">38</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">38</p>
+                        <span class="art-badge">FAMILIA: ESTRUCTURA</span>
+                    </div>
+                    <h3 class="art-title">15CUBESSEPLUS</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Cubismo Monumental. Retratos volumétricos en los que se exalta la presencia y la solemnidad a través de una arquitectura facetada de polígonos y colores regios.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ESTRUCTURA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 38 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 39 MATERDIGISSE [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(200, 130, 40, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/39MATERDIGISSE/albane dog.png" class="art-img" alt="MATERDIGISSE">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">39</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">39</p>
+                        <span class="art-badge">FAMILIA: SPATULA & MATERIA</span>
+                    </div>
+                    <h3 class="art-title">MATERDIGISSE</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Digital Impasto Fino. Fusión táctil donde el contorno definido del pincel dinámico sigue la estructura anatómica del sujeto bajo un micro-relieve de textura al óleo de gran finura.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">SPATULA & MATERIA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 39 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 40 MECHPASTOSSE [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [FULL-BLEED] [FULL-BLEED] [FULL-BLEED] -->
+        <div class="slide layout-full-bleed" style="--glow-color: rgba(200, 130, 40, 0.04)">
+            <div class="full-bleed-wrapper">
+                <div class="museum-frame full-bleed-frame">
+                    <img src="assets/40MECHPASTOSSE/bufalo.png" class="art-img-full" alt="MECHPASTOSSE">
+                </div>
+                <div class="full-bleed-info">
+                    <div class="bg-number">40</div>
+                    <div class="art-header" style="justify-content: center; margin-bottom: 20px;">
+                        <p class="art-number-inline">40</p>
+                        <span class="art-badge">FAMILIA: SPATULA & MATERIA</span>
+                    </div>
+                    <h3 class="art-title" style="text-align: center; font-size: 3.5rem; margin-bottom: 30px;">MECHPASTOSSE</h3>
+                    <p class="art-description" style="text-align: center; max-width: 900px; margin: 0 auto 40px auto; font-size: 1.2rem; line-height: 1.8;">Fusión de Óleo e Ingeniería. Colisión compositiva donde la tosquedad física de la espátula al óleo se fusiona con elementos mecánicos de bronce, remaches y engranajes.</p>
+                    <div class="art-metadata-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 40px; max-width: 900px; margin: 0 auto; border-top: 1px solid #eae7e1; padding-top: 30px;">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">SPATULA & MATERIA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 40 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 41 GESSOLUX [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(212, 175, 55, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/41GESSOLUX/amanecer.png" class="art-img" alt="GESSOLUX">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">41</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">41</p>
+                        <span class="art-badge">FAMILIA: YESO Y LUZ</span>
+                    </div>
+                    <h3 class="art-title">GESSOLUX</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Luz sobre Stucco. Atmósfera de gran ligereza y resplandor celestial sobre un soporte de yeso agrietado (stucco) de grano fino, uniendo la rugosidad física con una luz divina etérea.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">YESO Y LUZ</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 41 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 42 GESSOLUX EXTREMUM [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(212, 175, 55, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/42GESSOLUX_EXTREMUM/mont blanc.png" class="art-img" alt="GESSOLUX EXTREMUM">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">42</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">42</p>
+                        <span class="art-badge">FAMILIA: YESO Y LUZ</span>
+                    </div>
+                    <h3 class="art-title">GESSOLUX EXTREMUM</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Yeso Calcáreo. Relieve calcáreo tridimensional y tosco que esculpe desniveles, grietas profundas e imita el volumen de la propia roca o montaña con gran oclusión física.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">YESO Y LUZ</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 42 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOUBLE COLUMN GROUP: 43 & 44 -->
+        <!-- 43 YESO Y LUZ -->
+        <div class="slide layout-double-column" style="--glow-color: rgba(212, 175, 55, 0.04)">
+            <div class="double-column-grid">
+                <!-- Column 1 -->
+                <div class="double-column-card">
+                    <div class="museum-frame">
+                        <img src="assets/00EDUSSE/00edusse_001.png" class="art-img" alt="GESSOLUX MONOCHROMA">
+                    </div>
+                    <div class="art-info" style="padding: 0;">
+                        <div class="bg-number">43</div>
+                        <div class="art-header">
+                            <p class="art-number-inline">43</p>
+                            <span class="art-badge">FAMILIA: YESO Y LUZ</span>
+                        </div>
+                        <h3 class="art-title" style="font-size: 2.2rem; margin-bottom: 15px;">GESSOLUX MONOCHROMA</h3>
+                        <p class="art-description" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">Silencio Blanco Yeso. Eliminación completa de la gama de color para centrar la mirada en las luces, las sombras y las grietas físicas del relieve blanco tiza sobre stucco.</p>
+                        <div class="art-metadata-grid" style="padding-top: 20px;">
+                            <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">YESO Y LUZ</span></div>
+                            <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 43 &bull; Pintura</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column 2 -->
+                <!-- 44 YESO Y LUZ -->
+                <div class="double-column-card">
+                    <div class="museum-frame">
+                        <img src="assets/44GESSOLUX_AZURITE/barca_gessolux_azurite.png" class="art-img" alt="GESSOLUX AZURITE">
+                    </div>
+                    <div class="art-info" style="padding: 0;">
+                        <div class="bg-number">44</div>
+                        <div class="art-header">
+                            <p class="art-number-inline">44</p>
+                            <span class="art-badge">FAMILIA: YESO Y LUZ</span>
+                        </div>
+                        <h3 class="art-title" style="font-size: 2.2rem; margin-bottom: 15px;">GESSOLUX AZURITE</h3>
+                        <p class="art-description" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">Azurita Mineral. Soporte de yeso pigmentado en un místico y profundo azul lapislázuli ultramar, coronado por sutiles destellos e incrustaciones cobrizas.</p>
+                        <div class="art-metadata-grid" style="padding-top: 20px;">
+                            <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">YESO Y LUZ</span></div>
+                            <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 44 &bull; Pintura</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 45 GESSOLUX IRIS [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(212, 175, 55, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/45GESSOLUX_IRIS/barca arco.png" class="art-img" alt="GESSOLUX IRIS">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">45</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">45</p>
+                        <span class="art-badge">FAMILIA: YESO Y LUZ</span>
+                    </div>
+                    <h3 class="art-title">GESSOLUX IRIS</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Yeso Irisado. Relieve fino de stucco acrílico bañado por la refracción de un gradiente de prisma de arcoíris difuso en tonos pastel muy sutiles.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">YESO Y LUZ</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 45 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 46 ESPATAC-EXTREME [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [STANDARD] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(200, 130, 40, 0.04)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/46ESPATAC-EXTREME/Ait Benhaddou_ Marruecos.png" class="art-img" alt="ESPATAC-EXTREME">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">46</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">46</p>
+                        <span class="art-badge">FAMILIA: SPATULA & MATERIA</span>
+                    </div>
+                    <h3 class="art-title">ESPATAC-EXTREME</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Espátula Extrema. Capas monumentales de óleo grueso superpuestas como costras o escamas secas al sol, de gran tridimensionalidad y volumen matérico rústico.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">SPATULA & MATERIA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 46 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 47 NEBULÍNICO [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [STANDARD] [STANDARD] [STANDARD] -->
+        <div class="slide layout-standard" style="--glow-color: rgba(100, 100, 120, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/47NEBULÍNICO/Puma_Torres pine_Chile.png" class="art-img" alt="NEBULÍNICO">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">47</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">47</p>
+                        <span class="art-badge">FAMILIA: ATMÓSFERA</span>
+                    </div>
+                    <h3 class="art-title">NEBULÍNICO</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Bruma y Mancha Introspectiva. Quietud y neblina densa húmeda en tonos grises y azulados, donde los contornos se disuelven y emergen toques aislados y sutiles de color cálido naranja o rojo.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ATMÓSFERA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 47 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 48 BESSELUXY L [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] [INVERTED] -->
+        <div class="slide layout-inverted" style="--glow-color: rgba(100, 100, 120, 0.03)">
+            <div class="art-layout">
+                <div class="art-preview-wrapper">
+                    <div class="museum-frame">
+                        <img src="assets/48BESSELUXY_L/hay carmela li.png" class="art-img" alt="BESSELUXY L">
+                    </div>
+                </div>
+                <div class="art-info">
+                    <div class="bg-number">48</div>
+                    <div class="art-header">
+                        <p class="art-number-inline">48</p>
+                        <span class="art-badge">FAMILIA: ESTRUCTURA</span>
+                    </div>
+                    <h3 class="art-title">BESSELUXY L</h3>
+                    <div class="divider-gold"></div>
+                    <p class="art-description">Nueva colección en proceso de catalogación.</p>
+                    <div class="art-metadata-grid">
+                        <div class="meta-item"><span class="meta-label">MOVIMIENTO</span><span class="meta-val">ESTRUCTURA</span></div>
+                        <div class="meta-item"><span class="meta-label">TÉCNICA</span><span class="meta-val">Estilo 48 &bull; Pintura Digital</span></div>
+                        <div class="meta-item"><span class="meta-label">SOPORTE</span><span class="meta-val">Giclée Fine Art</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FINAL DE LA EXPOSICIÓN -->
+        <div class="slide footer-slide">
+            <div>
+                <h2>EDUARDO RAMÍREZ</h2>
+                <p>La imaginación abre el camino, la técnica lo vuelve arte.</p>
+                <a href="https://dudeduart.es" class="btn" target="_blank">Adquirir Obra / dudeduart.es</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FURSONA GENESIS v3 — NFT Factory</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+    :root {
+      --cyan: #00f5ff;
+      --pink: #ff006e;
+      --purple: #8b00ff;
+      --gold: #ffd700;
+      --green: #00ff88;
+      --orange: #ff6600;
+      --dark: #040410;
+      --dark2: #080820;
+      --panel: rgba(0, 245, 255, 0.03);
+      --border: rgba(0, 245, 255, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--dark);
+      color: #fff;
+      font-family: 'Rajdhani', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(rgba(0, 245, 255, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 245, 255, 0.025) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: gridMove 25s linear infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes gridMove {
+      to {
+        background-position: 50px 50px;
+      }
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(1.8rem, 5vw, 4rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      background: linear-gradient(90deg, var(--cyan), var(--pink), var(--purple), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: hueShift 6s linear infinite;
+    }
+
+    @keyframes hueShift {
+      0% {
+        filter: hue-rotate(0deg)
+      }
+
+      100% {
+        filter: hue-rotate(360deg)
+      }
+    }
+
+    header p {
+      font-size: 0.9rem;
+      color: rgba(0, 245, 255, 0.5);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 12px 20px;
+      background: rgba(0, 245, 255, 0.03);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-val {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--cyan);
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* MAIN LAYOUT */
+    .main {
+      position: relative;
+      z-index: 10;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 20px;
+    }
+
+    /* LEFT: Avatar + Collection */
+    .left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* AVATAR DISPLAY */
+    .avatar-panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .avatar-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: conic-gradient(var(--cyan), var(--pink), var(--purple), var(--gold), var(--cyan));
+      animation: spinBorder 4s linear infinite;
+      z-index: -1;
+      border-radius: 50%;
+    }
+
+    @keyframes spinBorder {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    #avatarSVG {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      display: block;
+      transition: all 0.4s ease;
+      filter: drop-shadow(0 0 25px rgba(0, 245, 255, 0.25));
+    }
+
+    #avatarSVG:hover {
+      transform: scale(1.04) rotate(2deg);
+    }
+
+    .avatar-info {
+      flex: 1;
+    }
+
+    .avatar-id {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.7rem;
+      color: rgba(0, 245, 255, 0.5);
+      letter-spacing: 0.2em;
+      margin-bottom: 4px;
+    }
+
+    .avatar-name {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .avatar-title {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .rarity-badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .rarity-common {
+      background: rgba(120, 120, 120, 0.2);
+      border: 1px solid #666;
+      color: #aaa;
+    }
+
+    .rarity-uncommon {
+      background: rgba(0, 200, 100, 0.15);
+      border: 1px solid #00c864;
+      color: #00c864;
+    }
+
+    .rarity-rare {
+      background: rgba(30, 80, 255, 0.15);
+      border: 1px solid #2255ff;
+      color: #5588ff;
+    }
+
+    .rarity-epic {
+      background: rgba(160, 0, 255, 0.15);
+      border: 1px solid #aa00ff;
+      color: #cc66ff;
+    }
+
+    .rarity-legendary {
+      background: rgba(255, 180, 0, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      animation: legendPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes legendPulse {
+
+      0%,
+      100% {
+        box-shadow: none
+      }
+
+      50% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.4)
+      }
+    }
+
+    .traits-mini {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .trait-chip {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: 6px 10px;
+    }
+
+    .trait-chip .tl {
+      font-size: 0.62rem;
+      color: rgba(0, 245, 255, 0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .trait-chip .tv {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #eee;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .price-eth {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--gold);
+    }
+
+    .price-usd {
+      font-size: 0.85rem;
+      color: rgba(255, 215, 0, 0.5);
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-gen {
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      color: #000;
+    }
+
+    .btn-gen:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(0, 245, 255, 0.4);
+    }
+
+    .btn-save {
+      background: transparent;
+      border: 1px solid var(--green);
+      color: var(--green);
+    }
+
+    .btn-save:hover {
+      background: rgba(0, 255, 136, 0.1);
+    }
+
+    .btn-dl {
+      background: transparent;
+      border: 1px solid var(--pink);
+      color: var(--pink);
+    }
+
+    .btn-dl:hover {
+      background: rgba(255, 0, 110, 0.1);
+    }
+
+    .btn-auto {
+      background: linear-gradient(135deg, var(--orange), var(--pink));
+      color: #fff;
+    }
+
+    .btn-auto:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(255, 102, 0, 0.4);
+    }
+
+    .btn-auto.running {
+      animation: pulse 0.8s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.6
+      }
+    }
+
+    /* COLLECTION GRID */
+    .collection-panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+    }
+
+    .panel-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.75rem;
+      color: var(--cyan);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 10px;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+
+    .collection-grid::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .collection-grid::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .collection-grid::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 2px;
+    }
+
+    .col-item {
+      cursor: pointer;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .col-item:hover {
+      border-color: var(--cyan);
+      transform: scale(1.05);
+    }
+
+    .col-item.selected {
+      border-color: var(--gold);
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+    }
+
+    .col-item svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .col-item-id {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      font-family: 'Orbitron', monospace;
+      font-size: 0.55rem;
+      text-align: center;
+      padding: 2px;
+      color: var(--cyan);
+    }
+
+    .empty-col {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.2);
+      font-size: 0.9rem;
+      padding: 30px;
+    }
+
+    /* RIGHT: Controls */
+    .controls-col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .control-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .control-card h3 {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.7rem;
+      color: var(--cyan);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .control-card h3::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 6px var(--cyan);
+      flex-shrink: 0;
+    }
+
+    .opt-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .opt-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 7px;
+      padding: 8px 4px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .opt-btn:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: rgba(0, 245, 255, 0.05);
+    }
+
+    .opt-btn.active {
+      border-color: var(--cyan);
+      background: rgba(0, 245, 255, 0.1);
+      color: var(--cyan);
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(0, 245, 255, 0.15);
+    }
+
+    .color-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .cdot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .cdot:hover {
+      transform: scale(1.2);
+    }
+
+    .cdot.active {
+      border-color: #fff;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+
+    .bg-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .bg-opt {
+      height: 30px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .bg-opt:hover {
+      transform: scale(1.05);
+    }
+
+    .bg-opt.active {
+      border-color: #fff;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    }
+
+    .speed-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .speed-row label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      white-space: nowrap;
+    }
+
+    input[type=range] {
+      flex: 1;
+      accent-color: var(--cyan);
+    }
+
+    .speed-val {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.8rem;
+      color: var(--cyan);
+      width: 45px;
+      text-align: right;
+    }
+
+    .mint-card {
+      background: linear-gradient(135deg, rgba(0, 245, 255, 0.04), rgba(139, 0, 255, 0.04));
+      border: 1px solid rgba(139, 0, 255, 0.25);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .mint-total {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.15em;
+      margin-bottom: 14px;
+    }
+
+    .progress-bar {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      border-radius: 2px;
+      transition: width 0.5s ease;
+    }
+
+    .btn-mint {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      color: #000;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.85rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-transform: uppercase;
+    }
+
+    .btn-mint:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 245, 255, 0.35);
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0
+      }
+
+      60% {
+        transform: scale(1.1)
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1
+      }
+    }
+
+    .pop {
+      animation: popIn 0.3s ease forwards;
+    }
+
+    @media(max-width:900px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .avatar-panel {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      #avatarSVG {
+        width: 220px;
+        height: 220px;
+      }
+
+      .traits-mini {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>FURSONA GENESIS v3</h1>
+    <p>NFT Avatar Factory v3.0 — The Next Generation</p>
+  </header>
+
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-val" id="statTotal">0</div>
+      <div class="stat-label">Generados</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" id="statSaved">0</div>
+      <div class="stat-label">Colección</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" id="statLegend">0</div>
+      <div class="stat-label">Legendarios</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" id="statEpic">0</div>
+      <div class="stat-label">Épicos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" id="statValue">0.00 ETH</div>
+      <div class="stat-label">Valor Colección</div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="left-col">
+      <!-- AVATAR -->
+      <div class="avatar-panel">
+        <div class="avatar-wrap">
+          <svg id="avatarSVG" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+        <div class="avatar-info">
+          <div class="avatar-id" id="aId">#0000</div>
+          <div class="avatar-name" id="aName">—</div>
+          <div class="avatar-title" id="aTitle">—</div>
+          <div class="rarity-badge" id="aRarity">—</div>
+          <div class="traits-mini" id="aTraits"></div>
+          <div class="price-row">
+            <div class="price-eth" id="aPrice">0.00 ETH</div>
+            <div class="price-usd" id="aPriceUsd">≈ $0</div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-gen" onclick="generateAvatar()">⚡ GENERAR</button>
+            <button class="btn btn-save" onclick="saveToCollection()">💾 GUARDAR</button>
+            <button class="btn btn-dl" onclick="downloadSVG()">⬇ SVG</button>
+            <button class="btn btn-auto" id="autoBtn" onclick="toggleAuto()">🤖 AUTO</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLLECTION -->
+      <div class="collection-panel">
+        <div class="panel-title">
+          <span>Mi Colección</span>
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-dl" style="padding:6px 12px;font-size:0.65rem" onclick="exportCollection()">⬇
+              JSON</button>
+            <button class="btn btn-save" style="padding:6px 12px;font-size:0.65rem" onclick="exportAllSVG()"
+              id="zipBtn">⬇ ZIP SVGs</button>
+            <button class="btn"
+              style="padding:6px 12px;font-size:0.65rem;border:1px solid #ff4444;color:#ff4444;background:transparent"
+              onclick="clearCollection()">🗑 LIMPIAR</button>
+          </div>
+        </div>
+        <div class="collection-grid" id="collectionGrid">
+          <div class="empty-col">Tu colección aparecerá aquí.<br>Pulsa 💾 GUARDAR para añadir avatares.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="controls-col">
+      <div class="control-card">
+        <h3>Especie</h3>
+        <div class="opt-grid" id="optSpecies"></div>
+      </div>
+      <div class="control-card">
+        <h3>Color Pelaje</h3>
+        <div class="color-row" id="optColor"></div>
+      </div>
+      <div class="control-card">
+        <h3>Fondo</h3>
+        <div class="bg-row" id="optBg"></div>
+      </div>
+      <div class="control-card">
+        <h3>Ropa</h3>
+        <div class="opt-grid" id="optOutfit"></div>
+      </div>
+      <div class="control-card">
+        <h3>Ojos</h3>
+        <div class="opt-grid" id="optEyes"></div>
+      </div>
+      <div class="control-card">
+        <h3>Accesorio</h3>
+        <div class="opt-grid" id="optAccessory"></div>
+      </div>
+      <div class="control-card">
+        <h3>Velocidad Auto</h3>
+        <div class="speed-row">
+          <label>Lento</label>
+          <input type="range" id="speedRange" min="200" max="2000" value="800" step="100" oninput="updateSpeed()">
+          <label>Rápido</label>
+          <span class="speed-val" id="speedVal">0.8s</span>
+        </div>
+      </div>
+      <div class="mint-card">
+        <div class="mint-total">COLECCIÓN: <span id="mintProgress">0</span> / 10,000 NFTs</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill" style="width:0%"></div>
+        </div>
+        <div style="margin-bottom:12px">
+          <div
+            style="font-family:Orbitron,monospace;font-size:0.65rem;color:rgba(0,245,255,0.5);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:6px">
+            Empezar desde ID #</div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <input type="number" id="startId" value="1" min="1" max="99999"
+              style="flex:1;background:rgba(0,245,255,0.06);border:1px solid rgba(0,245,255,0.2);border-radius:6px;padding:8px 10px;color:#fff;font-family:Orbitron,monospace;font-size:0.85rem;width:100%"
+              onchange="setStartId()" />
+            <button class="btn" onclick="setStartId()"
+              style="padding:8px 12px;font-size:0.65rem;border:1px solid var(--cyan);color:var(--cyan);background:transparent;white-space:nowrap">✓
+              OK</button>
+          </div>
+          <div style="font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:4px">Portátil 2 → empieza en #10001</div>
+        </div>
+        <button class="btn-mint" onclick="mintNFT()">🔥 MINT NFT</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ============ DATA ============
+    const SPECIES = [
+      { name: 'Zorro', rarity: 'common', ears: 'pointy', snout: 'long', c2: '#cc4400' },
+      { name: 'Lobo', rarity: 'common', ears: 'pointy', snout: 'long', c2: '#555' },
+      { name: 'Gato', rarity: 'uncommon', ears: 'small', snout: 'short', c2: '#ff9900' },
+      { name: 'Conejo', rarity: 'uncommon', ears: 'tall', snout: 'tiny', c2: '#ffcccc' },
+      { name: 'Dragón', rarity: 'epic', ears: 'horns', snout: 'long', c2: '#ff2200' },
+      { name: 'Panda', rarity: 'rare', ears: 'round', snout: 'short', c2: '#000' },
+      { name: 'León', rarity: 'epic', ears: 'round', snout: 'medium', c2: '#cc8800' },
+      { name: 'Fénix', rarity: 'legendary', ears: 'feathers', snout: 'beak', c2: '#ff6600' },
+      { name: 'Kitsune', rarity: 'legendary', ears: 'multi', snout: 'long', c2: '#ffffff' },
+      { name: 'Lobo Arct.', rarity: 'rare', ears: 'pointy', snout: 'long', c2: '#aaddff' },
+      { name: 'Tigre', rarity: 'rare', ears: 'small', snout: 'medium', c2: '#ff8800' },
+      { name: 'Oso', rarity: 'common', ears: 'round', snout: 'medium', c2: '#8B4513' },
+      { name: 'Chacal', rarity: 'common', ears: 'tall', snout: 'long', c2: '#a37233' },
+      { name: 'Lince', rarity: 'uncommon', ears: 'small', snout: 'short', c2: '#a5a5aa' },
+      { name: 'Búho M.', rarity: 'rare', ears: 'feathers', snout: 'beak', c2: '#222233' },
+      { name: 'Quimera', rarity: 'legendary', ears: 'horns', snout: 'short', c2: '#9900cc' },
+      { name: 'Plasma Fox', rarity: 'epic', ears: 'pointy', snout: 'long', c2: '#00ffff' },
+    ];
+
+    const FUR_COLORS = [
+      { name: 'Naranja', hex: '#f57c20', dark: '#a54010' },
+      { name: 'Gris', hex: '#7a8a9a', dark: '#3a4a5a' },
+      { name: 'Blanco', hex: '#e8e8f0', dark: '#a0a0b0' },
+      { name: 'Negro', hex: '#2a2a3e', dark: '#0a0a1e' },
+      { name: 'Neón Azul', hex: '#00aaff', dark: '#0055cc' },
+      { name: 'Rosa', hex: '#ff66aa', dark: '#cc2277' },
+      { name: 'Verde', hex: '#00cc66', dark: '#007733' },
+      { name: 'Dorado', hex: '#ffcc00', dark: '#aa8800' },
+      { name: 'Púrpura', hex: '#aa44ff', dark: '#6600cc' },
+      { name: 'Rojo', hex: '#ff3333', dark: '#aa0000' },
+      { name: 'Menta', hex: '#44ffcc', dark: '#00aa88' },
+      { name: 'Lavanda', hex: '#cc88ff', dark: '#884dcc' },
+      { name: 'Ópalo', hex: '#ffbbee', dark: '#cc88aa' },
+      { name: 'Platino', hex: '#e5e4e2', dark: '#b5b5b5' },
+      { name: 'Rubí', hex: '#e0115f', dark: '#900020' },
+    ];
+
+    const BG_PRESETS = [
+      { name: 'Ciudad', colors: ['#0a0a2e', '#151540'], type: 'city' },
+      { name: 'Cosmos', colors: ['#000010', '#050520'], type: 'space' },
+      { name: 'Bosque', colors: ['#051505', '#0a2a0a'], type: 'forest' },
+      { name: 'Fuego', colors: ['#200500', '#3a0800'], type: 'fire' },
+      { name: 'Hielo', colors: ['#030a18', '#050f25'], type: 'ice' },
+      { name: 'Sakura', colors: ['#1a0510', '#2e0a1e'], type: 'sakura' },
+      { name: 'Neón', colors: ['#010108', '#050110'], type: 'neon' },
+      { name: 'Dorado', colors: ['#150a00', '#280f00'], type: 'gold' },
+      { name: 'Tóxico', colors: ['#051100', '#0a2200'], type: 'space' },
+      { name: 'Ciber-Data', colors: ['#001111', '#002222'], type: 'city' },
+      { name: 'Olas Lava', colors: ['#2a0000', '#3a0005'], type: 'fire' },
+      { name: 'Matrix', colors: ['#000500', '#001a00'], type: 'neon' },
+    ];
+
+    const OUTFITS = [
+      { name: 'Streetwear', rarity: 'common' }, { name: 'Cyberpunk', rarity: 'uncommon' },
+      { name: 'Ninja', rarity: 'rare' }, { name: 'Mago', rarity: 'epic' },
+      { name: 'Samurái', rarity: 'rare' }, { name: 'Pirata', rarity: 'uncommon' },
+      { name: 'Astronauta', rarity: 'epic' }, { name: 'Desnudo', rarity: 'common' },
+      { name: 'Neon King', rarity: 'legendary' }, { name: 'Vikingo', rarity: 'rare' },
+      { name: 'Cazador', rarity: 'uncommon' }, { name: 'Dios Sols', rarity: 'legendary' },
+    ];
+
+    const EYES = [
+      { name: 'Normal', rarity: 'common' }, { name: 'Neón', rarity: 'uncommon' },
+      { name: 'Galaxia', rarity: 'epic' }, { name: 'Fuego', rarity: 'rare' },
+      { name: 'Pixel', rarity: 'uncommon' }, { name: 'Gafas Sol', rarity: 'common' },
+      { name: 'Cyborg', rarity: 'rare' }, { name: 'Calavera', rarity: 'epic' },
+      { name: 'Arcoíris', rarity: 'legendary' }, { name: 'Demonio', rarity: 'rare' },
+      { name: 'Cósmico', rarity: 'epic' }, { name: 'Fantasma', rarity: 'uncommon' },
+    ];
+
+    const ACCESSORIES = [
+      { name: 'Ninguno', rarity: 'common' }, { name: 'Collar', rarity: 'common' },
+      { name: 'Auriculares', rarity: 'uncommon' }, { name: 'Corona', rarity: 'epic' },
+      { name: 'Cigarro', rarity: 'rare' }, { name: 'Katana', rarity: 'rare' },
+      { name: 'Halo', rarity: 'epic' }, { name: 'Gorra', rarity: 'uncommon' },
+      { name: 'Tridente', rarity: 'legendary' }, { name: 'Pipa', rarity: 'uncommon' },
+      { name: 'Alas', rarity: 'epic' }, { name: 'Cadena ORO', rarity: 'legendary' },
+    ];
+
+    const RARITIES = ['common', 'uncommon', 'rare', 'epic', 'legendary'];
+    const RARITY_ES = { common: 'Común', uncommon: 'Poco Común', rare: 'Raro', epic: 'Épico', legendary: 'Legendario' };
+    const PRICES = { common: 0.04, uncommon: 0.06, rare: 0.10, epic: 0.18, legendary: 0.55 };
+    const PRICE_USD = { common: '$120', uncommon: '$180', rare: '$300', epic: '$540', legendary: '$1,650' };
+
+    // Names system
+    const PREFIXES = {
+      Zorro: ['Kai', 'Ren', 'Kira', 'Sable'], Lobo: ['Shadow', 'Fang', 'Storm', 'Dusk'],
+      Gato: ['Pixel', 'Lyra', 'Zara', 'Nyx'], Conejo: ['Luna', 'Hop', 'Mochi', 'Pearl'],
+      Dragón: ['Ember', 'Vex', 'Pyra', 'Ignis'], Panda: ['Zen', 'Bao', 'Mochi', 'Bo'],
+      León: ['Mane', 'Roar', 'Rex', 'Aurum'], Fénix: ['Blaze', 'Solara', 'Ignis', 'Ash'],
+      Kitsune: ['Inari', 'Yako', 'Kuzunoha', 'Tamamo'], 'Lobo Arct.': ['Frost', 'Blizzard', 'Polar', 'Arctic'],
+      Tigre: ['Saber', 'Stripe', 'Bengala', 'Raja'], Oso: ['Bruno', 'Brax', 'Bjorn', 'Kodiak'],
+      Chacal: ['Anubis', 'Set', 'Sethos', 'Cairo'], Lince: ['Lynx', 'Rune', 'Scout', 'Aero'],
+      'Búho M.': ['Owl', 'Talon', 'Noctis', 'Myst'], Quimera: ['Chimera', 'Aether', 'Vortex', 'Chaos'],
+      'Plasma Fox': ['Neon', 'Pulse', 'Spark', 'Voltx'],
+    };
+
+    const TITLES = {
+      legendary: ['el Inmortal', 'la Divina', 'Señor del Caos', 'Madre del Cosmos', 'el Eterno', 'la Invencible'],
+      epic: ['el Sombrio', 'la Feroz', 'Cazador de Sombras', 'Guardián del Abismo', 'el Renegado'],
+      rare: ['el Valiente', 'la Astuta', 'Maestro del Acero', 'Ojos de Tormenta', 'el Sigiloso'],
+      uncommon: ['el Errante', 'la Curiosa', 'Bailarín del Viento', 'Hijo del Bosque', 'la Libre'],
+      common: ['del Clan Norte', 'de las Tierras Bajas', 'Cazador Menor', 'del Valle', 'de la Ciudad'],
+    };
+
+    const CLANS = {
+      Zorro: 'Clan Zorro Plateado', Lobo: 'Manada Sombra', Gato: 'Gremio Felino',
+      Conejo: 'Tribu Ágil', Dragón: 'Orden del Dragón', Panda: 'Hermandad del Bambú',
+      León: 'Legión Dorada', Fénix: 'Fénix Eterno', Kitsune: 'Cofradía Kitsune',
+      'Lobo Arct.': 'Horda Ártica', Tigre: 'Tigres de Jade', Oso: 'Clanes del Norte',
+      Chacal: 'Ermitaños del Desierto', Lince: 'Acechadores Silenciosos',
+      'Búho M.': 'Vigías de Noche', Quimera: 'Sindicato del Caos',
+      'Plasma Fox': 'Nómadas Eléctricos',
+    };
+
+    // State
+    let state = { species: 0, color: 0, bg: 0, outfit: 0, eyes: 0, accessory: 0, id: 1 };
+    let collection = [];
+    let autoTimer = null;
+    let totalGenerated = 0;
+    let autoSpeed = 800;
+    let legendCount = 0, epicCount = 0;
+    let collectionValue = 0;
+
+    // ============ BUILD CONTROLS ============
+    function buildControls() {
+      buildOptGroup('optSpecies', SPECIES, 'species');
+      // Colors
+      const co = document.getElementById('optColor');
+      FUR_COLORS.forEach((c, i) => {
+        const d = document.createElement('div');
+        d.className = 'cdot' + (i === state.color ? ' active' : '');
+        d.style.background = `linear-gradient(135deg,${c.hex},${c.dark})`;
+        d.title = c.name;
+        d.onclick = () => { state.color = i; refreshClass('optColor', '.cdot', i); renderAvatar(); };
+        co.appendChild(d);
+      });
+      // BG
+      const bg = document.getElementById('optBg');
+      BG_PRESETS.forEach((b, i) => {
+        const d = document.createElement('div');
+        d.className = 'bg-opt' + (i === state.bg ? ' active' : '');
+        d.style.background = `linear-gradient(135deg,${b.colors[0]},${b.colors[1]})`;
+        d.title = b.name;
+        d.onclick = () => { state.bg = i; refreshClass('optBg', '.bg-opt', i); renderAvatar(); };
+        bg.appendChild(d);
+      });
+      buildOptGroup('optOutfit', OUTFITS, 'outfit');
+      buildOptGroup('optEyes', EYES, 'eyes');
+      buildOptGroup('optAccessory', ACCESSORIES, 'accessory');
+    }
+
+    function buildOptGroup(id, items, key) {
+      const el = document.getElementById(id);
+      items.forEach((item, i) => {
+        const b = document.createElement('button');
+        b.className = 'opt-btn' + (i === state[key] ? ' active' : '');
+        b.textContent = item.name;
+        b.onclick = () => { state[key] = i; refreshActive(id, i); renderAvatar(); };
+        el.appendChild(b);
+      });
+    }
+
+    function refreshActive(id, idx) {
+      document.querySelectorAll(`#${id} .opt-btn`).forEach((b, i) => b.classList.toggle('active', i === idx));
+    }
+    function refreshClass(id, sel, idx) {
+      document.querySelectorAll(`#${id} ${sel}`).forEach((b, i) => b.classList.toggle('active', i === idx));
+    }
+
+    // ============ RENDER AVATAR ============
+    function renderAvatar() {
+      const sp = SPECIES[state.species];
+      const fc = FUR_COLORS[state.color];
+      const bg = BG_PRESETS[state.bg];
+      const outfit = OUTFITS[state.outfit];
+      const eyes = EYES[state.eyes];
+      const acc = ACCESSORIES[state.accessory];
+
+      const svg = document.getElementById('avatarSVG');
+      svg.innerHTML = buildSVGContent(sp, fc, bg, outfit, eyes, acc, false);
+      updateInfo(sp, fc, outfit, eyes, acc);
+    }
+
+    function buildSVGContent(sp, fc, bg, outfit, eyes, acc, forCollection) {
+      const eyeColor = getEyeColor(eyes.name);
+      const bgSVG = buildBackground(bg, sp.rarity);
+      const rarity = getRarityLevel(sp, OUTFITS[state.outfit] || { rarity: 'common' }, EYES[state.eyes] || { rarity: 'common' }, ACCESSORIES[state.accessory] || { rarity: 'common' });
+      const { name, title, clan } = buildName(sp, rarity);
+      const fullName = `${name} ${title}`;
+      const rarityColor = { common: '#aaaaaa', uncommon: '#00c864', rare: '#5588ff', epic: '#cc66ff', legendary: '#ffd700' }[rarity];
+
+      return `
+    <defs>
+      <radialGradient id="furG" cx="40%" cy="35%" r="65%">
+        <stop offset="0%" stop-color="${fc.hex}"/>
+        <stop offset="100%" stop-color="${fc.dark}"/>
+      </radialGradient>
+      <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="softGlow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <clipPath id="circ"><circle cx="200" cy="200" r="196"/></clipPath>
+    </defs>
+    <circle cx="200" cy="200" r="200" fill="${bg.colors[0]}"/>
+    ${bgSVG}
+    <g clip-path="url(#circ)">
+      ${renderEars(sp, fc)}
+      ${renderBody(sp, fc, outfit)}
+      ${renderHead(sp, fc)}
+      ${renderFace(sp, fc, eyes, eyeColor)}
+      ${renderOutfitDetails(outfit, fc)}
+      ${renderAccessory(acc, fc)}
+    </g>
+    <circle cx="200" cy="200" r="195" fill="none" stroke="${fc.hex}" stroke-width="1" opacity="0.25"/>
+    <!-- NAME PLATE -->
+    <rect x="18" y="346" width="364" height="50" rx="12" fill="rgba(0,0,0,0.75)"/>
+    <rect x="18" y="346" width="364" height="50" rx="12" fill="none" stroke="${rarityColor}" stroke-width="1.5" opacity="0.65"/>
+    <text x="200" y="367" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="${rarityColor}" letter-spacing="1">${fullName}</text>
+    <text x="200" y="386" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="rgba(255,255,255,0.5)" letter-spacing="1">${clan}</text>
+  `;
+    }
+
+    function buildBackground(bg, rarity) {
+      const type = bg.type;
+      const count = { common: 4, uncommon: 8, rare: 14, epic: 20, legendary: 30 }[rarity] || 4;
+      let extras = '';
+
+      if (type === 'space') {
+        for (let i = 0; i < 40; i++) {
+          const x = Math.random() * 400, y = Math.random() * 400, r = Math.random() * 1.5 + 0.3;
+          extras += `<circle cx="${x}" cy="${y}" r="${r}" fill="white" opacity="${0.3 + Math.random() * 0.5}"/>`;
+        }
+      } else if (type === 'city') {
+        for (let i = 0; i < 8; i++) {
+          const x = i * 55, w = 35 + Math.random() * 20, h = 60 + Math.random() * 80;
+          extras += `<rect x="${x}" y="${400 - h}" width="${w}" height="${h}" fill="${bg.colors[0]}" opacity="0.6"/>`;
+          for (let j = 0; j < 4; j++) extras += `<rect x="${x + 5 + j * 8}" y="${400 - h + 10 + Math.floor(Math.random() * 4) * 15}" width="4" height="6" fill="#ffff88" opacity="${Math.random() > 0.4 ? '0.7' : '0'}"/>`;
+        }
+      } else if (type === 'forest') {
+        for (let i = 0; i < 6; i++) {
+          const x = i * 70 - 10;
+          extras += `<ellipse cx="${x + 30}" cy="350" rx="45" ry="80" fill="#072a07" opacity="0.7"/>`;
+        }
+      } else if (type === 'fire') {
+        extras = `<radialGradient id="fireG" cx="50%" cy="80%" r="60%"><stop offset="0%" stop-color="#ff6600" stop-opacity="0.3"/><stop offset="100%" stop-color="transparent"/></radialGradient><circle cx="200" cy="400" r="250" fill="url(#fireG)"/>`;
+      } else if (type === 'sakura') {
+        for (let i = 0; i < 12; i++) {
+          const x = Math.random() * 400, y = Math.random() * 300;
+          extras += `<circle cx="${x}" cy="${y}" r="${2 + Math.random() * 3}" fill="#ffaacc" opacity="${0.3 + Math.random() * 0.4}"/>`;
+        }
+      } else if (type === 'neon') {
+        extras = `
+      <line x1="0" y1="200" x2="400" y2="200" stroke="#00f5ff" stroke-width="0.5" opacity="0.15"/>
+      <line x1="200" y1="0" x2="200" y2="400" stroke="#ff006e" stroke-width="0.5" opacity="0.15"/>
+      <circle cx="200" cy="200" r="150" fill="none" stroke="#8b00ff" stroke-width="0.5" opacity="0.15"/>
+    `;
+      } else if (type === 'gold') {
+        for (let i = 0; i < count; i++) {
+          const x = Math.random() * 400, y = Math.random() * 400;
+          extras += `<polygon points="${x},${y - 5} ${x + 3},${y + 3} ${x - 3},${y + 3}" fill="#ffd700" opacity="${0.1 + Math.random() * 0.2}"/>`;
+        }
+      }
+
+      // Particle dots based on rarity
+      for (let i = 0; i < count; i++) {
+        const x = Math.random() * 400, y = Math.random() * 400, r = 0.8 + Math.random() * 2.5;
+        extras += `<circle cx="${x}" cy="${y}" r="${r}" fill="${bg.colors[1]}" opacity="${0.15 + Math.random() * 0.25}"/>`;
+      }
+
+      return extras;
+    }
+
+    function getEyeColor(name) {
+      const map = {
+        'Normal': '#1a1a1a', 'Neón': '#00ffcc', 'Galaxia': '#8844ff', 'Fuego': '#ff4400',
+        'Pixel': '#00ff00', 'Gafas Sol': '#111', 'Cyborg': '#00ccff', 'Calavera': '#ffffff',
+        'Arcoíris': 'url(#irisgr)', 'Demonio': '#cc0000', 'Cósmico': '#4400aa', 'Fantasma': '#aaddff',
+      };
+      return map[name] || '#1a1a1a';
+    }
+
+    function renderEars(sp, fc) {
+      const { ears } = sp;
+      if (ears === 'pointy') return `
+    <polygon points="108,148 130,55 168,142" fill="url(#furG)"/>
+    <polygon points="114,147 134,70 162,142" fill="${fc.dark}" opacity="0.45"/>
+    <polygon points="232,142 268,55 290,148" fill="url(#furG)"/>
+    <polygon points="238,142 266,70 284,147" fill="${fc.dark}" opacity="0.45"/>`;
+      if (ears === 'tall') return `
+    <ellipse cx="138" cy="88" rx="23" ry="58" fill="url(#furG)"/>
+    <ellipse cx="138" cy="88" rx="13" ry="42" fill="${fc.dark}" opacity="0.45"/>
+    <ellipse cx="262" cy="88" rx="23" ry="58" fill="url(#furG)"/>
+    <ellipse cx="262" cy="88" rx="13" ry="42" fill="${fc.dark}" opacity="0.45"/>`;
+      if (ears === 'small') return `
+    <path d="M128,152 Q116,108 160,132" fill="url(#furG)" stroke="${fc.dark}" stroke-width="1.5"/>
+    <path d="M272,152 Q284,108 240,132" fill="url(#furG)" stroke="${fc.dark}" stroke-width="1.5"/>`;
+      if (ears === 'round') return `
+    <circle cx="138" cy="130" r="36" fill="url(#furG)"/>
+    <circle cx="262" cy="130" r="36" fill="url(#furG)"/>
+    <circle cx="138" cy="130" r="20" fill="${fc.dark}" opacity="0.3"/>
+    <circle cx="262" cy="130" r="20" fill="${fc.dark}" opacity="0.3"/>`;
+      if (ears === 'horns') return `
+    <polygon points="138,146 155,48 178,142" fill="#cc2200"/>
+    <polygon points="222,142 245,48 262,146" fill="#cc2200"/>
+    <polygon points="144,144 158,65 172,142" fill="#ff5500" opacity="0.5"/>
+    <polygon points="228,142 247,65 256,144" fill="#ff5500" opacity="0.5"/>`;
+      if (ears === 'feathers') return `
+    <ellipse cx="132" cy="98" rx="19" ry="52" fill="#ff6600" transform="rotate(-22,132,152)"/>
+    <ellipse cx="268" cy="98" rx="19" ry="52" fill="#ff6600" transform="rotate(22,268,152)"/>
+    <ellipse cx="122" cy="92" rx="12" ry="38" fill="#ffcc00" transform="rotate(-28,122,152)"/>
+    <ellipse cx="278" cy="92" rx="12" ry="38" fill="#ffcc00" transform="rotate(28,278,152)"/>`;
+      if (ears === 'multi') return `
+    <polygon points="118,148 138,58 162,142" fill="${fc.hex}" opacity="0.9"/>
+    <polygon points="238,142 262,58 282,148" fill="${fc.hex}" opacity="0.9"/>
+    <polygon points="102,155 118,80 138,148" fill="${fc.hex}" opacity="0.65"/>
+    <polygon points="262,148 282,80 298,155" fill="${fc.hex}" opacity="0.65"/>
+    <polygon points="88,162 105,95 120,155" fill="${fc.hex}" opacity="0.4"/>
+    <polygon points="280,155 295,95 312,162" fill="${fc.hex}" opacity="0.4"/>`;
+      return `<ellipse cx="138" cy="134" rx="26" ry="20" fill="url(#furG)"/>
+          <ellipse cx="262" cy="134" rx="26" ry="20" fill="url(#furG)"/>`;
+    }
+
+    function renderBody(sp, fc, outfit) {
+      const oc = {
+        Streetwear: '#1a1a3e', Cyberpunk: '#082030', Ninja: '#0a0a0a', Mago: '#180a3e',
+        Samurái: '#180a0a', Pirata: '#180a0a', Astronauta: '#252535', Desnudo: fc.hex,
+        'Neon King': '#080818', Vikingo: '#1a0a0a', Cazador: '#0a1a0a', 'Dios Sols': '#180800',
+      }[outfit.name] || '#1a1a1a';
+      return `
+    <rect x="172" y="296" width="56" height="42" rx="10" fill="url(#furG)"/>
+    <ellipse cx="200" cy="372" rx="92" ry="62" fill="${oc}"/>
+    ${getBodyAccent(outfit.name, fc.hex)}`;
+    }
+
+    function getBodyAccent(name, c) {
+      switch (name) {
+        case 'Cyberpunk': return `<line x1="148" y1="342" x2="252" y2="342" stroke="#00f5ff" stroke-width="2" opacity="0.65"/><rect x="188" y="350" width="24" height="14" rx="4" fill="none" stroke="#00f5ff" stroke-width="1.5" opacity="0.65"/>`;
+        case 'Ninja': return `<rect x="158" y="330" width="84" height="5" rx="2" fill="#cc0000"/>`;
+        case 'Mago': return `<ellipse cx="200" cy="345" rx="42" ry="9" fill="${c}" opacity="0.25"/>`;
+        case 'Samurái': return `<rect x="128" y="336" width="144" height="8" rx="3" fill="#cc9900"/>`;
+        case 'Vikingo': return `<rect x="135" y="340" width="130" height="6" rx="3" fill="#8b4513"/><circle cx="200" cy="357" r="10" fill="#888" stroke="#666" stroke-width="1"/>`;
+        case 'Cazador': return `<line x1="155" y1="330" x2="155" y2="400" stroke="#5a3a1a" stroke-width="4"/><line x1="245" y1="330" x2="245" y2="400" stroke="#5a3a1a" stroke-width="4"/>`;
+        case 'Dios Sols': return `<ellipse cx="200" cy="340" rx="60" ry="10" fill="#ff8800" opacity="0.4" filter="url(#glow)"/>`;
+        case 'Neon King': return `<line x1="148" y1="332" x2="252" y2="332" stroke="${c}" stroke-width="2" opacity="0.8" filter="url(#glow)"/>`;
+        case 'Astronauta': return `<circle cx="200" cy="352" r="26" fill="none" stroke="#aaddff" stroke-width="3" opacity="0.45"/>`;
+        default: return '';
+      }
+    }
+
+    function renderHead(sp, fc) {
+      return `
+    <ellipse cx="200" cy="222" rx="102" ry="92" fill="url(#furG)"/>
+    ${sp.snout !== 'beak' ? `<ellipse cx="200" cy="254" rx="56" ry="44" fill="${fc.hex}" opacity="0.35"/>` : ''}`;
+    }
+
+    function renderFace(sp, fc, eyes, eyeColor) {
+      const gf = ['Neón', 'Fuego', 'Galaxia', 'Arcoíris', 'Demonio', 'Cósmico'].includes(eyes.name);
+      let eyeSVG = '';
+
+      if (eyes.name === 'Gafas Sol') eyeSVG = `
+    <rect x="148" y="206" width="44" height="23" rx="11" fill="#111" stroke="#888" stroke-width="2"/>
+    <rect x="208" y="206" width="44" height="23" rx="11" fill="#111" stroke="#888" stroke-width="2"/>
+    <line x1="192" y1="217" x2="208" y2="217" stroke="#888" stroke-width="2"/>`;
+      else if (eyes.name === 'Pixel') eyeSVG = `
+    <rect x="156" y="208" width="10" height="10" fill="#00ff00"/>
+    <rect x="166" y="208" width="10" height="10" fill="#00ff00"/>
+    <rect x="222" y="208" width="10" height="10" fill="#00ff00"/>
+    <rect x="232" y="208" width="10" height="10" fill="#00ff00"/>`;
+      else if (eyes.name === 'Calavera') eyeSVG = `
+    <ellipse cx="172" cy="216" rx="19" ry="16" fill="#fff"/>
+    <ellipse cx="228" cy="216" rx="19" ry="16" fill="#fff"/>
+    <ellipse cx="172" cy="216" rx="10" ry="10" fill="#000"/>
+    <ellipse cx="228" cy="216" rx="10" ry="10" fill="#000"/>`;
+      else if (eyes.name === 'Cyborg') eyeSVG = `
+    <ellipse cx="172" cy="216" rx="17" ry="15" fill="#001020"/>
+    <ellipse cx="228" cy="216" rx="17" ry="15" fill="#001020"/>
+    <circle cx="172" cy="216" r="9" fill="#00ccff" filter="url(#glow)"/>
+    <circle cx="228" cy="216" r="9" fill="#00ccff" filter="url(#glow)"/>
+    <line x1="155" y1="216" x2="189" y2="216" stroke="#00ccff" stroke-width="1" opacity="0.4"/>`;
+      else if (eyes.name === 'Demonio') eyeSVG = `
+    <ellipse cx="172" cy="216" rx="18" ry="15" fill="#200000"/>
+    <ellipse cx="228" cy="216" rx="18" ry="15" fill="#200000"/>
+    <ellipse cx="172" cy="216" rx="5" ry="12" fill="#cc0000" filter="url(#glow)"/>
+    <ellipse cx="228" cy="216" rx="5" ry="12" fill="#cc0000" filter="url(#glow)"/>`;
+      else if (eyes.name === 'Cósmico') eyeSVG = `
+    <ellipse cx="172" cy="216" rx="18" ry="15" fill="#000010"/>
+    <ellipse cx="228" cy="216" rx="18" ry="15" fill="#000010"/>
+    <circle cx="172" cy="216" r="10" fill="#220044"/>
+    <circle cx="228" cy="216" r="10" fill="#220044"/>
+    <circle cx="172" cy="216" r="5" fill="#8844ff" filter="url(#glow)"/>
+    <circle cx="228" cy="216" r="5" fill="#8844ff" filter="url(#glow)"/>
+    <circle cx="172" cy="213" r="2" fill="#fff" opacity="0.7"/>
+    <circle cx="228" cy="213" r="2" fill="#fff" opacity="0.7"/>`;
+      else if (eyes.name === 'Fantasma') eyeSVG = `
+    <ellipse cx="172" cy="216" rx="18" ry="15" fill="#001030" opacity="0.8"/>
+    <ellipse cx="228" cy="216" rx="18" ry="15" fill="#001030" opacity="0.8"/>
+    <ellipse cx="172" cy="216" rx="10" ry="8" fill="#aaddff" opacity="0.6" filter="url(#softGlow)"/>
+    <ellipse cx="228" cy="216" rx="10" ry="8" fill="#aaddff" opacity="0.6" filter="url(#softGlow)"/>`;
+      else {
+        const gf2 = gf ? 'filter="url(#glow)"' : '';
+        eyeSVG = `
+      <ellipse cx="172" cy="216" rx="18" ry="15" fill="#fff"/>
+      <ellipse cx="228" cy="216" rx="18" ry="15" fill="#fff"/>
+      <circle cx="172" cy="216" r="10" fill="${eyeColor}" ${gf2}/>
+      <circle cx="228" cy="216" r="10" fill="${eyeColor}" ${gf2}/>
+      <circle cx="175" cy="213" r="3" fill="rgba(255,255,255,0.65)"/>
+      <circle cx="231" cy="213" r="3" fill="rgba(255,255,255,0.65)"/>`;
+      }
+
+      // Snout
+      let snout = '';
+      const { snout: st } = sp;
+      if (st === 'long') snout = `<ellipse cx="200" cy="264" rx="30" ry="20" fill="${fc.dark}" opacity="0.65"/><ellipse cx="200" cy="260" rx="13" ry="9" fill="#1a1a1a"/><ellipse cx="196" cy="258" rx="4" ry="3" fill="#333"/><ellipse cx="204" cy="258" rx="4" ry="3" fill="#333"/>`;
+      else if (st === 'short') snout = `<ellipse cx="200" cy="260" rx="22" ry="14" fill="${fc.dark}" opacity="0.5"/><ellipse cx="200" cy="257" rx="9" ry="7" fill="#1a1a1a"/>`;
+      else if (st === 'tiny') snout = `<circle cx="200" cy="257" r="7" fill="#ffaaaa"/>`;
+      else if (st === 'beak') snout = `<polygon points="185,246 215,246 200,278" fill="#ff8800"/><line x1="185" y1="257" x2="215" y2="257" stroke="#cc6600" stroke-width="2"/>`;
+      else snout = `<ellipse cx="200" cy="262" rx="24" ry="16" fill="${fc.dark}" opacity="0.55"/><circle cx="200" cy="258" r="8" fill="#1a1a1a"/>`;
+
+      return `${eyeSVG}${snout}${st !== 'beak' ? `<path d="M188,274 Q200,284 212,274" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"/>` : ''}`;
+    }
+
+    function renderOutfitDetails(outfit, fc) {
+      switch (outfit.name) {
+        case 'Mago': return `<polygon points="200,98 167,177 233,177" fill="#220044"/><ellipse cx="200" cy="177" rx="40" ry="13" fill="#330066"/><circle cx="200" cy="118" r="9" fill="${fc.hex}" opacity="0.8" filter="url(#glow)"/><circle cx="200" cy="118" r="5" fill="#fff" opacity="0.5"/>`;
+        case 'Pirata': return `<ellipse cx="200" cy="160" rx="72" ry="19" fill="#180800"/><rect x="152" y="115" width="96" height="52" rx="5" fill="#180800"/><polygon points="184,115 200,88 216,115" fill="#cc9900"/>`;
+        case 'Samurái': return `<ellipse cx="200" cy="152" rx="78" ry="28" fill="#550000"/><rect x="142" y="140" width="116" height="18" rx="3" fill="#770000"/>`;
+        case 'Astronauta': return `<ellipse cx="200" cy="196" rx="112" ry="108" fill="none" stroke="#aaddff" stroke-width="7" opacity="0.2"/>`;
+        case 'Neon King': return `<polygon points="152,150 168,112 184,142 200,104 216,142 232,112 248,150" fill="${fc.hex}" filter="url(#glow)" opacity="0.9"/>`;
+        case 'Vikingo': return `<ellipse cx="200" cy="150" rx="80" ry="22" fill="#3a1a0a"/><polygon points="128,148 110,120 155,148" fill="#aaa"/><polygon points="272,148 290,120 245,148" fill="#aaa"/>`;
+        case 'Cazador': return `<ellipse cx="200" cy="155" rx="68" ry="18" fill="#2a1a08" opacity="0.8"/>`;
+        case 'Dios Sols': return `<circle cx="200" cy="150" r="80" fill="none" stroke="#ff8800" stroke-width="3" opacity="0.35" filter="url(#glow)"/>${Array.from({ length: 8 }, (_, i) => { const a = i * 45 * Math.PI / 180; return `<line x1="${200 + 65 * Math.cos(a)}" y1="${150 + 65 * Math.sin(a)}" x2="${200 + 95 * Math.cos(a)}" y2="${150 + 95 * Math.sin(a)}" stroke="#ff8800" stroke-width="2" opacity="0.5"/>`; }).join('')}`;
+        case 'Cyberpunk': return `<rect x="153" y="197" width="5" height="16" rx="2" fill="#00f5ff" opacity="0.8" filter="url(#glow)"/><rect x="242" y="197" width="5" height="16" rx="2" fill="#00f5ff" opacity="0.8" filter="url(#glow)"/>`;
+        case 'Ninja': return `<rect x="148" y="236" width="104" height="28" rx="5" fill="#080808" opacity="0.88"/>`;
+        default: return '';
+      }
+    }
+
+    function renderAccessory(acc, fc) {
+      switch (acc.name) {
+        case 'Collar': return `<ellipse cx="200" cy="306" rx="46" ry="12" fill="none" stroke="${fc.hex}" stroke-width="5" opacity="0.8"/><circle cx="200" cy="318" r="6" fill="${fc.dark}"/>`;
+        case 'Auriculares': return `<path d="M112,197 Q112,128 200,128 Q288,128 288,197" fill="none" stroke="#333" stroke-width="10" stroke-linecap="round"/><rect x="103" y="192" width="22" height="30" rx="9" fill="#222"/><rect x="275" y="192" width="22" height="30" rx="9" fill="#222"/><rect x="106" y="195" width="16" height="24" rx="7" fill="${fc.hex}" opacity="0.6"/>< rect x="278" y="195" width="16" height="24" rx="7" fill="${fc.hex}" opacity="0.6"/>`;
+        case 'Corona': return `<polygon points="152,146 165,110 180,138 200,102 220,138 235,110 248,146" fill="#ffcc00" filter="url(#glow)"/><ellipse cx="200" cy="146" rx="50" ry="9" fill="#cc9900"/><circle cx="200" cy="120" r="5" fill="#fff" opacity="0.8"/>`;
+        case 'Cigarro': return `<rect x="216" y="272" width="36" height="6" rx="3" fill="#f0f0e0"/><rect x="246" y="271" width="9" height="8" rx="2" fill="#ff5500"/><path d="M255,268 Q263,257 258,248" fill="none" stroke="#aaa" stroke-width="1.5" opacity="0.5"/>`;
+        case 'Katana': return `<line x1="128" y1="312" x2="282" y2="370" stroke="#ddd" stroke-width="5"/><rect x="184" y="336" width="32" height="10" rx="3" fill="#cc9900" transform="rotate(22,200,341)"/><line x1="128" y1="312" x2="282" y2="370" stroke="rgba(200,230,255,0.35)" stroke-width="2"/>`;
+        case 'Halo': return `<ellipse cx="200" cy="116" rx="58" ry="14" fill="none" stroke="#ffdd00" stroke-width="7" opacity="0.85" filter="url(#glow)"/>`;
+        case 'Gorra': return `<ellipse cx="200" cy="152" rx="70" ry="19" fill="#222"/><path d="M132,152 Q138,118 200,116 Q262,118 268,152" fill="#333"/><rect x="252" y="148" width="32" height="9" rx="3" fill="#222"/>`;
+        case 'Tridente': return `<line x1="262" y1="280" x2="275" y2="405" stroke="#cc4400" stroke-width="6"/><line x1="256" y1="280" x2="256" y2="252" stroke="#cc4400" stroke-width="6"/><line x1="266" y1="280" x2="266" y2="258" stroke="#cc4400" stroke-width="6"/><line x1="278" y1="280" x2="278" y2="252" stroke="#cc4400" stroke-width="6"/>`;
+        case 'Pipa': return `<path d="M200,272 Q218,272 225,280 Q232,288 224,292" fill="none" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/><ellipse cx="220" cy="294" rx="8" ry="6" fill="none" stroke="#8B4513" stroke-width="3"/><path d="M220,272 Q224,264 222,255" fill="none" stroke="#888" stroke-width="1.5" opacity="0.4"/>`;
+        case 'Alas': return `<path d="M98,240 Q58,180 82,140 Q106,120 130,180 Q115,210 98,240Z" fill="${fc.dark}" opacity="0.75"/><path d="M302,240 Q342,180 318,140 Q294,120 270,180 Q285,210 302,240Z" fill="${fc.dark}" opacity="0.75"/><path d="M98,240 Q70,185 88,150" fill="none" stroke="${fc.hex}" stroke-width="2" opacity="0.4"/><path d="M302,240 Q330,185 312,150" fill="none" stroke="${fc.hex}" stroke-width="2" opacity="0.4"/>`;
+        case 'Cadena ORO': return `<ellipse cx="200" cy="303" rx="50" ry="13" fill="none" stroke="#ffcc00" stroke-width="6" opacity="0.9" filter="url(#glow)"/><ellipse cx="200" cy="303" rx="50" ry="13" fill="none" stroke="#ffee88" stroke-width="2" opacity="0.6"/>`;
+        default: return '';
+      }
+    }
+
+    // ============ INFO UPDATE ============
+    function getRarityLevel(sp, outfit, eyes, acc) {
+      const score = [sp, outfit, eyes, acc].map(x => RARITIES.indexOf(x.rarity)).reduce((a, b) => a + b, 0);
+      if (score >= 13) return 'legendary';
+      if (score >= 9) return 'epic';
+      if (score >= 6) return 'rare';
+      if (score >= 3) return 'uncommon';
+      return 'common';
+    }
+
+    function buildName(sp, rarity) {
+      const names = PREFIXES[sp.name] || ['Unknown'];
+      const name = names[state.id % names.length];
+      const title = TITLES[rarity][state.id % TITLES[rarity].length];
+      const clan = CLANS[sp.name] || 'Clan Desconocido';
+      return { name, title, clan };
+    }
+
+    function updateInfo(sp, fc, outfit, eyes, acc) {
+      const rarity = getRarityLevel(sp, outfit, eyes, acc);
+      const { name, title, clan } = buildName(sp, rarity);
+      const price = PRICES[rarity];
+
+      document.getElementById('aId').textContent = `#${String(state.id).padStart(4, '0')}`;
+      document.getElementById('aName').textContent = `${name} ${title}`;
+      document.getElementById('aTitle').textContent = clan;
+      const badge = document.getElementById('aRarity');
+      badge.textContent = RARITY_ES[rarity];
+      badge.className = `rarity-badge rarity-${rarity}`;
+      document.getElementById('aPrice').textContent = `${price} ETH`;
+      document.getElementById('aPriceUsd').textContent = `≈ ${PRICE_USD[rarity]} USD`;
+
+      const traits = [
+        { l: 'Especie', v: sp.name }, { l: 'Pelaje', v: fc.name },
+        { l: 'Ropa', v: outfit.name }, { l: 'Ojos', v: eyes.name },
+        { l: 'Accesorio', v: acc.name }, { l: 'Gen', v: 'GEN-3' },
+      ];
+      document.getElementById('aTraits').innerHTML = traits.map(t =>
+        `<div class="trait-chip"><div class="tl">${t.l}</div><div class="tv">${t.v}</div></div>`
+      ).join('');
+    }
+
+    // ============ GENERATE ============
+    function generateAvatar(save = false) {
+      state.species = Math.floor(Math.random() * SPECIES.length);
+      state.color = Math.floor(Math.random() * FUR_COLORS.length);
+      state.bg = Math.floor(Math.random() * BG_PRESETS.length);
+      state.outfit = Math.floor(Math.random() * OUTFITS.length);
+      state.eyes = Math.floor(Math.random() * EYES.length);
+      state.accessory = Math.floor(Math.random() * ACCESSORIES.length);
+      state.id = totalGenerated + 1;
+
+      refreshActive('optSpecies', state.species);
+      refreshActive('optOutfit', state.outfit);
+      refreshActive('optEyes', state.eyes);
+      refreshActive('optAccessory', state.accessory);
+      refreshClass('optColor', '.cdot', state.color);
+      refreshClass('optBg', '.bg-opt', state.bg);
+
+      renderAvatar();
+      totalGenerated++;
+      document.getElementById('statTotal').textContent = totalGenerated;
+
+      if (save) saveToCollection(true);
+    }
+
+    // ============ COLLECTION ============
+    function saveToCollection(silent = false) {
+      const sp = SPECIES[state.species];
+      const fc = FUR_COLORS[state.color];
+      const bg = BG_PRESETS[state.bg];
+      const outfit = OUTFITS[state.outfit];
+      const eyes = EYES[state.eyes];
+      const acc = ACCESSORIES[state.accessory];
+      const rarity = getRarityLevel(sp, outfit, eyes, acc);
+      const { name, title, clan } = buildName(sp, rarity);
+
+      const svgContent = buildSVGContent(sp, fc, bg, outfit, eyes, acc, true);
+      const item = {
+        id: state.id, svgContent, rarity,
+        name: `${name} ${title}`, clan, price: PRICES[rarity],
+        rarityLabel: RARITY_ES[rarity],
+        species: sp.name,
+        furColor: fc.name,
+        bg: BG_PRESETS[state.bg].name,
+        outfit: outfit.name,
+        eyes: eyes.name,
+        accessory: acc.name,
+        bgColor: BG_PRESETS[state.bg].colors[0].replace('#', ''),
+      };
+
+      collection.push(item);
+      if (rarity === 'legendary') legendCount++;
+      if (rarity === 'epic') epicCount++;
+      collectionValue += PRICES[rarity];
+
+      // Save to localStorage
+      try {
+        localStorage.setItem('fursona_v3_collection', JSON.stringify(collection));
+        localStorage.setItem('fursona_v3_stats', JSON.stringify({ legendCount, epicCount, collectionValue, totalGenerated }));
+      } catch (e) { console.warn('localStorage lleno, continuando sin guardar'); }
+
+      // Update stats
+      document.getElementById('statSaved').textContent = collection.length;
+      document.getElementById('statLegend').textContent = legendCount;
+      document.getElementById('statEpic').textContent = epicCount;
+      document.getElementById('statValue').textContent = collectionValue.toFixed(2) + ' ETH';
+      const pct = Math.min((collection.length / 10000) * 100, 100);
+      document.getElementById('mintProgress').textContent = collection.length;
+      document.getElementById('progressFill').style.width = pct + '%';
+
+      addToGrid(item, svgContent);
+    }
+
+    function addToGrid(item, svgContent) {
+      const grid = document.getElementById('collectionGrid');
+      if (grid.querySelector('.empty-col')) grid.innerHTML = '';
+
+      const div = document.createElement('div');
+      div.className = 'col-item pop';
+      div.title = `#${String(item.id).padStart(4, '0')} — ${item.name}\n${RARITY_ES[item.rarity]} — ${item.price} ETH`;
+      div.innerHTML = `<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">${svgContent}</svg>
+    <div class="col-item-id">#${String(item.id).padStart(4, '0')}</div>`;
+      div.onclick = () => {
+        document.querySelectorAll('.col-item').forEach(x => x.classList.remove('selected'));
+        div.classList.add('selected');
+      };
+      grid.appendChild(div);
+      grid.scrollTop = grid.scrollHeight;
+    }
+
+    function clearCollection() {
+      if (!confirm('¿Limpiar toda la colección V3?')) return;
+      collection = []; legendCount = 0; epicCount = 0; collectionValue = 0;
+      document.getElementById('statSaved').textContent = 0;
+      document.getElementById('statLegend').textContent = 0;
+      document.getElementById('statEpic').textContent = 0;
+      document.getElementById('statValue').textContent = '0.00 ETH';
+      document.getElementById('mintProgress').textContent = 0;
+      document.getElementById('progressFill').style.width = '0%';
+      document.getElementById('collectionGrid').innerHTML = '<div class="empty-col">Tu colección aparecerá aquí.<br>Pulsa 💾 GUARDAR para añadir avatares.</div>';
+      localStorage.removeItem('fursona_v3_collection');
+      localStorage.removeItem('fursona_v3_stats');
+    }
+
+    // ============ AUTO MODE ============
+    function toggleAuto() {
+      const btn = document.getElementById('autoBtn');
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+        btn.textContent = '🤖 AUTO';
+        btn.classList.remove('running');
+      } else {
+        btn.textContent = '⏹ STOP';
+        btn.classList.add('running');
+        autoTimer = setInterval(() => generateAvatar(true), autoSpeed);
+      }
+    }
+
+    function updateSpeed() {
+      autoSpeed = parseInt(document.getElementById('speedRange').value);
+      document.getElementById('speedVal').textContent = (autoSpeed / 1000).toFixed(1) + 's';
+      if (autoTimer) { clearInterval(autoTimer); autoTimer = setInterval(() => generateAvatar(true), autoSpeed); }
+    }
+
+    // ============ DOWNLOAD ============
+    function downloadSVG() {
+      const svg = document.getElementById('avatarSVG');
+      const data = new XMLSerializer().serializeToString(svg);
+      const blob = new Blob([`<?xml version="1.0" encoding="UTF-8"?>\n${data}`], { type: 'image/svg+xml' });
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+      const sp2 = SPECIES[state.species];
+      const outfit2 = OUTFITS[state.outfit];
+      const eyes2 = EYES[state.eyes];
+      const acc2 = ACCESSORIES[state.accessory];
+      const rar2 = getRarityLevel(sp2, outfit2, eyes2, acc2);
+      const { name: n2, title: t2 } = buildName(sp2, rar2);
+      const safeName = `${n2}-${t2}`.replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s-]/g, '').replace(/\s+/g, '-');
+      a.download = `fursona-v3-#${String(state.id).padStart(4, '0')}-${safeName}.svg`; a.click();
+    }
+
+    function exportCollection() {
+      if (!collection.length) { alert('¡Tu colección está vacía!'); return; }
+      const manifest = collection.map(item => ({
+        tokenId: item.id,
+        name: item.name,
+        description: `${item.name} — ${item.clan}. Fursona Genesis V3 Collection #${String(item.id).padStart(4, '0')}.`,
+        image: `ipfs://YOUR_CID/${String(item.id).padStart(4, '0')}.svg`,
+        external_url: `https://fursona-genesis.io/token/${item.id}`,
+        background_color: item.bgColor || '040410',
+        attributes: [
+          { trait_type: 'Especie', value: item.species },
+          { trait_type: 'Pelaje', value: item.furColor },
+          { trait_type: 'Fondo', value: item.bg },
+          { trait_type: 'Ropa', value: item.outfit },
+          { trait_type: 'Ojos', value: item.eyes },
+          { trait_type: 'Accesorio', value: item.accessory },
+          { trait_type: 'Rareza', value: item.rarityLabel },
+          { trait_type: 'Clan', value: item.clan },
+          { trait_type: 'Gen', value: 'GEN-3' },
+          { display_type: 'number', trait_type: 'Token ID', value: item.id },
+        ]
+      }));
+      const blob = new Blob([JSON.stringify(manifest, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+      a.download = 'fursona-genesis-v3-metadata.json'; a.click();
+    }
+
+    async function exportAllSVG() {
+      if (!collection.length) { alert('¡Tu colección está vacía!'); return; }
+      const btn = document.getElementById('zipBtn');
+      btn.textContent = '⏳ Zipeando...';
+      btn.disabled = true;
+
+      const zip = new JSZip();
+      const folder = zip.folder('FURSONA_GENESIS_V3_SVG');
+
+      collection.forEach(item => {
+        const safeName = item.name.replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s-]/g, '').replace(/\s+/g, '-');
+        const filename = `fursona-v3-#${String(item.id).padStart(4, '0')}-${safeName}.svg`;
+        const svgFull = `<?xml version="1.0" encoding="UTF-8"?><svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">${item.svgContent}</svg>`;
+        folder.file(filename, svgFull);
+      });
+
+      const blob = await zip.generateAsync({ type: 'blob' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `fursona-genesis-v3-${collection.length}-avatares.zip`;
+      a.click();
+
+      btn.textContent = '✅ ¡Descargado!';
+      setTimeout(() => { btn.textContent = '⬇ ZIP SVGs'; btn.disabled = false; }, 2500);
+    }
+
+    function mintNFT() {
+      if (!collection.length) { alert('¡Genera y guarda al menos un avatar primero!'); return; }
+      const btn = event.target;
+      btn.textContent = '⏳ MINTANDO...'; btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = '✅ ¡MINTED!';
+        setTimeout(() => { btn.textContent = '🔥 MINT NFT'; btn.disabled = false; }, 2500);
+      }, 1800);
+    }
+
+    function setStartId() {
+      const val = parseInt(document.getElementById('startId').value);
+      if (val && val >= 1) {
+        totalGenerated = val - 1;
+        state.id = val;
+        document.getElementById('statTotal').textContent = totalGenerated;
+        const input = document.getElementById('startId');
+        input.style.borderColor = '#00ff88';
+        setTimeout(() => input.style.borderColor = 'rgba(0,245,255,0.2)', 1500);
+      }
+    }
+
+    // ============ LOAD FROM STORAGE ============
+    function loadCollection() {
+      try {
+        const saved = localStorage.getItem('fursona_v3_collection');
+        const stats = localStorage.getItem('fursona_v3_stats');
+        if (!saved) return;
+
+        const items = JSON.parse(saved);
+        if (!items.length) return;
+
+        const savedStats = stats ? JSON.parse(stats) : null;
+        if (savedStats) {
+          legendCount = savedStats.legendCount || 0;
+          epicCount = savedStats.epicCount || 0;
+          collectionValue = savedStats.collectionValue || 0;
+          totalGenerated = savedStats.totalGenerated || items.length;
+        }
+
+        collection = items;
+        document.getElementById('statSaved').textContent = collection.length;
+        document.getElementById('statLegend').textContent = legendCount;
+        document.getElementById('statEpic').textContent = epicCount;
+        document.getElementById('statValue').textContent = collectionValue.toFixed(2) + ' ETH';
+        document.getElementById('statTotal').textContent = totalGenerated;
+        document.getElementById('mintProgress').textContent = collection.length;
+        document.getElementById('progressFill').style.width = Math.min((collection.length / 10000) * 100, 100) + '%';
+        document.getElementById('startId').value = totalGenerated + 1;
+
+        // Rebuild grid
+        const grid = document.getElementById('collectionGrid');
+        grid.innerHTML = '';
+        items.forEach(item => addToGrid(item, item.svgContent));
+
+        showToast(`✅ Colección restaurada: ${collection.length} avatares`);
+      } catch (e) {
+        console.warn('Error cargando colección:', e);
+      }
+    }
+
+    function showToast(msg) {
+      const t = document.createElement('div');
+      t.textContent = msg;
+      t.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:rgba(0,245,255,0.15);border:1px solid rgba(0,245,255,0.4);color:#00f5ff;padding:12px 24px;border-radius:10px;font-family:Orbitron,monospace;font-size:0.8rem;z-index:9999;letter-spacing:0.1em';
+      document.body.appendChild(t);
+      setTimeout(() => t.remove(), 3500);
+    }
+
+    // ============ INIT ============
+    buildControls();
+    generateAvatar();
+    loadCollection();
+  </script>
+</body>
+
+</html>

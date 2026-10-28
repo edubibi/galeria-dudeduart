@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Centering</title>
+    <link rel="stylesheet" href="style.css?v=2026_m8">
+    <style>
+        @media (max-width: 900px) {
+            #hero-overlay {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                background: rgba(0, 0, 0, 0.88) !important;
+                backdrop-filter: blur(8px) !important;
+                -webkit-backdrop-filter: blur(8px) !important;
+                z-index: 99999 !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                padding: 12px !important;
+                box-sizing: border-box !important;
+                margin: 0 !important;
+                opacity: 1 !important;
+                pointer-events: all !important;
+            }
+
+            .hero-content,
+            #hero-overlay .hero-content,
+            #hero-overlay.active .hero-content {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 340px !important;
+                min-width: 0 !important;
+                height: auto !important;
+                max-height: 90vh !important;
+                margin: 0 auto !important;
+                padding: 12px 14px 16px 14px !important;
+                background: #000000 !important;
+                border: 2px solid #D4AF37 !important;
+                border-radius: 12px !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                box-sizing: border-box !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+
+            .hero-image-container {
+                width: 100% !important;
+                max-height: 30vh !important;
+                min-height: 0 !important;
+                margin-bottom: 6px !important;
+                display: flex !important;
+                justify-content: center !important;
+                padding: 0 !important;
+                border: none !important;
+                box-sizing: border-box !important;
+                flex: none !important;
+            }
+            .hero-image-container img {
+                max-height: 100% !important;
+                max-width: 100% !important;
+                object-fit: contain !important;
+                display: block !important;
+            }
+            .hero-details {
+                padding: 0 !important;
+                width: 100% !important;
+                min-width: 0 !important;
+                box-sizing: border-box !important;
+                overflow-x: hidden !important;
+                flex: none !important;
+                background: transparent !important;
+            }
+            #hero-title { 
+                font-size: 0.95rem !important; 
+                margin: 2px 0 !important; 
+                color: #fff !important; 
+                word-break: break-word !important;
+            }
+            .hero-meta {
+                display: flex !important;
+                gap: 8px !important;
+                margin: 4px 0 6px 0 !important;
+                align-items: center !important;
+            }
+            .hero-meta .tag { font-size: 0.72rem !important; padding: 2px 8px !important; }
+            .hero-meta .price { font-size: 0.85rem !important; font-weight: 700 !important; color: #D4AF37 !important; }
+            #hero-desc { font-size: 0.72rem !important; line-height: 1.15 !important; margin: 5px 0 8px 0 !important; color: #ccc !important; }
+
+            .hero-action-buttons {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 8px !important;
+                margin-top: 10px !important;
+                margin-bottom: 6px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .hero-action-buttons button,
+            .hero-action-buttons .btn-comprar,
+            .hero-action-buttons .btn-outline {
+                padding: 10px 12px !important;
+                font-size: 0.85rem !important;
+                font-weight: 600 !important;
+                margin: 0 !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
+                border-radius: 6px !important;
+            }
+            #close-hero { 
+                position: absolute !important;
+                top: 8px !important; 
+                right: 8px !important; 
+                width: 38px !important;
+                height: 38px !important;
+                border-radius: 50% !important;
+                background: #dc2626 !important;
+                border: 2px solid #ffffff !important;
+                color: #ffffff !important;
+                font-size: 1.3rem !important; 
+                font-weight: bold !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9) !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                z-index: 1050 !important;
+                cursor: pointer !important;
+            }
+            .btn-hero-close-bottom {
+                width: 100% !important;
+                background: rgba(255, 255, 255, 0.08) !important;
+                border: 1px solid rgba(255, 255, 255, 0.25) !important;
+                color: #e2e8f0 !important;
+                padding: 8px !important;
+                border-radius: 6px !important;
+                font-size: 0.8rem !important;
+                font-weight: 600 !important;
+                cursor: pointer !important;
+                text-align: center !important;
+                margin-top: 4px !important;
+                box-sizing: border-box !important;
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body style="background: #000; min-height: 100vh;">
+    <div id="hero-overlay" class="active">
+        <div class="hero-content">
+            <button id="close-hero" onclick="alert('Cerrar')">✕</button>
+            <div class="hero-image-container">
+                <img id="hero-img" src="../assets/00EDUSSE/la_vaca_solar_y_el_rio_de_signos_edusse.jpg" alt="Vaca">
+            </div>
+            <div class="hero-details">
+                <h2 id="hero-title">La Vaca Solar Y El Rio De Signos</h2>
+                <div class="hero-meta">
+                    <span id="hero-category" class="tag">00 EDUSSE</span>
+                    <span id="hero-price" class="price">1.700,00 €</span>
+                </div>
+                <p id="hero-desc">Una majestuosa vaca que actúa como guardiana de un cosmos interior...</p>
+                <div class="hero-action-buttons">
+                    <button class="btn-comprar">🛒 Comprar el Cuadro</button>
+                    <button class="btn-outline">🖼️ Probador Virtual</button>
+                    <button type="button" class="btn-hero-close-bottom">✕ Cerrar Ficha</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = () => {
+            const overlay = document.getElementById('hero-overlay');
+            const content = document.querySelector('.hero-content');
+            const btn = document.getElementById('close-hero');
+            const info = {
+                windowWidth: window.innerWidth,
+                bodyRect: document.body.getBoundingClientRect(),
+                overlayRect: overlay.getBoundingClientRect(),
+                contentRect: content.getBoundingClientRect(),
+                contentComputed: {
+                    width: getComputedStyle(content).width,
+                    marginLeft: getComputedStyle(content).marginLeft,
+                    marginRight: getComputedStyle(content).marginRight,
+                    left: getComputedStyle(content).left,
+                    position: getComputedStyle(content).position,
+                    transform: getComputedStyle(content).transform
+                },
+                btnRect: btn.getBoundingClientRect()
+            };
+            document.title = "DBG:" + JSON.stringify(info);
+        };
+    </script>
+</body>
+</html>

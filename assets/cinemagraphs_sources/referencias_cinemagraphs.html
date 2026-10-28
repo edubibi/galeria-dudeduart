@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referencias de Cinemagraphs B2B - EduArt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --gold: #fbbf24;
+            --gold-glow: rgba(251, 191, 36, 0.15);
+            --blue: #38bdf8;
+            --blue-glow: rgba(56, 189, 248, 0.15);
+            --green: #34d399;
+            --green-glow: rgba(52, 211, 153, 0.15);
+            --purple: #c084fc;
+            --purple-glow: rgba(192, 132, 252, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem;
+            background-image: radial-gradient(circle at 50% 0%, rgba(251, 191, 36, 0.05), transparent 50%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--gold), #f59e0b, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* Guía Rápida de Prompts */
+        .prompt-guide {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .prompt-guide h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .prompt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .prompt-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .prompt-box:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .prompt-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .prompt-copy {
+            background: #000;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 0.5rem;
+        }
+
+        /* Lista de Obras por Categoría */
+        .category-section {
+            margin-bottom: 3rem;
+        }
+
+        .category-header {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-left: 0.75rem;
+            border-left: 4px solid var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .category-section:nth-of-type(odd) .category-header {
+            border-left-color: var(--gold);
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .card-origin {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-slider {
+            background: var(--purple-glow);
+            color: var(--purple);
+            border: 1px solid rgba(192, 132, 252, 0.3);
+        }
+
+        .badge-push {
+            background: var(--blue-glow);
+            color: var(--blue);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .badge-static {
+            background: var(--gold-glow);
+            color: var(--gold);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .badge-ok {
+            background: var(--green-glow);
+            color: var(--green);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Catálogo de Referencias B2B</h1>
+            <p class="subtitle">Cinemagraphs para Hoteles y Galerías Digitales — Colección de Eduardo Ramirez (EduArt)</p>
+        </header>
+
+        <!-- Guía Rápida de Prompts -->
+        <section class="prompt-guide">
+            <h2>⭐ Los 3 Prompts de Animación (Meta AI)</h2>
+            <div class="prompt-grid">
+                <div class="prompt-box">
+                    <div class="prompt-title">
+                        <span>1. SLIDER LATERAL</span>
+                        <span class="badge badge-slider">Movimiento</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Crea paralaje y sensación de profundidad de lado a lado. Ideal para bosques, filas de flores y composiciones horizontales.</p>
+                    <div class="prompt-copy">slow lateral camera slider movement from left to right. Soft 3D parallax effect separating the foreground elements from the background. Elegant depth of field, organic and cinematic camera motion.</div>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-title">
+                        <span>2. PUSH-IN 3D</span>
+                        <span class="badge badge-push">Volumen</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Avanza hacia el centro y da relieve tridimensional real a las texturas. Ideal para galaxias, centros de luz y detalles de pintura.</p>
+                    <div class="prompt-copy">A slow, steady cinematic camera push-in towards the center of the painting. The textures, paint strokes, and objects on the canvas extrude and gain real 3D volume, transforming into tangible physical forms. Subtle 3D parallax effect, gentle depth of field shift, smooth and organic motion, 4k.</div>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-title">
+                        <span>3. ESTÁTICO (Elemento Vivo)</span>
+                        <span class="badge badge-static">Enfoque</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Congela toda la escena excepto un elemento específico. Ideal para velas, lluvia, olas, auroras y hojas que caen.</p>
+                    <div class="prompt-copy">Static camera shot. Elegant depth of field and cinematic lighting. The entire scene remains completely still, except for a single random element that has subtle, organic and gentle motion. Soft 3D parallax layers separating foreground from background.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORÍA 1: ARTE PICTORÍCO -->
+        <section class="category-section">
+            <div class="category-header">
+                <span>🎨 Arte Pictórico (Galería Existente)</span>
+                <span class="badge badge-ok">3 Listas</span>
+            </div>
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Bodegón con limones</div>
+                            <div class="card-origin">Colección B2B_MAGNA</div>
+                            <p class="card-desc">Bodegón de limones y jarra con gran detalle. El movimiento se aplica de forma muy sutil al brillo de la fruta y la luz reflejada.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-static">Estático</span>
+                            <span class="badge badge-ok">Completado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Templo / Petra</div>
+                            <div class="card-origin">Colección 03EXPNEOPLUS</div>
+                            <p class="card-desc">Arquitectura rocosa de Petra bajo un cielo en espiral estilo Van Gogh. Las ruinas quedan estáticas y el cielo rota lentamente.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-static">Estático</span>
+                            <span class="badge badge-ok">Completado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Mujer cubista con mechón</div>
+                            <div class="card-origin">Colección 02CUBESSE stilo</div>
+                            <p class="card-desc">Retrato cubista cálido. La figura y el fondo están inmóviles, mientras que un solo mechón de pelo flota con la brisa.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-static">Estático</span>
+                            <span class="badge badge-ok">Completado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORÍA 2: NATURALEZA (AGUA / MAR) -->
+        <section class="category-section">
+            <div class="category-header">
+                <span>🌊 Naturaleza (Agua y Mar)</span>
+            </div>
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Cascada en selva tropical</div>
+                            <div class="card-origin">Origen: Portátil / EXTRAS</div>
+                            <p class="card-desc">Gran cascada en entorno selvático con rayos de sol filtrados. La cámara avanza lentamente hacia la caída de agua.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-push">Push-in 3D</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Acantilado con olas</div>
+                            <div class="card-origin">Origen: Portátil / EXTRAS</div>
+                            <p class="card-desc">Fuerte oleaje rompiendo contra las rocas oscuras del acantilado bajo cielo nublado. Todo el acantilado se congela y las olas vibran.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-static">Estático</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Mar nocturno bioluminiscente</div>
+                            <div class="card-origin">Origen: Gemini</div>
+                            <p class="card-desc">Playa de noche con olas de color azul brillante fluorescente y reflejo de luna dorada. Ideal para dejar quieto el cielo estrellado.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-static">Estático</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Suruga Bay & Monte Fuji</div>
+                            <div class="card-origin">Origen: EXTRAS (suruga_bay_japon.png)</div>
+                            <p class="card-desc">Vista del Monte Fuji al atardecer sobre el mar. El volcán y la playa quedan quietos, con las olas rompiendo suavemente.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-static">Estático</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORÍA 3: FUEGO Y LUZ -->
+        <section class="category-section">
+            <div class="category-header">
+                <span>🔥 Fuego y Luz</span>
+            </div>
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Chimenea de mármol</div>
+                            <div class="card-origin">Origen: Gemini</div>
+                            <p class="card-desc">Chimenea barroca de mármol tallado con llamas encendidas. El mármol queda inmóvil y el fuego es el elemento de movimiento.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-static">Estático</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Vela con bokeh dorado</div>
+                            <div class="card-origin">Origen: Gemini</div>
+                            <p class="card-desc">Una vela encendida sobre mesa reflectante y fondo desenfocado con esferas doradas. Solo la llama oscila.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-static">Estático</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Farolillos en lago japonés</div>
+                            <div class="card-origin">Origen: Gemini</div>
+                            <p class="card-desc">Multitud de linternas flotantes sobre agua oscura. La cámara se desliza lateralmente mientras los farolillos derivan despacio.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-slider">Slider Lateral</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Aurora boreal con renos</div>
+                            <div class="card-origin">Origen: Gemini (Cabaña con luz)</div>
+                            <p class="card-desc">Un cielo nocturno de Laponia cargado de auroras sobre un río helado con renos. Las auroras y el reflejo se mueven arriba.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-static">Estático</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORÍA 4: NATURALEZA PREMIUM -->
+        <section class="category-section">
+            <div class="category-header">
+                <span>🎋 Naturaleza Premium (Zen)</span>
+            </div>
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Bambú en la niebla</div>
+                            <div class="card-origin">Origen: Gemini</div>
+                            <p class="card-desc">Tallos verdes de bambú con una casa de té japonesa al fondo. La niebla se desplaza lateralmente entre los troncos.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-slider">Slider Lateral</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Cerezo en flor</div>
+                            <div class="card-origin">Origen: Gemini</div>
+                            <p class="card-desc">Cerezo japonés iluminado en la noche. El árbol queda estático, y solo los pétalos de flor caen de forma continua.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-static">Estático</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Selva con rayos de sol</div>
+                            <div class="card-origin">Origen: Gemini</div>
+                            <p class="card-desc">Espesor del bosque tropical cruzado por grandes haces de luz dorada. La cámara avanza lentamente hacia el origen de la luz.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-push">Push-in 3D</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Campo de lavanda</div>
+                            <div class="card-origin">Origen: Gemini</div>
+                            <p class="card-desc">Líneas infinitas de lavanda morada al amanecer. La cámara se mueve de lado y la bruma baja flota sobre las flores.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-slider">Slider Lateral</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORÍA 5: URBANO PREMIUM -->
+        <section class="category-section">
+            <div class="category-header">
+                <span>🌆 Urbano Premium</span>
+            </div>
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Lluvia en ventana (NYC)</div>
+                            <div class="card-origin">Origen: Gemini (Con decantador)</div>
+                            <p class="card-desc">Interior de habitación con butaca y copa, mirando al skyline de Nueva York a través de un cristal lleno de gotas resbalando.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-static">Estático</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Sydney Harbour Bridge</div>
+                            <div class="card-origin">Origen: Gemini</div>
+                            <p class="card-desc">El icónico puente de Sydney iluminado con reflejos en el agua y luna llena. Slider lateral con el agua moviéndose.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-slider">Slider Lateral</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">NYC emergiendo de la niebla</div>
+                            <div class="card-origin">Origen: Gemini</div>
+                            <p class="card-desc">Rascacielos iluminados cortando una densa capa de niebla baja. La cámara avanza lentamente hacia el skyline.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-push">Push-in 3D</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Terraza al atardecer</div>
+                            <div class="card-origin">Origen: Gemini</div>
+                            <p class="card-desc">Terraza mediterránea con mesa servida, copa de champán y palmera de fondo. El viento agita sutilmente las cortinas blancas.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-static">Estático</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORÍA 6: ABSTRACTO DE LUJO -->
+        <section class="category-section">
+            <div class="category-header">
+                <span>✨ Abstracto de Lujo</span>
+            </div>
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Vórtice Galáctico Azul y Oro</div>
+                            <div class="card-origin">Origen: Gemini</div>
+                            <p class="card-desc">Una espiral de oro líquido mezclada con azul marino profundo. La cámara avanza y el vórtice parece girar en tres dimensiones.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-push">Push-in 3D</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Mármol negro con vetas doradas</div>
+                            <div class="card-origin">Pendiente de generación</div>
+                            <p class="card-desc">Patrón orgánico de mármol negro veteado en oro, donde las líneas doradas fluyen lentamente como magma frío.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-push">Push-in 3D</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Burbujas de cristal flotando</div>
+                            <div class="card-origin">Pendiente de generación</div>
+                            <p class="card-desc">Esferas translúcidas con destellos de luz que ascienden flotando lentamente en un fondo oscuro tridimensional.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-push">Push-in 3D</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">Geometría Sagrada Rotando</div>
+                            <div class="card-origin">Pendiente de generación</div>
+                            <p class="card-desc">Un mandala o patrón lineal geométrico dorado rotando sobre sí mismo lentamente en un fondo de terciopelo negro.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-push">Push-in 3D</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTO ESPECIAL: VIDEO "SIEMPRE TE AMARÉ" -->
+        <section class="category-section" style="margin-top: 4rem; border-top: 2px solid rgba(251, 191, 36, 0.2); padding-top: 3rem;">
+            <div class="category-header" style="border-left-color: var(--gold);">
+                <span>🎵 Proyecto Especial: Vídeo "Siempre Te Amaré" (The Research Band)</span>
+                <span class="badge badge-static" style="background: var(--gold-glow); color: var(--gold);">4 Imágenes Listas</span>
+            </div>
+            
+            <p class="card-desc" style="margin-bottom: 2rem; font-size: 1rem;">Guía de animación para el videoclip de 4'29" basado en miniloops geométricos en azul y oro sobre fondo negro.</p>
+            
+            <div class="grid-cards">
+                <div class="card" style="border-color: rgba(251, 191, 36, 0.2);">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">siempre_01_pareja_abrazo.png</div>
+                            <div class="card-origin">Estado: Generada</div>
+                            <p class="card-desc">Dos figuras geométricas abrazadas con una estrella brillante en el pecho. Movimiento de acercamiento lento.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-push">Push-in 3D</span>
+                            <span class="badge badge-ok">En Carpeta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="border-color: rgba(251, 191, 36, 0.2);">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">siempre_02_manos_luz.png</div>
+                            <div class="card-origin">Estado: Generada</div>
+                            <p class="card-desc">Dos manos de luz geométrica casi tocándose por la punta de los dedos. Movimiento de carril de lado a lado.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-slider">Slider Lateral</span>
+                            <span class="badge badge-ok">En Carpeta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="border-color: rgba(251, 191, 36, 0.2);">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title">siempre_03_destello_oscuridad.png</div>
+                            <div class="card-origin">Estado: Generada</div>
+                            <p class="card-desc">Estrella dorada explotando en fragmentos en forma de corazón. Movimiento de entrada 3D hacia el núcleo.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-push">Push-in 3D</span>
+                            <span class="badge badge-ok">En Carpeta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="border-color: rgba(251, 191, 36, 0.3); background: rgba(251, 191, 36, 0.02);">
+                    <div class="card-body">
+                        <div>
+                            <div class="card-title" style="color: var(--gold);">hands varias.jpeg</div>
+                            <div class="card-origin">Estado: Generada en Flow</div>
+                            <p class="card-desc">Varias manos geométricas de luz azul cruzándose con un fuerte brillo dorado en el centro. Movimiento lento de cámara hacia el destello.</p>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge badge-push">Push-in 3D</span>
+                            <span class="badge badge-ok">En Carpeta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prompts Corregidos para Copiar -->
+            <div style="margin-top: 2rem; background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 12px;">
+                <h3 style="font-size: 1.1rem; color: var(--gold); margin-bottom: 1rem;">📋 Prompts específicos de generación:</h3>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem; color: #fff;">Prompt 1 (Las dos manos de la pareja)</h4>
+                    <div class="prompt-copy">A close-up of two hands (a man's hand and a woman's hand) gently reaching toward each other, almost touching at the fingertips, low-poly geometric style made of glowing blue crystalline shards and warm gold veins, pitch black background, a soft golden light radiating from where they are about to touch, vertical portrait format, deep emotional and intimate atmosphere.</div>
+                </div>
+
+                <div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem; color: #fff;">Prompt 2 (Pareja contemplando la noche)</h4>
+                    <div class="prompt-copy">Two side-profile silhouettes of a man and a woman standing close, looking up at a starry night, geometric low-poly art style fragmented into blue and gold triangular shards, a brilliant golden light glowing between their chests, black background, vertical format, deep and poetic mood.</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>EduArt Gallery — Catálogo de Referencias Técnicas para Cinemagraphs B2B</p>
+        </footer>
+    </div>
+</body>
+</html>

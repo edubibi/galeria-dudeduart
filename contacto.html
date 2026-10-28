@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Tu Arte</title>
+    <link rel="stylesheet" href="main.css?v=106">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: #e0e0e0;
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- UNIFIED NAVBAR --- */
+        @media (min-width: 901px) {
+            .navbar {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 1.5rem 5% !important;
+                background-color: #000000 !important;
+                border-bottom: 1px solid #1a1a1a !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 1000 !important;
+            }
+
+            .nav-links {
+                display: flex !important;
+                gap: 2rem !important;
+                list-style: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .nav-links a {
+                text-decoration: none !important;
+                color: #e0e0e0 !important;
+                font-family: 'Lato', sans-serif !important;
+                font-size: 0.9rem !important;
+                font-weight: 400 !important;
+                letter-spacing: 1px !important;
+                transition: color 0.3s ease !important;
+            }
+
+            .nav-links a.active,
+            .nav-links a:hover {
+                color: #D4AF37 !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 0.75rem 1.25rem !important;
+                background-color: #0a0a0a !important;
+                border-bottom: 1px solid #1a1a1a !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 1000 !important;
+            }
+            .logo img {
+                max-height: 46px !important;
+                width: auto !important;
+            }
+            .navbar-mobile-actions {
+                display: flex !important;
+                align-items: center !important;
+                gap: 12px !important;
+            }
+            .mobile-cart-btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                gap: 5px !important;
+                background: rgba(212, 175, 55, 0.15) !important;
+                border: 1px solid rgba(212, 175, 55, 0.4) !important;
+                color: #ffffff !important;
+                text-decoration: none !important;
+                padding: 7px 12px !important;
+                border-radius: 20px !important;
+                font-size: 0.88rem !important;
+            }
+            .nav-toggle-btn {
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-around !important;
+                width: 44px !important;
+                height: 44px !important;
+                background: #111111 !important;
+                border: 1px solid rgba(212, 175, 55, 0.4) !important;
+                border-radius: 8px !important;
+                cursor: pointer !important;
+                padding: 10px !important;
+                box-sizing: border-box !important;
+            }
+            .nav-toggle-btn .bar {
+                width: 100% !important;
+                height: 2px !important;
+                background: #D4AF37 !important;
+                border-radius: 2px !important;
+                pointer-events: none !important;
+            }
+            .nav-toggle-btn.open .bar-1 { transform: translateY(8px) rotate(45deg) !important; }
+            .nav-toggle-btn.open .bar-2 { opacity: 0 !important; transform: scaleX(0) !important; }
+            .nav-toggle-btn.open .bar-3 { transform: translateY(-8px) rotate(-45deg) !important; }
+            .nav-links {
+                display: none !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                width: 100% !important;
+                background: #0f0f14 !important;
+                flex-direction: column !important;
+                gap: 0 !important;
+                padding: 0.8rem 1.2rem 1.4rem 1.2rem !important;
+                border-bottom: 3px solid #D4AF37 !important;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85) !important;
+                box-sizing: border-box !important;
+                z-index: 999 !important;
+            }
+            .nav-links.open {
+                display: flex !important;
+                animation: slideNavDark 0.25s ease forwards !important;
+            }
+            @keyframes slideNavDark {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .nav-links li { width: 100% !important; list-style: none !important; }
+            .nav-links a {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                font-family: 'Playfair Display', serif !important;
+                font-size: 1.15rem !important;
+                color: #e2e8f0 !important;
+                padding: 13px 16px !important;
+                text-decoration: none !important;
+                border-radius: 6px !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+                background: transparent !important;
+            }
+            .nav-links a.active,
+            .nav-links a:hover {
+                background: rgba(212, 175, 55, 0.15) !important;
+                color: #D4AF37 !important;
+                padding-left: 20px !important;
+            }
+            .nav-links a::after {
+                content: '›' !important;
+                font-size: 1.3rem !important;
+                color: #D4AF37 !important;
+                opacity: 0.7 !important;
+            }
+            .nav-links a.active::after {
+                content: '✓' !important;
+                font-size: 1rem !important;
+                opacity: 1;
+            }
+            .desktop-cart-item { display: none !important; }
+        }
+
+        /* --- PAGE HEADER --- */
+        .page-header {
+            background: #050505;
+            padding: 55px 20px 35px;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            color: #D4AF37;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .page-header p {
+            color: #ffffff;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- CONTACT CARDS & INPUTS --- */
+        .contact-img-card {
+            background-color: #f8f9fa;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .contact-input {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background-color: #f8f9fa !important;
+            color: #111111 !important;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.4) !important;
+            border-radius: 6px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-input::placeholder {
+            color: #666666 !important;
+            opacity: 1;
+        }
+
+        .contact-input:focus {
+            border-color: #D4AF37 !important;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.4) !important;
+        }
+
+        .btn-send-message {
+            width: 100%;
+            padding: 1rem;
+            background-color: #f8f9fa !important;
+            color: #000000 !important;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 1px solid #D4AF37 !important;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-send-message:hover {
+            background-color: #D4AF37 !important;
+            color: #000000 !important;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .social-links a {
+            color: #D4AF37 !important;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ffffff !important;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="assets/logo_banner.png" alt="Logo"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre M&iacute;</a></li>
+            <li><a href="memorandum.html">Universo EDUSSE</a></li>
+            <li><a href="colecciones.html">Colecciones</a></li>
+            <li><a href="compra.html">Cómo Comprar</a></li>
+            <li><a href="contacto.html" class="active">Contacto</a></li>
+            <li><a href="carrito.html">Carrito <span class="cart-badge"></span></a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Contacto</h1>
+            <p>Hablemos sobre comisiones, compras o colaboraciones.</p>
+        </div>
+    </header>
+
+    <section class="section" style="padding: 60px 15px; background-color: #000000;">
+        <div class="container" style="max-width:600px; margin:0 auto; text-align:center;">
+
+            <!-- Tarjeta con la imagen sobre fondo blanco nuevo #f8f9fa -->
+            <div class="contact-img-card">
+                <img src="assets/contact_header.png" alt="Contacto Arte"
+                    style="width:100%; max-width:380px; display:block; border-radius:4px;">
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <p style="font-size: 1.25rem; font-weight: bold; color: #ffffff;">📧 <a href="mailto:dudeduart@gmail.com"
+                        style="color: #D4AF37; text-decoration: none;">dudeduart@gmail.com</a></p>
+                <p style="font-size: 0.95rem; color: #ffffff;">Escríbeme para cualquier duda personalizada.</p>
+            </div>
+
+            <!-- Social Media Icons (Inline SVG en Dorado Corporativo) -->
+            <div class="social-links" style="display:flex; justify-content:center; gap:1.8rem; margin-bottom:2.5rem;">
+                <!-- Instagram -->
+                <a href="#" target="_blank" title="Instagram">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <!-- Facebook -->
+                <a href="#" target="_blank" title="Facebook">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+                <!-- WhatsApp -->
+                <a href="#" target="_blank" title="WhatsApp">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+
+            <form id="contactForm" style="display:flex; flex-direction:column; gap:1.6rem; text-align:left;">
+                <div>
+                    <label style="display:block; margin-bottom:0.6rem; font-weight:700; color:#D4AF37; letter-spacing:0.5px;">Nombre</label>
+                    <input type="text" id="name" class="contact-input" placeholder="Tu nombre">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:0.6rem; font-weight:700; color:#D4AF37; letter-spacing:0.5px;">Email (para responderte)</label>
+                    <input type="email" id="email" class="contact-input" placeholder="tu@email.com">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:0.6rem; font-weight:700; color:#D4AF37; letter-spacing:0.5px;">Mensaje</label>
+                    <textarea id="message" class="contact-input" style="min-height:160px;" placeholder="¿En qué obra estás interesado?"></textarea>
+                </div>
+                <button type="button" onclick="sendEmail()" class="btn-send-message">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function sendEmail() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !message) {
+                alert("Por favor, escribe al menos tu nombre y un mensaje.");
+                return;
+            }
+
+            const subject = encodeURIComponent("Contacto Web: " + name);
+            const body = encodeURIComponent("Nombre: " + name + "\nEmail: " + email + "\n\n" + message);
+
+            // Mailto logic
+            window.location.href = `mailto:dudeduart@gmail.com?subject=${subject}&body=${body}`;
+        }
+    </script>
+
+    <footer style="text-align: center; padding: 3rem 1rem; background-color: #000000; color: #ffffff; border-top: 1px solid #1a1a1a;">
+        <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #ffffff;">&copy; e.ramirez 2026. Todos los derechos reservados. |
+            PRODUCED BY <a href="https://khem.es" target="_blank"
+                style="color: #D4AF37; text-decoration: none; font-weight: bold;">KHEM</a></p>
+        <p style="font-size:0.85rem; margin-top:0.5rem;">
+            <a href="condiciones.html" style="color: #D4AF37; text-decoration: none; opacity: 0.95;">Términos y Condiciones</a>
+        </p>
+    </footer>
+    <script src="js/cart.js?v=106"></script>
+</body>
+
+</html>

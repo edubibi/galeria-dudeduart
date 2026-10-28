@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- SYNC TEST MARKER: 2026-03-01 09:50 (Manolo) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Arte | Portafolio Oficial</title>
+    <link rel="stylesheet" href="main.css?v=2026_m12">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* --- BLOQUE 1: BIENVENIDA LUMINOSA Y MINIMALISTA (#f8f9fa) --- */
+        .hero-clean-section {
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+            padding: 90px 20px 80px 20px;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .hero-slogan-clean {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.7rem;
+            font-weight: 400;
+            line-height: 1.35;
+            color: #111111;
+            margin: 0 0 35px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-main-btn-wrapper {
+            margin-bottom: 70px;
+        }
+
+        .btn-hero-galeria-digital {
+            display: inline-block;
+            background: #111111;
+            color: #ffffff;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: 40px;
+            border: 2px solid #111111;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s ease;
+        }
+
+        .btn-hero-galeria-digital:hover {
+            background: #D4AF37;
+            border-color: #D4AF37;
+            color: #000000;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .novedades-clean-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .novedad-clean-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 450px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .novedad-clean-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .novedad-label-fine {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            color: #888888;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .novedad-clean-img-box {
+            width: 100%;
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            margin-bottom: 16px;
+        }
+
+        .novedad-clean-img-box img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .novedad-clean-card:hover .novedad-clean-img-box img {
+            transform: scale(1.02);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+        }
+
+        .novedad-clean-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #111111;
+            margin: 0 0 6px 0;
+        }
+
+        .novedad-clean-category {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: #a57843;
+            text-transform: uppercase;
+        }
+
+        .transition-to-black {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #0a0a0a 100%);
+        }
+
+        /* --- ESTILOS MÓVILES PORTADA OFICIAL (< 900px) --- */
+        @media (max-width: 900px) {
+            /* Navbar Móvil */
+            .navbar {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 0.75rem 1.25rem !important;
+                background: rgba(248, 249, 250, 0.97) !important;
+                backdrop-filter: blur(12px) !important;
+                -webkit-backdrop-filter: blur(12px) !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 1000 !important;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+            }
+            .logo img {
+                max-height: 48px !important;
+                width: auto !important;
+            }
+            .navbar-mobile-actions {
+                display: flex !important;
+                align-items: center !important;
+                gap: 12px !important;
+            }
+            .mobile-cart-btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                gap: 5px !important;
+                background: rgba(212, 175, 55, 0.12) !important;
+                border: 1px solid rgba(212, 175, 55, 0.4) !important;
+                color: #1a1a1a !important;
+                text-decoration: none !important;
+                padding: 7px 12px !important;
+                border-radius: 20px !important;
+                font-size: 0.88rem !important;
+                font-weight: 700 !important;
+            }
+            .nav-toggle-btn {
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-around !important;
+                width: 44px !important;
+                height: 44px !important;
+                background: #111111 !important;
+                border: 1px solid rgba(212, 175, 55, 0.4) !important;
+                border-radius: 8px !important;
+                cursor: pointer !important;
+                padding: 10px !important;
+                box-sizing: border-box !important;
+                box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15) !important;
+            }
+            .nav-toggle-btn .bar {
+                width: 100% !important;
+                height: 2px !important;
+                background: #D4AF37 !important;
+                border-radius: 2px !important;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                transform-origin: center !important;
+                pointer-events: none !important;
+            }
+            .nav-toggle-btn.open .bar-1 {
+                transform: translateY(8px) rotate(45deg) !important;
+            }
+            .nav-toggle-btn.open .bar-2 {
+                opacity: 0 !important;
+                transform: scaleX(0) !important;
+            }
+            .nav-toggle-btn.open .bar-3 {
+                transform: translateY(-8px) rotate(-45deg) !important;
+            }
+            .nav-links {
+                display: none !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                width: 100% !important;
+                background: #ffffff !important;
+                flex-direction: column !important;
+                gap: 0 !important;
+                padding: 0.8rem 1.2rem 1.4rem 1.2rem !important;
+                border-bottom: 3px solid #D4AF37 !important;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16) !important;
+                box-sizing: border-box !important;
+                z-index: 999 !important;
+            }
+            .nav-links.open {
+                display: flex !important;
+                animation: slideNavMobile 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+            }
+            .nav-links li {
+                width: 100% !important;
+                list-style: none !important;
+            }
+            .nav-links a {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                font-family: 'Playfair Display', serif !important;
+                font-size: 1.15rem !important;
+                color: #1a1a1a !important;
+                padding: 13px 16px !important;
+                text-decoration: none !important;
+                border-radius: 6px !important;
+                border-bottom: 1px solid #f2f2f2 !important;
+                background: transparent !important;
+                transition: all 0.2s ease !important;
+                font-weight: 500 !important;
+            }
+            .nav-links a:hover,
+            .nav-links a.active {
+                background: #fdfaf0 !important;
+                color: #b89324 !important;
+                font-weight: 700 !important;
+                padding-left: 20px !important;
+            }
+            .nav-links a::after {
+                content: '›' !important;
+                font-size: 1.3rem !important;
+                color: #D4AF37 !important;
+                opacity: 0.7 !important;
+            }
+            .desktop-cart-item {
+                display: none !important;
+            }
+
+            .hero-clean-section {
+                padding: 45px 16px 40px 16px;
+            }
+
+            .hero-slogan-clean {
+                font-size: clamp(1.6rem, 5.2vw, 2.4rem);
+                line-height: 1.32;
+                margin: 0 0 25px 0;
+                padding: 0 5px;
+            }
+
+            .hero-main-btn-wrapper {
+                margin-bottom: 45px;
+            }
+
+            .btn-hero-galeria-digital {
+                font-size: clamp(0.76rem, 3.2vw, 0.88rem);
+                padding: 14px 20px;
+                letter-spacing: 1.2px;
+                max-width: 95%;
+                box-sizing: border-box;
+                display: inline-block;
+                line-height: 1.4;
+            }
+
+            .novedades-clean-container {
+                gap: 32px;
+                padding: 0 5px;
+            }
+
+            .novedad-clean-card {
+                flex: 1 1 100%;
+                min-width: 100%;
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .novedad-clean-img-box {
+                height: clamp(260px, 68vw, 360px);
+                margin-bottom: 12px;
+            }
+
+            .novedad-clean-img-box img {
+                max-height: 100%;
+                border-radius: 6px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
+            }
+
+            .novedad-clean-title {
+                font-size: 1.3rem;
+                margin: 0 0 4px 0;
+            }
+
+            .novedad-clean-category {
+                font-size: 0.8rem;
+                letter-spacing: 1.5px;
+            }
+
+            .transition-to-black {
+                height: 70px;
+            }
+
+            /* Sección Filosofía en móvil */
+            .filosofia-section {
+                padding: 3.5rem 1.2rem !important;
+            }
+
+            .filosofia-quote {
+                font-size: clamp(1.05rem, 4vw, 1.25rem) !important;
+                line-height: 1.85 !important;
+            }
+
+            .lookbook-cta-wrapper {
+                flex-direction: column !important;
+                gap: 18px !important;
+                text-align: center !important;
+            }
+        }
+
+        /* ESTILOS DE MARCOS DE MADERA COLGANTES (RÚSTICOS) */
+        .hero-featured-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 3.5rem;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 15px;
+        }
+
+        .featured-box {
+            position: relative;
+            background: #eadecd; /* Color passepartout rústico/cartón */
+            /* Efecto inglete con bordes de madera con degradado de colores */
+            border-top: 20px solid #cfa36b;
+            border-right: 20px solid #a57843;
+            border-bottom: 20px solid #734d23;
+            border-left: 20px solid #a57843;
+            padding: 10px;
+            max-width: 290px;
+            width: 100%;
+            box-shadow: 
+                0 18px 30px rgba(0, 0, 0, 0.75), 
+                inset 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-top: 55px; /* Espacio para la cuerda */
+            box-sizing: border-box;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+
+        .featured-box:hover {
+            transform: translateY(-8px) rotate(0.8deg);
+            box-shadow: 
+                0 25px 40px rgba(0, 0, 0, 0.85), 
+                inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Borde interior oscuro del marco */
+        .featured-box-inner {
+            background: #fff;
+            padding: 12px 12px 15px 12px;
+            border: 2px solid #54391c;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .featured-box-img {
+            width: 100%;
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        /* Cuerda colgante superior */
+        .featured-rope {
+            position: absolute;
+            top: -55px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 55px;
+            pointer-events: none;
+            z-index: 10;
+        }
+    </style>
+    <script>console.log("v2.4.1 Loaded");</script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="assets/logo_banner.png?v=2026_m12" alt="Logo Dudeduart">
+            </a>
+        </div>
+        
+        <!-- Acciones en barra móvil: carrito rápido y botón hamburguesa -->
+        <div class="navbar-mobile-actions">
+            <a href="carrito.html" class="mobile-cart-btn" aria-label="Ver Carrito">
+                🛒 <span class="cart-badge"></span>
+            </a>
+            <button class="nav-toggle-btn" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" onclick="toggleMobileNav(event)">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+            </button>
+        </div>
+
+        <ul class="nav-links" id="main-nav-links">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre M&iacute;</a></li>
+            <li><a href="cuadroteca/index.html?v=2026_m5">Galería Digital</a></li>
+            <li><a href="memorandum.html">Universo EDUSSE</a></li>
+            <li><a href="colecciones.html">Colecciones</a></li>
+            <li><a href="compra.html">Cómo Comprar</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li class="desktop-cart-item"><a href="carrito.html">Carrito <span class="cart-badge"></span></a></li>
+        </ul>
+    </nav>
+
+    <!-- ================================================================= -->
+    <!-- 🖼️ BLOQUE 1: BIENVENIDA LUMINOSA Y MINIMALISTA (#f8f9fa)           -->
+    <!-- ================================================================= -->
+    <header class="hero-clean-section">
+        <!-- Eslogan en Grande -->
+        <h1 class="hero-slogan-clean">
+            La imaginación abre el camino,<br>la técnica lo vuelve arte
+        </h1>
+
+        <!-- Único Botón Principal Centrado -->
+        <div class="hero-main-btn-wrapper">
+            <a href="cuadroteca/index.html?v=2026_m5" class="btn-hero-galeria-digital">[ GALERÍA DIGITAL - ENTRAR A LOS ESTILOS ]</a>
+        </div>
+
+                <!-- Novedades Limpias sobre Fondo Gris Claro -->
+        <div class="novedades-clean-container">
+            <!-- Novedad 1: Último en llegar -->
+            <div class="novedad-clean-card" id="featured-latest">
+                <div class="novedad-label-fine">— ÚLTIMO EN LLEGAR</div>
+                <a id="featured-latest-link" href="visor/index.html?img=..%2Fassets%2F57STUCKEDU%2Fcolumnas_flotantes_zhangjiajie.jpg&title=Las%20Columnas%20Flotantes%20de%20Zhangjiajie%20(Hunan)&category=57%20STUCKEDU&id=57stuckedu_columnas_flotantes_zhangjiajie" style="text-decoration: none; color: inherit;">
+                    <div class="novedad-clean-img-box">
+                        <img id="featured-latest-img" src="assets/57STUCKEDU/columnas_flotantes_zhangjiajie.jpg" alt="Las Columnas Flotantes de Zhangjiajie (Hunan) - 57 STUCKEDU">
+                    </div>
+                    <h3 class="novedad-clean-title" id="featured-latest-title">Las Columnas Flotantes de Zhangjiajie (Hunan)</h3>
+                    <p class="novedad-clean-category" id="featured-latest-category">57 STUCKEDU</p>
+                </a>
+            </div>
+
+            <!-- Novedad 2: Lanzamiento anterior -->
+            <div class="novedad-clean-card" id="featured-previous">
+                <div class="novedad-label-fine">— LANZAMIENTO ANTERIOR</div>
+                <a id="featured-previous-link" href="visor/index.html?img=..%2Fassets%2F57STUCKEDU%2Fmujer_en_la_habitacion.jpg&title=Mujer%20en%20la%20Habitaci%C3%B3n&category=57%20STUCKEDU&id=57stuckedu_mujer_en_la_habitacion" style="text-decoration: none; color: inherit;">
+                    <div class="novedad-clean-img-box">
+                        <img id="featured-previous-img" src="assets/57STUCKEDU/mujer_en_la_habitacion.jpg" alt="Mujer en la Habitación - 57 STUCKEDU">
+                    </div>
+                    <h3 class="novedad-clean-title" id="featured-previous-title">Mujer en la Habitación</h3>
+                    <p class="novedad-clean-category" id="featured-previous-category">57 STUCKEDU</p>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Transición al negro puro de la sección de Filosofía -->
+    <div class="transition-to-black"></div>
+
+    <!-- Sección Manifiesto / Filosofía de Autor -->
+    <section class="section filosofia-section" style="background-color: #0a0a0a; color: #fff; padding: 5rem 1.5rem; text-align: center; border-top: 2px solid #222; border-bottom: 2px solid #222;">
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1.8rem; color: #D4AF37; letter-spacing: 4px; text-transform: uppercase;">Filosof&iacute;a de Autor</h2>
+            <div class="filosofia-quote" style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.25rem; line-height: 2.1; color: #e0e0e0; font-weight: 300;">
+                «No uso la inteligencia artificial. <strong>Dialogo con ella.</strong><br><br>
+                M&aacute;s de cien formas de pintar desarrolladas. Cuarenta y ocho estilos propios, cada uno con su luz, su materia y su respiraci&oacute;n. Un universo visual que no exist&iacute;a antes.<br><br>
+                El Universo EDUSSE no nace de pulsar un bot&oacute;n. Nace de cincuenta a&ntilde;os de oficio, de saber qu&eacute; pedir, cu&aacute;ndo corregir y cu&aacute;ndo dejar respirar.»
+            </div>
+            <div style="margin-top: 35px;">
+                <p style="font-family: 'Lato', sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff; letter-spacing: 3px; text-transform: uppercase;">
+                    Eduardo Ram&iacute;rez de Cartagena
+                </p>
+                <a href="manifiesto.html" style="display: inline-block; margin-top: 40px; color: #D4AF37; text-decoration: none; font-size: 0.85rem; border: 1px solid #D4AF37; padding: 10px 30px; border-radius: 30px; letter-spacing: 1px; transition: all 0.3s; text-transform: uppercase;" onmouseover="this.style.background='#D4AF37'; this.style.color='#0a0a0a';" onmouseout="this.style.background='transparent'; this.style.color='#D4AF37';">Leer Manifiesto Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Living Masterpieces Section -->
+    <section class="moving-art-section">
+        <div class="moving-art-content">
+            <h2 class="moving-art-title">Living Masterpieces</h2>
+            <p class="moving-art-desc">
+                Experimenta el arte vivo. Obras maestras diseñadas para pantallas y televisores de alta gama, con un movimiento sutil en bucle infinito que transforma la atmósfera de cualquier estancia.
+            </p>
+            
+            <div class="moving-art-grid">
+                <!-- Cinemagraph Card 1 (Avestruz) -->
+                <div class="cinemagraph-card">
+                    <div class="video-container">
+                        <video autoplay loop muted playsinline class="cinemagraph-video">
+                            <source src="assets/cinemagraphs/cascada_web.mp4" type="video/mp4">
+                            Tu navegador no soporta vídeo.
+                        </video>
+                    </div>
+                    <div class="cinemagraph-info">
+                        <h3>Cascada de Selva Tropical</h3>
+                        <p class="cinemagraph-category">Colección Universo EDUSSE</p>
+                        <a href="contacto.html?interest=living_avestruz" class="btn-moving-buy">Adquirir Licencia 4K</a>
+                    </div>
+                </div>
+                
+                <!-- Cinemagraph Card 2 (Relieve Caligrafía) -->
+                <div class="cinemagraph-card">
+                    <div class="video-container">
+                        <video autoplay loop muted playsinline class="cinemagraph-video">
+                            <source src="assets/cinemagraphs/marea_web.mp4" type="video/mp4">
+                            Tu navegador no soporta vídeo.
+                        </video>
+                    </div>
+                    <div class="cinemagraph-info">
+                        <h3>Marea Dorada</h3>
+                        <p class="cinemagraph-category">Colección B2B Magna</p>
+                        <a href="contacto.html?interest=living_magna" class="btn-moving-buy">Adquirir Licencia 4K</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Lookbook Section -->
+    <section class="lookbook-section" style="background-color: #050505; padding: 6rem 0; border-top: 1px solid #1a1a1a;">
+        <div class="container" style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #D4AF37; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1rem;">Coleccionismo de &Eacute;lite</h2>
+            <p style="font-family: 'Lato', sans-serif; font-size: 1.1rem; color: #aaa; letter-spacing: 1px;">Visualiza tu pr&oacute;xima inversi&oacute;n en su h&aacute;bitat natural.</p>
+        </div>
+        
+        <div class="lookbook-grid" style="width: 100%; max-width: 1600px; margin: 0 auto 50px auto;">
+            <style>
+                .lookbook-grid {
+                    display: grid;
+                    grid-template-columns: repeat(1, 1fr);
+                    gap: 1.5rem;
+                    padding: 0 1.2rem;
+                    margin-bottom: 40px;
+                }
+                @media (min-width: 600px) {
+                    .lookbook-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; padding: 0 2rem; }
+                }
+                @media (min-width: 1024px) {
+                    /* 4 fotos en fila pero el contenedor es más ancho, así que las fotos son más grandes */
+                    .lookbook-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+                }
+                .lookbook-item {
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                    position: relative;
+                    /* Transición suave para el efecto de agrandar */
+                    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, z-index 0s;
+                    z-index: 1;
+                    cursor: pointer;
+                }
+                @media (min-width: 901px) {
+                    .lookbook-item:hover {
+                        /* El zoom potente al pasar el ratón pero quedándose en su sitio (solo desktop) */
+                        transform: scale(1.45);
+                        z-index: 20;
+                        box-shadow: 0 35px 80px rgba(0,0,0,0.95);
+                    }
+                }
+                @media (max-width: 900px) {
+                    .lookbook-item:hover {
+                        transform: scale(1.02);
+                        box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+                    }
+                }
+                .lookbook-item img {
+                    width: 100%;
+                    height: 100%;
+                    aspect-ratio: 4/5; /* Las mantiene uniformes */
+                    object-fit: cover;
+                    display: block;
+                }
+            </style>
+
+            <div class="lookbook-item">
+                <img src="assets/mockups/mockup kuwai salon cuadro.png" alt="Hotel Kuwait VIP" loading="lazy">
+            </div>
+            <div class="lookbook-item">
+                <img src="assets/mockups/mockup_rasgo_perdido.png" alt="Atico Nueva York" loading="lazy">
+            </div>
+            <div class="lookbook-item">
+                <img src="assets/mockups/mockup_gemanium.png" alt="Salon Minimalista" loading="lazy">
+            </div>
+            <div class="lookbook-item">
+                <img src="assets/mockups/mockup antesala.png" alt="Antesala Jazz" loading="lazy">
+            </div>
+        </div>
+        
+        <div class="lookbook-cta-wrapper" style="display: flex; justify-content: center; align-items: center; gap: 30px; margin-top: 3rem; flex-wrap: wrap;">
+            <a href="certificado_autenticidad.html" target="_blank" style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; font-size: 1.6rem; color: #FFD700; text-decoration: none; text-shadow: 0 2px 5px rgba(0,0,0,0.8); transition: color 0.3s;" onmouseover="this.style.color='#FFF';" onmouseout="this.style.color='#FFD700';">con Certificaci&oacute;n Oficial</a>
+            
+            <a href="colecciones.html" style="display: inline-block; background: #D4AF37; color: #000; text-decoration: none; font-family: 'Lato', sans-serif; font-weight: bold; font-size: 0.95rem; padding: 12px 28px; border-radius: 30px; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s; box-shadow: 0 5px 15px rgba(212,175,55,0.2);" onmouseover="this.style.background='#fff'; this.style.color='#000'; this.style.boxShadow='0 5px 25px rgba(255,255,255,0.3)';" onmouseout="this.style.background='#D4AF37'; this.style.color='#000'; this.style.boxShadow='0 5px 15px rgba(212,175,55,0.2)';">Explorar Colecci&oacute;n Completa</a>
+        </div>
+    </section>
+
+    <footer class="site-footer"
+        style="text-align: center; padding: 3rem 1rem; background-color: #000000; color: #aaaaaa; border-top: 1px solid #1a1a1a; margin-top: 0;">
+        <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #888888;">&copy; e.ramirez 2026. Todos los derechos reservados. |
+            PRODUCED BY <a href="https://khem.es" target="_blank"
+                style="color: #D4AF37; text-decoration: none; font-weight: bold;">KHEM</a></p>
+        <a href="condiciones.html" style="color: #D4AF37; text-decoration: none; font-size: 0.85rem; opacity: 0.85;">Términos y
+            Condiciones</a>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js?v=20261020_stuckedu_china"></script>
+    <script src="js/cart.js?v=20261015_v1"></script>
+    <script src="js/loader.js?v=20261015_v1"></script>
+    <script src="js/protection.js"></script>
+    
+    <!-- Script para cargar novedades dinámicamente -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof artworkData !== 'undefined' && artworkData.length > 0) {
+                let latest = artworkData.find(a => a.id === '57stuckedu_columnas_flotantes_zhangjiajie');
+                let previous = artworkData.find(a => a.id === '57stuckedu_mujer_en_la_habitacion');
+
+                if (latest) {
+                    const safeUrl = encodeURI(latest.src).replace(/'/g, "%27");
+                    document.getElementById('featured-latest-img').src = safeUrl;
+                    document.getElementById('featured-latest-title').textContent = latest.title || 'Las Columnas Flotantes de Zhangjiajie (Hunan)';
+                    document.getElementById('featured-latest-category').textContent = latest.category || '57 STUCKEDU';
+                    document.getElementById('featured-latest-link').href = `visor/index.html?img=${encodeURIComponent('../' + latest.src)}&title=${encodeURIComponent(latest.title)}&category=${encodeURIComponent(latest.category)}&id=${latest.id}`;
+                    document.getElementById('featured-latest').style.display = 'block';
+                }
+
+                if (previous) {
+                    const safeUrl = encodeURI(previous.src).replace(/'/g, "%27");
+                    document.getElementById('featured-previous-img').src = safeUrl;
+                    document.getElementById('featured-previous-title').textContent = previous.title || 'Mujer en la Habitación';
+                    document.getElementById('featured-previous-category').textContent = previous.category || '57 STUCKEDU';
+                    document.getElementById('featured-previous-link').href = `visor/index.html?img=${encodeURIComponent('../' + previous.src)}&title=${encodeURIComponent(previous.title)}&category=${encodeURIComponent(previous.category)}&id=${previous.id}`;
+                    document.getElementById('featured-previous').style.display = 'block';
+                }
+            }
+        });
+    </script>
+
+    <!-- Script del Menú Móvil -->
+    <script>
+        function toggleMobileNav(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            const navLinks = document.getElementById('main-nav-links') || document.querySelector('.nav-links');
+            const menuToggle = document.getElementById('mobile-menu-toggle');
+            if (!navLinks) return;
+            const isOpen = navLinks.classList.toggle('open');
+            if (menuToggle) {
+                menuToggle.classList.toggle('open', isOpen);
+                menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.getElementById('main-nav-links') || document.querySelector('.nav-links');
+            if (!navLinks) return;
+
+            // Cerrar al pulsar un enlace
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                    const menuToggle = document.getElementById('mobile-menu-toggle');
+                    if (menuToggle) {
+                        menuToggle.classList.remove('open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            // Cerrar al pulsar fuera del menú
+            document.addEventListener('click', (e) => {
+                const menuToggle = document.getElementById('mobile-menu-toggle');
+                if (navLinks.classList.contains('open')) {
+                    if (!navLinks.contains(e.target) && (!menuToggle || !menuToggle.contains(e.target))) {
+                        navLinks.classList.remove('open');
+                        if (menuToggle) {
+                            menuToggle.classList.remove('open');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

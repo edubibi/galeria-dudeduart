@@ -1,0 +1,285 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1600" width="1600" height="1600">
+  <defs>
+    <!-- Grid Pattern for Blueprint background -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#0d4b94" />
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1b5eb3" stroke-width="1.2" />
+      <path d="M 20 0 L 20 40 M 0 20 L 40 20" fill="none" stroke="#1252a1" stroke-dasharray="2,2" stroke-width="0.5" />
+    </pattern>
+    <!-- Diagonal tick mark for dimension lines -->
+    <marker id="tick" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 10 L 10 0" stroke="#ffffff" stroke-width="2.5" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Outer Border -->
+  <rect x="30" y="30" width="1540" height="1540" fill="none" stroke="#ffffff" stroke-width="4" />
+
+  <!-- ==================== TITLE BLOCK / BANNER AT THE BOTTOM ==================== -->
+  <g fill="none" stroke="#ffffff" stroke-width="3">
+    <line x1="30" y1="1450" x2="1570" y2="1450" />
+    <line x1="1200" y1="1450" x2="1200" y2="1570" />
+    <line x1="1350" y1="1450" x2="1350" y2="1570" />
+  </g>
+  <g fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-weight="bold">
+    <circle cx="90" cy="1510" r="30" fill="none" stroke="#ffffff" stroke-width="4" />
+    <text x="140" y="1500" font-size="28" letter-spacing="2">VIRTUAL 3D ART GALLERY - FLOOR PLAN</text>
+    <text x="140" y="1535" font-size="18" font-weight="normal" fill="#cccccc">SCALE: 1:100 | EXACT 2D LAYOUT FOR SKETCHUP TRACING</text>
+    
+    <!-- Compass North -->
+    <circle cx="1275" cy="1510" r="35" fill="none" stroke="#ffffff" stroke-width="3" />
+    <path d="M 1275 1535 L 1275 1480" fill="none" stroke="#ffffff" stroke-width="3" />
+    <path d="M 1265 1495 L 1275 1480 L 1285 1495" fill="none" stroke="#ffffff" stroke-width="3" />
+    <text x="1275" y="1470" font-size="20" text-anchor="middle">N</text>
+    
+    <!-- Key block -->
+    <text x="1370" y="1485" font-size="20">KEY</text>
+    <rect x="1370" y="1505" width="30" height="15" fill="none" stroke="#ffffff" stroke-width="2" />
+    <text x="1415" y="1518" font-size="14" font-weight="normal">WALLS</text>
+  </g>
+
+  <!-- ==================== 1. WHITE THICK BASE WALLS ==================== -->
+  <g stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16">
+    <!-- Room 5 (Left Wing) Outer Walls -->
+    <path d="M 450 680 L 150 680 L 150 180 L 450 180" />
+    
+    <!-- Room 8 (Right Wing) Outer Walls -->
+    <path d="M 1150 180 L 1450 180 L 1450 680 L 1150 680" />
+    
+    <!-- Left Corridor (Timber Trusses) Walls -->
+    <path d="M 450 180 L 450 950" />
+    <path d="M 580 180 L 580 950" />
+    
+    <!-- Right Corridor (Timber Trusses) Walls -->
+    <path d="M 1020 180 L 1020 950" />
+    <path d="M 1150 180 L 1150 950" />
+    
+    <!-- Center Core (Rooms 1, 3, 6, 7) -->
+    <!-- Room 7 top wall and dome -->
+    <path d="M 580 180 L 700 180" />
+    <path d="M 900 180 L 1020 180" />
+    <path d="M 700 180 A 100 100 0 0 1 900 180" />
+    
+    <!-- Room 1 bottom wall -->
+    <path d="M 580 1200 L 760 1200" />
+    <path d="M 840 1200 L 1020 1200" />
+    
+    <!-- Room 2 (Semi-Circular Rotunda) Outer Curve -->
+    <path d="M 500 950 A 150 150 0 1 0 500 1150" />
+    
+    <!-- Room 4 (Yellow Accent Wall) Curve -->
+    <path d="M 1020 700 A 200 200 0 0 1 1020 1100" />
+    
+    <!-- Stairs base wall -->
+    <path d="M 500 950 L 580 950" />
+    <path d="M 500 1200 L 580 1200" />
+    
+    <!-- Exhibition Panel Partition Walls (Room 5) -->
+    <path d="M 150 290 L 300 290" />
+    <path d="M 150 410 L 300 410" />
+    <path d="M 150 530 L 300 530" />
+    
+    <path d="M 450 290 L 330 290" />
+    <path d="M 450 410 L 330 410" />
+    <path d="M 450 530 L 330 530" />
+    
+    <path d="M 450 620 L 330 620" />
+  </g>
+
+  <!-- ==================== 2. BLUE OVERLAY FOR WALL HOLLOWS ==================== -->
+  <!-- This overlays a thinner blue stroke on top of the white thick base walls to create double line walls -->
+  <g stroke="#0d4b94" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="10">
+    <path d="M 450 680 L 150 680 L 150 180 L 450 180" />
+    <path d="M 1150 180 L 1450 180 L 1450 680 L 1150 680" />
+    <path d="M 450 180 L 450 950" />
+    <path d="M 580 180 L 580 950" />
+    <path d="M 1020 180 L 1020 950" />
+    <path d="M 1150 180 L 1150 950" />
+    <path d="M 580 180 L 700 180" />
+    <path d="M 900 180 L 1020 180" />
+    <path d="M 700 180 A 100 100 0 0 1 900 180" />
+    <path d="M 580 1200 L 760 1200" />
+    <path d="M 840 1200 L 1020 1200" />
+    <path d="M 500 950 A 150 150 0 1 0 500 1150" />
+    <path d="M 1020 700 A 200 200 0 0 1 1020 1100" />
+    <path d="M 500 950 L 580 950" />
+    <path d="M 500 1200 L 580 1200" />
+    <path d="M 150 290 L 300 290" />
+    <path d="M 150 410 L 300 410" />
+    <path d="M 150 530 L 300 530" />
+    <path d="M 450 290 L 330 290" />
+    <path d="M 450 410 L 330 410" />
+    <path d="M 450 530 L 330 530" />
+    <path d="M 450 620 L 330 620" />
+  </g>
+
+  <!-- ==================== 3. FINE DETAILS & FURNITURE ==================== -->
+  <g stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    
+    <!-- Connective doors and swing arcs (Room 1 to Room 3) -->
+    <path d="M 760 950 L 760 910 M 840 950 L 840 910" />
+    <path d="M 760 910 A 40 40 0 0 1 800 910" stroke-dasharray="2,2" />
+    <path d="M 840 910 A 40 40 0 0 0 800 910" stroke-dasharray="2,2" />
+    
+    <!-- Door Room 3 to Room 6 -->
+    <path d="M 760 600 L 760 570 M 840 600 L 840 570" />
+    
+    <!-- Door Room 6 to Room 7 -->
+    <path d="M 760 440 L 760 410 M 840 440 L 840 410" />
+
+    <!-- Stairs Detail (Stair steps) -->
+    <path d="M 500 975 L 580 975 M 500 1000 L 580 1000 M 500 1025 L 580 1025 M 500 1050 L 580 1050 M 500 1075 L 580 1075 M 500 1100 L 580 1100 M 500 1125 L 580 1125 M 500 1150 L 580 1150 M 500 1175 L 580 1175" stroke-width="1.5" />
+
+    <!-- Pillars in Room 3 (8 columns) -->
+    <g fill="#ffffff" stroke="none">
+      <rect x="650" y="650" width="22" height="22" />
+      <rect x="650" y="730" width="22" height="22" />
+      <rect x="650" y="810" width="22" height="22" />
+      <rect x="650" y="890" width="22" height="22" />
+      <rect x="928" y="650" width="22" height="22" />
+      <rect x="928" y="730" width="22" height="22" />
+      <rect x="928" y="810" width="22" height="22" />
+      <rect x="928" y="890" width="22" height="22" />
+    </g>
+
+    <!-- Room 6 Beams (Vertical beam lines in ceiling) -->
+    <path d="M 610 440 L 610 600 M 645 440 L 645 600 M 680 440 L 680 600 M 715 440 L 715 600 M 750 440 L 750 600 M 785 440 L 785 600 M 820 440 L 820 600 M 855 440 L 855 600 M 890 440 L 890 600 M 925 440 L 925 600 M 960 440 L 960 600 M 990 440 L 990 600" stroke-width="1.5" stroke-opacity="0.5" />
+
+    <!-- Room 7 Atrium details -->
+    <!-- Circular Garden -->
+    <circle cx="800" cy="300" r="90" stroke-width="3" />
+    <circle cx="800" cy="300" r="80" stroke-width="1" stroke-dasharray="3,3" />
+    <circle cx="800" cy="300" r="50" stroke-width="2" />
+    <!-- Small trees -->
+    <circle cx="630" cy="230" r="18" stroke-width="1.5" />
+    <circle cx="630" cy="370" r="18" stroke-width="1.5" />
+    <circle cx="970" cy="230" r="18" stroke-width="1.5" />
+    <circle cx="970" cy="370" r="18" stroke-width="1.5" />
+    <!-- Benches in Atrium -->
+    <rect x="700" y="380" width="60" height="12" rx="2" stroke-width="1.8" />
+    <rect x="840" y="380" width="60" height="12" rx="2" stroke-width="1.8" />
+
+    <!-- Room 2 (Rotunda) Inner Concentric Circles -->
+    <circle cx="350" cy="1050" r="95" stroke-width="2" stroke-dasharray="4,4" />
+    <circle cx="350" cy="1050" r="65" stroke-width="2.5" />
+
+    <!-- Corridor Trusses (X-shapes representing Timber Trusses) -->
+    <!-- Left Corridor Trusses -->
+    <path d="M 450 180 L 580 300 M 580 180 L 450 300 M 450 300 L 580 420 M 580 300 L 450 420 M 450 420 L 580 540 M 580 420 L 450 540 M 450 540 L 580 660 M 580 540 L 450 660 M 450 660 L 580 780 M 580 660 L 450 780 M 450 780 L 580 900 M 580 780 L 450 900" stroke-width="1.2" stroke-opacity="0.4" />
+    <!-- Right Corridor Trusses -->
+    <path d="M 1020 180 L 1150 300 M 1150 180 L 1020 300 M 1020 300 L 1150 420 M 1150 300 L 1020 420 M 1020 420 L 1150 540 M 1150 420 L 1020 540 M 1020 540 L 1150 660 M 1150 540 L 1020 660 M 1020 660 L 1150 780 M 1150 660 L 1020 780 M 1020 780 L 1150 900 M 1150 780 L 1020 900" stroke-width="1.2" stroke-opacity="0.4" />
+
+    <!-- Room 8 Furniture Layout -->
+    <rect x="1180" y="200" width="80" height="130" rx="5" stroke-width="2" />
+    <rect x="1330" y="200" width="70" height="130" rx="5" stroke-width="2" />
+    <circle cx="1290" cy="420" r="30" stroke-width="2" />
+    <rect x="1190" y="520" width="110" height="80" rx="4" stroke-width="2" />
+
+    <!-- Room 1 Furniture Layout -->
+    <rect x="610" y="1000" width="90" height="50" rx="3" stroke-width="2" />
+    <rect x="635" y="985" width="40" height="12" rx="2" stroke-width="1.5" />
+    <rect x="880" y="1000" width="100" height="55" rx="3" stroke-width="2" />
+    <circle cx="850" cy="1025" r="10" stroke-width="1.5" />
+    <circle cx="945" cy="1075" r="10" stroke-width="1.5" />
+  </g>
+
+  <!-- ==================== 4. DIMENSION LINES & MARKS ==================== -->
+  <g stroke="#ffffff" fill="none" stroke-width="1.5" marker-start="url(#tick)" marker-end="url(#tick)">
+    
+    <!-- TOP HORIZONTAL MEASUREMENTS -->
+    <line x1="150" y1="80" x2="450" y2="80" />
+    <line x1="450" y1="80" x2="580" y2="80" />
+    <line x1="580" y1="80" x2="700" y2="80" />
+    <line x1="700" y1="80" x2="900" y2="80" />
+    <line x1="900" y1="80" x2="1020" y2="80" />
+    <line x1="1020" y1="80" x2="1150" y2="80" />
+    <line x1="1150" y1="80" x2="1450" y2="80" />
+    
+    <!-- Extension lines -->
+    <g stroke-dasharray="3,3" stroke-width="1" marker-start="none" marker-end="none">
+      <line x1="150" y1="80" x2="150" y2="180" />
+      <line x1="450" y1="80" x2="450" y2="180" />
+      <line x1="580" y1="80" x2="580" y2="180" />
+      <line x1="700" y1="80" x2="700" y2="180" />
+      <line x1="900" y1="80" x2="900" y2="180" />
+      <line x1="1020" y1="80" x2="1020" y2="180" />
+      <line x1="1150" y1="80" x2="1150" y2="180" />
+      <line x1="1450" y1="80" x2="1450" y2="180" />
+    </g>
+
+    <!-- BOTTOM HORIZONTAL MEASUREMENTS -->
+    <line x1="250" y1="1380" x2="500" y2="1380" />
+    <line x1="500" y1="1380" x2="580" y2="1380" />
+    <line x1="900" y1="1380" x2="1020" y2="1380" />
+    <line x1="1020" y1="1380" x2="1220" y2="1380" />
+
+    <g stroke-dasharray="3,3" stroke-width="1" marker-start="none" marker-end="none">
+      <line x1="250" y1="1380" x2="250" y2="1140" />
+      <line x1="500" y1="1380" x2="500" y2="1180" />
+      <line x1="580" y1="1380" x2="580" y2="1180" />
+      <line x1="900" y1="1380" x2="900" y2="1180" />
+      <line x1="1020" y1="1380" x2="1020" y2="1180" />
+      <line x1="1220" y1="1380" x2="1220" y2="1100" />
+    </g>
+  </g>
+
+  <!-- DIMENSION VALUES (TEXT) -->
+  <g fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">
+    <!-- Top values -->
+    <text x="300" y="70">3.60</text>
+    <text x="515" y="70">3.30</text>
+    <text x="640" y="70">1.50</text>
+    <text x="800" y="70">1.50</text>
+    <text x="960" y="70">3.30</text>
+    <text x="1085" y="70">3.30</text>
+    <text x="1300" y="70">3.60</text>
+
+    <!-- Bottom values -->
+    <text x="375" y="1370">3.300</text>
+    <text x="540" y="1370">1.200</text>
+    <text x="960" y="1370">1.100</text>
+    <text x="1120" y="1370">3.690</text>
+  </g>
+
+  <!-- ==================== ROOM LABELS ==================== -->
+  <g fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-weight="bold" text-anchor="middle">
+    <!-- Room 1 -->
+    <text x="800" y="1060" font-size="22">Room 1</text>
+    <text x="800" y="1085" font-size="15" font-weight="normal" fill="#e0e0e0">(BRUTALIST RECEPTION)</text>
+    
+    <!-- Room 2 -->
+    <text x="350" y="1040" font-size="22">Room 2</text>
+    <text x="350" y="1065" font-size="15" font-weight="normal" fill="#e0e0e0">(SEMI-CIRCULAR ROTUNRA)</text>
+    
+    <!-- Room 3 -->
+    <text x="800" y="780" font-size="22">Room 3</text>
+    <text x="800" y="805" font-size="15" font-weight="normal" fill="#e0e0e0">(PILLARS PAVILION)</text>
+    
+    <!-- Room 4 -->
+    <text x="1100" y="930" font-size="22">Room 4</text>
+    <text x="1100" y="955" font-size="15" font-weight="normal" fill="#e0e0e0">(YELLOW ACCENT WALL)</text>
+    
+    <!-- Room 5 -->
+    <text x="330" y="450" font-size="22">Room 5</text>
+    <text x="330" y="475" font-size="15" font-weight="normal" fill="#e0e0e0">(EXTERNAL COLLECTION)</text>
+    
+    <!-- Room 6 -->
+    <text x="800" y="520" font-size="22">Room 6</text>
+    <text x="800" y="545" font-size="15" font-weight="normal" fill="#e0e0e0">(TIMBER BEAMS ROOM)</text>
+    
+    <!-- Room 7 -->
+    <text x="800" y="240" font-size="22">Room 7</text>
+    <text x="800" y="265" font-size="15" font-weight="normal" fill="#e0e0e0">(GRAND OPEN ATRIUM)</text>
+    
+    <!-- Room 8 -->
+    <text x="1270" y="450" font-size="22">Room 8</text>
+    <text x="1270" y="475" font-size="15" font-weight="normal" fill="#e0e0e0">(VIP LOUNGE)</text>
+
+    <!-- Other structural labels from blueprint -->
+    <text x="515" y="500" font-size="12" fill="#a0d2ff" transform="rotate(-90 515 500)">TIMBER TRUSSES</text>
+    <text x="1085" y="500" font-size="12" fill="#a0d2ff" transform="rotate(90 1085 500)">TIMBER TRUSSES</text>
+  </g>
+</svg>

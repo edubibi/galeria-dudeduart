@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dossier Artístico - Eduardo Ramírez (SENSORY ARTISTIC)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+        :root {
+            --primary: #1a1a1a;
+            --primary-light: #444;
+            --accent: #C5A059; /* Antique Gold */
+            --accent-light: rgba(197, 160, 89, 0.12);
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Lato', sans-serif;
+            --page-bg: #FCFBF9; /* Warm gallery white */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary);
+            margin: 0;
+            padding: 0;
+            background: #141414; /* Sleek dark environment on screen */
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Top sticky print assistant bar on screen */
+        .print-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: rgba(20, 20, 20, 0.95);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .print-bar-title {
+            color: #fff;
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .print-bar-title span {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .print-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, #a37f3d 100%);
+            color: #111;
+            border: none;
+            padding: 10px 24px;
+            font-family: var(--font-sans);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
+            background: linear-gradient(135deg, #d4b26f 0%, var(--accent) 100%);
+        }
+
+        .print-tip {
+            color: #ccc;
+            font-size: 0.8rem;
+            max-width: 500px;
+            text-align: right;
+            line-height: 1.4;
+        }
+
+        /* Screen spacing container */
+        .portfolio-container {
+            padding-top: 40px;
+            padding-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* A4 Page base */
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 25mm 20mm;
+            background: var(--page-bg);
+            position: relative;
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            text-align: center;
+            justify-content: center;
+            background: #111;
+            color: #fff;
+            padding: 25mm 20mm;
+            position: relative;
+        }
+
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 10mm;
+            bottom: 10mm;
+            left: 10mm;
+            right: 10mm;
+            border: 1px solid var(--accent);
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .cover-page h1 {
+            font-family: var(--font-serif);
+            font-size: 3.2rem;
+            color: var(--accent);
+            margin: 0 0 1rem 0;
+            letter-spacing: 4px;
+            font-weight: 700;
+        }
+
+        .cover-page .subtitle {
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+
+        .cover-divider {
+            width: 80px;
+            height: 1px;
+            background: var(--accent);
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .cover-author {
+            font-size: 1.4rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .cover-meta {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+        }
+
+        /* Standard Inner Page Styles */
+        .intro-page {
+            justify-content: flex-start;
+            padding-top: 25mm;
+        }
+
+        .intro-page h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--primary);
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .intro-page h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-top: -15px;
+            margin-bottom: 25px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .intro-page p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--primary-light);
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        .intro-page strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .ally-badge {
+            display: inline-block;
+            background: var(--accent-light);
+            color: #8c6a2b;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        /* Styles index grid */
+        .styles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .style-card {
+            border-left: 3px solid var(--accent);
+            padding-left: 15px;
+            margin-bottom: 5px;
+        }
+
+        .style-card h4 {
+            margin: 0 0 5px 0;
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--primary);
+        }
+
+        .style-card p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--primary-light);
+            margin: 0;
+            text-align: left;
+        }
+
+        .style-card em {
+            font-size: 0.85rem;
+            color: #666;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Portrait & Signature Frame */
+        .bio-footer {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(0,0,0,0.1);
+        }
+
+        .portrait-container {
+            width: 120px;
+            height: 120px;
+            border: 2px solid var(--accent);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            overflow: hidden;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .portrait-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .signature-text {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--primary-light);
+        }
+
+        .signature-name {
+            font-weight: 700;
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            font-style: normal;
+            letter-spacing: 2px;
+            font-size: 1rem;
+            color: var(--accent);
+            margin-left: 10px;
+            display: inline-block;
+        }
+
+        /* Artwork Page Inset Passe-Partout */
+        .artwork-page {
+            align-items: center;
+            padding: 30mm 20mm 20mm 20mm;
+        }
+
+        /* Elegant inner frame representing gallery display */
+        .artwork-frame {
+            position: absolute;
+            top: 10mm;
+            bottom: 10mm;
+            left: 10mm;
+            right: 10mm;
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Corner L-markers for high-end catalog look */
+        .artwork-frame::before, .artwork-frame::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-color: var(--accent);
+            border-style: solid;
+            pointer-events: none;
+        }
+        
+        .artwork-frame::before {
+            top: -1px;
+            left: -1px;
+            border-width: 2px 0 0 2px;
+        }
+        
+        .artwork-frame::after {
+            bottom: -1px;
+            right: -1px;
+            border-width: 0 2px 2px 0;
+        }
+
+        /* Sub-corner styling via secondary element */
+        .artwork-frame-corners {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .artwork-frame-corners::before, .artwork-frame-corners::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-color: var(--accent);
+            border-style: solid;
+            pointer-events: none;
+        }
+
+        .artwork-frame-corners::before {
+            top: -1px;
+            right: -1px;
+            border-width: 2px 2px 0 0;
+        }
+
+        .artwork-frame-corners::after {
+            bottom: -1px;
+            left: -1px;
+            border-width: 0 0 2px 2px;
+        }
+
+        .artwork-image-container {
+            width: 100%;
+            height: 52%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .artwork-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+            border: 4px solid #fff;
+            outline: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .artwork-info {
+            text-align: left;
+            width: 100%;
+            padding: 0 5%;
+            box-sizing: border-box;
+            z-index: 5;
+        }
+
+        .artwork-title {
+            font-family: var(--font-serif);
+            font-size: 1.7rem;
+            margin: 0 0 8px 0;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .artwork-meta {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-left: 2px solid var(--accent);
+            padding-left: 10px;
+            font-weight: 700;
+        }
+
+        .artwork-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--primary-light);
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* Universal Footer */
+        .page-footer {
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            z-index: 5;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 220mm) {
+            body {
+                background: #141414;
+                padding: 10px;
+            }
+            .print-bar {
+                position: relative;
+                top: 0;
+                width: 100%;
+                margin-bottom: 20px;
+                padding: 10px;
+                height: auto;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            .print-tip {
+                text-align: center;
+            }
+            .portfolio-container {
+                padding-top: 0;
+            }
+            .page {
+                width: 100%;
+                height: auto;
+                aspect-ratio: inherit;
+                padding: 15mm 10mm;
+                margin-bottom: 20px;
+            }
+            .artwork-image-container {
+                height: auto;
+                min-height: 250px;
+            }
+            .artwork-frame {
+                display: none;
+            }
+        }
+
+        /* Print Settings override */
+        @media print {
+            body {
+                background: #fff !important;
+                color: #000 !important;
+            }
+            
+            .print-bar {
+                display: none !important;
+            }
+
+            .portfolio-container {
+                padding: 0 !important;
+            }
+
+            .page {
+                width: 210mm !important;
+                height: 297mm !important;
+                padding: 25mm 20mm !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                page-break-after: always !important;
+                page-break-inside: avoid !important;
+                background: var(--page-bg) !important;
+                border: none !important;
+            }
+
+            .cover-page {
+                background: #111 !important;
+                color: #fff !important;
+                border: none !important;
+            }
+            .cover-page::before {
+                border: 1px solid var(--accent) !important;
+            }
+
+            .artwork-frame {
+                border: 1px solid rgba(197, 160, 89, 0.25) !important;
+            }
+
+            .artwork-image {
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="portfolio-container">
+
+        <!-- PORTADA -->
+        <div class="page cover-page">
+            <!-- Center square emblem shifted up to the absolute sweet spot -->
+            <div style="width: 170px; height: 170px; margin: -85px auto 95px auto; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.4); box-shadow: 0 10px 25px rgba(0,0,0,0.5); position: relative; z-index: 20;">
+                <img src="assets/00EDUSSE/La Botella de los Astros.png" style="width: 100%; height: 100%; object-fit: cover;" alt="La Botella de los Astros">
+            </div>
+            <h1 style="position: relative; z-index: 20; margin: 0 0 1rem 0;">SENSORY ARTISTIC</h1>
+            <div class="subtitle" style="position: relative; z-index: 20; margin-bottom: 2rem;">Universo EDUSSE — Retrospectiva Conceptual</div>
+            <div class="cover-divider" style="position: relative; z-index: 20; margin: 0 auto 2.5rem auto;"></div>
+            <div class="cover-author" style="position: relative; z-index: 20; margin-bottom: 0.5rem;">Eduardo Ramírez de Cartagena</div>
+            <div class="cover-meta" style="position: relative; z-index: 20;">Colección de Arte y Dirección Creativa | 2026</div>
+        </div>
+
+        <!-- BIO -->
+        <div class="page intro-page">
+            <h2>Statement del Artista</h2>
+            <p><strong>¿Cómo sueña la tecnología cuando es guiada por la sensibilidad y el corazón humano?</strong></p>
+            <p>Como creador multidisciplinario bajo la filosofía de <strong>SENSORY ARTISTIC (senart)</strong>, entiendo la tecnología no como un fin o un generador automático de algoritmos, sino como una extensión de los sentidos. Cada pieza en el "Universo EDUSSE" nace de una visión personal íntima —un recuerdo, un acorde de sonido, una emoción o un imposible arquitectónico— que moldeo y esculpo meticulosamente a través de un diálogo digital honesto.</p>
+            <p>En este viaje creativo, declaro con orgullo a mis verdaderos aliados de viaje: <span class="ally-badge">Antigravity</span>, <span class="ally-badge">Copilot</span>, <span class="ally-badge">Gemini</span> y <span class="ally-badge">Flow</span>. Juntos sumamos precisión técnica y estructura a mi intuición y corazón, demostrando que la tecnología es solo la herramienta, mientras que el arte sensorial es el único y verdadero propósito.</p>
+            <p>Esta selección invita al espectador a abrir ventanas de realidades alternativas, donde el postimpresionismo, la materia y el cubismo digital se funden en un solo lenguaje sin fronteras.</p>
+
+            <!-- BLOQUE DE FIRMA Y RETRATO -->
+            <div class="bio-footer">
+                <div class="portrait-container">
+                    <img src="assets/nova_bio_eduardo.jpg" class="portrait-img" alt="Eduardo Ramírez">
+                </div>
+                <div class="signature-text">
+                    el autor: <span class="signature-name">Eduardo Ramírez</span>
+                </div>
+            </div>
+
+            <div class="page-footer">Eduardo Ramírez | Dossier Selección</div>
+        </div>
+
+        <!-- ESTILOS Y CONCEPTOS -->
+        <div class="page intro-page">
+            <h2>El Universo EDUSSE</h2>
+            <h3>Estilos y Conceptos Auditados</h3>
+
+            <div class="styles-grid">
+                <div class="style-card">
+                    <h4>EXP NEOCIRC</h4>
+                    <em>Composición circular y emoción visual</em>
+                    <p>Estilo pictórico narrativo y envolvente basado en la energía circular, la pincelada expresiva y la emoción visual. Aporta la vertiente más luminosa y emocional.</p>
+                </div>
+
+                <div class="style-card">
+                    <h4>CUBESSE</h4>
+                    <em>Cubismo digital y solidez geométrica</em>
+                    <p>Construcción pictórica basada en geometría facetada y presencia sólida. Utiliza planos facetados y pinceladas tipo óleo impasto para una fuerte identidad estructural.</p>
+                </div>
+
+                <div class="style-card">
+                    <h4>LINEART</h4>
+                    <em>Geometría minimalista y emocional</em>
+                    <p>Vórtice de línea minimalista que busca el equilibrio entre la forma y el vacío mediante un trazado vectorial de alta precisión y dinamismo.</p>
+                </div>
+
+                <div class="style-card">
+                    <h4>IMPASTUS PAINT</h4>
+                    <em>El color como entidad física</em>
+                    <p>Materia y memoria. Emplea pinceladas densas con relieve táctil e impasto digital para celebrar la fuerza física y la profundidad de la pintura.</p>
+                </div>
+
+                <div class="style-card">
+                    <h4>ESPATAC-EXTREME</h4>
+                    <em>Pintura al límite de la escultura</em>
+                    <p>Grito matérico. Representa el límite físico del impasto donde la pintura se hace relieve tridimensional absoluto con sombras arrojadas reales.</p>
+                </div>
+
+                <div class="style-card">
+                    <h4>NEBULÍNICO</h4>
+                    <em>Figuración disuelta y niebla</em>
+                    <p>Identidad de la niebla. Explora la disolución de las formas en atmósferas difusas con paletas gris-azuladas, acentos cálidos y surcos de espátula visibles.</p>
+                </div>
+
+                <div class="style-card">
+                    <h4>49 ARTE CIBERNÉTICO</h4>
+                    <em>Fusión Cuántica y Entidades de Luz</em>
+                    <p>Exploración visual de entidades cibernéticas y dimensiones cuánticas. Una colección curada de 20 obras que representan la vanguardia tecnológica y mística del Universo EDUSSE.</p>
+                </div>
+
+                <div class="style-card">
+                    <h4>GASTRO-RELIEVE</h4>
+                    <em>Materia orgánica y volumen escultórico</em>
+                    <p>Estilo artístico basado en imágenes tridimensionales utilizando exclusivamente ingredientes comestibles (miel, mantequilla, pimentón, semillas). El volumen se genera mediante acumulación física sobre soporte sólido.</p>
+                </div>
+
+                <div class="style-card">
+                    <h4>NEO-FAUVE</h4>
+                    <em>Aquarelle-Découpé y síntesis cromática</em>
+                    <p>Homenaje directo a la libertad de Henri Matisse. Estilo ilustrativo vibrante que combina recortes de papel figurados y gouache digital, usando el color de forma independiente y emocional, liberado de la realidad descriptiva.</p>
+                </div>
+
+                <div class="style-card">
+                    <h4>KINTSUGI-ORGÁNICO</h4>
+                    <em>Mármol clásico y exoesqueleto áureo</em>
+                    <p>Fusión del hiperrealismo escultórico en mármol con estructuras paramétricas y corales de oro líquido. Representa la simbiosis entre la pureza clásica y la infección orgánica preciosa.</p>
+                </div>
+            </div>
+
+            <div class="page-footer">Eduardo Ramírez | Estilos Auditados</div>
+        </div>
+
+        <!-- OBRAS SELECCIONADAS -->
+        
+        <!-- 1 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/00EDUSSE/00edusse_003.png" class="artwork-image" alt="El Guardian Del Circuito Solar">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">El Guardian Del Circuito Solar</h3>
+                <div class="artwork-meta">Colección: 00EDUSSE | Digital Art</div>
+                <p class="artwork-desc">Un mastín de mirada sabia y protectora cuya piel narra historias de paisajes olvidados. La lealtad absoluta en un entorno místico.</p>
+            </div>
+            <div class="page-footer">1 / 17</div>
+        </div>
+
+        <!-- 2 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/01EXP_NEOCIRC/01exp_neocirc_017.jpg" class="artwork-image" alt="Catedral En Las Nubes">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Catedral En Las Nubes</h3>
+                <div class="artwork-meta">Colección: 01EXP_NEOCIRC | Digital Art</div>
+                <p class="artwork-desc">La conexión entre lo humano y lo divino. El estilo NEOCIRC respeta la verticalidad mientras el cielo se arremolina sobre el rosetón central.</p>
+            </div>
+            <div class="page-footer">2 / 17</div>
+        </div>
+
+        <!-- 3 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/02CUBESSE stilo/02cubesse_stilo_001.jpeg" class="artwork-image" alt="Flotando como un colibri">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Flotando como un colibri</h3>
+                <div class="artwork-meta">Colección: 02CUBESSE stilo | Digital Art</div>
+                <p class="artwork-desc">El colibrí se descompone en un prisma de mil facetas, capturando el latido frenético contra un firmamento de fuego geométrico.</p>
+            </div>
+            <div class="page-footer">3 / 17</div>
+        </div>
+
+        <!-- 4 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/08BORACARBON/08boracarbon_001.png" class="artwork-image" alt="Abuelo Paseando Bajo La Lluvia">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Abuelo Paseando Bajo La Lluvia</h3>
+                <div class="artwork-meta">Colección: 08BORACARBON | Digital Art</div>
+                <p class="artwork-desc">El eco de los pasos sobre el asfalto mojado resuena en esta pieza, donde la lluvia y la memoria se funden en el suave grano del carboncillo.</p>
+            </div>
+            <div class="page-footer">4 / 17</div>
+        </div>
+
+        <!-- 5 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/08BORACARBON/08boracarbon_004.png" class="artwork-image" alt="Señora sentada en la puerta de su casa">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Señora sentada en la puerta de su casa</h3>
+                <div class="artwork-meta">Colección: 08BORACARBON | Digital Art</div>
+                <p class="artwork-desc">La espera silenciosa y la paz de la tarde se graban en la piedra, en un retrato que honra la dignidad del tiempo y la quietud del hogar.</p>
+            </div>
+            <div class="page-footer">5 / 17</div>
+        </div>
+
+        <!-- 6 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/23TRIDIM-BURST/23tridim_burst_004.png" class="artwork-image" alt="Trueno Y La Mar">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Trueno Y La Mar</h3>
+                <div class="artwork-meta">Colección: 23TRIDIM-BURST | Digital Art</div>
+                <p class="artwork-desc">La inmensidad del océano se convierte en espejo del subconsciente. La técnica realza la calma tensa y la majestuosidad de la marea.</p>
+            </div>
+            <div class="page-footer">6 / 17</div>
+        </div>
+
+        <!-- 7 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/03EXPNEOPLUS/03expneoplus_038.jpg" class="artwork-image" alt="Venecia">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Venecia</h3>
+                <div class="artwork-meta">Colección: 03EXPNEOPLUS | Digital Art</div>
+                <p class="artwork-desc">Góndolas se deslizan por un canal de reflejos, donde los palacios venecianos sueñan en un mar de color cambiante.</p>
+            </div>
+            <div class="page-footer">7 / 17</div>
+        </div>
+
+        <!-- 8 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/09FRACNEO/09fracneo_001.png" class="artwork-image" alt="Abstracto fractal">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Abstracto fractal</h3>
+                <div class="artwork-meta">Colección: 09FRACNEO | Digital Art</div>
+                <p class="artwork-desc">Un mundo circular donde la metrópolis gira en torno a un sol central, creando una danza geométrica de barcos, casas y olas.</p>
+            </div>
+            <div class="page-footer">8 / 17</div>
+        </div>
+
+        <!-- 9 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/17FUZZTESS/17fuzztess_001.jpg" class="artwork-image" alt="Mar Bravo">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Mar Bravo</h3>
+                <div class="artwork-meta">Colección: 17FUZZTESS | Digital Art</div>
+                <p class="artwork-desc">El rugido del océano convertido en bruma; un mar que azota la memoria con la fuerza de una tormenta de ensueño.</p>
+            </div>
+            <div class="page-footer">9 / 17</div>
+        </div>
+
+        <!-- 10 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/28ESPATAC/aldea china.png" class="artwork-image" alt="Aldea China">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Aldea China</h3>
+                <div class="artwork-meta">Colección: 28ESPATAC | Digital Art</div>
+                <p class="artwork-desc">Serenidad milenaria; la vida respira en los tejados curvos y el silencio de las montañas, un refugio donde el tiempo fluye calmado.</p>
+            </div>
+            <div class="page-footer">10 / 17</div>
+        </div>
+
+        <!-- 11 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/37IMPASTUS PAINT/MANHATTAN.png" class="artwork-image" alt="Tormenta en Manhattan">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Tormenta en Manhattan</h3>
+                <div class="artwork-meta">Colección: 37 IMPASTUS PAINT | Digital Art</div>
+                <p class="artwork-desc">La ciudad se rinde ante la materia. Una visión vibrante donde la pincelada densa captura la electricidad de una tormenta neoyorquina.</p>
+            </div>
+            <div class="page-footer">11 / 17</div>
+        </div>
+
+        <!-- 12 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/36LINEART/chica joven posando.png" class="artwork-image" alt="Chica Joven Posando">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Chica Joven Posando</h3>
+                <div class="artwork-meta">Colección: 36 LINEART | Digital Art</div>
+                <p class="artwork-desc">La esencia de la figura humana destilada en un laberinto de líneas. Una exploración minimalista sobre la elegancia del trazo puro.</p>
+            </div>
+            <div class="page-footer">12 / 17</div>
+        </div>
+
+        <!-- 13 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/46ESPATAC-EXTREME/Ardez_Switzerland.png" class="artwork-image" alt="Ardez Switzerland">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Ardez Switzerland</h3>
+                <div class="artwork-meta">Colección: 46ESPATAC-EXTREME | Digital Art</div>
+                <p class="artwork-desc">El paisaje suizo esculpido con espátula extrema, donde la piedra de las casas de la Engadina y las cumbres alpinas cobran una tridimensionalidad casi tectónica. La materia se convierte en memoria física de los Alpes.</p>
+            </div>
+            <div class="page-footer">13 / 17</div>
+        </div>
+
+        <!-- 14 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/46ESPATAC-EXTREME/Iseltwald_Switzerland.png" class="artwork-image" alt="Iseltwald Switzerland">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Iseltwald Switzerland</h3>
+                <div class="artwork-meta">Colección: 46ESPATAC-EXTREME | Digital Art</div>
+                <p class="artwork-desc">Un embarcadero legendario que se adentra en el turquesa profundo del lago alpino. El relieve matérico de la espátula esculpe el agua y los reflejos, transformando un paisaje clásico en una sinfonía de pura textura física.</p>
+            </div>
+            <div class="page-footer">14 / 17</div>
+        </div>
+
+        <!-- 15 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/47NEBULÍNICO/Agathla Peak_ Arizona.png" class="artwork-image" alt="Agathla Peak Arizona">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Agathla Peak Arizona</h3>
+                <div class="artwork-meta">Colección: 47NEBULÍNICO | Digital Art</div>
+                <p class="artwork-desc">La mística cumbre de Arizona emergiendo entre la bruma del desierto. El estilo NEBULÍNICO diluye los contornos de la roca sagrada, creando un surco visible que evoca la quietud del viento y el paso del tiempo.</p>
+            </div>
+            <div class="page-footer">15 / 17</div>
+        </div>
+
+        
+        <!-- ESTILO 57: STUCKEDU (OBRA DE AUTOR) -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/57STUCKEDU/mujer_en_la_habitacion.jpg" class="artwork-image" alt="Mujer en la Habitación">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Mujer en la Habitación</h3>
+                <div class="artwork-meta">Colección: 57 STUCKEDU (Pintor de Autor) | Fine Art Canvas</div>
+                <p class="artwork-desc">Retrato íntimo y conmovedor en un espacio de recogimiento interior. La serie 57 STUCKEDU es una creación personalísima y entrañable de Eduardo Ramírez de Cartagena, donde la densidad plástica y la luz tamizada capturan la nostalgia, el silencio y la verdad de la mirada humana.</p>
+                <p style="font-size: 0.85rem; font-weight: bold; color: var(--accent); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;">Colección de Autor — Tarifa Galería: 3.600,00 €€€</p>
+            </div>
+            <div class="page-footer">Colección de Autor - 57 STUCKEDU</div>
+        </div>
+
+        <!-- PÁGINA DE TRANSICIÓN: SECCIÓN VIP B2B MAGNA -->
+        <div class="page intro-page" style="justify-content: center; text-align: center; background: #111; color: #fff;">
+            <div style="position: absolute; top: 10mm; bottom: 10mm; left: 10mm; right: 10mm; border: 1px solid rgba(197, 160, 89, 0.4); pointer-events: none; z-index: 10;"></div>
+            <div style="position: relative; z-index: 20; padding: 0 10%; margin-top: auto; margin-bottom: auto;">
+                <h2 style="color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 20px; font-family: var(--font-serif); font-size: 2.2rem; margin-top: 0; margin-bottom: 30px; letter-spacing: 2px;">
+                    Espacios Singulares & Gran Formato
+                </h2>
+                <p style="font-size: 1.15rem; line-height: 1.8; color: #eee; margin-bottom: 24px; text-align: center; font-family: var(--font-sans);">
+                    Para aquellos espacios que exigen una presencia monumental, disponemos de nuestra exclusiva colección <strong>B2B Magna</strong>.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 24px; text-align: center; font-family: var(--font-sans);">
+                    Una selección de obras concebidas bajo estrictas ediciones limitadas y diseñadas específicamente para proyectos contract de alta gama: hoteles de lujo, vestíbulos corporativos, suites de prestigio y zonas comunes exclusivas.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 35px; text-align: center; font-family: var(--font-sans);">
+                    Estas piezas destacan por su gran formato personalizable y la pureza de su acabado en calidad de museo.
+                </p>
+                <div style="margin: 30px 0;">
+                    <a href="https://dudeduart.es/cuadroteca/index.html" target="_blank" style="display: inline-block; border: 1px solid var(--accent); color: var(--accent); padding: 14px 35px; font-family: var(--font-sans); font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1.5px; border-radius: 4px; transition: all 0.3s ease;">
+                        Explorar Colección Magna
+                    </a>
+                </div>
+                <p style="font-size: 0.9rem; color: #888; margin-top: 20px; letter-spacing: 1px;">
+                    A continuación, se muestra una selección exclusiva de piezas B2B Magna.
+                </p>
+            </div>
+            <div class="page-footer" style="color: #666; border-top: 1px solid rgba(255,255,255,0.05);">Colección VIP / Gran Formato B2B</div>
+        </div>
+    
+        <!-- Obra VIP 1 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/B2B_MAGNA/pianista_mineral.jpg" class="artwork-image" alt="Pianista Mineral">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Pianista Mineral</h3>
+                <div class="artwork-meta">Colección Exclusiva B2B Magna | Dimensión sugerida: 150 x 200 cm (Gran Formato Contract)</div>
+                <p class='artwork-desc' style='margin-bottom: 8px;'>Solemne interpretación musical arraigada en formaciones geológicas y vetas pétreas de la serie 56 NATURALEXSSE, conjugando resonancia acústica y solidez mineral en una pieza monumental concebida para espacios de alta arquitectura e interiorismo contract.</p>
+                <p style="font-size: 0.85rem; font-weight: bold; color: var(--accent); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;">Edición Limitada — Tarifa Contract: 4.200,00 €</p>
+            </div>
+            <div class="page-footer">Colección Magna VIP - 1 / 7</div>
+        </div>
+        
+        <!-- Obra VIP 2 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/B2B_MAGNA/danza_de_color.jpg" class="artwork-image" alt="La Danza del Color">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">La Danza del Color</h3>
+                <div class="artwork-meta">Colección Exclusiva B2B Magna | Dimensión sugerida: 240 x 135 cm (Gran Formato Contract)</div>
+                <p class='artwork-desc' style='margin-bottom: 8px;'>Composición magna en mosaico vítreo y teselas policromadas de alta refracción lumínica. La silueta etérea de una bailarina emerge de una espiral de cristales que transitan del azul cobalto y turquesa al fulgor dorado, ámbar y bermellón. Una obra monumental diseñada para vestíbulos de honor, salas de concierto y proyectos contract de alto standing.</p>
+                <p style="font-size: 0.85rem; font-weight: bold; color: var(--accent); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;">Edición Limitada — Tarifa Contract: 8.800,00 €</p>
+            </div>
+            <div class="page-footer">Colección Magna VIP - 2 / 7</div>
+        </div>
+        
+        <!-- Obra VIP 3 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/B2B_MAGNA/paraiso_tropical.jpg" class="artwork-image" alt="Paraíso Tropical">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Paraíso Tropical</h3>
+                <div class="artwork-meta">Colección Exclusiva B2B Magna | Dimensión sugerida: 240 x 135 cm (Gran Formato Contract)</div>
+                <p class='artwork-desc' style='margin-bottom: 8px;'>Paisaje monumental concebido en mosaico vítreo de inspiración bizantina y mediterránea. Palmeras estilizadas, orilla de cantos rodados y aguas turquesas convergen en un horizonte radiante al atardecer donde la luz del ocaso se descompone en miles de teselas translúcidas y cálidas. Pieza exclusiva orientada a resorts de gran lujo, suites presidenciales y espacios de relax arquitectónico.</p>
+                <p style="font-size: 0.85rem; font-weight: bold; color: var(--accent); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;">Edición Limitada — Tarifa Contract: 8.600,00 €</p>
+            </div>
+            <div class="page-footer">Colección Magna VIP - 3 / 7</div>
+        </div>
+        
+        <!-- Obra VIP 4 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/B2B_MAGNA/Trilogía Argéntea.png" class="artwork-image" alt="Trilogía Argéntea">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Trilogía Argéntea</h3>
+                <div class="artwork-meta">Colección Exclusiva B2B Magna | Dimensión sugerida: 180 x 90 cm</div>
+                <p class='artwork-desc' style='margin-bottom: 8px;'>Obra exclusiva de la colección Magna B2B.</p>
+                <p style="font-size: 0.85rem; font-weight: bold; color: var(--accent); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;">Edición Limitada — Tarifa Contract: 4.500,00 €</p>
+            </div>
+            <div class="page-footer">Colección Magna VIP - 4 / 7</div>
+        </div>
+        
+        <!-- Obra VIP 5 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/B2B_MAGNA/burbble memory.png" class="artwork-image" alt="Burbble Memory">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Burbble Memory</h3>
+                <div class="artwork-meta">Colección Exclusiva B2B Magna | Dimensión sugerida: 180 x 90 cm</div>
+                <p class='artwork-desc' style='margin-bottom: 8px;'>Obra exclusiva de la colección Magna B2B.</p>
+                <p style="font-size: 0.85rem; font-weight: bold; color: var(--accent); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;">Edición Limitada — Tarifa Contract: 3.600,00 €€</p>
+            </div>
+            <div class="page-footer">Colección Magna VIP - 5 / 7</div>
+        </div>
+        
+        <!-- Obra VIP 6 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/B2B_MAGNA/camino empedrado.png" class="artwork-image" alt="Camino Empedrado">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Camino Empedrado</h3>
+                <div class="artwork-meta">Colección Exclusiva B2B Magna | Dimensión sugerida: 150 x 150 cm</div>
+                <p class='artwork-desc' style='margin-bottom: 8px;'>Obra exclusiva de la colección Magna B2B.</p>
+                <p style="font-size: 0.85rem; font-weight: bold; color: var(--accent); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;">Edición Limitada — Tarifa Contract: 2.900,00 €</p>
+            </div>
+            <div class="page-footer">Colección Magna VIP - 6 / 7</div>
+        </div>
+        
+        <!-- Obra VIP 7 -->
+        <div class="page artwork-page">
+            <div class="artwork-frame"><div class="artwork-frame-corners"></div></div>
+            <div class="artwork-image-container">
+                <img src="assets/B2B_MAGNA/indian oceanica.png" class="artwork-image" alt="Indian Oceanica">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">Indian Oceanica</h3>
+                <div class="artwork-meta">Colección Exclusiva B2B Magna | Dimensión sugerida: 240 x 110 cm</div>
+                <p class='artwork-desc' style='margin-bottom: 8px;'>Obra de gran formato exclusiva para proyectos de interiorismo de alto nivel y cadenas hoteleras de lujo.</p>
+                <p style="font-size: 0.85rem; font-weight: bold; color: var(--accent); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;">Edición Limitada — Tarifa Contract: 6.000,00 €</p>
+            </div>
+            <div class="page-footer">Colección Magna VIP - 7 / 7</div>
+        </div>
+        
+    </div>
+</body>
+</html>
+    

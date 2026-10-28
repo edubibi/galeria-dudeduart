@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière | Catálogo de Marcos</title>
+    <link rel="stylesheet" href="style.css?v=350">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CRITICAL CSS PATCHES (INLINE TO AVOID NOMINALIA CACHE & OVERLAP) -->
+    <style>
+        /* 1. Strict Modal Grid Isolation (Prevents Image Overlap on Nominalia) */
+        @media (min-width: 901px) {
+            .modal-content {
+                display: flex !important;
+                flex-direction: row !important;
+                overflow: hidden !important;
+                position: relative !important;
+                width: 100vw !important;
+                height: 100vh !important;
+            }
+
+            .modal-frame-container {
+                flex: 0 0 58% !important;
+                width: 58% !important;
+                max-width: 58% !important;
+                height: 100vh !important;
+                position: relative !important;
+                overflow: hidden !important;
+                box-sizing: border-box !important;
+                z-index: 10 !important;
+            }
+
+            .modal-frame-container img#modalImage {
+                max-width: 88%;
+                max-height: 84vh;
+                position: relative;
+                z-index: 15;
+                object-fit: contain;
+            }
+
+            .modal-controls {
+                flex: 0 0 42% !important;
+                width: 42% !important;
+                max-width: 42% !important;
+                height: 100vh !important;
+                position: relative !important;
+                z-index: 30 !important;
+                box-sizing: border-box !important;
+            }
+
+            /* --- ENVIRONMENT MODE ABSOLUTE POSITIONING OVERRIDES (DESKTOP) --- */
+            .modal-frame-container.env-bedroom,
+            .modal-frame-container.env-room,
+            .modal-frame-container.env-table {
+                padding: 0 !important;
+            }
+
+            .modal-frame-container.env-bedroom img#modalImage {
+                position: absolute !important;
+                top: 41.5% !important;
+                left: 47% !important;
+                transform: translate(-50%, -50%) !important;
+                max-width: 10.5% !important;
+                max-height: 10.5% !important;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6) !important;
+                z-index: 100 !important;
+            }
+
+            .modal-frame-container.env-room img#modalImage {
+                position: absolute !important;
+                top: 41.5% !important;
+                left: 50.5% !important;
+                transform: translate(-50%, -50%) !important;
+                max-width: 11.5% !important;
+                max-height: 11.5% !important;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6) !important;
+                z-index: 100 !important;
+            }
+
+            .modal-frame-container.env-table img#modalImage {
+                position: absolute !important;
+                top: 65% !important;
+                left: 53.5% !important;
+                transform: translate(-50%, -50%) !important;
+                max-width: 20% !important;
+                max-height: 20% !important;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5) !important;
+                z-index: 100 !important;
+            }
+        }
+
+        /* FOTOS A PELO EN AMBIENTES (sin marcos, bordes ni sombras de marco que compriman la imagen) */
+        .modal-frame-container.env-room img,
+        .modal-frame-container.env-bedroom img,
+        .modal-frame-container.env-table img,
+        #imageModal .modal-frame-container.env-room img#modalImage,
+        #imageModal .modal-frame-container.env-bedroom img#modalImage,
+        #imageModal .modal-frame-container.env-table img#modalImage {
+            border: none !important;
+            outline: none !important;
+            padding: 0 !important;
+            background: transparent !important;
+        }
+
+        .modal-frame-container.env-room::after,
+        .modal-frame-container.env-bedroom::after,
+        .modal-frame-container.env-table::after,
+        .modal-frame-container.env-room::before,
+        .modal-frame-container.env-bedroom::before,
+        .modal-frame-container.env-table::before {
+            display: none !important;
+        }
+
+        /* 2. Global Logo Constraint (Desktop & Mobile) */
+        .brand img {
+            max-width: 180px !important;
+            height: auto !important;
+            margin: 0 auto 1.5rem auto !important;
+            display: block;
+        }
+
+        /* 3. Desktop Layout Check (Sidebar LEFT) */
+        @media (min-width: 901px) {
+            .app-container {
+                flex-direction: row !important;
+            }
+
+            .controls-sidebar {
+                order: 1 !important;
+                /* Forces Sidebar to Left */
+                width: 300px !important;
+            }
+
+            .gallery-container {
+                order: 2 !important;
+                /* Forces Photo to Right */
+                flex: 1;
+            }
+        }
+
+        /* 3. Mobile Layout Fixes */
+        @media (max-width: 900px) {
+            .app-container {
+                flex-direction: column !important;
+            }
+
+            /* Visor/Photo goes FIRST on mobile */
+            .gallery-container {
+                order: 1 !important;
+                height: 65vh !important;
+                /* Ensure height */
+                min-height: 400px;
+            }
+
+            /* Controls go BELOW */
+            .controls-sidebar {
+                order: 2 !important;
+                width: 100% !important;
+                height: auto !important;
+                border-right: none;
+                border-top: 1px solid #ddd;
+                padding-top: 1rem;
+            }
+
+            /* Smaller logo on mobile sidebar */
+            .controls-sidebar .brand img {
+                max-width: 120px !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            /* Landing page fixes */
+            .landing-title {
+                font-size: 2rem !important;
+            }
+        }
+
+        /* 4. FIX FRAME SELECTOR OVERFLOW (The "Huge" list issue) */
+        .frame-selector-row {
+            display: flex;
+            flex-wrap: wrap !important;
+            /* Force wrapping to next line */
+            gap: 0.5rem;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .frame-selector-row .frame-option {
+            flex: 1 1 auto;
+            min-width: 80px;
+            max-width: 48%;
+            /* 2 per line mostly */
+            text-align: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            /* Ensure visibility */
+        }
+
+        /* 5. SEAMLESS FULLSCREEN MODAL (100% COVERAGE, ZERO GAPS) */
+        #imageModal {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            background: #000000 !important;
+            z-index: 9999999 !important;
+            display: none;
+        }
+
+        #imageModal.active {
+            display: block !important;
+        }
+
+        #imageModal .modal-content {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            background: #000000 !important;
+            display: flex !important;
+            flex-direction: row !important;
+        }
+
+        #imageModal .modal-frame-container {
+            flex: 1 1 58% !important;
+            width: 58% !important;
+            height: 100% !important;
+            padding: 2rem !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-sizing: border-box !important;
+            position: relative !important;
+        }
+
+        #imageModal .modal-frame-container:not(.env-room):not(.env-bedroom):not(.env-table) {
+            background-color: #000000 !important;
+            background-image: none !important;
+        }
+
+        #imageModal .modal-frame-container:not(.env-room):not(.env-bedroom):not(.env-table) img {
+            max-width: 92%;
+            max-height: 88vh;
+        }
+
+        #imageModal .modal-controls {
+            flex: 1 1 42% !important;
+            width: 42% !important;
+            height: 100% !important;
+            min-width: 360px !important;
+            max-width: none !important;
+            background: #08080a !important;
+            border-left: 1px solid #1a1a20 !important;
+            padding: 2.5rem 2rem 5rem 2rem !important;
+            overflow-y: auto !important;
+            box-sizing: border-box !important;
+            position: relative !important;
+        }
+
+        #imageModal .modal-controls::-webkit-scrollbar {
+            width: 8px !important;
+        }
+
+        #imageModal .modal-controls::-webkit-scrollbar-track {
+            background: #08080a !important;
+        }
+
+        #imageModal .modal-controls::-webkit-scrollbar-thumb {
+            background: #D4AF37 !important;
+            border-radius: 4px !important;
+        }
+
+        /* 5. STRICT MOBILE RESPONSIVE RULES (@media max-width: 900px) */
+        @media (max-width: 900px) {
+            /* 1. ARQUITECTURA: Single vertical column */
+            #imageModal .modal-content {
+                flex-direction: column !important;
+                overflow-y: auto !important;
+                height: 100vh !important;
+                height: 100dvh !important;
+                width: 100vw !important;
+                position: relative !important;
+            }
+
+            /* 2. RENDER SUPERIOR: Container base */
+            #imageModal .modal-frame-container {
+                width: 100% !important;
+                height: 44vh !important;
+                min-height: 240px !important;
+                flex: none !important;
+                position: relative !important;
+                top: 0 !important;
+                z-index: 10 !important;
+                background-color: #000000 !important;
+                padding: 0.8rem !important;
+                box-sizing: border-box !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            /* Solo Cuadro (Neutral) en móvil */
+            #imageModal .modal-frame-container:not(.env-room):not(.env-bedroom):not(.env-table) img#modalImage {
+                max-width: 90% !important;
+                max-height: 90% !important;
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                transform: none !important;
+                object-fit: contain !important;
+            }
+
+            /* Proporción exacta en móvil para fondos de habitación y salón (16:9 sin barras negras) */
+            #imageModal .modal-frame-container.env-bedroom,
+            #imageModal .modal-frame-container.env-room {
+                height: auto !important;
+                min-height: 0 !important;
+                aspect-ratio: 16 / 9 !important;
+                max-height: 48vh !important;
+                padding: 0 !important;
+                background-size: 100% 100% !important;
+                background-position: center center !important;
+                position: relative !important;
+            }
+
+            /* Cuadro en el Salón en móvil: dentro de la moldura encima del sofá */
+            #imageModal .modal-frame-container.env-room img#modalImage {
+                position: absolute !important;
+                top: 36% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                max-width: 27% !important;
+                max-height: 36% !important;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7) !important;
+                z-index: 100 !important;
+            }
+
+            /* Cuadro en la Habitación en móvil: centrado sobre el cabecero */
+            #imageModal .modal-frame-container.env-bedroom img#modalImage {
+                position: absolute !important;
+                top: 41.5% !important;
+                left: 57.5% !important;
+                transform: translate(-50%, -50%) !important;
+                max-width: 19% !important;
+                max-height: 25% !important;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7) !important;
+                z-index: 100 !important;
+            }
+
+            /* Cuadro en Sobremesa en móvil: encima del escritorio de madera */
+            #imageModal .modal-frame-container.env-table {
+                height: auto !important;
+                min-height: 0 !important;
+                aspect-ratio: 1 / 1 !important;
+                max-height: 44vh !important;
+                padding: 0 !important;
+                background-size: 100% 100% !important;
+                background-position: center bottom !important;
+                position: relative !important;
+            }
+
+            #imageModal .modal-frame-container.env-table img#modalImage {
+                position: absolute !important;
+                top: 65% !important;
+                left: 53.5% !important;
+                transform: translate(-50%, -50%) !important;
+                max-width: 32% !important;
+                max-height: 36% !important;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6) !important;
+                z-index: 100 !important;
+            }
+
+            /* 3. TEXTOS Y CONTROLES INFERIORES: Panel below render */
+            #imageModal .modal-controls {
+                width: 100% !important;
+                height: auto !important;
+                min-height: 52vh !important;
+                flex: none !important;
+                min-width: 0 !important;
+                padding: 1.5rem 1.2rem 4rem 1.2rem !important;
+                background: #08080a !important;
+                border-left: none !important;
+                border-top: 1px solid #1a1a20 !important;
+                overflow-y: visible !important;
+            }
+
+            /* 4. SELECTOR DE MARCOS: Slider táctil horizontal */
+            #modalFrameSelector {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+                gap: 0.6rem !important;
+                padding-bottom: 0.6rem !important;
+                width: 100% !important;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+            }
+
+            #modalFrameSelector .frame-option {
+                flex: 0 0 auto !important;
+                white-space: nowrap !important;
+                min-width: 92px !important;
+            }
+
+            #modalFrameSelector::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            #modalFrameSelector::-webkit-scrollbar-thumb {
+                background: #D4AF37;
+                border-radius: 4px;
+            }
+
+            /* 5. ¿DÓNDE LO PONDRÍAS?: Cuadrícula 2x2 visible 100% sin scroll */
+            .size-selector {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.6rem !important;
+                width: 100% !important;
+                overflow: visible !important;
+                white-space: normal !important;
+                padding-bottom: 0 !important;
+            }
+
+            .size-selector button,
+            .size-selector .btn-size {
+                width: 100% !important;
+                min-width: 0 !important;
+                flex: none !important;
+                padding: 0.65rem 0.4rem !important;
+                font-size: 0.85rem !important;
+                text-align: center !important;
+                white-space: nowrap !important;
+                border-radius: 4px !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 5. OCULTAR MODO ADMIN EN MÓVIL */
+            #calibrationConsole,
+            #adminBtnContainer {
+                display: none !important;
+            }
+
+            /* Mobile close modal button position */
+            #imageModal .close-modal {
+                top: 12px !important;
+                right: 15px !important;
+                width: 38px !important;
+                height: 38px !important;
+                font-size: 1.6rem !important;
+                background: rgba(0, 0, 0, 0.7) !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Splash Screen -->
+    <div id="splashScreen" class="splash-screen">
+        <div class="splash-content">
+            <!-- Added Logo -->
+            <img src="../assets/logo_banner.png" alt="Logo"
+                style="max-height: 80px; margin-bottom: 2rem; display: block; margin-left: auto; margin-right: auto;">
+            <div class="splash-icon">🖼️</div>
+            <h1 class="splash-text">Iniciar Experiencia</h1>
+        </div>
+    </div>
+
+    <!-- Landing Page (Welcome) -->
+    <div id="landingPage" class="landing-page">
+        <!-- Logo Absolute Top Left -->
+        <div style="position: absolute; top: 2rem; left: 2rem; z-index: 2001;">
+            <img src="../assets/logo_banner.png" alt="Logo" style="height: 60px; width: auto;">
+        </div>
+
+        <div class="landing-content">
+            <h1 class="landing-title">Bienvenido a la Galería</h1>
+            <p class="landing-subtitle">Una experiencia visual inmersiva</p>
+
+            <div class="formats-guide">
+                <div class="format-item">
+                    <div class="icon-box size-small"></div>
+                    <span>Pequeño</span>
+                </div>
+                <div class="format-item">
+                    <div class="icon-box size-medium"></div>
+                    <span>Medio</span>
+                </div>
+                <div class="format-item">
+                    <div class="icon-box size-large"></div>
+                    <span>Grande</span>
+                </div>
+            </div>
+
+            <p class="landing-instruction">Explora nuestra colección de cuadros en diferentes formatos y estilos.</p>
+
+            <button id="enterBtn" class="enter-btn">
+                <div class="arrow-icon">➜</div>
+                <span>Entrar al Visor</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="appContainer" class="container" style="display:none; opacity:0; transition: opacity 0.8s ease;">
+        <!-- Sidebar Controls -->
+        <aside class="controls-sidebar">
+            <div style="display: flex; gap: 0.5rem;">
+                <button id="backBtn" class="home-btn" title="Volver atrás">
+                    ⬅ Volver
+                </button>
+                <button id="homeBtn" class="home-btn" title="Volver al Inicio">
+                    🏠 Inicio
+                </button>
+            </div>
+
+            <div class="brand">
+                <img src="../assets/logo_banner.png" alt="Logo"
+                    style="max-width: 100%; height: auto; display: block; margin-bottom: 0.5rem;">
+                <button id="adminToggle"
+                    style="width:100%; background:none; border:1px solid #ddd; font-size:0.7rem; color:#999; cursor:pointer; padding:4px; border-radius:4px; margin-bottom:1.5rem;">⚙️
+                    Ajustes de Sistema</button>
+            </div>
+
+            <div class="control-group">
+                <label>Estilo de Marco Global</label>
+                <div class="frame-selector" id="frameSelector">
+                    <!-- Javascript will populate this -->
+                </div>
+            </div>
+
+            <!-- New Customization Section -->
+            <div class="control-group" id="customizationPanel"
+                style="border-top: 1px solid #eee; padding-top: 1.5rem; margin-top: 1rem; display: none;">
+                <label>Personalización</label>
+
+                <div style="margin-bottom: 1rem;">
+                    <span style="font-size: 0.7rem; color: #999; display:block; margin-bottom:0.3rem;">Logo de
+                        Marca</span>
+                    <input type="file" id="logoInput" accept="image/*" hidden>
+                    <button class="btn-secondary" onclick="document.getElementById('logoInput').click()"
+                        style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; background: #fff; cursor: pointer; font-size: 0.8rem;">
+                        Subir Tu Logo
+                    </button>
+                    <span id="removeLogo"
+                        style="font-size: 0.7rem; color: #999; cursor: pointer; display: none; text-align: center; margin-top: 5px; text-decoration: underline;">Eliminar
+                        Logo</span>
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <span style="font-size: 0.7rem; color: #999; display:block; margin-bottom:0.3rem;">Fondo de la
+                        App</span>
+                    <input type="file" id="bgInput" accept="image/*" hidden>
+                    <button class="btn-secondary" onclick="document.getElementById('bgInput').click()"
+                        style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; background: #fff; cursor: pointer; font-size: 0.8rem;">
+                        Subir Fondo
+                    </button>
+                    <span id="removeBg"
+                        style="font-size: 0.7rem; color: #999; cursor: pointer; display: none; text-align: center; margin-top: 5px; text-decoration: underline;">Eliminar
+                        Fondo</span>
+
+                    <div style="margin-top: 10px;">
+                        <span style="font-size: 0.7rem; color: #999; display:block; margin-bottom:0.3rem;">Zoom
+                            Fondo</span>
+                        <input type="range" id="bgSizeInput" min="10" max="250" step="5" value="100"
+                            style="width: 100%;">
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <span style="font-size: 0.7rem; color: #999; display:block; margin-bottom:0.3rem;">Grosor del
+                        Marco</span>
+                    <input type="range" id="frameThickness" min="0.5" max="3" step="0.1" value="1" style="width: 100%;">
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <span style="font-size: 0.7rem; color: #999; display:block; margin-bottom:0.3rem;">Título de la
+                        App</span>
+                    <input type="text" id="appTitleInput" value="Tu Marca"
+                        style="width: 100%; padding: 0.3rem; border:1px solid #ddd;">
+                </div>
+
+                <div>
+                    <span style="font-size: 0.7rem; color: #999; display:block; margin-bottom:0.3rem;">Subtítulo</span>
+                    <input type="text" id="appSubtitleInput" value="Tu Subtítulo"
+                        style="width: 100%; padding: 0.3rem; border:1px solid #ddd;">
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Gallery Area -->
+        <main class="gallery-container">
+            <header class="top-bar">
+                <h2>Galería de Colección</h2>
+                <div class="view-options" style="display: items; gap: 1rem; align-items: center;">
+                    <a href="../carrito.html" class="btn"
+                        style="text-decoration: none; color: #333; font-weight: bold;">
+                        🛒 Carrito <span id="visorCartBadge" class="cart-badge"
+                            style="background:#000; color:#fff; padding:2px 6px; border-radius:10px; font-size:0.8rem;"></span>
+                    </a>
+                    <span id="photoCount">0 fotos</span>
+                </div>
+            </header>
+
+            <div class="photo-grid" id="photoGrid">
+                <!-- Javascript will populate grid items -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Detailed View -->
+    <div class="modal" id="imageModal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <div class="modal-frame-container" id="modalFrameContainer">
+                <img src="" alt="Full View" id="modalImage">
+                
+                <!-- CONSOLA DE CALIBRACIÓN (Admin Only) -->
+                <div id="calibrationConsole" 
+                     style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.9); color: #fff; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 11px; z-index: 1000; display: none; width: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); border: 1px solid #444;">
+                    <div style="margin-bottom: 10px; border-bottom: 1px solid #444; padding-bottom: 5px; font-weight: bold; color: #fbbf24; display: flex; justify-content: space-between;">
+                        <span>🛠 CALIBRACIÓN VIVA</span>
+                        <span onclick="this.parentElement.parentElement.style.display='none'" style="cursor:pointer;">&times;</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 8px;">
+                        <label style="display: block; margin-bottom: 2px;">↕️ Arriba / Abajo (Top %):</label>
+                        <input type="number" id="inputTop" value="38" step="0.5" style="width: 100%; background: #222; color: #fff; border: 1px solid #555; padding: 4px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 8px;">
+                        <label style="display: block; margin-bottom: 2px;">↔️ Izquierda / Derecha (Left %):</label>
+                        <input type="number" id="inputLeft" value="65" step="0.5" style="width: 100%; background: #222; color: #fff; border: 1px solid #555; padding: 4px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 8px;">
+                        <label style="display: block; margin-bottom: 2px;">🔍 Más Grande / Pequeño (%):</label>
+                        <input type="number" id="inputSize" value="14" step="0.5" style="width: 100%; background: #222; color: #fff; border: 1px solid #555; padding: 4px;">
+                    </div>
+
+                    <div style="font-size: 9px; color: #aaa; margin-top: 10px; line-height: 1.2; background: #222; padding: 5px; border-radius: 4px;">
+                        Valores actuales aplicados.<br>
+                        Ajusta y anota los números.
+                    </div>
+
+                    <button onclick="copyCalibrationSummary()" 
+                            style="width: 100%; margin-top: 10px; font-size: 9px; background: #fbbf24; color: #000; border: none; padding: 5px; border-radius: 3px; cursor: pointer; font-weight: bold;">
+                        📋 COPIAR RESUMEN PARA ANTIGRAVITY
+                    </button>
+                </div>
+
+                <!-- Visual Reference (Human Scale) -->
+                <div id="scaleReference" class="scale-reference" style="display: none;">
+                    <svg viewBox="0 0 100 300" preserveAspectRatio="none">
+                        <!-- Simple abstract human silhouette -->
+                        <path
+                            d="M50,20 C60,20 68,28 68,38 C68,48 60,56 50,56 C40,56 32,48 32,38 C32,28 40,20 50,20 Z M50,60 C75,60 85,90 85,110 L85,180 C85,190 80,195 75,195 C70,195 65,190 65,180 L65,140 L65,180 L65,290 C65,298 58,300 50,300 C42,300 35,298 35,290 L35,180 L35,140 L35,180 C35,190 30,195 25,195 C20,195 15,190 15,180 L15,110 C15,90 25,60 50,60 Z"
+                            fill="#333" opacity="0.8" />
+                    </svg>
+                    <span
+                        style="display: block; text-align: center; font-size: 0.7rem; color: #555; margin-top: 5px;">1.70m</span>
+                </div>
+            </div>
+            <div class="modal-controls">
+                <div id="adminBtnContainer" style="padding: 0 2rem; margin-top: 1rem; display: none;">
+                    <button class="admin-only-btn" onclick="document.getElementById('adminToggle').click()" 
+                            style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.15); font-size:0.8rem; color:#aaaaaa; cursor:pointer; padding:8px; border-radius:4px; margin-bottom:1rem; transition:all 0.3s;" onmouseover="this.style.color='#D4AF37'; this.style.borderColor='#D4AF37';" onmouseout="this.style.color='#aaaaaa'; this.style.borderColor='rgba(255,255,255,0.15)';">
+                        ⚙️ Ajustes de Sistema (Admin)
+                    </button>
+                </div>
+                <script>
+                    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:' || window.location.search.includes('admin=true')) {
+                        document.getElementById('adminBtnContainer').style.display = 'block';
+                    }
+                </script>
+                <div id="artDetails" class="art-details"
+                    style="margin-bottom: 2rem; border: 1px solid rgba(212, 175, 55, 0.25); background: #0d0d10; padding: 2rem; border-radius: 8px;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h2 id="artTitle"
+                            style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #ffffff; line-height: 1.2; margin:0; width: 100%;">
+                            Título de la Obra
+                        </h2>
+                        <!-- Technical Info Box (Only visible if specific tech info exists) -->
+                        <div id="artTechInfo"
+                            style="border-left:3px solid #D4AF37; background:rgba(212,175,55,0.12); padding:0.6rem 1rem; font-size:0.92rem; color:#e0e0e0; border-radius:4px; display:none; line-height:1.4; margin-top: 0.8rem; margin-bottom: 0.5rem;">
+                            <!-- Content will be injected by JS -->
+                        </div>
+                    </div>
+
+                    <p id="artCatalog"
+                        style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: #D4AF37; margin-bottom: 1rem; font-weight: 700;">
+                        Colección</p>
+                    <p id="artDesc"
+                        style="font-family: 'Lato', sans-serif; color: #e0e0e0; font-size: 1.05rem; margin-bottom: 1rem; line-height: 1.6;">
+                        Descripción</p>
+
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap: 0.8rem; margin-bottom: 0.8rem;">
+                        <p id="artPrice"
+                            style="font-weight: 700; color: #D4AF37; font-size: 1.3rem; letter-spacing: 0.5px; margin: 0; white-space: nowrap;">
+                            Precio</p>
+                        <a href="../certificado_autenticidad.html" target="_blank" style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; font-size: 1rem; color: #D4AF37; text-decoration: none; transition: color 0.3s; white-space: nowrap;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='#D4AF37';">📜 con Certificaci&oacute;n Oficial</a>
+                    </div>
+                    <p id="artSize" style="font-family: 'Lato', sans-serif; color: #cccccc; font-size: 0.95rem; margin-bottom: 1.5rem;">
+                        Tamaño</p>
+
+                    <div id="modalFrameSection" style="margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem;">
+                        <h3 style="font-size: 0.9rem; color: #D4AF37; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.8rem; font-weight: 700;">Editar Marco (Solo Cuadro)</h3>
+                        <div class="frame-selector-row" id="modalFrameSelector" style="margin-bottom: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); gap: 0.6rem; width: 100%;">
+                            <!-- JS populated -->
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 0.9rem; color: #ffffff; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem;">
+                            ¿Dónde lo pondrías?
+                        </h3>
+                        <div class="size-selector" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; width: 100%;">
+                            <button class="btn-size active" id="btnEnvClassic" onclick="changeEnvironment('neutral')"
+                                style="width: 100%; padding: 0.65rem 0.4rem; font-size: 0.85rem; font-weight: bold; background: transparent; border: 1px solid rgba(255,255,255,0.25); color: #ffffff; border-radius: 4px; box-sizing: border-box;">🖼️ Solo Cuadro</button>
+                            <button class="btn-size" id="btnEnvNeutral" onclick="changeEnvironment('bedroom')"
+                                style="width: 100%; padding: 0.65rem 0.4rem; font-size: 0.85rem; font-weight: bold; background: transparent; border: 1px solid rgba(255,255,255,0.25); color: #ffffff; border-radius: 4px; box-sizing: border-box;">¿Tu Habitación?</button>
+                            <button class="btn-size" id="btnEnvRoom" onclick="changeEnvironment('room')"
+                                style="width: 100%; padding: 0.65rem 0.4rem; font-size: 0.85rem; font-weight: bold; background: transparent; border: 1px solid rgba(255,255,255,0.25); color: #ffffff; border-radius: 4px; box-sizing: border-box;">¿Tu Salón?</button>
+                            <button class="btn-size" id="btnEnvTable" onclick="changeEnvironment('table')"
+                                style="width: 100%; padding: 0.65rem 0.4rem; font-size: 0.85rem; font-weight: bold; background: transparent; border: 1px solid rgba(255,255,255,0.25); color: #ffffff; border-radius: 4px; box-sizing: border-box;">¿Sobremesa?</button>
+                        </div>
+                        <p style="font-size: 0.8rem; color: #aaaaaa; margin-top: 0.5rem; font-style: italic;">
+                            *En las estancias la obra se presenta directamente sin marco.
+                        </p>
+                    </div>
+
+                    <button id="addToCartBtn" class="btn-primary"
+                        style="width:100%; background: linear-gradient(135deg, #D4AF37 0%, #aa8528 100%); color:#000000; border:none; padding:1.2rem; cursor:pointer; font-weight:800; font-size:1.1rem; border-radius:4px; box-shadow:0 4px 15px rgba(212,175,55,0.3); transition: all 0.3s;">
+                        🛒 COMPRAR EL CUADRO
+                    </button>
+                    <div id="cartMsg"
+                        style="text-align:center; color:#10b981; margin-top:0.5rem; display:none; font-weight:bold;">
+                        ¡Añadido! <a href="../carrito.html" style="color:#10b981; text-decoration:underline;">Ver Carrito</a>
+                    </div>
+                </div>
+            <script>console.log("HTML loaded, waiting for scripts...");</script>
+        </div>
+    </div>
+
+    <script src="../js/data.js?v=300"></script>
+    <script src="../js/cart.js?v=300"></script>
+    <script src="app.js?v=305"></script>
+    <footer class="site-footer" style="text-align: center; padding: 2rem; background-color: transparent; color: inherit; border-top: 1px solid #eaeaea; margin-top: 4rem;">
+        <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">&copy; e.ramirez 2026. Todos los derechos reservados.</p>
+        <a href="../condiciones.html" style="color: inherit; text-decoration: underline; font-size: 0.85rem;">Términos y Condiciones</a>
+    </footer>
+</body>
+
+</html>

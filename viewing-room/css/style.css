@@ -1,0 +1,205 @@
+:root {
+    --bg-color: #FDFBF7; /* Un blanco roto muy cálido y de museo */
+    --text-primary: #1A1A1A; /* Gris muy oscuro, no negro puro, para elegancia */
+    --text-secondary: #555555;
+    --accent-gold: #A67C00; /* Oro más oscuro para que contraste bien sobre blanco */
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 2s ease-in forwards;
+    opacity: 0;
+}
+
+.fade-in-delayed {
+    animation: fadeIn 2.5s ease-in forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+.fade-in-delayed-more {
+    animation: fadeIn 3s ease-in forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(15px); 
+        filter: blur(5px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+        filter: blur(0);
+    }
+}
+
+/* Layout */
+.viewing-room {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+.gallery-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    letter-spacing: 0.3em;
+}
+
+.gallery-header h1 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--text-primary);
+}
+
+.gallery-header .subtitle {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-top: 0.8rem;
+    letter-spacing: 0.4em;
+}
+
+/* Video Section */
+.video-container {
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 6rem;
+}
+
+.video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #111;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15); /* Sombra suave de galería luminosa */
+}
+
+.video-credits {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.video-credits h2 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--text-primary);
+}
+
+.video-credits h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.video-credits p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+/* Concept Text */
+.concept-text {
+    max-width: 650px;
+    text-align: center;
+    margin-bottom: 8rem;
+}
+
+.concept-text h2 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--accent-gold);
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+}
+
+.concept-text p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.8rem;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+/* Footer / Representation */
+.representation {
+    text-align: center;
+    padding-top: 4rem;
+    border-top: 1px solid #E0E0E0; /* Línea muy clara */
+    width: 100%;
+    max-width: 500px;
+}
+
+.inquiry-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.inquiry-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    transition: all 0.4s ease;
+    background-color: transparent;
+}
+
+.contact-btn:hover {
+    background-color: var(--accent-gold);
+    color: #FFF;
+}

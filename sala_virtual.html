@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala Virtual 3D | Galería Inmersiva Universo EDUSSE</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/sala_virtual.css?v=105">
+    
+    <!-- Load shared site scripts -->
+    <script src="js/data.js?v=105"></script>
+    <script src="js/cart.js?v=105"></script>
+</head>
+
+<body>
+
+    <!-- Welcome Entrance Screen -->
+    <div id="welcome-screen">
+        <div class="welcome-bg"></div>
+        <div class="welcome-box">
+            <div class="welcome-logo">UNIVERSO EDUSSE</div>
+            <h1>VISITA VIRTUAL 3D</h1>
+            <p>Un recorrido inmersivo e interactivo por las salas de arte y colecciones de Eduardo Ramírez.</p>
+            <button id="btn-start-visit">Comenzar Visita ➔</button>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="gallery-header">
+        <div class="header-left">
+            <a href="colecciones.html" class="nav-link">Colecciones</a>
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="cuadroteca/index.html" class="nav-link" style="color: var(--primary);">Cuadroteca 📋</a>
+        </div>
+
+        <div class="header-center">
+            <h1>SALA VIRTUAL <span>3D</span></h1>
+        </div>
+
+        <div class="header-right">
+            <span id="current-room-name">Recibidor Brutalista</span>
+        </div>
+    </header>
+
+    <!-- 3D VIEWPORT CONTAINER -->
+    <div class="viewport-3d" id="viewport">
+        <!-- Transition fade overlay for room changing -->
+        <div id="room-fade-overlay"></div>
+        
+        <!-- The actual 3D hallway space -->
+        <div class="hallway-3d" id="hallway">
+            
+            <!-- CEILING PLANE -->
+            <div class="surface-3d ceiling-3d" id="ceiling"></div>
+            
+            <!-- FLOOR PLANE -->
+            <div class="surface-3d floor-3d" id="floor">
+                <div class="floor-reflection"></div>
+            </div>
+            
+            <!-- LEFT WALL -->
+            <div class="surface-3d left-wall-3d" id="left-wall-content"></div>
+            
+            <!-- RIGHT WALL -->
+            <div class="surface-3d right-wall-3d" id="right-wall-content"></div>
+            
+            <!-- BACK WALL (closes the depth at the end) -->
+            <div class="surface-3d back-wall-3d" id="back-wall">
+                <img src="assets/logo_banner.png" alt="EDUSSE" class="back-wall-logo">
+                <div id="back-wall-label" style="color: rgba(255,255,255,0.3); font-family: var(--font-serif); font-size: 1.2rem; margin-top: 20px; letter-spacing: 2px;">
+                    Fin de la Sala
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Minimap UI Panel -->
+    <div id="minimap-container">
+        <div class="minimap-header">Plano de la Galería</div>
+        <div class="minimap-graphic">
+            <svg viewBox="0 0 200 200" id="minimap-svg">
+                <!-- Connection lines -->
+                <line x1="100" y1="170" x2="100" y2="135" class="map-line"></line>
+                <line x1="100" y1="135" x2="100" y2="92" class="map-line"></line>
+                <line x1="100" y1="92" x2="100" y2="50" class="map-line"></line>
+                
+                <line x1="100" y1="170" x2="55" y2="145" class="map-line"></line>
+                <line x1="100" y1="170" x2="145" y2="145" class="map-line"></line>
+                
+                <line x1="55" y1="145" x2="55" y2="85" class="map-line"></line>
+                <line x1="145" y1="145" x2="145" y2="85" class="map-line"></line>
+                
+                <line x1="100" y1="50" x2="55" y2="85" class="map-line"></line>
+                <line x1="100" y1="50" x2="145" y2="85" class="map-line"></line>
+
+                <!-- Room nodes -->
+                <!-- Room 1: Reception -->
+                <rect x="85" y="157" width="30" height="26" rx="3" class="map-node" data-room="1" id="node-1"></rect>
+                <text x="100" y="173" class="map-label">S1</text>
+                
+                <!-- Room 2: Rotonda Circular -->
+                <circle cx="55" cy="145" r="15" class="map-node" data-room="2" id="node-2"></circle>
+                <text x="55" y="149" class="map-label">S2</text>
+                
+                <!-- Room 3: Columns -->
+                <rect x="83" y="117" width="34" height="26" rx="3" class="map-node" data-room="3" id="node-3"></rect>
+                <text x="100" y="133" class="map-label">S3</text>
+                
+                <!-- Room 4: Yellow Wall -->
+                <rect x="133" y="133" width="24" height="24" rx="3" class="map-node" data-room="4" id="node-4"></rect>
+                <text x="145" y="147" class="map-label">S4</text>
+                
+                <!-- Room 5: External Left -->
+                <rect x="42" y="65" width="26" height="40" rx="3" class="map-node" data-room="5" id="node-5"></rect>
+                <text x="55" y="88" class="map-label">S5</text>
+                
+                <!-- Room 6: Wood Beams -->
+                <rect x="85" y="80" width="30" height="24" rx="3" class="map-node" data-room="6" id="node-6"></rect>
+                <text x="100" y="95" class="map-label">S6</text>
+                
+                <!-- Room 7: Atrium of Luxury -->
+                <circle cx="100" cy="50" r="18" class="map-node" data-room="7" id="node-7"></circle>
+                <text x="100" y="54" class="map-label">S7</text>
+                
+                <!-- Room 8: VIP Right -->
+                <rect x="132" y="65" width="26" height="40" rx="3" class="map-node" data-room="8" id="node-8"></rect>
+                <text x="145" y="88" class="map-label">S8</text>
+            </svg>
+        </div>
+        <div class="minimap-footer">Haz clic en una sala para ir directamente</div>
+    </div>
+
+    <!-- Floor Arrow Controls (Google Street View Style) -->
+    <div id="floor-controls">
+        <button id="ctrl-turn-left" class="floor-btn" title="Girar a la izquierda">↶</button>
+        <button id="ctrl-forward" class="floor-btn" title="Avanzar por el pasillo">▲</button>
+        <button id="ctrl-backward" class="floor-btn" title="Retroceder">▼</button>
+        <button id="ctrl-turn-right" class="floor-btn" title="Girar a la derecha">↷</button>
+    </div>
+
+    <!-- Navigation Scroll Guide Icon -->
+    <div class="navigation-guide">
+        <div class="mouse-icon"></div>
+        <span>Usa la rueda, arrastra o las flechas para caminar</span>
+    </div>
+
+    <!-- Detail Overlay Panel (Modal) -->
+    <div id="exhibit-detail-panel">
+        <button id="close-detail">✕</button>
+        <div class="detail-content">
+            <div class="detail-image-side watermarked">
+                <div class="artwork-overlay"></div>
+                <img id="detail-img" src="" alt="Obra de Arte">
+            </div>
+            <div class="detail-info-side">
+                <h2 id="detail-title">Título de la Obra</h2>
+                <div class="detail-meta">
+                    <span id="detail-category" class="detail-tag">Categoría</span>
+                    <span id="detail-price" class="detail-price">19,99€</span>
+                </div>
+                <p id="detail-desc">Descripción de la obra seleccionada...</p>
+                <div class="detail-buttons">
+                    <button class="btn-buy" onclick="comprarCuadro()">🛒 Comprar Obra</button>
+                    <button class="btn-try" onclick="probarCuadro()">🖼️ Probador Virtual</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats footer showing visitor counts -->
+    <footer class="visitor-footer" id="visitor-footer">
+        <span id="footer-visitor-stats">Cargando estadísticas locales...</span>
+    </footer>
+
+    <!-- Loader & Protection Scripts -->
+    <script src="js/sala_virtual.js?v=105"></script>
+    <script src="js/protection.js"></script>
+
+</body>
+
+</html>

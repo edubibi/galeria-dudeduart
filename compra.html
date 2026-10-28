@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo Comprar | DUDEDUART Galería de Arte</title>
+    <link rel="stylesheet" href="main.css?v=106">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #000000;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- UNIFIED NAVBAR --- */
+        @media (min-width: 901px) {
+            .navbar {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 1.5rem 5% !important;
+                background-color: #000000 !important;
+                border-bottom: 1px solid #1a1a1a !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 1000 !important;
+            }
+
+            .nav-links {
+                display: flex !important;
+                gap: 2rem !important;
+                list-style: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .nav-links a {
+                text-decoration: none !important;
+                color: #e0e0e0 !important;
+                font-family: 'Lato', sans-serif !important;
+                font-size: 0.9rem !important;
+                font-weight: 400 !important;
+                letter-spacing: 1px !important;
+                transition: color 0.3s ease !important;
+            }
+
+            .nav-links a.active,
+            .nav-links a:hover {
+                color: #D4AF37 !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 0.75rem 1.25rem !important;
+                background-color: #0a0a0a !important;
+                border-bottom: 1px solid #1a1a1a !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 1000 !important;
+            }
+            .logo img {
+                max-height: 46px !important;
+                width: auto !important;
+            }
+            .navbar-mobile-actions {
+                display: flex !important;
+                align-items: center !important;
+                gap: 12px !important;
+            }
+            .mobile-cart-btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                gap: 5px !important;
+                background: rgba(212, 175, 55, 0.15) !important;
+                border: 1px solid rgba(212, 175, 55, 0.4) !important;
+                color: #ffffff !important;
+                text-decoration: none !important;
+                padding: 7px 12px !important;
+                border-radius: 20px !important;
+                font-size: 0.88rem !important;
+            }
+            .nav-toggle-btn {
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-around !important;
+                width: 44px !important;
+                height: 44px !important;
+                background: #111111 !important;
+                border: 1px solid rgba(212, 175, 55, 0.4) !important;
+                border-radius: 8px !important;
+                cursor: pointer !important;
+                padding: 10px !important;
+                box-sizing: border-box !important;
+            }
+            .nav-toggle-btn .bar {
+                width: 100% !important;
+                height: 2px !important;
+                background: #D4AF37 !important;
+                border-radius: 2px !important;
+                pointer-events: none !important;
+            }
+            .nav-toggle-btn.open .bar-1 { transform: translateY(8px) rotate(45deg) !important; }
+            .nav-toggle-btn.open .bar-2 { opacity: 0 !important; transform: scaleX(0) !important; }
+            .nav-toggle-btn.open .bar-3 { transform: translateY(-8px) rotate(-45deg) !important; }
+            .nav-links {
+                display: none !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                width: 100% !important;
+                background: #0f0f14 !important;
+                flex-direction: column !important;
+                gap: 0 !important;
+                padding: 0.8rem 1.2rem 1.4rem 1.2rem !important;
+                border-bottom: 3px solid #D4AF37 !important;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85) !important;
+                box-sizing: border-box !important;
+                z-index: 999 !important;
+            }
+            .nav-links.open {
+                display: flex !important;
+                animation: slideNavDark 0.25s ease forwards !important;
+            }
+            @keyframes slideNavDark {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .nav-links li { width: 100% !important; list-style: none !important; }
+            .nav-links a {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                font-family: 'Playfair Display', serif !important;
+                font-size: 1.15rem !important;
+                color: #e2e8f0 !important;
+                padding: 13px 16px !important;
+                text-decoration: none !important;
+                border-radius: 6px !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+                background: transparent !important;
+            }
+            .nav-links a.active,
+            .nav-links a:hover {
+                background: rgba(212, 175, 55, 0.15) !important;
+                color: #D4AF37 !important;
+                padding-left: 20px !important;
+            }
+            .nav-links a::after {
+                content: '›' !important;
+                font-size: 1.3rem !important;
+                color: #D4AF37 !important;
+                opacity: 0.7 !important;
+            }
+            .nav-links a.active::after {
+                content: '✓' !important;
+                font-size: 1rem !important;
+                opacity: 1;
+            }
+            .desktop-cart-item { display: none !important; }
+        }
+
+        /* --- PAGE HEADER --- */
+        .page-header {
+            background: #050505;
+            padding: 55px 20px 35px;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            color: #D4AF37;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .step-card {
+            background: #0d0d10;
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            border-radius: 12px;
+            padding: 32px 28px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
+        }
+
+        .step-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #D4AF37;
+            margin-bottom: 14px;
+        }
+
+        .faq-card {
+            background: #0d0d10;
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        details summary {
+            font-weight: 700;
+            cursor: pointer;
+            color: #D4AF37;
+            font-size: 1.05rem;
+            padding: 10px 0;
+            letter-spacing: 0.5px;
+        }
+
+        details p {
+            margin-top: 10px;
+            color: #e0e0e0;
+            line-height: 1.65;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html"><img src="assets/logo_banner.png" alt="Logo"></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre Mí</a></li>
+            <li><a href="memorandum.html">Universo EDUSSE</a></li>
+            <li><a href="colecciones.html">Colecciones</a></li>
+            <li><a href="compra.html" class="active">Cómo Comprar</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html">Carrito <span class="cart-badge"></span></a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Cómo Adquirir una Obra</h1>
+            <p style="color: #aaaaaa; font-size: 1.05rem; letter-spacing: 0.5px;">Un proceso directo con el artista, transparente, seguro y con justificante oficial.</p>
+        </div>
+    </header>
+
+    <section class="section" style="padding: 50px 15px; background-color: #000000;">
+        <div class="container" style="max-width:860px; margin:0 auto;">
+
+            <div style="display:grid; grid-template-columns: 1fr; gap:24px;">
+
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <h2>1. Selección & Probador Virtual</h2>
+                    <p style="color: #e0e0e0; font-size: 0.98rem; line-height: 1.6;">
+                        Explora las colecciones de la galería y prueba cada obra a escala real en los entornos del <strong>Visor / Probador Virtual</strong> (Habitación, Salón, Sobremesa). ¡Aprovecha la <strong style="color: #D4AF37;">Promoción 3+1</strong>: por cada 4 obras en tu carrito, la de menor importe es GRATIS!
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card" style="border: 1px solid rgba(212, 175, 55, 0.4);">
+                    <h2 style="color: #D4AF37;">2. Métodos de Pago Directos</h2>
+                    <p style="color: #e0e0e0; font-size: 0.98rem; line-height: 1.6; margin-bottom: 18px;">
+                        Pago directo sin comisiones de intermediarios:
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                        <span style="background: rgba(212, 175, 55, 0.12); border: 1px solid #D4AF37; color: #D4AF37; font-weight: 700; padding: 8px 16px; border-radius: 20px; font-size: 0.88rem; letter-spacing: 0.5px;">
+                            📱 BIZUM (678 70 87 29)
+                        </span>
+                        <span style="background: rgba(0,192,255,0.12); border: 1px solid #00c0ff; color: #00c0ff; font-weight: 700; padding: 8px 16px; border-radius: 20px; font-size: 0.88rem; letter-spacing: 0.5px;">
+                            🅿️ PayPal
+                        </span>
+                        <span style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); color: #ffffff; font-weight: 700; padding: 8px 16px; border-radius: 20px; font-size: 0.88rem; letter-spacing: 0.5px;">
+                            🏦 Transferencia Bancaria
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card" style="border: 1px solid #D4AF37; box-shadow: 0 10px 30px rgba(212,175,55,0.2);">
+                    <h2>3. Entrega Master, Recibo Oficial & Certificado</h2>
+                    <p style="color: #e0e0e0; font-size: 0.98rem; line-height: 1.6; margin-bottom: 20px;">
+                        Tras la confirmación, obtienes tu <strong style="color:#ffffff;">Archivo Master en Altísima Resolución</strong> para impresión en gran formato, junto con tu <strong style="color:#D4AF37;">Recibo Oficial de Adquisición firmado</strong> y el modelo de Certificado de Autenticidad de la obra.
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                        <a href="recibo.html" style="display: inline-block; padding: 9px 20px; background: transparent; border: 1px solid #D4AF37; color: #D4AF37; text-decoration: none; font-weight: bold; border-radius: 20px; font-size: 0.85rem; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='#D4AF37'; this.style.color='#000';" onmouseout="this.style.background='transparent'; this.style.color='#D4AF37';">
+                            📄 Ver Modelo de Recibo
+                        </a>
+                        <a href="certificado_autenticidad.html" target="_blank" style="display: inline-block; padding: 9px 20px; background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 20px; font-size: 0.85rem; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='rgba(255,255,255,0.2)';" onmouseout="this.style.background='transparent';">
+                            🎖️ Ver Modelo de Certificado
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-card">
+                <h3 style="text-align:center; color:#D4AF37; margin-bottom:30px; font-family:'Playfair Display', serif; font-size:2rem; letter-spacing: 1px; text-transform: uppercase;">
+                    Preguntas Frecuentes
+                </h3>
+
+                <details style="margin-bottom:18px; border-bottom:1px solid rgba(212,175,55,0.15); padding-bottom:14px;">
+                    <summary>¿Qué recibo exactamente al comprar?</summary>
+                    <p>Recibirás el "Master File" en <strong>Altísima Resolución</strong> (JPG máxima calidad / TIFF), con nitidez profesional preparada para impresiones de gran formato (hasta 70x100cm o superior), acompañado de su <strong>Recibo Oficial de Compra</strong> y Certificado de Autenticidad.</p>
+                </details>
+
+                <details style="margin-bottom:18px; border-bottom:1px solid rgba(212,175,55,0.15); padding-bottom:14px;">
+                    <summary>¿Se emite justificante / recibo para particulares o profesionales?</summary>
+                    <p>Sí. Durante el proceso de compra puedes introducir tu Nombre, DNI/NIF o Razón Social para que el sistema genere automáticamente tu <strong>Recibo Oficial de Adquisición</strong> con membrete oficial, referencia única y firma del autor Eduardo Ramírez de Cartagena (DUDEDUART).</p>
+                </details>
+
+                <details style="margin-bottom:18px; border-bottom:1px solid rgba(212,175,55,0.15); padding-bottom:14px;">
+                    <summary>¿Puedo imprimirlo en cualquier imprenta o estudio?</summary>
+                    <p>Sí, tienes total libertad para imprimir la obra en tu laboratorio fotográfico de confianza, imprenta local o servicios online en soporte lienzo, papel baritado, giclée o metacrilato.</p>
+                </details>
+
+                <div style="text-align:center; margin-top:35px;">
+                    <a href="contacto.html" style="color:#D4AF37; font-weight:bold; text-decoration:none; font-size: 0.98rem; letter-spacing: 0.5px;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
+                        ¿Tienes alguna duda o encargo especial? Contáctanos directamente &rarr;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 3rem 1rem; background-color: #000000; color: #aaaaaa; border-top: 1px solid #1a1a1a;">
+        <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #888888;">&copy; e.ramirez 2026. Todos los derechos reservados. |
+            PRODUCED BY <a href="https://khem.es" target="_blank"
+                style="color: #D4AF37; text-decoration: none; font-weight: bold;">KHEM</a></p>
+        <p style="font-size:0.85rem; margin-top:0.5rem;">
+            <a href="condiciones.html" style="color: #D4AF37; text-decoration: none; opacity: 0.85;">Términos y Condiciones</a>
+        </p>
+    </footer>
+
+    <script src="js/data.js?v=106"></script>
+    <script src="js/cart.js?v=106"></script>
+</body>
+
+</html>

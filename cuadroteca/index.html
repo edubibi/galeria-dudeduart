@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Digital | Neon Edition</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20261015_contain">
+    <style>
+        /* MOBILE LUXURY GALLERY (Strictly < 900px) */
+        @media (max-width: 900px) {
+            .neon-header {
+                padding: 0.7rem 1rem !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                gap: 10px !important;
+            }
+            .header-center {
+                position: static !important;
+                transform: none !important;
+            }
+            .neon-title {
+                font-size: 1.05rem !important;
+                letter-spacing: 2px !important;
+            }
+            .mobile-v { display: inline !important; font-size: 9px; color: #888; margin-left: 5px; }
+            .nav-btn {
+                font-size: 0.78rem !important;
+                margin-right: 0 !important;
+                padding: 6px 12px !important;
+                border-radius: 20px !important;
+                background: rgba(212, 175, 55, 0.15) !important;
+                border: 1px solid rgba(212, 175, 55, 0.4) !important;
+                color: #D4AF37 !important;
+                display: inline-flex !important;
+                align-items: center !important;
+            }
+            .art-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+                padding: 10px 8px !important;
+            }
+            .category-section { margin-bottom: 2.5rem !important; }
+            .category-title { font-size: 1.25rem !important; margin-bottom: 1rem !important; padding-left: 8px; }
+            
+            /* CARDS & ARTWORK VISIBILITY */
+            .art-card, .art-image-wrapper {
+                height: auto !important;
+                aspect-ratio: auto !important;
+                min-height: 0 !important;
+                border-radius: 8px !important;
+                overflow: hidden !important;
+            }
+            .art-image-wrapper {
+                margin-bottom: 8px !important;
+                border-radius: 6px !important;
+                overflow: hidden !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                background-color: #0d0d12 !important;
+            }
+            .art-item img, .art-image-wrapper img, .art-card img {
+                height: clamp(160px, 42vw, 220px) !important;
+                width: 100% !important;
+                object-fit: contain !important;
+                display: block !important;
+                border-radius: 6px !important;
+            }
+            .art-info {
+                margin-top: 6px !important;
+                padding: 0 4px !important;
+                opacity: 1 !important;
+            }
+            .art-title {
+                font-size: 0.84rem !important;
+                line-height: 1.25 !important;
+                margin-bottom: 4px !important;
+                white-space: normal !important;
+                height: auto !important; 
+                overflow: visible !important;
+                color: #ffffff !important;
+                font-weight: 600 !important;
+            }
+            .art-price {
+                display: none !important;
+            }
+            /* DENSE DETAIL OVERLAY (Visor de obra compacto garantizado sin desbordes) */
+            #hero-overlay {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                background: rgba(0, 0, 0, 0.88) !important;
+                backdrop-filter: blur(8px) !important;
+                -webkit-backdrop-filter: blur(8px) !important;
+                z-index: 99999 !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                padding: 10px !important;
+                box-sizing: border-box !important;
+                margin: 0 !important;
+                overflow: hidden !important;
+            }
+            .hero-content,
+            #hero-overlay .hero-content,
+            #hero-overlay.active .hero-content {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                transform: none !important;
+                display: flex !important;
+                flex-direction: column !important;
+                width: 100% !important;
+                max-width: 340px !important;
+                min-width: 0 !important;
+                height: auto !important;
+                max-height: 88vh !important;
+                margin: 0 auto !important;
+                padding: 12px 14px 16px 14px !important;
+                background: #000000 !important;
+                border: 2px solid var(--primary) !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                border-radius: 12px !important;
+                box-sizing: border-box !important;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.95), 0 0 20px rgba(212, 175, 55, 0.25) !important;
+            }
+            .hero-image-container {
+                width: 100% !important;
+                max-height: 30vh !important;
+                min-height: 0 !important;
+                margin-bottom: 6px !important;
+                display: flex !important;
+                justify-content: center !important;
+                padding: 0 !important;
+                border: none !important;
+                box-sizing: border-box !important;
+                flex: none !important;
+            }
+            .hero-image-container img {
+                max-height: 100% !important;
+                max-width: 100% !important;
+                width: auto !important;
+                height: auto !important;
+                object-fit: contain !important;
+                display: block !important;
+            }
+            .hero-details {
+                padding: 0 !important;
+                width: 100% !important;
+                min-width: 0 !important;
+                box-sizing: border-box !important;
+                overflow-x: hidden !important;
+                flex: none !important;
+                background: transparent !important;
+            }
+            #hero-title, .hero-details h2 { 
+                font-size: 0.95rem !important; 
+                margin: 2px 0 !important; 
+                color: #fff !important; 
+                -webkit-text-fill-color: #fff !important;
+                background: none !important;
+                -webkit-background-clip: unset !important;
+                word-break: break-word !important;
+            }
+            .hero-meta {
+                display: flex !important;
+                gap: 8px !important;
+                margin: 4px 0 6px 0 !important;
+                align-items: center !important;
+            }
+            .hero-meta .tag, #hero-category { 
+                font-size: 0.72rem !important; 
+                padding: 2px 8px !important; 
+            }
+            .hero-meta .price, #hero-price { 
+                font-size: 0.85rem !important; 
+                font-weight: 700 !important;
+                color: var(--primary) !important;
+            }
+            #hero-desc { 
+                font-size: 0.72rem !important; 
+                line-height: 1.15 !important; 
+                margin: 5px 0 8px 0 !important;
+                color: #ccc !important;
+                word-break: break-word !important;
+            }
+            .hero-action-buttons {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 8px !important;
+                margin-top: 10px !important;
+                margin-bottom: 6px !important;
+                width: 100% !important;
+                min-width: 0 !important;
+                box-sizing: border-box !important;
+            }
+            .hero-action-buttons button,
+            .hero-action-buttons .btn-comprar,
+            .hero-action-buttons .btn-outline,
+            .btn-comprar, .btn-outline {
+                padding: 10px 12px !important;
+                font-size: 0.85rem !important;
+                font-weight: 600 !important;
+                margin: 0 !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
+                white-space: normal !important;
+                line-height: 1.2 !important;
+                word-break: break-word !important;
+                border-radius: 6px !important;
+            }
+            #close-hero { 
+                position: absolute !important;
+                top: 8px !important; 
+                right: 8px !important; 
+                width: 38px !important;
+                height: 38px !important;
+                border-radius: 50% !important;
+                background: #dc2626 !important; /* Rojo vivo visible */
+                border: 2px solid #ffffff !important;
+                color: #ffffff !important;
+                font-size: 1.3rem !important; 
+                font-weight: bold !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9) !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                z-index: 1050 !important;
+                cursor: pointer !important;
+            }
+            .btn-hero-close-bottom {
+                width: 100% !important;
+                background: rgba(255, 255, 255, 0.08) !important;
+                border: 1px solid rgba(255, 255, 255, 0.25) !important;
+                color: #e2e8f0 !important;
+                padding: 8px !important;
+                border-radius: 6px !important;
+                font-size: 0.8rem !important;
+                font-weight: 600 !important;
+                cursor: pointer !important;
+                text-align: center !important;
+                margin-top: 4px !important;
+                box-sizing: border-box !important;
+                display: block !important;
+            }
+        }
+    </style>
+
+    <!-- Importamos los datos de la web principal -->
+    <script src="../js/data.js?v=105"></script>
+
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Header / Controls -->
+        <header class="neon-header">
+            <div class="header-left">
+                <a href="../colecciones.html" class="nav-btn">⬅ Volver</a>
+                <a href="../index.html" class="nav-btn">🏠 Inicio</a>
+            </div>
+
+            <div class="header-center">
+                <h1 class="neon-title">GALERÍA <span class="highlight">DIGITAL</span></h1>
+            </div>
+
+            <div class="header-right">
+            </div>
+        </header>
+
+        <!-- Barra de Navegación Rápida e Índice Numérico -->
+        <nav id="quick-nav-bar" class="quick-nav-bar">
+            <!-- Selector Desplegable Directo -->
+            <div class="quick-select-wrapper">
+                <label for="quick-style-select" class="quick-select-label">⚡ SALTO RÁPIDO:</label>
+                <select id="quick-style-select" onchange="jumpToSelectedStyle(this.value)">
+                    <option value="">-- Elige Colección (00 al 56) --</option>
+                </select>
+            </div>
+
+            <!-- Botones de Décadas -->
+            <div class="quick-decades-group">
+                <button type="button" class="decade-btn" onclick="jumpToDecade('0')">00s</button>
+                <button type="button" class="decade-btn" onclick="jumpToDecade('1')">10s</button>
+                <button type="button" class="decade-btn" onclick="jumpToDecade('2')">20s</button>
+                <button type="button" class="decade-btn" onclick="jumpToDecade('3')">30s</button>
+                <button type="button" class="decade-btn" onclick="jumpToDecade('4')">40s</button>
+                <button type="button" class="decade-btn highlight-50" onclick="jumpToDecade('5')">50s (56)</button>
+                <button type="button" class="decade-btn b2b-btn" onclick="jumpToB2B()">👑 B2B MAGNA</button>
+                <button type="button" class="decade-btn sellos-btn" onclick="jumpToSellos()">✨ SELLOS</button>
+            </div>
+
+            <!-- Botón Índice Memorándum -->
+            <div class="quick-memo-btn-wrapper">
+                <button type="button" id="btn-toggle-memo-index" class="memo-toggle-btn" onclick="toggleMemoIndex()">📑 Índice Memorándum</button>
+            </div>
+        </nav>
+
+        <!-- Panel Desplegable Estilo Memorándum -->
+        <div id="memo-index-panel" class="memo-index-panel" style="display: none;">
+            <div class="memo-index-header">
+                <div class="memo-index-title-group">
+                    <h3>🏛️ ÍNDICE GENERAL DE COLECCIONES EDUSSE</h3>
+                    <p>Haz clic en cualquier estilo para viajar directamente sin scroll</p>
+                </div>
+                <button type="button" class="memo-close-btn" onclick="toggleMemoIndex()">✕ Cerrar</button>
+            </div>
+            <div id="memo-index-grid" class="memo-index-grid">
+                <!-- Se inyecta con JavaScript -->
+            </div>
+        </div>
+
+        <!-- Main Gallery Grid -->
+        <main id="gallery-container" class="gallery-container">
+            <!-- JS injected content here -->
+        </main>
+
+    </div>
+
+    <!-- Botón Flotante Volver Arriba -->
+    <button id="btn-back-to-top" class="btn-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Volver al inicio">
+        ▲
+    </button>
+
+    <!-- Hero Overlay for details -->
+    <div id="hero-overlay">
+        <div class="hero-content">
+            <button id="close-hero" onclick="closeHero()" title="Cerrar">✕</button>
+            <div class="hero-image-container watermarked">
+                <div class="artwork-overlay"></div>
+                <img id="hero-img" src="" alt="">
+                <!-- Mockup Living Room for B2B Magna -->
+                <div id="mockup-container" style="display: none; position: relative; width: 100%; aspect-ratio: 1/1; background-image: url('../assets/b2b_mockup_bg.jpg'); background-size: cover; background-position: center; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                    <!-- Wall Cover to mask the original frame on the wall -->
+                    <div id="mockup-wall-mask" style="position: absolute; top: 22%; left: 24%; width: 52%; height: 36%; background: #e8e5dc; filter: blur(2px);"></div>
+                    <!-- Frameless floating canvas wrapper (a pelo) -->
+                    <div id="mockup-artwork-wrapper" style="position: absolute; top: 24%; left: 26%; width: 48%; height: 32%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                        <img id="mockup-art-img" src="" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0px 15px 20px rgba(0,0,0,0.55)) contrast(1.02) brightness(0.98); border-radius: 2px;">
+                    </div>
+                </div>
+            </div>
+            <div class="hero-details">
+                <h2 id="hero-title">Título de la Obra</h2>
+                <div class="hero-meta">
+                    <span id="hero-category" class="tag">Categoría</span>
+                    <span id="hero-price" class="price">Precio</span>
+                </div>
+                <p id="hero-desc">Descripción detallada de la obra...</p>
+                <div class="hero-action-buttons">
+                    <!-- Botón de compra -->
+                    <button id="btn-comprar-cuadroteca" class="btn-comprar" onclick="comprarCuadro()">🛒 Comprar el Cuadro</button>
+                    <!-- Botón de Probador Virtual -->
+                    <button id="btn-probador-cuadroteca" class="btn-outline" onclick="probarCuadro()">🖼️ Probador Virtual</button>
+                    <!-- Botón secundario para cerrar en móvil -->
+                    <button type="button" class="btn-hero-close-bottom" onclick="closeHero()">✕ Cerrar Ficha</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página con estadísticas de visitas -->
+    <footer id="visitor-footer" style="position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(15, 23, 42, 0.95); border-top: 1px solid #334155; padding: 0.4rem 2rem; font-size: 0.75rem; color: #64748b; text-align: center; z-index: 90; letter-spacing: 1px; font-family: sans-serif;">
+        <span id="footer-visitor-stats">Cargando estadísticas locales...</span>
+    </footer>
+
+    <script src="../js/data.js?v=353"></script>
+    <script src="../js/cart.js?v=105"></script>
+    <script src="script.js?v=2026_m9"></script>
+    <script src="../js/protection.js"></script>
+</body>
+
+</html>

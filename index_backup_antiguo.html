@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- SYNC TEST MARKER: 2026-03-01 09:50 (Manolo) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Arte | Portafolio Oficial</title>
+    <link rel="stylesheet" href="main.css?v=105">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* RADICAL MOBILE COMPACTING (Strictly < 900px) */
+        @media (max-width: 900px) {
+            .navbar {
+                padding: 0.3rem 2% !important;
+                flex-direction: column !important;
+                gap: 2px !important;
+            }
+            .logo img {
+                max-height: 30px !important; /* Even smaller logo */
+            }
+            .mobile-v { display: inline !important; font-size: 10px; color: #888; margin-left: 5px; }
+            .nav-links {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                width: 100% !important;
+                gap: 10px !important;
+                padding: 8px 5px !important;
+                margin: 5px 0 !important;
+                justify-content: flex-start !important;
+                border-top: 1px solid #ddd;
+                border-bottom: 1px solid #ddd;
+            }
+            .nav-links::-webkit-scrollbar { display: none; }
+            .nav-links li { flex: 0 0 auto !important; }
+            .nav-links a {
+                font-size: 0.75rem !important;
+                white-space: nowrap !important;
+                padding: 4px 8px !important;
+                background: #f0f0f0 !important;
+                border-radius: 15px !important;
+                border: 1px solid #ccc !important;
+            }
+            .hero {
+                height: auto !important;
+                min-height: 100vh !important; /* Estirado para que no quede corta con las novedades */
+                padding: 40px 15px !important;
+            }
+            .zigzag-title {
+                font-size: 1.5rem !important;
+                margin-bottom: 15px !important;
+            }
+            .hero-subtitle {
+                font-size: 0.8rem !important;
+                margin-top: 5px !important;
+            }
+            /* 3 COLUMN GRID FOR HOMEPAGE NFTs */
+            #nfts div[style*="max-width: 400px"] {
+                max-width: 31% !important; 
+                height: auto !important;
+                aspect-ratio: auto !important;
+                padding: 2px !important;
+                margin: 0 !important;
+            }
+            #nfts img {
+                height: 80px !important; 
+                object-fit: cover !important;
+            }
+            #nfts h3 { font-size: 0.55rem !important; margin: 3px 0 !important; }
+            #nfts a[style*="background"] {
+                padding: 2px 5px !important;
+                font-size: 0.55rem !important;
+            }
+        }
+
+        /* ESTILOS DE MARCOS DE MADERA COLGANTES (RÚSTICOS) */
+        .hero-featured-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 3.5rem;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 15px;
+        }
+
+        .featured-box {
+            position: relative;
+            background: #eadecd; /* Color passepartout rústico/cartón */
+            /* Efecto inglete con bordes de madera con degradado de colores */
+            border-top: 20px solid #cfa36b;
+            border-right: 20px solid #a57843;
+            border-bottom: 20px solid #734d23;
+            border-left: 20px solid #a57843;
+            padding: 10px;
+            max-width: 290px;
+            width: 100%;
+            box-shadow: 
+                0 18px 30px rgba(0, 0, 0, 0.75), 
+                inset 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-top: 55px; /* Espacio para la cuerda */
+            box-sizing: border-box;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+
+        .featured-box:hover {
+            transform: translateY(-8px) rotate(0.8deg);
+            box-shadow: 
+                0 25px 40px rgba(0, 0, 0, 0.85), 
+                inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Borde interior oscuro del marco */
+        .featured-box-inner {
+            background: #fff;
+            padding: 12px 12px 15px 12px;
+            border: 2px solid #54391c;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .featured-box-img {
+            width: 100%;
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        /* Cuerda colgante superior */
+        .featured-rope {
+            position: absolute;
+            top: -55px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 55px;
+            pointer-events: none;
+            z-index: 10;
+        }
+    </style>
+    <script>console.log("v2.4.1 Loaded");</script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="artwork-container watermarked"><div class="artwork-overlay"></div><img src="assets/logo_banner.png" alt="Logo"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre M&iacute;</a></li>
+            <li><a href="memorandum.html">Universo EDUSSE</a></li>
+            <li><a href="colecciones.html">Colecciones</a></li>
+            <li><a href="compra.html">Cómo Comprar</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html">Carrito <span class="cart-badge"></span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content minimalist-hero">
+            <h1 class="zigzag-title">
+                <span class="line-1">La imaginación abre el camino,</span>
+                <span class="line-2">la técnica lo vuelve arte</span>
+            </h1>
+            <div class="hero-buttons minimalist-buttons" style="margin-bottom: 2rem;">
+                <a href="cuadroteca/index.html" class="btn text-btn outline-btn">GALERÍA DIGITAL</a>
+                <p class="hero-subtitle">Obras únicas creadas por Eduardo Ramírez<br>en simbiosis con Inteligencia
+                    Artificial.</p>
+            </div>
+
+            <!-- Contenedor de Novedades (Dos Recuadros de Obras en Marcos de Madera) -->
+            <div class="hero-featured-container">
+                <!-- Marco Izquierdo: Última Novedad -->
+                <div class="featured-box" id="featured-latest" style="display: none;">
+                    <svg class="featured-rope" viewBox="0 0 100 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="8" r="4.5" fill="#3a2818" />
+                        <circle cx="50" cy="8" r="2.5" fill="#1a120b" />
+                        <path d="M 50 8 L 10 55" stroke="#a08058" stroke-width="3" stroke-linecap="round" stroke-dasharray="4,2" />
+                        <path d="M 50 8 L 90 55" stroke="#a08058" stroke-width="3" stroke-linecap="round" stroke-dasharray="4,2" />
+                        <path d="M 50 8 L 10 55" stroke="#785c38" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M 50 8 L 90 55" stroke="#785c38" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                    <div class="featured-box-inner">
+                        <span style="display: inline-block; background: #a57843; color: #fff; font-size: 0.7rem; font-weight: bold; padding: 3px 10px; border-radius: 10px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">Última Novedad</span>
+                        <div class="featured-box-img" id="featured-latest-img"></div>
+                        <h3 id="featured-latest-title" style="font-family: 'Playfair Display', serif; color: #222; font-size: 1.1rem; margin-top: 0; margin-bottom: 5px; font-weight: bold; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"></h3>
+                        <p id="featured-latest-category" style="color: #8b5a2b; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 15px; font-weight: bold; letter-spacing: 0.5px;"></p>
+                        <a id="featured-latest-link" href="#" style="display: inline-block; background: #3a2818; color: #fff; text-decoration: none; padding: 8px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; transition: all 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.2);" onmouseover="this.style.background='#a57843';" onmouseout="this.style.background='#3a2818';">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <!-- Marco Derecho: Novedad Anterior -->
+                <div class="featured-box" id="featured-previous" style="display: none;">
+                    <svg class="featured-rope" viewBox="0 0 100 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="8" r="4.5" fill="#3a2818" />
+                        <circle cx="50" cy="8" r="2.5" fill="#1a120b" />
+                        <path d="M 50 8 L 10 55" stroke="#a08058" stroke-width="3" stroke-linecap="round" stroke-dasharray="4,2" />
+                        <path d="M 50 8 L 90 55" stroke="#a08058" stroke-width="3" stroke-linecap="round" stroke-dasharray="4,2" />
+                        <path d="M 50 8 L 10 55" stroke="#785c38" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M 50 8 L 90 55" stroke="#785c38" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                    <div class="featured-box-inner">
+                        <span style="display: inline-block; background: #888; color: #fff; font-size: 0.7rem; font-weight: bold; padding: 3px 10px; border-radius: 10px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">Anterior</span>
+                        <div class="featured-box-img" id="featured-previous-img"></div>
+                        <h3 id="featured-previous-title" style="font-family: 'Playfair Display', serif; color: #222; font-size: 1.1rem; margin-top: 0; margin-bottom: 5px; font-weight: bold; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"></h3>
+                        <p id="featured-previous-category" style="color: #666; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 0.5px;"></p>
+                        <a id="featured-previous-link" href="#" style="display: inline-block; background: #efefef; color: #3a2818; border: 1px solid #ccc; text-decoration: none; padding: 7px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; transition: all 0.3s; box-shadow: 0 1px 3px rgba(0,0,0,0.1);" onmouseover="this.style.background='#3a2818'; this.style.color='#fff';" onmouseout="this.style.background='#efefef'; this.style.color='#3a2818';">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Manifiesto / Filosofía de Autor -->
+    <section class="section" style="background-color: #0a0a0a; color: #fff; padding: 5rem 1.5rem; text-align: center; border-top: 2px solid #222; border-bottom: 2px solid #222;">
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1.8rem; color: #D4AF37; letter-spacing: 4px; text-transform: uppercase;">Filosof&iacute;a de Autor</h2>
+            <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.25rem; line-height: 2.1; color: #e0e0e0; font-weight: 300;">
+                "No uso la inteligencia artificial. <strong>Dialogo con ella.</strong><br><br>
+                M&aacute;s de cien formas de pintar desarrolladas. Cuarenta y ocho estilos propios, cada uno con su luz, su materia y su respiraci&oacute;n. Un universo visual que no exist&iacute;a antes.<br><br>
+                El Universo EDUSSE no nace de pulsar un bot&oacute;n. Nace de cincuenta a&ntilde;os de oficio, de saber qu&eacute; pedir, cu&aacute;ndo corregir y cu&aacute;ndo dejar respirar."
+            </div>
+            <div style="margin-top: 3rem;">
+                <p style="font-family: 'Lato', sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff; letter-spacing: 3px; text-transform: uppercase;">
+                    Eduardo Ram&iacute;rez de Cartagena
+                </p>
+                <a href="manifiesto.html" style="display: inline-block; margin-top: 1.5rem; color: #D4AF37; text-decoration: none; font-size: 0.85rem; border: 1px solid #D4AF37; padding: 10px 25px; border-radius: 30px; letter-spacing: 1px; transition: all 0.3s; text-transform: uppercase;" onmouseover="this.style.background='#D4AF37'; this.style.color='#0a0a0a';" onmouseout="this.style.background='transparent'; this.style.color='#D4AF37';">Leer Manifiesto Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Living Masterpieces Section -->
+    <section class="moving-art-section">
+        <div class="moving-art-content">
+            <h2 class="moving-art-title">Living Masterpieces</h2>
+            <p class="moving-art-desc">
+                Experimenta el arte vivo. Obras maestras diseñadas para pantallas y televisores de alta gama, con un movimiento sutil en bucle infinito que transforma la atmósfera de cualquier estancia.
+            </p>
+            
+            <div class="moving-art-grid">
+                <!-- Cinemagraph Card 1 (Avestruz) -->
+                <div class="cinemagraph-card">
+                    <div class="video-container">
+                        <video autoplay loop muted playsinline class="cinemagraph-video">
+                            <source src="assets/cinemagraphs/cascada_web.mp4" type="video/mp4">
+                            Tu navegador no soporta vídeo.
+                        </video>
+                    </div>
+                    <div class="cinemagraph-info">
+                        <h3>Cascada de Selva Tropical</h3>
+                        <p class="cinemagraph-category">Colección Universo EDUSSE</p>
+                        <a href="contacto.html?interest=living_avestruz" class="btn-moving-buy">Adquirir Licencia 4K</a>
+                    </div>
+                </div>
+                
+                <!-- Cinemagraph Card 2 (Relieve Caligrafía) -->
+                <div class="cinemagraph-card">
+                    <div class="video-container">
+                        <video autoplay loop muted playsinline class="cinemagraph-video">
+                            <source src="assets/cinemagraphs/marea_web.mp4" type="video/mp4">
+                            Tu navegador no soporta vídeo.
+                        </video>
+                    </div>
+                    <div class="cinemagraph-info">
+                        <h3>Marea Dorada</h3>
+                        <p class="cinemagraph-category">Colección B2B Magna</p>
+                        <a href="contacto.html?interest=living_magna" class="btn-moving-buy">Adquirir Licencia 4K</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Lookbook Section -->
+    <section class="lookbook-section" style="background-color: #050505; padding: 6rem 0; border-top: 1px solid #1a1a1a;">
+        <div class="container" style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #D4AF37; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1rem;">Coleccionismo de &Eacute;lite</h2>
+            <p style="font-family: 'Lato', sans-serif; font-size: 1.1rem; color: #aaa; letter-spacing: 1px;">Visualiza tu pr&oacute;xima inversi&oacute;n en su h&aacute;bitat natural.</p>
+        </div>
+        
+        <div class="lookbook-grid" style="width: 100%; max-width: 1600px; margin: 0 auto;">
+            <style>
+                .lookbook-grid {
+                    display: grid;
+                    grid-template-columns: repeat(1, 1fr);
+                    gap: 2rem;
+                    padding: 0 2rem;
+                }
+                @media (min-width: 600px) {
+                    .lookbook-grid { grid-template-columns: repeat(2, 1fr); }
+                }
+                @media (min-width: 1024px) {
+                    /* 4 fotos en fila pero el contenedor es más ancho, así que las fotos son más grandes */
+                    .lookbook-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+                }
+                .lookbook-item {
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                    position: relative;
+                    /* Transición suave para el efecto de agrandar */
+                    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, z-index 0s;
+                    z-index: 1;
+                    cursor: pointer;
+                }
+                .lookbook-item:hover {
+                    /* El zoom potente al pasar el ratón pero quedándose en su sitio */
+                    transform: scale(1.45);
+                    z-index: 20; /* Para que quede por encima de las demás */
+                    box-shadow: 0 35px 80px rgba(0,0,0,0.95);
+                }
+                .lookbook-item img {
+                    width: 100%;
+                    height: 100%;
+                    aspect-ratio: 4/5; /* Las mantiene uniformes */
+                    object-fit: cover;
+                    display: block;
+                }
+            </style>
+
+            <div class="lookbook-item">
+                <img src="assets/mockups/mockup kuwai salon cuadro.png" alt="Hotel Kuwait VIP" loading="lazy">
+            </div>
+            <div class="lookbook-item">
+                <img src="assets/mockups/mockup_rasgo_perdido.png" alt="Atico Nueva York" loading="lazy">
+            </div>
+            <div class="lookbook-item">
+                <img src="assets/mockups/mockup_gemanium.png" alt="Salon Minimalista" loading="lazy">
+            </div>
+            <div class="lookbook-item">
+                <img src="assets/mockups/mockup antesala.png" alt="Antesala Jazz" loading="lazy">
+            </div>
+        </div>
+        
+        <div style="display: flex; justify-content: center; align-items: center; gap: 2.5rem; margin-top: 4rem; flex-wrap: wrap;">
+            <a href="certificado_autenticidad.html" target="_blank" style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; font-size: 1.8rem; color: #FFD700; text-decoration: none; text-shadow: 0 2px 5px rgba(0,0,0,0.8); transition: color 0.3s;" onmouseover="this.style.color='#FFF';" onmouseout="this.style.color='#FFD700';">con Certificaci&oacute;n Oficial</a>
+            
+            <a href="colecciones.html" style="display: inline-block; background: #D4AF37; color: #000; text-decoration: none; font-family: 'Lato', sans-serif; font-weight: bold; font-size: 0.95rem; padding: 15px 35px; border-radius: 30px; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s; box-shadow: 0 5px 15px rgba(212,175,55,0.2);" onmouseover="this.style.background='#fff'; this.style.color='#000'; this.style.boxShadow='0 5px 25px rgba(255,255,255,0.3)';" onmouseout="this.style.background='#D4AF37'; this.style.color='#000'; this.style.boxShadow='0 5px 15px rgba(212,175,55,0.2)';">Explorar Colecci&oacute;n Completa</a>
+        </div>
+    </section>
+
+    <footer class="site-footer"
+        style="text-align: center; padding: 2rem; background-color: transparent; color: inherit; border-top: 1px solid #eaeaea; margin-top: 4rem;">
+        <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">&copy; e.ramirez 2026. Todos los derechos reservados. |
+            PRODUCED BY <a href="https://khem.es" target="_blank"
+                style="color: inherit; text-decoration: none; font-weight: bold;">KHEM</a></p>
+        <a href="condiciones.html" style="color: inherit; text-decoration: underline; font-size: 0.85rem;">Términos y
+            Condiciones</a>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js?v=105"></script>
+    <script src="js/cart.js?v=105"></script>
+    <script src="js/loader.js?v=105"></script>
+    <script src="js/protection.js"></script>
+    
+    <!-- Script para cargar novedades dinámicamente -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof artworkData !== 'undefined' && artworkData.length > 0) {
+                // Filtrar obras públicas exclusivas del arte pictórico (excluyendo B2B, NFT y Sellos/Cincelado)
+                const publicArtworks = artworkData.filter(art => {
+                    const isB2B = art.category && (art.category.includes('B2B') || art.b2b_only === true);
+                    const isNFT = art.category && (art.category.includes('FURSONA') || art.category.includes('QUANTUM') || art.category.includes('VORTEX'));
+                    const isStampOrEngraving = art.category && (
+                        art.category.toUpperCase().includes('CINCELADA') || 
+                        art.category.toUpperCase().includes('SELLO') || 
+                        art.category.toUpperCase().includes('SELLOS')
+                    );
+                    return !isB2B && !isNFT && !isStampOrEngraving;
+                });
+
+                if (publicArtworks.length > 0) {
+                    const latest = publicArtworks.find(a => a.id === 'running apes') || publicArtworks[publicArtworks.length - 1];
+                    const previous = publicArtworks.find(a => a.id === 'without a trace of barbarism') || (publicArtworks.length > 1 ? publicArtworks[publicArtworks.length - 2] : null);
+
+                    if (latest) {
+                        const safeUrl = encodeURI(latest.src).replace(/'/g, "%27");
+                        document.getElementById('featured-latest-img').style.backgroundImage = `url('${safeUrl}')`;
+                        document.getElementById('featured-latest-title').textContent = latest.title || 'Sin Título';
+                        document.getElementById('featured-latest-category').textContent = (latest.category || '').replace(/^\d+/, '').replace(/_/g, ' ');
+                        document.getElementById('featured-latest-link').href = `visor/index.html?img=${encodeURIComponent('../' + latest.src)}&title=${encodeURIComponent(latest.title)}&category=${encodeURIComponent(latest.category)}&id=${latest.id}`;
+                        document.getElementById('featured-latest').style.display = 'block';
+                    }
+
+                    if (previous) {
+                        const safeUrl = encodeURI(previous.src).replace(/'/g, "%27");
+                        document.getElementById('featured-previous-img').style.backgroundImage = `url('${safeUrl}')`;
+                        document.getElementById('featured-previous-title').textContent = previous.title || 'Sin Título';
+                        document.getElementById('featured-previous-category').textContent = (previous.category || '').replace(/^\d+/, '').replace(/_/g, ' ');
+                        document.getElementById('featured-previous-link').href = `visor/index.html?img=${encodeURIComponent('../' + previous.src)}&title=${encodeURIComponent(previous.title)}&category=${encodeURIComponent(previous.category)}&id=${previous.id}`;
+                        document.getElementById('featured-previous').style.display = 'block';
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

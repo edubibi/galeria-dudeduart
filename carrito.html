@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito | DUDEDUART Galería de Arte</title>
+    <link rel="stylesheet" href="main.css?v=106">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- UNIFIED NAVBAR (FULL INTENSITY & HIGH VISIBILITY) --- */
+        @media (min-width: 901px) {
+            .navbar {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 1.5rem 5% !important;
+                background-color: #000000 !important;
+                border-bottom: 1px solid #1a1a1a !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 1000 !important;
+            }
+
+            .nav-links {
+                display: flex !important;
+                gap: 2rem !important;
+                list-style: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .nav-links a {
+                text-decoration: none !important;
+                color: #ffffff !important;
+                font-family: 'Lato', sans-serif !important;
+                font-size: 0.95rem !important;
+                font-weight: 400 !important;
+                letter-spacing: 1px !important;
+                transition: color 0.3s ease !important;
+                opacity: 0.95 !important;
+            }
+
+            .nav-links a.active,
+            .nav-links a:hover {
+                color: #D4AF37 !important;
+                opacity: 1 !important;
+                font-weight: 700 !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 0.75rem 1.25rem !important;
+                background-color: #0a0a0a !important;
+                border-bottom: 1px solid #1a1a1a !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 1000 !important;
+            }
+            .logo img {
+                max-height: 46px !important;
+                width: auto !important;
+            }
+            .navbar-mobile-actions {
+                display: flex !important;
+                align-items: center !important;
+                gap: 12px !important;
+            }
+            .mobile-cart-btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                gap: 5px !important;
+                background: rgba(212, 175, 55, 0.15) !important;
+                border: 1px solid rgba(212, 175, 55, 0.4) !important;
+                color: #ffffff !important;
+                text-decoration: none !important;
+                padding: 7px 12px !important;
+                border-radius: 20px !important;
+                font-size: 0.88rem !important;
+            }
+            .nav-toggle-btn {
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-around !important;
+                width: 44px !important;
+                height: 44px !important;
+                background: #111111 !important;
+                border: 1px solid rgba(212, 175, 55, 0.4) !important;
+                border-radius: 8px !important;
+                cursor: pointer !important;
+                padding: 10px !important;
+                box-sizing: border-box !important;
+            }
+            .nav-toggle-btn .bar {
+                width: 100% !important;
+                height: 2px !important;
+                background: #D4AF37 !important;
+                border-radius: 2px !important;
+                pointer-events: none !important;
+            }
+            .nav-toggle-btn.open .bar-1 { transform: translateY(8px) rotate(45deg) !important; }
+            .nav-toggle-btn.open .bar-2 { opacity: 0 !important; transform: scaleX(0) !important; }
+            .nav-toggle-btn.open .bar-3 { transform: translateY(-8px) rotate(-45deg) !important; }
+            .nav-links {
+                display: none !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                width: 100% !important;
+                background: #0f0f14 !important;
+                flex-direction: column !important;
+                gap: 0 !important;
+                padding: 0.8rem 1.2rem 1.4rem 1.2rem !important;
+                border-bottom: 3px solid #D4AF37 !important;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85) !important;
+                box-sizing: border-box !important;
+                z-index: 999 !important;
+            }
+            .nav-links.open {
+                display: flex !important;
+                animation: slideNavDark 0.25s ease forwards !important;
+            }
+            @keyframes slideNavDark {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .nav-links li { width: 100% !important; list-style: none !important; }
+            .nav-links a {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                font-family: 'Playfair Display', serif !important;
+                font-size: 1.15rem !important;
+                color: #e2e8f0 !important;
+                padding: 13px 16px !important;
+                text-decoration: none !important;
+                border-radius: 6px !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+                background: transparent !important;
+            }
+            .nav-links a.active,
+            .nav-links a:hover {
+                background: rgba(212, 175, 55, 0.15) !important;
+                color: #D4AF37 !important;
+                padding-left: 20px !important;
+            }
+            .nav-links a::after {
+                content: '›' !important;
+                font-size: 1.3rem !important;
+                color: #D4AF37 !important;
+                opacity: 0.7 !important;
+            }
+            .nav-links a.active::after {
+                content: '✓' !important;
+                font-size: 1rem !important;
+                opacity: 1;
+            }
+            .desktop-cart-item { display: none !important; }
+        }
+
+        /* --- PAGE HEADER --- */
+        .page-header {
+            background: #050505;
+            padding: 55px 20px 35px;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            color: #D4AF37;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .cart-card {
+            background: #0d0d10;
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            margin-bottom: 30px;
+        }
+
+        .cart-table th {
+            color: #D4AF37;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 12px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .cart-table td {
+            padding: 16px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+        }
+
+        .form-input {
+            width: 100%;
+            background: #f8f9fa !important;
+            color: #111111 !important;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 12px 14px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: #D4AF37 !important;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.4) !important;
+        }
+
+        .payment-method-box {
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            transition: all 0.2s;
+        }
+
+        .btn-bizum-copy {
+            background: #00b4a7;
+            color: #000;
+            border: none;
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .btn-bizum-copy:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html"><img src="assets/logo_banner.png" alt="Logo"></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre Mí</a></li>
+            <li><a href="memorandum.html">Universo EDUSSE</a></li>
+            <li><a href="colecciones.html">Colecciones</a></li>
+            <li><a href="compra.html">Cómo Comprar</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html" class="active">Carrito <span class="cart-badge"></span></a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Tu Selección de Arte</h1>
+            <p style="color: #ffffff; font-size: 1.05rem; letter-spacing: 0.5px;">Revisa tus obras y elige tu método de pago directo con el autor.</p>
+        </div>
+    </header>
+
+    <section class="section" style="padding: 50px 15px; background-color: #000000;">
+        <div class="container" style="max-width:920px; margin:0 auto;">
+
+            <!-- Empty Cart -->
+            <div id="empty-cart-msg" class="cart-card" style="text-align:center; padding: 60px 20px; display:none;">
+                <div style="font-size: 3.5rem; margin-bottom: 15px;">🎨</div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #D4AF37; margin-bottom: 12px;">Tu carrito está vacío</h3>
+                <p style="color: #ffffff; font-size: 1.05rem; margin-bottom: 30px;">Explora las colecciones y añade las obras que desees adquirir o probar en el visor virtual.</p>
+                <a href="colecciones.html" class="btn" style="background: #D4AF37; color: #000; font-weight: 800; padding: 12px 32px; border-radius: 30px; text-decoration: none; display: inline-block; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">
+                    Explorar Colecciones
+                </a>
+            </div>
+
+            <!-- Cart Content -->
+            <div id="cart-content" style="display:none;">
+
+                <!-- Tabla de Obras -->
+                <div class="cart-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #fff;">Obras en tu Cesta</h2>
+                        <button onclick="clearCart()" style="color: #94a3b8; background: transparent; border: 1px solid rgba(255,255,255,0.2); padding: 6px 12px; cursor: pointer; border-radius: 6px; font-size: 0.78rem; font-family: inherit;">
+                            🗑️ Vaciar Cesta
+                        </button>
+                    </div>
+
+                    <table class="cart-table" style="width:100%; border-collapse: collapse; margin-bottom: 1.5rem;">
+                        <thead>
+                            <tr>
+                                <th style="text-align:left;">Obra</th>
+                                <th style="text-align:center; min-width: 230px;">Formato / Medida Deseada</th>
+                                <th style="text-align:center; width: 110px;">Precio</th>
+                                <th style="text-align:center; width: 60px;">Quitar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items-body">
+                            <!-- JS populated -->
+                        </tbody>
+                    </table>
+
+                    <div id="promo-banner" style="display:none; background: rgba(212, 175, 55, 0.12); padding: 12px; border-radius: 8px; text-align:center; margin-bottom: 1.5rem; border: 1px dashed #D4AF37; color: #ffd700; font-weight: bold; font-size: 0.90rem;">
+                        ✨ ¡Promoción 3+1 Aplicada! Por cada 4 obras, la de menor importe te sale GRATIS.
+                    </div>
+
+                    <!-- Subtotal y Total -->
+                    <div style="display:flex; justify-content: flex-end; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                        <div style="text-align:right; width: 280px;">
+                            <div style="color:#94a3b8; font-size:0.92rem; margin-bottom: 4px;" id="subtotal-row">Subtotal: 0,00 €</div>
+                            <div style="color:#e67e22; font-weight:bold; font-size:0.92rem; display:none; margin-bottom: 4px;" id="discount-row">Ahorro Promo: -0,00 €</div>
+                            <div style="font-size:1.6rem; color: #D4AF37; font-weight: 800;">
+                                Total: <span id="cart-total">0,00 €</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario de Datos para Recibo Oficial (100% OPCIONAL) -->
+                <div class="cart-card" style="border-left: 4px solid #D4AF37; background: #0e1420;">
+                    <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none;">
+                        <input type="checkbox" id="toggle-receipt" onchange="toggleReceiptForm()" style="width: 20px; height: 20px; accent-color: #D4AF37; cursor: pointer;">
+                        <div>
+                            <span style="font-weight: 700; font-size: 1.05rem; color: #fff;">
+                                📄 ¿Deseas solicitar Recibo Oficial de Compra?
+                            </span>
+                            <span style="font-size: 0.80rem; color: #D4AF37; font-weight: 600; margin-left: 6px; text-transform: uppercase;">
+                                (Opcional)
+                            </span>
+                            <p style="color: #94a3b8; font-size: 0.80rem; margin: 2px 0 0 0;">
+                                Márcalo si necesitas un justificante oficial a tu nombre, DNI/NIF o empresa. Si no lo necesitas, puedes pagar directamente.
+                            </p>
+                        </div>
+                    </label>
+
+                    <!-- Campos Desplegables (Ocultos por defecto) -->
+                    <div id="receipt-fields" style="display: none; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 15px;">
+                        <div>
+                            <label style="display: block; font-size: 0.76rem; color: #cbd5e1; text-transform: uppercase; font-weight: 700; margin-bottom: 5px;">Nombre y Apellidos / Razón Social:</label>
+                            <input type="text" id="buyer-name" class="form-input" placeholder="Ej: Juan Pérez García" oninput="saveReceiptDraft()">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.76rem; color: #cbd5e1; text-transform: uppercase; font-weight: 700; margin-bottom: 5px;">DNI / NIF / CIF:</label>
+                            <input type="text" id="buyer-dni" class="form-input" placeholder="Ej: 12345678Z" oninput="saveReceiptDraft()">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.76rem; color: #cbd5e1; text-transform: uppercase; font-weight: 700; margin-bottom: 5px;">Email para el justificante:</label>
+                            <input type="email" id="buyer-email" class="form-input" placeholder="Ej: cliente@email.com" oninput="saveReceiptDraft()">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.76rem; color: #cbd5e1; text-transform: uppercase; font-weight: 700; margin-bottom: 5px;">Población / Dirección (Opcional):</label>
+                            <input type="text" id="buyer-address" class="form-input" placeholder="Ej: Madrid, España" oninput="saveReceiptDraft()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pasarelas de Pago -->
+                <div class="cart-card">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.35rem; color: #D4AF37; margin-bottom: 6px;">Elige tu Método de Pago Directo</h3>
+                    <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 20px;">Venta directa con el autor Eduardo Ramírez de Cartagena (DUDEDUART). Sin intermediarios.</p>
+
+                    <!-- 1. BIZUM (MÉTODO PRINCIPAL DESTACADO) -->
+                    <div class="payment-method-box" style="background: rgba(0, 180, 167, 0.08); border: 2px solid #00b4a7; box-shadow: 0 4px 20px rgba(0,180,167,0.15);">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span style="background: #00b4a7; color: #000; font-weight: 900; font-size: 0.85rem; padding: 3px 10px; border-radius: 6px;">BIZUM</span>
+                                <span style="font-weight: 700; font-size: 1.05rem; color: #fff;">Pago Inmediato (España)</span>
+                            </div>
+                            <span id="bizum-total-badge" style="color: #00b4a7; font-weight: 900; font-size: 1.25rem;">0,00 €</span>
+                        </div>
+
+                        <div style="background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(0, 180, 167, 0.35); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+                            <div>
+                                <div style="font-size: 0.72rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">Número de Teléfono para Bizum:</div>
+                                <div style="font-size: 1.4rem; font-weight: 800; color: #00e5d4; letter-spacing: 1.5px;">678 70 87 29</div>
+                            </div>
+                            <button onclick="copyBizumPhone(this)" class="btn-bizum-copy">
+                                📋 Copiar Número
+                            </button>
+                        </div>
+
+                        <p style="font-size: 0.82rem; color: #cbd5e1; margin-bottom: 12px; line-height: 1.4;">
+                            1. Abre la app de tu banco y haz un Bizum por el importe exacto al <strong>678 70 87 29</strong>.<br>
+                            2. Pulsa en <strong>Confirmar por WhatsApp</strong> o envía un email para recibir el archivo Master y tu recibo:
+                        </p>
+
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px;">
+                            <a id="btn-whatsapp-bizum" href="#" target="_blank" style="flex: 1; min-width: 180px; background: #25D366; color: #000; font-weight: 800; font-size: 0.84rem; padding: 11px 16px; border-radius: 8px; text-decoration: none; text-align: center; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(37,211,102,0.3);">
+                                💬 Confirmar Pedido por WhatsApp
+                            </a>
+                            <a id="btn-email-bizum" href="#" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-weight: 700; font-size: 0.84rem; padding: 11px 16px; border-radius: 8px; text-decoration: none; text-align: center; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                                ✉️ Confirmar por Email
+                            </a>
+                        </div>
+
+                        <div style="text-align: center; border-top: 1px dashed rgba(0, 180, 167, 0.3); padding-top: 12px;">
+                            <button onclick="completeBizumOrder()" style="background: linear-gradient(135deg, #00b4a7, #007a71); color: #fff; border: none; font-weight: 800; font-size: 0.90rem; padding: 12px 24px; border-radius: 30px; cursor: pointer; font-family: inherit; box-shadow: 0 4px 15px rgba(0,180,167,0.4);">
+                                ✅ Ya he realizado el Bizum → Ver mi Recibo y Descargas
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2. PAYPAL -->
+                    <div class="payment-method-box" style="background: rgba(0, 112, 186, 0.10); border: 1px solid #0070ba;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span style="font-size: 1.4rem;">🅿️</span>
+                                <div>
+                                    <div style="font-weight: 700; font-size: 0.98rem; color: #fff;">PayPal</div>
+                                    <div style="font-size: 0.75rem; color: #94a3b8;">Pago seguro con saldo PayPal o Tarjeta de Crédito vinculada</div>
+                                </div>
+                            </div>
+                            <span id="paypal-total-badge" style="color: #00c0ff; font-weight: 800; font-size: 1.1rem;">0,00 €</span>
+                        </div>
+                        <a id="paypal-direct-link" href="https://www.paypal.com/paypalme/TheResearchBand" target="_blank" onclick="trackPayPalOrder()" style="display: block; background: #0070ba; color: #fff; text-align: center; font-weight: 800; font-size: 0.88rem; padding: 11px; border-radius: 8px; text-decoration: none; transition: background 0.2s;">
+                            Pagar con PayPal ➔
+                        </a>
+                    </div>
+
+                    <!-- 3. TRANSFERENCIA BANCARIA -->
+                    <div class="payment-method-box" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.15);">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                            <span style="font-size: 1.3rem;">🏦</span>
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.95rem; color: #fff;">Transferencia Bancaria Tradicional (IBAN)</div>
+                                <div style="font-size: 0.75rem; color: #94a3b8;">Solicita el número de cuenta si prefieres hacer una transferencia ordinaria</div>
+                            </div>
+                        </div>
+                        <a href="mailto:dudeduart@gmail.com?subject=Solicitud%20IBAN%20para%20compra%20en%20Galeria%20DUDEDUART" style="display: inline-block; color: #D4AF37; font-weight: 700; font-size: 0.82rem; text-decoration: underline;">
+                            Solicitar número de cuenta bancaria por Email &rarr;
+                        </a>
+                    </div>
+
+                    <div style="margin-top: 20px; text-align: center; color: #64748b; font-size: 0.75rem; display: flex; justify-content: center; gap: 20px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 15px;">
+                        <span>🔒 Compra 100% Segura</span>
+                        <span>📄 Recibo Oficial Firmado</span>
+                        <span>🎖️ Certificado de Autenticidad</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 3rem 1rem; background-color: #000000; color: #ffffff; border-top: 1px solid #1a1a1a;">
+        <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #ffffff;">&copy; e.ramirez 2026. Todos los derechos reservados. |
+            PRODUCED BY <a href="https://khem.es" target="_blank"
+                style="color: #D4AF37; text-decoration: none; font-weight: bold;">KHEM</a></p>
+        <p style="font-size:0.85rem; margin-top:0.5rem;">
+            <a href="condiciones.html" style="color: #D4AF37; text-decoration: none; opacity: 0.95;">Términos y Condiciones</a>
+        </p>
+    </footer>
+
+    <script src="js/cart.js"></script>
+
+    <script>
+        window.addEventListener('cartUpdated', renderPage);
+
+        function toggleReceiptForm() {
+            const chk = document.getElementById('toggle-receipt');
+            const fields = document.getElementById('receipt-fields');
+            if (chk && fields) {
+                fields.style.display = chk.checked ? 'grid' : 'none';
+            }
+        }
+
+        function saveReceiptDraft() {
+            const name = document.getElementById('buyer-name').value;
+            const dni = document.getElementById('buyer-dni').value;
+            const email = document.getElementById('buyer-email').value;
+            const address = document.getElementById('buyer-address').value;
+
+            if (name) localStorage.setItem('receipt_buyer_name', name);
+            if (dni) {
+                localStorage.setItem('receipt_buyer_dni', dni);
+                localStorage.setItem('last_purchase_dni', dni);
+            }
+            if (email) localStorage.setItem('receipt_buyer_email', email);
+            if (address) localStorage.setItem('receipt_buyer_address', address);
+
+            updatePaymentLinks();
+        }
+
+        function copyBizumPhone(btn) {
+            navigator.clipboard.writeText('678708729').then(function() {
+                var old = btn.textContent;
+                btn.textContent = '✓ ¡Copiado!';
+                btn.style.background = '#22c55e';
+                btn.style.color = '#fff';
+                setTimeout(function() {
+                    btn.textContent = old;
+                    btn.style.background = '#00b4a7';
+                    btn.style.color = '#000';
+                }, 2000);
+            });
+        }
+
+        function selectItemSize(index, size) {
+            const cart = getCart();
+            if (cart[index]) {
+                cart[index].selectedSize = size;
+                if (typeof saveCart === 'function') {
+                    saveCart(cart);
+                } else {
+                    localStorage.setItem('tu_arte_cart', JSON.stringify(cart));
+                }
+                renderPage();
+            }
+        }
+        window.selectItemSize = selectItemSize;
+
+        function updatePaymentLinks() {
+            const cart = getCart();
+            const totals = calculateTotals();
+            const totalStr = totals.total.toFixed(2);
+            
+            const wantsReceipt = document.getElementById('toggle-receipt')?.checked;
+            const name = document.getElementById('buyer-name').value;
+            const dni = document.getElementById('buyer-dni').value;
+            const email = document.getElementById('buyer-email').value;
+
+            const itemsTitles = cart.map(i => `${i.title} (${i.selectedSize || '70×100 cm'})`).join(', ');
+
+            // Bizum Badges
+            const bizumBadge = document.getElementById('bizum-total-badge');
+            if (bizumBadge) bizumBadge.textContent = totalStr + ' €';
+
+            const paypalBadge = document.getElementById('paypal-total-badge');
+            if (paypalBadge) paypalBadge.textContent = totalStr + ' €';
+
+            // WhatsApp link
+            let waText = `Hola Eduardo, he hecho un Bizum de ${totalStr}€ para las siguientes obras de la Galería DUDEDUART:\n- Obras: ${itemsTitles}`;
+            if (wantsReceipt && (name || dni)) {
+                waText += `\n- Recibo a nombre de: ${name || 'Particular'}${dni ? ' (DNI: ' + dni + ')' : ''}`;
+            }
+            if (email) {
+                waText += `\n- Mi Email de entrega: ${email}`;
+            } else {
+                waText += `\n- Mi Email de entrega es: `;
+            }
+
+            const waBtn = document.getElementById('btn-whatsapp-bizum');
+            if (waBtn) waBtn.href = 'https://wa.me/34678708729?text=' + encodeURIComponent(waText);
+
+            // Email link
+            const emailBtn = document.getElementById('btn-email-bizum');
+            if (emailBtn) {
+                emailBtn.href = `mailto:dudeduart@gmail.com?subject=${encodeURIComponent('Pago Bizum Galería DUDEDUART (' + totalStr + ' EUR)')}&body=${encodeURIComponent(waText)}`;
+            }
+
+            // PayPal link
+            const paypalLink = document.getElementById('paypal-direct-link');
+            if (paypalLink) {
+                const cleanEUR = Math.round(totals.total);
+                paypalLink.href = `https://www.paypal.com/paypalme/TheResearchBand/${cleanEUR}EUR`;
+            }
+        }
+
+        function completeBizumOrder() {
+            const cart = getCart();
+            if (cart.length === 0) return;
+
+            const totals = calculateTotals();
+            const buyerName = document.getElementById('buyer-name').value || 'Cliente Particular';
+            const buyerDni = document.getElementById('buyer-dni').value || 'Consumidor Final';
+            const buyerEmail = document.getElementById('buyer-email').value || '---';
+            const buyerAddress = document.getElementById('buyer-address').value || 'Entrega Digital Telemática';
+
+            const receiptData = {
+                receiptNum: 'REC-2026-' + Math.floor(1000 + Math.random() * 9000),
+                date: new Date().toLocaleDateString('es-ES', { day: '2-digit', month: 'long', year: 'numeric' }),
+                buyerName: buyerName,
+                buyerDni: buyerDni,
+                buyerEmail: buyerEmail,
+                buyerAddress: buyerAddress,
+                paymentMethod: 'Bizum (678 70 87 29)',
+                items: cart.map(i => ({
+                    id: i.id,
+                    title: i.title,
+                    price: i.price,
+                    tech: `Giclée Master (${i.selectedSize || '70×100 cm'})`
+                })),
+                subtotal: totals.subtotal,
+                discount: totals.discount,
+                total: totals.total
+            };
+
+            localStorage.setItem('last_receipt_data', JSON.stringify(receiptData));
+            localStorage.setItem('last_purchase_dni', buyerDni);
+
+            window.location.href = 'checkout_success.html?method=bizum';
+        }
+
+        function trackPayPalOrder() {
+            const cart = getCart();
+            if (cart.length === 0) return;
+
+            const totals = calculateTotals();
+            const buyerName = document.getElementById('buyer-name').value || 'Cliente Particular';
+            const buyerDni = document.getElementById('buyer-dni').value || 'Consumidor Final';
+            const buyerEmail = document.getElementById('buyer-email').value || '---';
+            const buyerAddress = document.getElementById('buyer-address').value || 'Entrega Digital Telemática';
+
+            const receiptData = {
+                receiptNum: 'REC-2026-' + Math.floor(1000 + Math.random() * 9000),
+                date: new Date().toLocaleDateString('es-ES', { day: '2-digit', month: 'long', year: 'numeric' }),
+                buyerName: buyerName,
+                buyerDni: buyerDni,
+                buyerEmail: buyerEmail,
+                buyerAddress: buyerAddress,
+                paymentMethod: 'PayPal',
+                items: cart.map(i => ({
+                    id: i.id,
+                    title: i.title,
+                    price: i.price,
+                    tech: `Giclée Master (${i.selectedSize || '70×100 cm'})`
+                })),
+                subtotal: totals.subtotal,
+                discount: totals.discount,
+                total: totals.total
+            };
+
+            localStorage.setItem('last_receipt_data', JSON.stringify(receiptData));
+            localStorage.setItem('last_purchase_dni', buyerDni);
+        }
+
+        function renderPage() {
+            const cart = getCart();
+            const emptyMsg = document.getElementById('empty-cart-msg');
+            const content = document.getElementById('cart-content');
+            const tbody = document.getElementById('cart-items-body');
+            const totalEl = document.getElementById('cart-total');
+            const subtotalEl = document.getElementById('subtotal-row');
+            const discountEl = document.getElementById('discount-row');
+            const promoBanner = document.getElementById('promo-banner');
+
+            if (cart.length === 0) {
+                emptyMsg.style.display = 'block';
+                content.style.display = 'none';
+                return;
+            }
+
+            emptyMsg.style.display = 'none';
+            content.style.display = 'block';
+            tbody.innerHTML = '';
+
+            const totals = calculateTotals();
+
+            cart.forEach((item, idx) => {
+                const tr = document.createElement('tr');
+
+                let imgSrc = item.thumb || item.src || '';
+                if (imgSrc.startsWith('../')) imgSrc = imgSrc.replace('../', '');
+
+                const selectedSize = item.selectedSize || '70×100 cm';
+                const sizes = ['50×70 cm', '70×100 cm', '100×140 cm'];
+                const sizeButtons = sizes.map(sz => {
+                    const isSel = (sz === selectedSize);
+                    const bg = isSel ? 'linear-gradient(135deg, #D4AF37, #997819)' : 'rgba(255,255,255,0.06)';
+                    const color = isSel ? '#000' : '#cbd5e1';
+                    const border = isSel ? '1px solid #ffd700' : '1px solid rgba(255,255,255,0.18)';
+                    const fw = isSel ? '800' : '600';
+                    const shadow = isSel ? 'box-shadow: 0 0 10px rgba(212,175,55,0.45); transform: scale(1.02);' : '';
+                    return `<button type="button" onclick="selectItemSize(${idx}, '${sz}')" style="background:${bg}; color:${color}; border:${border}; font-weight:${fw}; padding:6px 12px; font-size:0.78rem; border-radius:6px; cursor:pointer; font-family:inherit; transition:all 0.15s ease; ${shadow}">⏹️ ${sz}</button>`;
+                }).join(' ');
+
+                tr.innerHTML = `
+                    <td style="display:flex; align-items:center; gap:14px;">
+                        <img src="${imgSrc}" style="width:55px; height:55px; object-fit:cover; border-radius:6px; border:1px solid rgba(212,175,55,0.4);" onerror="this.src='assets/logo_banner.png'">
+                        <div>
+                            <div style="font-weight:700; color:#fff; font-size:0.95rem;">${item.title}</div>
+                            <div style="font-size:0.75rem; color:#94a3b8;">Ref: ${item.id} · Master Hi-Res</div> 
+                        </div>
+                    </td>
+                    <td style="text-align:center;">
+                        <div style="display:inline-flex; gap:6px; flex-wrap:wrap; justify-content:center;">
+                            ${sizeButtons}
+                        </div>
+                    </td>
+                    <td style="text-align:center; font-weight:700; color:#D4AF37;">${item.price}</td>
+                    <td style="text-align:center;">
+                        <button onclick="removeFromCart('${item.id}')" style="color:#ef4444; background:none; border:none; cursor:pointer; font-weight:bold; font-size:1.1rem;" title="Eliminar de la cesta">×</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            totalEl.innerText = totals.total.toFixed(2) + ' €';
+            subtotalEl.innerText = 'Subtotal: ' + totals.subtotal.toFixed(2) + ' €';
+
+            if (totals.discount > 0) {
+                discountEl.innerText = 'Ahorro Promo (3+1): -' + totals.discount.toFixed(2) + ' €';
+                discountEl.style.display = 'block';
+                promoBanner.style.display = 'block';
+            } else {
+                discountEl.style.display = 'none';
+                promoBanner.style.display = 'none';
+            }
+
+            // Cargar datos previos si existen
+            const savedName = localStorage.getItem('receipt_buyer_name');
+            const savedDni = localStorage.getItem('receipt_buyer_dni');
+            const savedEmail = localStorage.getItem('receipt_buyer_email');
+            const savedAddress = localStorage.getItem('receipt_buyer_address');
+
+            if (savedName && !document.getElementById('buyer-name').value) document.getElementById('buyer-name').value = savedName;
+            if (savedDni && !document.getElementById('buyer-dni').value) document.getElementById('buyer-dni').value = savedDni;
+            if (savedEmail && !document.getElementById('buyer-email').value) document.getElementById('buyer-email').value = savedEmail;
+            if (savedAddress && !document.getElementById('buyer-address').value) document.getElementById('buyer-address').value = savedAddress;
+
+            if (savedName || savedDni) {
+                const chk = document.getElementById('toggle-receipt');
+                if (chk) {
+                    chk.checked = true;
+                    toggleReceiptForm();
+                }
+            }
+
+            updatePaymentLinks();
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderPage();
+        });
+    </script>
+</body>
+
+</html>

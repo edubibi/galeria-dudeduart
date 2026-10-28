@@ -1,0 +1,160 @@
+sello_magico_001: Acueducto De Segovia
+  Description: Eternidad tallada; la piedra romana se convierte en filatelia, un puente de arcos infinitos que une el pasado imperial con la memoria del coleccionista.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_002: Arco Del Triunfo Moncloa
+  Description: Victoria de línea; la arquitectura solemne de Madrid capturada en un grabado azul que respira la nobleza y el orden de la historia monumental.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_003: Carlos V Rey
+  Description: Imperialismo en sepia; la mirada del emperador domina el sello, un retrato forjado en la precisión del buril que evoca el esplendor de un imperio global.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_004: Catedral Santiago De Compostela
+  Description: Peregrinación de papel; la majestuosidad barroca se rinde ante la elegancia del grabado, una joya espiritual contenida en el formato de un tesoro postal.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_005: Catedral Santiago
+  Description: Hito de fe; una nueva perspectiva del templo gallego, donde la luz del atardecer parece filtrarse a través del delicado tramo de las líneas cinceladas.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_006: Cervantes
+  Description: Pluma y espada; el príncipe de los ingenios preside su propio rincón de la historia, escoltado por las sombras inmortales de sus más grandes creaciones.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_007: Compostela
+  Description: Faro de peregrinos; la ciudad santa grabada en la quietud del tiempo, un refugio de fe en cada trazo de tinta seca.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_008: Conmemora Europa
+  Description: Unidad de trazos; la visión de un continente hermano capturada en la elegancia de la filatelia, un mensaje de paz cruzando fronteras.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_009: Constitucion Española
+  Description: Ley cincelada; el fundamento de la concordia nacional plasmado con la sobriedad del grabado, un pilar de justicia en papel antiguo.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_010: Cristobal Colon 1951
+  Description: Navegante de sueños; el almirante contempla nuevos mundos en la penumbra del dibujo, una oda al valor que cambió el mapa del infinito.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_011: Cristobal Colon
+  Description: Rumbo a lo desconocido; la mirada fija en el horizonte, Columbus se erige como un símbolo de la curiosidad que define nuestra historia.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_012: El Cid Campeador
+  Description: Gloria a caballo; la leyenda de Rodrigo Díaz de Vivar galopa a través de las fibras del sello, un estallido de heroismo medieval.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_013: El Dictador F Franco
+  Description: Retrato de una era; la figura histórica capturada en la rigidez del grabado, un fragmento del pasado que invita a la reflexión y al estudio.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_014: El Quijote Cervantes
+  Description: Idealismo de buril; el caballero de la triste figura y su creador comparten el espacio sagrado de la literatura convertida en arte postal.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_015: Fernando El Catolico
+  Description: Forjador de unión; la firmeza del rey que vio nacer la España moderna, retratado con la dignidad de quien camina por las páginas del destino.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_016: Fernando Vii
+  Description: Soberanía en tinta; el perfil del rey en un duelo de luces y sombras, una estampa que respira la complejidad de una era de cambios profundos.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_017: Franco 1955
+  Description: Sello de una época; la sobriedad del retrato oficial en una composición que evoca el rigor y la estética de mediados del siglo XX.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_018: Isabel 64
+  Description: Realeza en relieve; la efigie de la reina capturada en la delicadeza del grabado, un testimonio de la continuidad monárquica en papel.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_019: Isabel Cervantes
+  Description: Dama de letras; la conjunción de la nobleza y el genio literario en un sello que celebra la herencia cultural más profunda de España.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_020: Isabel La Catolica
+  Description: Reina de horizontes; la mirada que financió un mundo nuevo, plasmada con la majestuosidad de quien cambió el curso de la humanidad.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_021: Juan Carlos Rey 1966
+  Description: Transición en línea; el retrato del monarca que guio la modernidad, grabado con la precisión de un futuro que empezaba a escribirse.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_022: Juan Carlos Y Sofia
+  Description: Duo ceremonial; la pareja real en una estampa de unidad y servicio, capturada en la elegancia atemporal del diseño filatélico.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_023: Juan De La Cierva
+  Description: Alas de ingenio; el inventor y su autogiro desafían la gravedad en un sello que celebra el despegue de la tecnología aeroespacial española.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_024: Kince Fauna Iberica
+  Description: Mirada furtiva; el lince ibérico asoma entre la maleza del grabado, una joya de la naturaleza protegida en el corazón de un tesoro postal.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_025: Lope De Vega
+  Description: Fénix de los ingenios; la pasión del teatro barroco contenida en el retrato del poeta, cuyas palabras siguen vibrando en cada línea del buril.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_026: Monasterio De El Escorial
+  Description: Geometría de piedra; la octava maravilla del mundo grabada con la sobria perfección de Juan de Herrera, un templo de orden y sabiduría.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_027: Pizarro
+  Description: Conquista de acero; el perfil del explorador en tierras lejanas, un retrato de determinación y coraje forjado en la dureza del grabado antiguo.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_028: Ramon Y Cajal 1955
+  Description: Arquitecto del cerebro; la curiosidad del Nobel plasmada en un sello que honra la ciencia y el descubrimiento de los paisajes invisibles del alma.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_029: Sagrada Familia
+  Description: Oración en piedra; el sueño de Gaudí se eleva hacia el cielo en un grabado que captura la luz y la fantasía de la arquitectura modernista.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_030: San Martin
+  Description: Libertador de los Andes; la nobleza del líder sudamericano en un gesto de mando y libertad, uniendo continentes a través de la filatelia.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_031: Velazquez Dos
+  Description: Maestro de la luz; un nuevo tributo al pintor de pintores, donde la pincelada se traduce a la precisión de la línea grabada en un baile eterno.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
+sello_magico_032: Velazquez
+  Description: Genio de la corte; el autor de €Las Meninas€ preside el sello con la dignidad de quien domina la realidad y la sombra con su arte inmortal.
+
+🎁 OFERTA: 1,10€ (unidad) / Pack 5 (diferentes o iguales): 3,90€
+--------------------------------------------------
