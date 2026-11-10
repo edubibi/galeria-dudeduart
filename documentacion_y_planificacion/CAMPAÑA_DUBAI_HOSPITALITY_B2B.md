@@ -3,7 +3,7 @@
 ### Producto: Living Art (Cinemagraphs 4K/8K sin fin) & Lienzos Monumentales Fine Art
 **Autor:** Eduardo Ramírez de Cartagena | **Firma:** SENSORY ARTISTIC / Universo EDUSSE  
 **Showcase Oficial:** [https://dudeduart.es/viewing_room_international.html](https://dudeduart.es/viewing_room_international.html)  
-**Contacto Oficial:** `eduardo@trbandmusic.es` | WhatsApp VIP: `+34 611 818 352`
+**Contacto Oficial:** `eduardoramirez@edusse.es` | WhatsApp VIP: `+34 611 818 352`
 
 ---
 
@@ -90,7 +90,7 @@ Best regards,
 
 Eduardo Ramírez de Cartagena
 Founder & Creative Director • Dudeduart Studio
-dudeduart.es | eduardo@trbandmusic.es | WhatsApp VIP: +34 611 818 352
+dudeduart.es | eduardoramirez@edusse.es | WhatsApp VIP: +34 611 818 352
 Madrid, Spain
 ```
 
@@ -116,7 +116,7 @@ Warm regards,
 
 Eduardo Ramírez de Cartagena
 Dudeduart Studio
-eduardo@trbandmusic.es | +34 611 818 352
+eduardoramirez@edusse.es | +34 611 818 352
 ```
 
 ---
@@ -141,7 +141,7 @@ Kind regards,
 
 Eduardo Ramírez de Cartagena
 Dudeduart Studio • Madrid
-eduardo@trbandmusic.es
+eduardoramirez@edusse.es
 ```
 
 ---
@@ -185,7 +185,7 @@ Un cordial saludo,
 
 Eduardo Ramírez de Cartagena
 Director Creativo • Dudeduart Studio
-dudeduart.es | eduardo@trbandmusic.es | Tel. / WhatsApp: +34 611 818 352
+dudeduart.es | eduardoramirez@edusse.es | Tel. / WhatsApp: +34 611 818 352
 Madrid
 ```
 
@@ -202,3 +202,4 @@ Madrid
 4. **Día 5-7:**
    - Enviar el **Correo 2 (Seguimiento / Simulación)** a los que no hayan respondido.
    - En cuanto uno conteste con curiosidad, ofrecer inmediatamente la **simulación gratuita** sobre una foto de su espacio. ¡Ese es el momento en que se cierra la venta!
+
