@@ -58,3 +58,20 @@ Aquí iremos apuntando todos los estudios de interiorismo, arquitectos y hoteles
 | **Raúl Almenara** | Buscar Email | Pendiente de contactar | - | Top 50 Madrid (Elle Decor) |
 | **Raúl Martins** | Buscar Email | Pendiente de contactar | - | Top 50 Madrid (Elle Decor) |
 | **Sergio Olazábal** | Buscar Email | Pendiente de contactar | - | Top 50 Madrid (Elle Decor) |
+
+
+## 🏨 Campaña Internacional Luxury Hospitality & Living Art (Enviados 10/11/2026)
+
+| Empresa / Consultora | Email | Ubicación | Estado | Fecha Envío | Notas |
+| :--- | :--- | :--- | :---: | :---: | :--- |
+| **Capsule Arts** | hello@capsulearts.com | Dubái (d3) | **Enviado** | 10/11/2026 | Comisarios Burj Al Arab, One&Only, St. Regis |
+| **Artelier Hospitality** | rt@artelier.com | Dubái & Londres | **Enviado** | 10/11/2026 | Especialistas en Living Art y Video Walls |
+| **HBA Dubai** | dubai@hba.com | Dubái | **Enviado** | 10/11/2026 | #1 mundial en diseño hotelero de lujo |
+| **Art Painting Lab** | hello@artpaintinglab.com | Dubái (Al Quoz) | **Enviado** | 10/11/2026 | Proyectos de arte para hoteles y corporativo |
+| **Showcase Art Consulting** | info@showcaseuae.com | Dubái (Alserkal) | **Enviado** | 10/11/2026 | Comisariado contemporáneo en Emiratos |
+| **Two Art Consultants** | hello@twoartconsultants.com | Dubái (d3) | **Enviado** | 10/11/2026 | Boutique art consultancy en distrito diseño |
+| **Artevo Consulting** | hello@artevo-consulting.com | Riad (Arabia Saudí) | **Enviado** | 10/11/2026 | Mega-proyectos de lujo en KSA |
+| **Peter Millard & Partners** | info@petermillardandpartners.com | Londres / Global | **Enviado** | 10/11/2026 | Referente europeo (Four Seasons, Ritz-Carlton) |
+| **SMC Art Consultancy** | info@smc-design.com | Londres / Global | **Enviado** | 10/11/2026 | Arquitectura y arte hotelero 5 estrellas |
+| **Kalisher Global** | jen@kalisher.com | Londres & NY | **Enviado** | 10/11/2026 | Gran consultora internacional de arte |
+| **Indigo Art** | info@indigoart.co.uk | Reino Unido / Global | **Enviado** | 10/11/2026 | Programas de arte para hoteles |
