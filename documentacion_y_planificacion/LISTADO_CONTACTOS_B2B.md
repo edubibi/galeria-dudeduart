@@ -73,5 +73,5 @@ Aquí iremos apuntando todos los estudios de interiorismo, arquitectos y hoteles
 | **Artevo Consulting** | hello@artevo-consulting.com | Riad (Arabia Saudí) | **Enviado** | 10/11/2026 | Mega-proyectos de lujo en KSA |
 | **Peter Millard & Partners** | info@petermillardandpartners.com | Londres / Global | **Enviado** | 10/11/2026 | Referente europeo (Four Seasons, Ritz-Carlton) |
 | **SMC Art Consultancy** | info@smc-design.com | Londres / Global | **Enviado** | 10/11/2026 | Arquitectura y arte hotelero 5 estrellas |
-| **Kalisher Global** | jen@kalisher.com | Londres & NY | **Enviado** | 10/11/2026 | Gran consultora internacional de arte |
+| **Kalisher Global** | jen@kalisher.com | Londres & NY | **Auto-Reply (Activo)** | 10/11/2026 | Jen Shepherd (Senior Art Consultant) en feria BDNY (Boutique Design NY). Revisa consultas mañana 11/11. |
 | **Indigo Art** | info@indigoart.co.uk | Reino Unido / Global | **Enviado** | 10/11/2026 | Programas de arte para hoteles |
