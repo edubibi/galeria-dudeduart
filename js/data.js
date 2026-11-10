@@ -5170,17 +5170,6 @@ const artworkData = [
         "sold": false
     },
     {
-        "id": "58vg_stilo_gotas_paraguas_plus",
-        "title": "Gotas y Paraguas en Suspensión",
-        "category": "58 VG STILO",
-        "src": "assets/58VG stilo/gotas_paraguas plus.jpg",
-        "description": "Vibración plástica de la lluvia en primer término rebotando sobre las telas tensas. Un prodigio de materia en relieve y dinamismo lumínico.",
-        "size": "Consultar",
-        "price": "3.800,00",
-        "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
-    },
-    {
         "id": "58vg_stilo_gotas_sobre_hojas_petalos_y_telaranas",
         "title": "Gotas sobre Hojas, Pétalos y Telarañas",
         "category": "58 VG STILO",
