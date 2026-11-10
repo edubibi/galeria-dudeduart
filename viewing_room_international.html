@@ -3,183 +3,1291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Private Viewing | Dudeduart</title>
-    <!-- SEO Meta Tags for International Art Market -->
-    <meta name="description" content="Exclusive private viewing room of Dudeduart. Tactile, large-format abstract art and Gessolux textures for luxury interior design and elite collectors.">
-    <meta name="keywords" content="luxury abstract art, textured paintings, Gessolux, Espatac-Extreme, large format art, interior design art, contemporary abstract, Dudeduart">
+    <title>Private Viewing Room | Dudeduart • Living Art & Fine Canvases</title>
+    
+    <!-- SEO & Hospitality Metadata -->
+    <meta name="description" content="Exclusive private viewing room for luxury hospitality curators, interior architecture studios, and elite collectors. 4K/8K Seamless Living Art (Cinemagraphs) and Museum-Grade Impasto Canvases by Eduardo Ramírez de Cartagena.">
+    <meta name="keywords" content="Luxury Hotel Art, Dubai Hospitality Art Procurement, Living Art, 4K Cinemagraphs, Samsung The Frame Art, Impasto Paintings, Eduardo Ramírez de Cartagena, Dudeduart">
+    <meta name="author" content="Eduardo Ramírez de Cartagena">
+    
+    <!-- Open Graph for WhatsApp, LinkedIn, iMessage previews -->
+    <meta property="og:title" content="Private Viewing Room | Dudeduart Hospitality Collection">
+    <meta property="og:description" content="Seamless 4K Living Art Loops & Museum Canvases for 5-star & 7-star resorts, presidential suites, and luxury architectural spaces.">
+    <meta property="og:image" content="https://dudeduart.es/assets/b2b_mockup_bg.jpg">
+    <meta property="og:url" content="https://dudeduart.es/viewing_room_international.html">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --bg-color: #050505;
-            --text-main: #f0f0f0;
-            --text-muted: #7a7a7a;
-            --accent: #cba358;
-            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            --font-serif: 'Playfair Display', 'Didot', 'Bodoni MT', serif;
+            --bg-deep: #08090C;
+            --bg-surface: #101218;
+            --bg-surface-elevated: #171922;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --text-dim: #6B7280;
+            --gold: #C5A059;
+            --gold-light: #DFBF7A;
+            --gold-glow: rgba(197, 160, 89, 0.25);
+            --gold-subtle: rgba(197, 160, 89, 0.10);
+            --border-soft: rgba(255, 255, 255, 0.08);
+            --border-gold: rgba(197, 160, 89, 0.35);
+            --font-display: 'Cinzel', serif;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Outfit', sans-serif;
         }
 
-        body, html {
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--bg-color);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-deep);
             color: var(--text-main);
-            font-family: var(--font-main);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(197, 160, 89, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 85% 30%, rgba(30, 41, 59, 0.3) 0%, transparent 50%);
         }
 
-        /* Top Header */
-        header {
-            width: 100%;
-            padding: 40px 0;
-            text-align: center;
-            opacity: 0;
-            animation: fadeIn 2s ease forwards 1s;
-        }
-
-        .logo {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            letter-spacing: 8px;
-            color: var(--text-muted);
+        /* Ambient Glow Bar */
+        .top-status-bar {
+            background: linear-gradient(90deg, #090a0d 0%, rgba(197, 160, 89, 0.2) 50%, #090a0d 100%);
+            border-bottom: 1px solid var(--border-gold);
+            padding: 8px 24px;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-        }
-
-        /* Video Container */
-        .video-wrapper {
-            width: 90%;
-            max-width: 1200px;
-            aspect-ratio: 16 / 9;
-            background-color: #111;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            border: 1px solid #222;
+            text-align: center;
+            color: var(--gold-light);
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
-            margin: 20px 0;
-            opacity: 0;
-            animation: fadeIn 2s ease forwards 0.5s;
+            gap: 16px;
         }
 
-        /* Placeholder text (to be removed when Eduardo adds the video tag) */
-        .video-placeholder {
-            font-family: var(--font-serif);
-            color: #333;
-            font-size: 1.5rem;
+        .top-status-bar span.bullet {
+            width: 6px;
+            height: 6px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px var(--gold);
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            background: rgba(8, 9, 12, 0.88);
+            border-bottom: 1px solid var(--border-soft);
+            padding: 18px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            letter-spacing: 6px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-logo span.sub {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-top: 2px;
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease, border-color 0.3s ease;
+            padding: 6px 0;
+            border-bottom: 1px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+            border-color: var(--gold);
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #C5A059 0%, #A37F38 100%);
+            color: #08090C;
+            text-decoration: none;
+            padding: 10px 22px;
+            font-size: 0.78rem;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-radius: 4px;
+            box-shadow: 0 4px 18px rgba(197, 160, 89, 0.35);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 26px rgba(197, 160, 89, 0.55);
+            background: linear-gradient(135deg, #DFBF7A 0%, #B89243 100%);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-soft);
+            padding: 9px 20px;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--gold);
+            color: var(--gold-light);
+            background: var(--gold-subtle);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 64px 24px 32px;
+            text-align: center;
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        .badge-exclusive {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold-subtle);
+            border: 1px solid var(--border-gold);
+            padding: 6px 16px;
+            border-radius: 30px;
+            color: var(--gold-light);
+            font-size: 0.75rem;
             letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
         }
 
-        /* Actual video styling for when he adds it */
-        .video-wrapper video {
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 3.2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 18px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #D1D5DB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 span.gold {
+            background: linear-gradient(180deg, #FDE68A 0%, #C5A059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p.tagline {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.35rem;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .hero p.desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 820px;
+            margin: 0 auto 36px;
+            font-weight: 300;
+        }
+
+        /* Cinema Living Art Section */
+        .cinema-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        .cinema-viewport {
+            background: #000;
+            border-radius: 12px;
+            border: 1px solid var(--border-gold);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 40px rgba(197, 160, 89, 0.15);
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cinema-viewport video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .cinema-overlay-meta {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 36px 40px 24px;
+            background: linear-gradient(0deg, rgba(8, 9, 12, 0.95) 0%, rgba(8, 9, 12, 0.6) 60%, transparent 100%);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            pointer-events: none;
+        }
+
+        .cinema-overlay-meta * {
+            pointer-events: auto;
+        }
+
+        .cinema-info h2 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .cinema-info p.cinema-desc {
+            color: #D1D5DB;
+            font-size: 0.95rem;
+            max-width: 600px;
+        }
+
+        .cinema-tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .cinema-tag {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cinema-controls {
+            display: flex;
+            gap: 12px;
+        }
+
+        .ctrl-btn {
+            background: rgba(23, 25, 34, 0.85);
+            border: 1px solid var(--border-soft);
+            color: var(--text-main);
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ctrl-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold-light);
+            background: rgba(197, 160, 89, 0.2);
+        }
+
+        /* Cinemagraph Thumbnails Strip */
+        .cinemagraph-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .cine-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: 10px;
+            padding: 14px;
+            cursor: pointer;
+            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .cine-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-gold);
+            background: var(--bg-surface-elevated);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .cine-card.active {
+            border-color: var(--gold);
+            background: rgba(197, 160, 89, 0.08);
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.25);
+        }
+
+        .cine-thumb-icon {
+            width: 72px;
+            height: 48px;
+            background: #000;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--gold);
+            border: 1px solid var(--border-soft);
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cine-thumb-icon .play-indicator {
+            width: 0; 
+            height: 0; 
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 10px solid var(--gold-light);
+            margin-left: 3px;
+        }
+
+        .cine-card-info h4 {
+            font-size: 0.95rem;
+            color: #fff;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+
+        .cine-card-info p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        .cine-card-info span.duration {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 0.7rem;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* Tech Specs Grid */
+        .specs-section {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-soft);
+            border-bottom: 1px solid var(--border-soft);
+            padding: 60px 24px;
+        }
+
+        .specs-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .spec-item {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid var(--border-soft);
+            border-radius: 8px;
+            background: rgba(8, 9, 12, 0.4);
+        }
+
+        .spec-icon {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .spec-item h3 {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .spec-item p {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Physical Masterworks Section */
+        .physical-section {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 90px 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            color: #fff;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--gold-light);
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.15rem;
+        }
+
+        .artworks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 32px;
+        }
+
+        .art-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .art-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-gold);
+            box-shadow: 0 20px 50px rgba(197, 160, 89, 0.15);
+        }
+
+        .art-img-box {
+            position: relative;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            background: #050608;
+        }
+
+        .art-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .art-card:hover .art-img-box img {
+            transform: scale(1.04);
+        }
+
+        .art-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(8, 9, 12, 0.85);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            backdrop-filter: blur(6px);
+        }
+
+        .art-details {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .art-details h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .art-style {
+            color: var(--gold);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .art-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .art-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-soft);
+            padding-top: 16px;
+        }
+
+        .art-specs {
+            font-size: 0.78rem;
+            color: var(--text-dim);
+        }
+
+        .art-price {
+            font-family: var(--font-sans);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gold-light);
+        }
+
+        /* Mockup In-Situ Simulation Showcase */
+        .simulation-banner {
+            max-width: 1320px;
+            margin: 0 auto 90px;
+            padding: 0 24px;
+        }
+
+        .simulation-box {
+            background: linear-gradient(135deg, rgba(23, 25, 34, 0.9) 0%, rgba(16, 18, 24, 0.95) 100%);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 56px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+        }
+
+        .sim-content h2 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 18px;
+            color: #fff;
+        }
+
+        .sim-content p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .sim-features {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .sim-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #E5E7EB;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .sim-features li span.check {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .sim-visual {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-soft);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+            aspect-ratio: 16 / 10;
+        }
+
+        .sim-visual img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Content Section */
-        .content {
-            width: 90%;
-            max-width: 800px;
+        /* Inquiries / Contact Concierge */
+        .concierge-section {
+            background: radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.12) 0%, rgba(8, 9, 12, 0.95) 80%);
+            border-top: 1px solid var(--border-gold);
+            padding: 90px 24px;
             text-align: center;
-            margin-top: 50px;
-            padding-bottom: 80px;
-            opacity: 0;
-            animation: fadeIn 2s ease forwards 1.5s;
         }
 
-        h1 {
+        .concierge-box {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .concierge-box h2 {
+            font-family: var(--font-display);
+            font-size: 2.6rem;
+            letter-spacing: 2px;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .concierge-box p.lead {
             font-family: var(--font-serif);
-            font-size: 2.5rem;
-            font-weight: 400;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--gold-light);
+            margin-bottom: 24px;
         }
 
-        .subtitle {
-            font-size: 0.9rem;
-            color: var(--accent);
-            letter-spacing: 4px;
-            text-transform: uppercase;
+        .concierge-box p.desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
             margin-bottom: 40px;
         }
 
-        p {
-            font-size: 1rem;
-            line-height: 1.8;
+        .contact-action-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .contact-card-info {
+            display: inline-flex;
+            gap: 32px;
+            padding: 20px 36px;
+            background: rgba(16, 18, 24, 0.7);
+            border: 1px solid var(--border-soft);
+            border-radius: 8px;
             color: var(--text-muted);
-            margin-bottom: 30px;
-        }
-
-        /* Footer & Contact */
-        .inquiry {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid #222;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 35px;
-            border: 1px solid var(--text-muted);
-            color: var(--text-main);
-            text-decoration: none;
             font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
+            text-align: left;
         }
 
-        .contact-btn:hover {
-            background-color: var(--text-main);
-            color: var(--bg-color);
+        .contact-card-info strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 2px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Footer */
+        footer {
+            background: #050608;
+            border-top: 1px solid var(--border-soft);
+            padding: 36px 48px;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .specs-inner { grid-template-columns: repeat(2, 1fr); }
+            .simulation-box { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.4rem; }
+        }
+
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .logo { font-size: 1rem; }
+            nav { padding: 16px 20px; flex-direction: column; gap: 14px; }
+            .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; }
+            .specs-inner { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.9rem; }
+            .cinema-overlay-meta { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px; }
+            .contact-card-info { flex-direction: column; gap: 14px; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">D U D E D U A R T</div>
+    <!-- Top Status Bar -->
+    <div class="top-status-bar">
+        <span>Dubai • Abu Dhabi • Doha • International Luxury Hospitality</span>
+        <span class="bullet"></span>
+        <span>Living Art & Fine Art Curation • Private Viewing Room</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="brand-logo">
+            D U D E D U A R T
+            <span class="sub">Sensory Art & Living Canvases</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#living-art">Living Art (4K Loops)</a></li>
+            <li><a href="#fine-canvases">Physical Masterpieces</a></li>
+            <li><a href="#in-situ">In-Situ Simulation</a></li>
+            <li><a href="#concierge">Advisory & Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="https://wa.me/34611818352?text=Hello%20Eduardo,%20I%20am%20inquiring%20about%20the%20Hospitality%20Viewing%20Room%20artworks%20and%20cinemagraphs." target="_blank" class="btn-ghost">WhatsApp VIP</a>
+            <a href="mailto:eduardo@trbandmusic.es?subject=Hospitality%20Curatorial%20Inquiry%20%7C%20Dudeduart" class="btn-gold">Request Prospectus</a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="hero">
+        <div class="badge-exclusive">
+            <span>🏛️ Curatorial Selection • Ultra-Luxury Architecture</span>
+        </div>
+        <h1>
+            Art That Transcends Space.<br>
+            <span class="gold">Living Canvases for Iconic Architecture.</span>
+        </h1>
+        <p class="tagline">"Where the boundary between moving atmosphere and tactile texture dissolves."</p>
+        <p class="desc">
+            Created by Spanish avant-garde composer and visual artist <strong>Eduardo Ramírez de Cartagena</strong>, this private collection unites seamless 4K/8K architectural cinemagraphs with museum-grade impasto physical canvases, custom-tailored for 5-star & 7-star resorts, presidential suites, and high-net-worth residences in Dubai, the UAE, and global luxury capitals.
+        </p>
     </header>
 
-    <!-- VIDEO PLAYER: Eduardo, just replace this div with your <video> tag when ready -->
-    <div class="video-wrapper">
-        <div class="video-placeholder">VIDEO PLAYER (PENDING CAPCUT EXPORT)</div>
-        <!-- 
-        Ejemplo de código para cuando tengas el vídeo listo:
-        <video controls controlsList="nodownload" poster="assets/tu_foto_de_portada.jpg">
-            <source src="assets/tu_video_maestro.mp4" type="video/mp4">
-        </video> 
-        -->
-    </div>
-
-    <div class="content">
-        <h1>Beyond the Visual</h1>
-        <div class="subtitle">The Sensory Art Collection</div>
-        
-        <p>A private exhibition showcasing a revolutionary approach to tactile aesthetics. Created by Eduardo Ramirez, a veteran music producer turned texture pioneer, this collection features 48 unique structural styles including the signature <i>Gessolux</i> and <i>Espatac-Extreme</i>.</p>
-        
-        <p>Designed exclusively for high-end interior spaces, these large-format abstracts break the boundary between the visual and the physical, commanding presence through deep, aggressive textures and sober elegance.</p>
-
-        <div class="inquiry">
-            <p style="font-size: 0.85rem; letter-spacing: 1px;">For commissions, gallery representation, or acquisitions:</p>
-            <a href="mailto:eduardoramirez@edusse.es?subject=Private%20Viewing%20Inquiry" class="contact-btn">Request Prospectus</a>
+    <!-- MAIN CINEMA: LIVING ART LOOP SHOWCASE -->
+    <section class="cinema-container" id="living-art">
+        <div class="cinema-viewport">
+            <video id="mainCinemaPlayer" autoplay loop muted playsinline controls poster="assets/b2b_mockup_bg.jpg">
+                <source id="videoSource" src="assets/cinemagraphs/marea_web.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            
+            <div class="cinema-overlay-meta">
+                <div class="cinema-info">
+                    <h2 id="cinemaTitle">Golden Tide (Marea Dorada)</h2>
+                    <p class="cinema-desc" id="cinemaDesc">
+                        Hypnotic sculptural liquid gold with continuous, harmonic ebb and flow. Designed to create a serene, majestic atmosphere in grand lobbies and luxury lounges.
+                    </p>
+                    <div class="cinema-tags">
+                        <span class="cinema-tag" id="cinemaDuration">40.0s Palindrome Loop</span>
+                        <span class="cinema-tag" id="cinemaResolution">Native 4K / 8K Master</span>
+                        <span class="cinema-tag">Architectural Video Wall / The Frame</span>
+                    </div>
+                </div>
+                
+                <div class="cinema-controls">
+                    <button class="ctrl-btn" onclick="toggleCinemaAudio()" id="audioBtn">
+                        🔊 Unmute Audio
+                    </button>
+                    <button class="ctrl-btn" onclick="toggleCinemaFullscreen()">
+                        ⛶ Fullscreen
+                    </button>
+                </div>
+            </div>
         </div>
-    </div>
 
+        <!-- Cinemagraph Strip Selection -->
+        <div class="cinemagraph-strip">
+            
+            <!-- 01. Marea Dorada -->
+            <div class="cine-card active" onclick="switchCinemagraph(
+                'assets/cinemagraphs/marea_web.mp4',
+                'Golden Tide (Marea Dorada)',
+                'Hypnotic sculptural liquid gold with continuous, harmonic ebb and flow. Designed to create a serene, majestic atmosphere in grand lobbies and luxury lounges.',
+                '40.0s Palindrome Loop',
+                this
+            )">
+                <div class="cine-thumb-icon">
+                    <div class="play-indicator"></div>
+                </div>
+                <div class="cine-card-info">
+                    <h4>01. Golden Tide</h4>
+                    <p>Sculptural liquid gold ocean in perpetual calm motion.</p>
+                    <span class="duration">⏱️ 40s • Seamless Loop</span>
+                </div>
+            </div>
+
+            <!-- 02. Paraiso Pared Rota -->
+            <div class="cine-card" onclick="switchCinemagraph(
+                'assets/cinemagraphs/PREVIOS/playa en la pared B2B.mp4',
+                'Trompe-l\'œil: Paradise Revealed (Pared Rota)',
+                'A striking architectural illusion. The stone gallery wall fractures to reveal a living tropical turquoise sea with rolling surf and ocean breeze.',
+                '38.5s Endless Loop',
+                this
+            )">
+                <div class="cine-thumb-icon">
+                    <div class="play-indicator"></div>
+                </div>
+                <div class="cine-card-info">
+                    <h4>02. Paradise Wall</h4>
+                    <p>3D architectural trompe-l'œil with living turquoise waves.</p>
+                    <span class="duration">⏱️ 38s • 3D Illusion</span>
+                </div>
+            </div>
+
+            <!-- 03. Cascada Tropical -->
+            <div class="cine-card" onclick="switchCinemagraph(
+                'assets/cinemagraphs/cascada_web.mp4',
+                'Emerald Falls (Cascada de Selva)',
+                'Perpetual freshwater cascade falling through dense rainforest flora. Natural living mist designed to lower heart rates in executive suites and wellness spas.',
+                '41.2s Palindrome Loop',
+                this
+            )">
+                <div class="cine-thumb-icon">
+                    <div class="play-indicator"></div>
+                </div>
+                <div class="cine-card-info">
+                    <h4>03. Emerald Falls</h4>
+                    <p>Perpetual tropical cascade with mist and living greenery.</p>
+                    <span class="duration">⏱️ 41s • Spa & Wellness</span>
+                </div>
+            </div>
+
+            <!-- 04. Canto de Ballena -->
+            <div class="cine-card" onclick="switchCinemagraph(
+                'assets/cinemagraphs/ballena_web.mp4',
+                'Leviathan\'s Song (Canto de Ballena)',
+                'Majestic gentle humpback whale swimming through deep crystalline rays of zenith sunlight. Pure serenity for presidential corridors.',
+                '37.0s Endless Loop',
+                this
+            )">
+                <div class="cine-thumb-icon">
+                    <div class="play-indicator"></div>
+                </div>
+                <div class="cine-card-info">
+                    <h4>04. Leviathan\'s Song</h4>
+                    <p>Serene deep sea navigation under zenith sunlight rays.</p>
+                    <span class="duration">⏱️ 37s • Meditative Deep</span>
+                </div>
+            </div>
+
+            <!-- 05. Deep Down -->
+            <div class="cine-card" onclick="switchCinemagraph(
+                'assets/cinemagraphs/deep_down_web.mp4',
+                'Abyssal Sanctuary (Deep Down)',
+                'Subaquatic cathedral of light piercing sapphire depths. Designed for high-contrast OLED installations and architectural backdrops.',
+                '44.0s Seamless Loop',
+                this
+            )">
+                <div class="cine-thumb-icon">
+                    <div class="play-indicator"></div>
+                </div>
+                <div class="cine-card-info">
+                    <h4>05. Abyssal Sanctuary</h4>
+                    <p>Subaquatic light cathedral piercing infinite deep blues.</p>
+                    <span class="duration">⏱️ 44s • High Contrast OLED</span>
+                </div>
+            </div>
+
+            <!-- 06. Isla Tropical -->
+            <div class="cine-card" onclick="switchCinemagraph(
+                'assets/cinemagraphs/isla_web.mp4',
+                'Atoll Horizon (Isla Tropical)',
+                'Pristine private island sanctuary with passing cloud shadows and breathing azure waters. The ultimate vacation aesthetic for hospitality.',
+                '36.0s Endless Loop',
+                this
+            )">
+                <div class="cine-thumb-icon">
+                    <div class="play-indicator"></div>
+                </div>
+                <div class="cine-card-info">
+                    <h4>06. Atoll Horizon</h4>
+                    <p>Passing sky currents over pristine turquoise lagoons.</p>
+                    <span class="duration">⏱️ 36s • Resort Suite</span>
+                </div>
+            </div>
+
+            <!-- 07. Vortice Dorado -->
+            <div class="cine-card" onclick="switchCinemagraph(
+                'assets/cinemagraphs/PREVIOS/vortice dorado.mp4',
+                'Celestial Golden Vortex',
+                'Slow celestial spiral rotation in pure mineral gold. An iconic, captivating centerpiece for signature hotel entrances and VIP lounges.',
+                '38.0s Endless Loop',
+                this
+            )">
+                <div class="cine-thumb-icon">
+                    <div class="play-indicator"></div>
+                </div>
+                <div class="cine-card-info">
+                    <h4>07. Golden Vortex</h4>
+                    <p>Hypnotic celestial gold spiral in slow fluid rotation.</p>
+                    <span class="duration">⏱️ 38s • Grand Entrance</span>
+                </div>
+            </div>
+
+            <!-- 08. Surrakis Desert Mirage -->
+            <div class="cine-card" onclick="switchCinemagraph(
+                'assets/cinemagraphs/PREVIOS/Surrakis time town.mp4',
+                'Surrakis: Desert Mirage',
+                'Warm atmospheric desert winds drifting across amber dunes and futuristic architectural horizons. A direct dialogue with Arabian architectural heritage.',
+                '39.5s Endless Loop',
+                this
+            )">
+                <div class="cine-thumb-icon">
+                    <div class="play-indicator"></div>
+                </div>
+                <div class="cine-card-info">
+                    <h4>08. Surrakis Mirage</h4>
+                    <p>Amber dunes and atmospheric desert city skyline.</p>
+                    <span class="duration">⏱️ 40s • Arabian Heritage</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TECHNICAL SPECIFICATIONS FOR HOSPITALITY -->
+    <section class="specs-section">
+        <div class="specs-inner">
+            <div class="spec-item">
+                <div class="spec-icon">♾️</div>
+                <h3>Seamless Palindrome</h3>
+                <p>Engineered without abrupt frame jumps. Flawless 24/7 continuous playback with zero viewer fatigue.</p>
+            </div>
+            <div class="spec-item">
+                <div class="spec-icon">📺</div>
+                <h3>Hardware Agnostic</h3>
+                <p>Native compatibility with Samsung The Frame, LG Wallpaper OLED, Barco, and custom multi-screen architectural walls.</p>
+            </div>
+            <div class="spec-item">
+                <div class="spec-icon">📜</div>
+                <h3>Territorial Exclusivity</h3>
+                <p>Global property exclusivity options available. 1-of-1 digital editions delivered with verifiable authenticity.</p>
+            </div>
+            <div class="spec-item">
+                <div class="spec-icon">🎨</div>
+                <h3>Physical Canvas Pairings</h3>
+                <p>Opportunity to pair digital cinemagraphs with complementary physical museum-grade impasto canvases.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHYSICAL FINE ART COLLECTION -->
+    <section class="physical-section" id="fine-canvases">
+        <div class="section-header">
+            <h2>Museum-Grade Physical Canvases</h2>
+            <p>"Tactile matter, faceted knife impasto, and mineral pigments."</p>
+        </div>
+
+        <div class="artworks-grid">
+
+            <!-- Artwork 1: El Paraguas Rojo (Style 58 VG STILO) -->
+            <div class="art-card">
+                <div class="art-img-box">
+                    <span class="art-badge">58 VG STILO • NEW 2026</span>
+                    <img src="assets/58VG stilo/El paraguas rojo.jpg" alt="El Paraguas Rojo">
+                </div>
+                <div class="art-details">
+                    <div>
+                        <h3>The Red Umbrella (El Paraguas Rojo)</h3>
+                        <div class="art-style">Contemporary Urban Impasto • Knife Palette</div>
+                        <p class="art-desc">
+                            Vibrant thermal contrast between autumnal boulevards and deep urban reflections. Heavy structural impasto applied with rigid steel spatulas, creating physical sculptural relief on canvas.
+                        </p>
+                    </div>
+                    <div class="art-footer">
+                        <span class="art-specs">140 x 100 cm • Cotton Canvas 310g</span>
+                        <span class="art-price">4.200 €</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artwork 2: Multitud Bajo los Paraguas (Style 58 VG STILO) -->
+            <div class="art-card">
+                <div class="art-img-box">
+                    <span class="art-badge">58 VG STILO • MASTERWORK</span>
+                    <img src="assets/58VG stilo/gente con paraguas VG.png" alt="Multitud Bajo los Paraguas">
+                </div>
+                <div class="art-details">
+                    <div>
+                        <h3>Crowd in the Rain (Gente con Paraguas)</h3>
+                        <div class="art-style">Atmospheric Neo-Impressionism</div>
+                        <p class="art-desc">
+                            Visual rhythm created through repeating concentric umbrella domes. Downward directional vertical strokes anchor the physics of rain and wet asphalt illumination.
+                        </p>
+                    </div>
+                    <div class="art-footer">
+                        <span class="art-specs">120 x 90 cm • Museum Bastidor</span>
+                        <span class="art-price">3.900 €</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artwork 3: Pianista Mineral (B2B MAGNA) -->
+            <div class="art-card">
+                <div class="art-img-box">
+                    <span class="art-badge">B2B MAGNA • SIGNATURE</span>
+                    <img src="assets/B2B_MAGNA/pianista_mineral.jpg" alt="Pianista Mineral">
+                </div>
+                <div class="art-details">
+                    <div>
+                        <h3>Mineral Pianist (Pianista Mineral)</h3>
+                        <div class="art-style">Sensory Cubism & Acoustic Fusion</div>
+                        <p class="art-desc">
+                            A tribute to Eduardo Ramírez's lifetime of musical composition. Fractured geological planes intertwine with grand piano keys and acoustic wave resonance.
+                        </p>
+                    </div>
+                    <div class="art-footer">
+                        <span class="art-specs">150 x 110 cm • Limited 1 of 25</span>
+                        <span class="art-price">4.800 €</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artwork 4: Danza de Color (B2B MAGNA) -->
+            <div class="art-card">
+                <div class="art-img-box">
+                    <span class="art-badge">B2B MAGNA • HIGH TENSION</span>
+                    <img src="assets/B2B_MAGNA/danza_de_color.jpg" alt="Danza de Color">
+                </div>
+                <div class="art-details">
+                    <div>
+                        <h3>The Dance of Color (Danza de Color)</h3>
+                        <div class="art-style">High-Energy Chromatic Gesturalism</div>
+                        <p class="art-desc">
+                            Explosive juxtaposition of cobalt blues, vermilions, and solar yellows. Ideal as a statement centerpiece for double-height hotel lobbies and atrium lounges.
+                        </p>
+                    </div>
+                    <div class="art-footer">
+                        <span class="art-specs">160 x 120 cm • Giclée Fine Art</span>
+                        <span class="art-price">5.200 €</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artwork 5: Golden River (B2B MAGNA) -->
+            <div class="art-card">
+                <div class="art-img-box">
+                    <span class="art-badge">B2B MAGNA • LUXURY MARBLE</span>
+                    <img src="assets/B2B_MAGNA/golden_river_marble_mountain.jpg" alt="Golden River in Marble Mountain">
+                </div>
+                <div class="art-details">
+                    <div>
+                        <h3>Golden River in Marble Mountain</h3>
+                        <div class="art-style">Organic Mineralism & Gold Leaf</div>
+                        <p class="art-desc">
+                            Veins of pure liquid gold running through veined Calacatta marble geological strata. Perfect harmony with ultra-luxury stone architecture in Dubai and Doha.
+                        </p>
+                    </div>
+                    <div class="art-footer">
+                        <span class="art-specs">180 x 100 cm • Architectural Canvas</span>
+                        <span class="art-price">5.600 €</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artwork 6: Torre Eiffel VG (Style 58 VG STILO) -->
+            <div class="art-card">
+                <div class="art-img-box">
+                    <span class="art-badge">58 VG STILO • MONUMENTAL</span>
+                    <img src="assets/58VG stilo/Torre eifel VG.jpg" alt="Torre Eiffel VG">
+                </div>
+                <div class="art-details">
+                    <div>
+                        <h3>Parisian Mist & Iron (Torre Eiffel VG)</h3>
+                        <div class="art-style">Neo-Impressionist Architecture</div>
+                        <p class="art-desc">
+                            The iconic iron structure emerging through mist and golden lantern glow. Heavy textured palette knife relief evoking European heritage and timeless romance.
+                        </p>
+                    </div>
+                    <div class="art-footer">
+                        <span class="art-specs">140 x 100 cm • Signed & Numbered</span>
+                        <span class="art-price">4.100 €</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- IN-SITU SIMULATION BANNER -->
+    <section class="simulation-banner" id="in-situ">
+        <div class="simulation-box">
+            <div class="sim-content">
+                <div class="badge-exclusive">Bespoke Architectural Advisory</div>
+                <h2>Complimentary In-Situ Placement Simulation</h2>
+                <p>
+                    Choosing art for prestigious hospitality spaces demands surgical precision with scale, lighting, and finishes. 
+                </p>
+                <p>
+                    Our studio offers an exclusive complimentary visualization service: send us a CAD plan, architectural render, or high-resolution photograph of your lobby, VIP suite, or executive boardroom. Within <strong>48 hours</strong>, our team renders exact fotorrealistic scale projections of any piece or looping cinemagraph integrated directly into your space.
+                </p>
+                <ul class="sim-features">
+                    <li><span class="check">✓</span> 100% complimentary with zero procurement obligation</li>
+                    <li><span class="check">✓</span> Precise optical scale matching your wall dimensions</li>
+                    <li><span class="check">✓</span> Tailored lighting analysis (natural sunlight vs. ambient LEDs)</li>
+                    <li><span class="check">✓</span> Custom hardware recommendations for seamless video display</li>
+                </ul>
+                <a href="mailto:eduardo@trbandmusic.es?subject=Request%20In-Situ%20Simulation%20%7C%20Hotel%20Project" class="btn-gold">
+                    Submit Room Photo for Simulation
+                </a>
+            </div>
+            <div class="sim-visual">
+                <img src="assets/mockups/mockup kuwai salon cuadro.png" alt="In-situ Architectural Simulation">
+            </div>
+        </div>
+    </section>
+
+    <!-- CONCIERGE & ACQUISITIONS -->
+    <section class="concierge-section" id="concierge">
+        <div class="concierge-box">
+            <h2>Private Hospitality Concierge</h2>
+            <p class="lead">"Direct artist-to-curator collaboration without intermediaries."</p>
+            <p class="desc">
+                Whether you are curating art for a 300-key resort development in Dubai, seeking a single 1-of-1 digital centerpiece for a royal suite, or staging a private residence, our studio provides bespoke acquisition terms, white-glove insured worldwide delivery, and dedicated provenance documentation.
+            </p>
+            
+            <div class="contact-action-row">
+                <a href="mailto:eduardo@trbandmusic.es?subject=Hospitality%20Acquisition%20Inquiry%20%7C%20Dudeduart&body=Dear%20Eduardo,%0A%0AWe%20are%20reviewing%20the%20Hospitality%20Viewing%20Room%20for%20an%20upcoming%20project:%0A-%20Project%20Name%20/%20Hotel:%0A-%20Location:%0A-%20Artworks%20/%20Cinemagraphs%20of%20interest:%0A%0ABest%20regards," class="btn-gold">
+                    ✉️ Email Curatorial Desk
+                </a>
+                <a href="https://wa.me/34611818352?text=Hello%20Eduardo,%20I%20am%20inquiring%20about%20the%20Hospitality%20Viewing%20Room%20artworks%20and%20cinemagraphs." target="_blank" class="btn-ghost">
+                    💬 WhatsApp VIP (+34 611 818 352)
+                </a>
+                <a href="catalogo_completo.html" target="_blank" class="btn-ghost">
+                    🏛️ Explore Full 575 Artworks Catalog
+                </a>
+            </div>
+
+            <div class="contact-card-info">
+                <div>
+                    <strong>Studio & Gallery</strong>
+                    Dudeduart Studio • Madrid, Spain
+                </div>
+                <div>
+                    <strong>Founder & Creative Director</strong>
+                    Eduardo Ramírez de Cartagena
+                </div>
+                <div>
+                    <strong>Direct Contact</strong>
+                    eduardo@trbandmusic.es • dudeduart.es
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Dudeduart • Eduardo Ramírez de Cartagena. All rights reserved.</p>
+        <p style="margin-top: 6px; font-size: 0.72rem; color: #555;">
+            Official International Hospitality Viewing Room • Madrid — Dubai — Global Capitals
+        </p>
+    </footer>
+
+    <!-- Video Switcher Script -->
+    <script>
+        const player = document.getElementById('mainCinemaPlayer');
+        const videoSource = document.getElementById('videoSource');
+        const titleEl = document.getElementById('cinemaTitle');
+        const descEl = document.getElementById('cinemaDesc');
+        const durationEl = document.getElementById('cinemaDuration');
+        const audioBtn = document.getElementById('audioBtn');
+
+        function switchCinemagraph(src, title, desc, duration, cardEl) {
+            // Remove active class from all cards
+            document.querySelectorAll('.cine-card').forEach(c => c.classList.remove('active'));
+            if (cardEl) {
+                cardEl.classList.add('active');
+            }
+
+            // Update Video Player with smooth fade
+            player.style.opacity = '0.3';
+            setTimeout(() => {
+                videoSource.src = src;
+                player.load();
+                player.play().catch(e => console.log('Autoplay handled:', e));
+                player.style.opacity = '1';
+                
+                // Update Metadata
+                titleEl.textContent = title;
+                descEl.textContent = desc;
+                durationEl.textContent = duration;
+            }, 250);
+        }
+
+        function toggleCinemaAudio() {
+            if (player.muted) {
+                player.muted = false;
+                audioBtn.innerHTML = '🔇 Mute Audio';
+                audioBtn.style.borderColor = 'var(--gold)';
+                audioBtn.style.color = 'var(--gold-light)';
+            } else {
+                player.muted = true;
+                audioBtn.innerHTML = '🔊 Unmute Audio';
+                audioBtn.style.borderColor = 'var(--border-soft)';
+                audioBtn.style.color = 'var(--text-main)';
+            }
+        }
+
+        function toggleCinemaFullscreen() {
+            if (!document.fullscreenElement) {
+                if (player.requestFullscreen) {
+                    player.requestFullscreen();
+                } else if (player.webkitRequestFullscreen) {
+                    player.webkitRequestFullscreen();
+                } else if (player.msRequestFullscreen) {
+                    player.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+    </script>
 </body>
 </html>
