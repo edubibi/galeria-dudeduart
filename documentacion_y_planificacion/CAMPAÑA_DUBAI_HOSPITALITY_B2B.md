@@ -26,8 +26,8 @@ Los hoteles de 5★ y 7★ en Dubái y el Golfo invierten millones de dólares e
 
 | Empresa | Ubicación | Web | Contacto / Email Sugerido | Perfil de Proyectos |
 | :--- | :--- | :--- | :--- | :--- |
-| **Capsule Arts** | Dubai Design District (d3) | [capsulearts.com](https://capsulearts.com) | `info@capsulearts.com`<br>`projects@capsulearts.com` | **Máximo objetivo**. Comisarios de arte para Jumeirah, St. Regis, Marriott, One&Only. |
-| **Artelier Hospitality** | Dubái & Londres | [artelier.co.uk](https://artelier.co.uk) | `enquiries@artelier.co.uk` | Especialistas en arte para hoteles de ultra-lujo, residencias reales y megayates. |
+| **Capsule Arts** | Dubai Design District (d3) | [capsulearts.com](https://capsulearts.com) | `info@capsulearts.com`<br>`hello@capsulearts.com` | **Máximo objetivo**. Comisarios de arte para Jumeirah, St. Regis, Marriott, One&Only. |
+| **Artelier Hospitality** | Dubái & Londres | [artelier.com](https://artelier.com) | `art@artelier.com` | Especialistas en arte para hoteles de ultra-lujo, residencias reales y megayates. |
 | **HBA Dubai (Hirsch Bedner Associates)** | Dubái (Downtown) | [hba.com](https://hba.com) | `dubai@hba.com` | La firma #1 del mundo en interiorismo y adquisición de arte para hostelería de lujo. |
 | **Wilson Associates ME** | Dubái | [wilsonassociates.com](https://wilsonassociates.com) | `dubai@wilsonassociates.com` | Arquitectura interior y arte exclusivo para resorts icónicos en Oriente Medio. |
 | **Art Consulting Dubai (Showcase)** | Dubái (Alserkal Avenue) | [showcaseuae.com](https://showcaseuae.com) | `info@showcaseuae.com` | Comisariado y suministro de arte contemporáneo para hoteles y clientes privados VIP. |
