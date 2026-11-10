@@ -66,6 +66,20 @@ Los hoteles de 5★ y 7★ en Dubái y el Golfo invierten millones de dólares e
 
 ---
 
+
+### BLOQUE D: Segunda Ola Internacional y Arabia Saudí (Verificados)
+
+| Empresa | Ubicación | Web / Contacto | Perfil y Proyectos |
+| :--- | :--- | :--- | :--- |
+| **Two Art Consultants** | Dubai Design District (d3) | hello@twoartconsultants.com | Especialistas en arte para hoteles en el distrito del diseño de Dubái. |
+| **Artevo Consulting** | Riad (Arabia Saudí) | hello@artevo-consulting.com | Curation para el mega-boom hotelero de Arabia Saudí (Riyadh, Laysen Valley). |
+| **Peter Millard & Partners** | Londres / Internacional | info@petermillardandpartners.com | La consultora #1 de Europa para hoteles 5★ (Four Seasons, Ritz-Carlton). |
+| **SMC Art Consultancy** | Londres / Internacional | info@smc-design.com | Arte para hostelería de ultra-lujo y arquitectura hotelera. |
+| **Kalisher Global** | Londres & Nueva York | jen@kalisher.com | Una de las mayores consultoras mundiales de arte para cadenas de lujo. |
+| **Indigo Art** | Reino Unido / Global | info@indigoart.co.uk | Proyectos de arte contemporáneo para hoteles internacionales. |
+
+---
+
 ## ✉️ 3. Plantillas de Outreach en Inglés (100% Listas para Copiar y Pegar)
 
 ### Correo 1: El Gancho Curatorial (Primer Contacto • Menos de 90 palabras)
