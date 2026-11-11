@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colección Alta Costura & Noir Urbano | Dudeduart Hospitality & Contract Art</title>
+    
+    <!-- Metadatos de Lujo y Hotelería -->
+    <meta name="description" content="Colección exclusiva de arte contemporáneo para hoteles boutique, suites presidenciales y proyectos de interiorismo de lujo por Eduardo Ramírez de Cartagena. Trípticos y lienzos matéricos de gran formato.">
+    <meta name="author" content="Eduardo Ramírez de Cartagena • Dudeduart">
+
+    <!-- Tipografías de Prestigio -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-deep: #090a0f;
+            --bg-surface: #12141c;
+            --bg-surface-elevated: #1a1d28;
+            --text-main: #f5f6fa;
+            --text-muted: #a0a6b5;
+            --text-dim: #6d7485;
+            --gold: #C5A059;
+            --gold-light: #e0c283;
+            --gold-glow: rgba(197, 160, 89, 0.25);
+            --gold-subtle: rgba(197, 160, 89, 0.12);
+            --border-soft: rgba(255, 255, 255, 0.08);
+            --border-gold: rgba(197, 160, 89, 0.35);
+            --font-display: 'Cinzel', serif;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Outfit', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(197, 160, 89, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(138, 43, 226, 0.04) 0%, transparent 40%);
+        }
+
+        /* Top Bar Fija */
+        .top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(9, 10, 15, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-soft);
+            padding: 14px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .brand-sub {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold) 0%, #9e7d3b 100%);
+            color: #000;
+            border: 1px solid var(--gold);
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            box-shadow: 0 0 15px var(--gold-glow);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-soft);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 70px 20px 40px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            border: 1px solid var(--border-gold);
+            background: var(--gold-subtle);
+            padding: 6px 16px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            line-height: 1.15;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 780px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-specs {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border-soft);
+        }
+
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .spec-val {
+            font-family: var(--font-display);
+            color: var(--gold);
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .spec-lbl {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+        }
+
+        /* Container General */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Sección Monumental: Tríptico */
+        .monumental-section {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .section-header-box {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-header-box h2 {
+            font-family: var(--font-display);
+            font-size: 2.1rem;
+            color: #fff;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .section-header-box p {
+            color: var(--gold);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .triptych-stage {
+            background: linear-gradient(180deg, #181920 0%, #0d0e13 100%);
+            border: 1px solid var(--border-soft);
+            border-radius: 8px;
+            padding: 50px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 80px rgba(0,0,0,0.6);
+        }
+
+        .triptych-img-full {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            filter: drop-shadow(0 25px 35px rgba(0,0,0,0.85));
+            transition: transform 0.4s ease;
+            cursor: pointer;
+        }
+
+        .triptych-img-full:hover {
+            transform: scale(1.015);
+        }
+
+        .triptych-breakdown {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 35px;
+        }
+
+        .panel-card {
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-soft);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .panel-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-4px);
+        }
+
+        .panel-thumb {
+            width: 100%;
+            height: 280px;
+            object-fit: contain;
+            background: #0d0e12;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .panel-title {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .panel-specs {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .format-pills {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .format-pill {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-soft);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #ccc;
+        }
+
+        .format-pill strong {
+            color: var(--gold);
+        }
+
+        /* Sección Horizontal: Man Descending */
+        .landscape-feature {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .landscape-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            border: 1px solid var(--border-soft);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .landscape-img:hover {
+            transform: scale(1.02);
+        }
+
+        .landscape-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+
+        .landscape-info .badge {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .landscape-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .room-tag-list {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .room-tag {
+            background: var(--gold-subtle);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* Galería de Obras Verticales */
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gallery-header h2 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .gallery-header p {
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .artwork-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .artwork-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        .art-img-wrap {
+            position: relative;
+            background: #0d0e13;
+            height: 380px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .art-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .artwork-card:hover .art-img-wrap img {
+            transform: scale(1.06);
+        }
+
+        .art-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .art-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .art-palette {
+            font-size: 0.78rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .art-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .art-meta {
+            padding-top: 12px;
+            border-top: 1px solid var(--border-soft);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.78rem;
+            color: var(--text-dim);
+        }
+
+        .art-meta span strong {
+            color: #ddd;
+        }
+
+        /* Simulador de Entorno de Hotel */
+        .simulator-section {
+            background: linear-gradient(180deg, #141722 0%, var(--bg-deep) 100%);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 45px 30px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .simulator-controls {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin: 25px 0 35px;
+            flex-wrap: wrap;
+        }
+
+        .sim-btn {
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-soft);
+            color: var(--text-muted);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .sim-btn.active, .sim-btn:hover {
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+            box-shadow: 0 0 20px var(--gold-glow);
+        }
+
+        .sim-stage {
+            max-width: 960px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+            border: 1px solid var(--border-soft);
+            position: relative;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            transition: background 0.5s ease;
+        }
+
+        .sim-artwork {
+            max-width: 82%;
+            max-height: 420px;
+            border-radius: 4px;
+            filter: drop-shadow(0 25px 35px rgba(0,0,0,0.85));
+            transition: all 0.4s ease;
+        }
+
+        /* Calidades Contract */
+        .contract-specs {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            padding: 45px;
+            margin: 60px 0;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .spec-box {
+            border-left: 2px solid var(--gold);
+            padding-left: 20px;
+        }
+
+        .spec-box h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .spec-box p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* CTA Footer */
+        .cta-footer {
+            text-align: center;
+            padding: 60px 20px 80px;
+            background: radial-gradient(circle at center, rgba(197, 160, 89, 0.08) 0%, transparent 70%);
+        }
+
+        .cta-footer h2 {
+            font-family: var(--font-display);
+            font-size: 2.3rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .cta-footer p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* Modal Lightbox */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 6, 9, 0.96);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+        }
+
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.9);
+            border: 1px solid var(--border-soft);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        /* Ajustes de Impresión / PDF */
+        @media print {
+            .top-nav, .simulator-section, .btn-action, .cta-footer, .lightbox-modal {
+                display: none !important;
+            }
+            body {
+                background: #fff !important;
+                color: #000 !important;
+            }
+            .monumental-section, .landscape-feature, .artwork-card, .contract-specs {
+                border: 1px solid #ddd !important;
+                background: #fff !important;
+                color: #000 !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+            }
+            h1, h2, h3, h4, .art-title, .brand-title {
+                color: #111 !important;
+                -webkit-text-fill-color: initial !important;
+            }
+            p, .art-desc, .panel-specs, .spec-lbl {
+                color: #444 !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.1rem; }
+            .monumental-section { padding: 20px; }
+            .triptych-breakdown { grid-template-columns: 1fr; }
+            .landscape-feature { grid-template-columns: 1fr; }
+            .top-nav { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación Superior Fija -->
+    <nav class="top-nav">
+        <div class="brand-box">
+            <span class="brand-title">DUDEDUART</span>
+            <span class="brand-sub">Hospitality & Contract Art Division</span>
+        </div>
+        <div class="nav-actions">
+            <button class="btn-action btn-outline" onclick="window.print()">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+                Imprimir Dossier PDF
+            </button>
+            <a href="https://wa.me/34611818352?text=Hola%20Eduardo,%20estoy%20revisando%20la%20Colección%20Moda%20y%20deseo%20solicitar%20presupuesto%20para%20un%20proyecto%20hotelero." class="btn-action btn-gold" target="_blank">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.181-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+                Consultar Disponibilidad
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="hero">
+        <span class="hero-badge">Colección Exclusiva Hospitality & Contract 2026</span>
+        <h1>HAUTE COUTURE & NOIR URBANO</h1>
+        <p>
+            Una audaz fusión entre el grafismo de la alta costura europea y el relieve tridimensional del óleo escultórico con textura matérica <em>dripping</em>. Diseñada para dotar de identidad exclusiva a vestíbulos de recepción, salones de gala y suites presidenciales.
+        </p>
+        <div class="hero-specs">
+            <div class="spec-item">
+                <span class="spec-val">3D Impasto</span>
+                <span class="spec-lbl">Técnica Matérica</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-val">Oro • Púrpura • Esmeralda</span>
+                <span class="spec-lbl">Pigmentos Nobles</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-val">Lienzo 380g / Bastidor 4cm</span>
+                <span class="spec-lbl">Grado Hotelero</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-val">100% One-Stop</span>
+                <span class="spec-lbl">Obra Original Certificada</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. SECCIÓN MONUMENTAL: EL TRÍPTICO DEL PUENTE -->
+        <section class="monumental-section">
+            <div class="section-header-box">
+                <h2>EL TRÍPTICO DEL PUENTE</h2>
+                <p>Gran Formato Monumental para Lobbies y Suites Presidenciales</p>
+            </div>
+
+            <div class="triptych-stage">
+                <img src="assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_Pareja_MOCKUP_COMPLETO_2K.png" 
+                     alt="Tríptico del Puente Completo con Sombras" 
+                     class="triptych-img-full"
+                     onclick="openLightbox(this.src)"
+                     title="Clic para ampliar en alta definición">
+            </div>
+
+            <div class="format-pills">
+                <div class="format-pill">Formato Estándar: <strong>180 x 90 cm</strong> (3 paneles de 55x90 cm)</div>
+                <div class="format-pill">Formato Gran Salón: <strong>240 x 120 cm</strong> (3 paneles de 75x120 cm)</div>
+                <div class="format-pill">Formato Lobby Monumental: <strong>300 x 150 cm</strong> (3 paneles de 95x150 cm)</div>
+            </div>
+
+            <!-- Desglose de los 3 Paneles Individuales -->
+            <div class="triptych-breakdown">
+                <div class="panel-card">
+                    <img src="assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_01_Izquierda_2K.png" alt="Panel Izquierdo" class="panel-thumb" onclick="openLightbox(this.src)">
+                    <div class="panel-title">Panel 01: El Remolino Áureo</div>
+                    <div class="panel-specs">Textura matérica, relieve oro y púrpura con caída orgánica.</div>
+                </div>
+                <div class="panel-card">
+                    <img src="assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_02_Centro_2K.png" alt="Panel Central" class="panel-thumb" onclick="openLightbox(this.src)">
+                    <div class="panel-title">Panel 02: La Pareja en el Puente</div>
+                    <div class="panel-specs">Siluetas de alta costura, paso sincronizado y drapeado tridimensional.</div>
+                </div>
+                <div class="panel-card">
+                    <img src="assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_03_Derecha_2K.png" alt="Panel Derecho" class="panel-thumb" onclick="openLightbox(this.src)">
+                    <div class="panel-title">Panel 03: La Estela y el Fin del Puente</div>
+                    <div class="panel-specs">Remate de la arquitectura en sillar negro y goteo de pintura hacia el suelo.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SECCIÓN HORIZONTAL PANORÁMICA: MAN DESCENDING THEATRE STEPS -->
+        <section class="landscape-feature">
+            <img src="assets/serie_moda/Man_descending_theatre_steps.jpg" 
+                 alt="Man descending theatre steps" 
+                 class="landscape-img"
+                 onclick="openLightbox(this.src)"
+                 title="Clic para ampliar">
+            <div class="landscape-info">
+                <span class="badge">Pieza Panorámica de Salón y Escaleras Principales</span>
+                <h3>Man Descending Theatre Steps</h3>
+                <p>
+                    Un caballero en esmoquin desciende la escalinata de mármol entre dos monumentales columnas clásicas doradas. De su hombro brota una deslumbrante capa de corte imperial realizada en óleo empastado rojo carmesí y oro líquido con goteo escultórico.
+                </p>
+                <div class="room-tag-list">
+                    <span class="room-tag">Subida de Escaleras Nobles</span>
+                    <span class="room-tag">Comedor Principal</span>
+                    <span class="room-tag">Salón Club / Bar Noir</span>
+                </div>
+                <div class="format-pill" style="display: inline-block;">
+                    Medidas Recomendadas: <strong>160 x 90 cm</strong> | <strong>200 x 110 cm</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. GALERÍA DE OBRAS VERTICALES (SUITES & PASILLOS) -->
+        <section class="vertical-gallery-section">
+            <div class="gallery-header">
+                <h2>OBRAS INDIVIDUALES & DÍPTICOS DE SUITE</h2>
+                <p>Selección curada en formato vertical para cabeceros de habitación, suites superiores y ritmo continuo en pasillos nobles.</p>
+            </div>
+
+            <div class="gallery-grid">
+
+                <!-- 1. Ellos Bailan -->
+                <div class="artwork-card">
+                    <div class="art-img-wrap">
+                        <img src="assets/serie_moda/ellos bailan.jpg" alt="Ellos Bailan" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="art-body">
+                        <h4 class="art-title">Ellos Bailan (The London Dance)</h4>
+                        <div class="art-palette">Verde Esmeralda • Plata • Negro Piano</div>
+                        <p class="art-desc">Pareja en abrazo íntimo junto a una clásica cabina británica, envueltos en un oleaje de óleo esmeralda y plata líquida.</p>
+                        <div class="art-meta">
+                            <span>Formato: <strong>80 x 80 cm / 100 x 100 cm</strong></span>
+                            <span>Ubicación: <strong>Suite Deluxe</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. En la Floristería -->
+                <div class="artwork-card">
+                    <div class="art-img-wrap">
+                        <img src="assets/serie_moda/en la floristería.jpg" alt="En la Floristería" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="art-body">
+                        <h4 class="art-title">En la Floristería de París</h4>
+                        <div class="art-palette">Oro Rosa • Amarillo Cadmio • Farola Clásica</div>
+                        <p class="art-desc">Silueta femenina contemplando los puestos de flores bajo la luz cálida de una farola parisina, con textura floral en relieve.</p>
+                        <div class="art-meta">
+                            <span>Formato: <strong>70 x 100 cm / 85 x 120 cm</strong></span>
+                            <span>Ubicación: <strong>Rincón de Lectura</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. La Chica en Bici -->
+                <div class="artwork-card">
+                    <div class="art-img-wrap">
+                        <img src="assets/serie_moda/la chica en bici.jpg" alt="La Chica en Bici" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="art-body">
+                        <h4 class="art-title">Paseo Matinal en Bicicleta</h4>
+                        <div class="art-palette">Turquesa • Cobre • Dinamismo Urbano</div>
+                        <p class="art-desc">Lirismo y libertad sobre dos ruedas. La bufanda y vestido en relieve parecen volar al compás del pedaleo matinal.</p>
+                        <div class="art-meta">
+                            <span>Formato: <strong>70 x 100 cm / 80 x 120 cm</strong></span>
+                            <span>Ubicación: <strong>Habitación Doble</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Hombre Cruzando -->
+                <div class="artwork-card">
+                    <div class="art-img-wrap">
+                        <img src="assets/serie_moda/hombre cruzando.jpg" alt="Hombre Cruzando" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="art-body">
+                        <h4 class="art-title">El Paso de la Gran Vía</h4>
+                        <div class="art-palette">Ocre Dorado • Grafito • Cobre</div>
+                        <p class="art-desc">Figura masculina con abrigo de corte arquitectónico cruzando la calzada con determinación y porte cinematográfico.</p>
+                        <div class="art-meta">
+                            <span>Formato: <strong>90 x 120 cm</strong></span>
+                            <span>Ubicación: <strong>Pasillo de Entrada</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Modelo en el Banco -->
+                <div class="artwork-card">
+                    <div class="art-img-wrap">
+                        <img src="assets/serie_moda/modelo en el banco.jpg" alt="Modelo en el Banco" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="art-body">
+                        <h4 class="art-title">Pausa en el Banco de Otoño</h4>
+                        <div class="art-palette">Naranja Tostado • Violeta • Oro</div>
+                        <p class="art-desc">Momento de descanso y reflexión en la banca pública, con drapeado rico en relieve que desborda hacia el suelo.</p>
+                        <div class="art-meta">
+                            <span>Formato: <strong>75 x 100 cm / 85 x 120 cm</strong></span>
+                            <span>Ubicación: <strong>Suite Junior</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. La Chica de la Parada -->
+                <div class="artwork-card">
+                    <div class="art-img-wrap">
+                        <img src="assets/serie_moda/la chica de la parada.jpg" alt="La Chica de la Parada" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="art-body">
+                        <h4 class="art-title">La Espera de Medianoche</h4>
+                        <div class="art-palette">Rojo Rubí • Azabache • Gris Seda</div>
+                        <p class="art-desc">La soledad elegante de la noche urbana: un vestido escarlata en relieve que contrasta con la quietud de la parada.</p>
+                        <div class="art-meta">
+                            <span>Formato: <strong>70 x 100 cm / 80 x 120 cm</strong></span>
+                            <span>Ubicación: <strong>Pasillo de Suites</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. SIMULADOR INTERACTIVO DE ENTORNO HOTELERO -->
+        <section class="simulator-section">
+            <h2 style="font-family: var(--font-display); font-size: 2rem; color: #fff; margin-bottom: 8px;">SIMULADOR DE INTEGRACIÓN EN ESPACIOS</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Comprueba cómo dialoga el arte con diferentes tipos de paredes y ambientes hoteleros.</p>
+
+            <div class="simulator-controls">
+                <button class="sim-btn active" onclick="setSimEnvironment('suite')">🛏️ Cabecero Suite Presidencial</button>
+                <button class="sim-btn" onclick="setSimEnvironment('lobby')">🏛️ Pared Recepción / Lobby</button>
+                <button class="sim-btn" onclick="setSimEnvironment('hall')">🚪 Galería de Pasillos Nobles</button>
+            </div>
+
+            <div class="sim-stage" id="sim-stage" style="background: linear-gradient(135deg, #1c1d24 0%, #101117 100%);">
+                <img src="assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_Pareja_MOCKUP_COMPLETO_2K.png" 
+                     alt="Simulación Tríptico en Pared" 
+                     class="sim-artwork" 
+                     id="sim-img">
+            </div>
+        </section>
+
+        <!-- 5. ESPECIFICACIONES TÉCNICAS B2B CONTRACT -->
+        <section class="contract-specs">
+            <h2 style="font-family: var(--font-display); font-size: 1.9rem; color: var(--gold); margin-bottom: 10px;">ESPECIFICACIONES CONTRACT PARA HOTELES</h2>
+            <p style="color: var(--text-muted);">Calidad museística certificada y durabilidad garantizada para establecimientos de alto tránsito.</p>
+
+            <div class="specs-grid">
+                <div class="spec-box">
+                    <h4>Lienzo Canvas 380g</h4>
+                    <p>Soporte de puro algodón orgánico con imprimación gesso mate para una absorción y fijación de color insuperable.</p>
+                </div>
+                <div class="spec-box">
+                    <h4>Tintas Minerales UV</h4>
+                    <p>Pigmentos de alta fidelidad que no decoloran ante la luz natural o la iluminación halógena/LED continua del hotel.</p>
+                </div>
+                <div class="spec-box">
+                    <h4>Barniz Mate Antirreflejos</h4>
+                    <p>Acabado protector invisible que sella el relieve, permite limpieza fácil con paño seco y elimina brillos molestos.</p>
+                </div>
+                <div class="spec-box">
+                    <h4>Bastidor de Pino Macizo 4cm</h4>
+                    <p>Madera secada al horno con escuadras de refuerzo antitorsión, inmune a las oscilaciones de climatización del hotel.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- CTA & Contacto Final -->
+    <footer class="cta-footer">
+        <h2>¿Deseas este Proyecto para tu Hotel o Estudio de Interiorismo?</h2>
+        <p>Facilitamos muestrarios físicos de texturas, fichas técnicas completas y tarifas especiales B2B por volumen para renovación de habitaciones y zonas comunes.</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/34611818352?text=Hola%20Eduardo,%20estoy%20interesado%20en%20presupuestar%20la%20Colección%20Moda%20para%20un%20proyecto%20de%20hotel." class="btn-action btn-gold" target="_blank">
+                Contactar por WhatsApp (+34 611 818 352)
+            </a>
+            <a href="mailto:ramirex00@gmail.com?subject=Solicitud%20de%20Dossier%20y%20Presupuesto%20Hotelero%20%7C%20Colección%20Moda%20Dudeduart&body=Estimado%20Eduardo,%0A%0ANos%20gustaría%20recibir%20información%20técnica%20y%20presupuesto%20de%20la%20Colección%20Alta%20Costura%20y%20Noir%20Urbano%20para%20un%20proyecto%20hotelero.%0A%0A-%20Nombre%20del%20Hotel%20/%20Estudio:%0A-%20Ubicación:%0A-%20Espacio%20a%20vestir%20(Suites%20/%20Recepción%20/%20Pasillos):%0A%0AUn%20cordial%20saludo," class="btn-action btn-outline">
+                Solicitar Cotización por Email
+            </a>
+        </div>
+        <p style="margin-top: 40px; font-size: 0.8rem; color: var(--text-dim);">
+            © 2026 Dudeduart • Eduardo Ramírez de Cartagena (SGAE Nº 29.751) • Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Enlarged Art" class="lightbox-img" id="lightbox-img" onclick="event.stopPropagation()">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Simulador de Ambientes
+        function setSimEnvironment(type) {
+            const stage = document.getElementById('sim-stage');
+            const img = document.getElementById('sim-img');
+            const btns = document.querySelectorAll('.sim-btn');
+            btns.forEach(b => b.classList.remove('active'));
+
+            if (type === 'suite') {
+                event.target.classList.add('active');
+                stage.style.background = 'radial-gradient(circle at center, #272a38 0%, #11131c 100%)';
+                img.src = 'assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_Pareja_MOCKUP_COMPLETO_2K.png';
+                img.style.maxWidth = '85%';
+            } else if (type === 'lobby') {
+                event.target.classList.add('active');
+                stage.style.background = 'radial-gradient(circle at center, #1e2029 0%, #0a0b10 100%)';
+                img.src = 'assets/serie_moda/Man_descending_theatre_steps.jpg';
+                img.style.maxWidth = '75%';
+            } else if (type === 'hall') {
+                event.target.classList.add('active');
+                stage.style.background = 'linear-gradient(90deg, #181922 0%, #202330 50%, #181922 100%)';
+                img.src = 'assets/serie_moda/ellos bailan.jpg';
+                img.style.maxWidth = '42%';
+            }
+        }
+    </script>
+</body>
+</html>
