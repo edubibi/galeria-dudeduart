@@ -914,14 +914,17 @@
             </p>
 
             <div class="sim-tabs">
-                <button class="sim-tab active" onclick="switchSim('salon')">
-                    🛋️ Salón Suite Presidencial
+                <button class="sim-tab active" onclick="switchSim('penthouse')">
+                    🥂 Penthouse Lounge Four Seasons
                 </button>
                 <button class="sim-tab" onclick="switchSim('dormitorio')">
                     🛏️ Cabecero Dormitorio Suite
                 </button>
                 <button class="sim-tab" onclick="switchSim('pasillo')">
                     🚪 Galería de Pasillos Nobles
+                </button>
+                <button class="sim-tab" onclick="switchSim('salon')">
+                    🛋️ Salón Suite Presidencial
                 </button>
                 <button class="sim-tab" onclick="switchSim('lobby')">
                     🏛️ Lobby Monumental 7 Estrellas
@@ -933,7 +936,7 @@
 
             <!-- Viewport de la Simulación Fotográfica Real -->
             <div class="sim-viewport">
-                <img src="assets/hotel_mockups/suite_presidencial_triptico.jpg" 
+                <img src="assets/hotel_mockups/penthouse_lounge_crior.jpg" 
                      alt="Simulación de Arte en Hotel de Lujo" 
                      class="sim-image" 
                      id="sim-display-img"
@@ -942,17 +945,17 @@
 
                 <div class="sim-info-bar">
                     <div class="sim-info-left">
-                        <h4 id="sim-info-title">Salón de Suite Presidencial / Penthouse Lounge</h4>
-                        <p id="sim-info-desc">El Tríptico del Puente suspendido sobre el sofá de diseño bajo iluminación de carril cálida.</p>
+                        <h4 id="sim-info-title">Penthouse Lounge & Salón Four Seasons</h4>
+                        <p id="sim-info-desc">Alta Costura en el Escaparate de París presidiendo el espacio central entre librerías integradas y mobiliario contemporáneo.</p>
                     </div>
                     <div class="sim-info-specs">
                         <div class="sim-spec-item">
                             <span class="label">Obra Expuesta</span>
-                            <span class="val" id="sim-spec-art">El Tríptico del Puente (3 Paneles)</span>
+                            <span class="val" id="sim-spec-art">Alta Costura en el Escaparate de París</span>
                         </div>
                         <div class="sim-spec-item">
                             <span class="label">Medidas Sugeridas</span>
-                            <span class="val" id="sim-spec-size">240 x 120 cm (3 de 75x120 cm)</span>
+                            <span class="val" id="sim-spec-size">120 x 90 cm / 140 x 100 cm</span>
                         </div>
                     </div>
                 </div>
@@ -1075,6 +1078,24 @@
                     </div>
                 </div>
 
+                <!-- 2. Alta Costura en el Escaparate -->
+                <div class="art-card">
+                    <div class="art-thumb-box">
+                        <img src="assets/serie_moda/crior escaparete.jpg" alt="Alta Costura en el Escaparate" class="art-img-primary" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_crior_escaparate.jpg" alt="Alta Costura en Penthouse Lounge Four Seasons" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <span class="hover-pill-badge">🏨 Ver en Penthouse Lounge</span>
+                    </div>
+                    <div class="art-content">
+                        <h4 class="art-title">Alta Costura en el Escaparate</h4>
+                        <div class="art-palette">Verde Esmeralda • Oro Imperial • Taller de Moda</div>
+                        <p class="art-desc">Silueta femenina con sombrilla ante el escaparate parisino. Textura matérica verde y oro con relieve escultórico y goteo tridimensional.</p>
+                        <div class="art-footer-meta">
+                            <span>Medida: <strong>120x90 cm</strong></span>
+                            <span>Uso: <strong>Penthouse Lounge / Living</strong></span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 2. En la Floristería -->
                 <div class="art-card">
                     <div class="art-thumb-box">
@@ -1098,7 +1119,7 @@
                     <div class="art-thumb-box">
                         <img src="assets/serie_moda/la chica en bici.jpg" alt="La Chica en Bici" class="art-img-primary" onclick="openLightbox(this.src)">
                         <img src="assets/hotel_mockups/insitu_la_chica_en_bici.jpg" alt="La Chica en Bici en Pasillo Noble" class="art-img-hover" onclick="openLightbox(this.src)">
-                        <span class="hover-pill-badge">🏨 Ver en Pasillo</span>
+                        <span class="hover-pill-badge">🏨 Ver en Pasillo Noble</span>
                     </div>
                     <div class="art-content">
                         <h4 class="art-title">Paseo Matinal en Bicicleta</h4>
@@ -1228,12 +1249,12 @@
     <!-- Script del Simulador con Ambientes Reales -->
     <script>
         const simData = {
-            salon: {
-                img: 'assets/hotel_mockups/suite_presidencial_triptico.jpg',
-                title: 'Salón de Suite Presidencial / Penthouse Lounge',
-                desc: 'El Tríptico del Puente suspendido sobre el sofá de diseño bajo iluminación de carril cálida.',
-                art: 'El Tríptico del Puente (3 Paneles)',
-                size: '240 x 120 cm (3 de 75x120 cm)'
+            penthouse: {
+                img: 'assets/hotel_mockups/penthouse_lounge_crior.jpg',
+                title: 'Penthouse Lounge & Salón Four Seasons',
+                desc: 'Alta Costura en el Escaparate de París presidiendo el espacio central entre librerías integradas y mobiliario contemporáneo.',
+                art: 'Alta Costura en el Escaparate de París',
+                size: '120 x 90 cm / 140 x 100 cm'
             },
             dormitorio: {
                 img: 'assets/hotel_mockups/dormitorio_suite_banco.jpg',
@@ -1248,6 +1269,13 @@
                 desc: 'Obra en formato vertical integrada con fuga de perspectiva en las molduras del pasillo noble.',
                 art: 'Ellos Bailan (The London Dance)',
                 size: '80 x 120 cm'
+            },
+            salon: {
+                img: 'assets/hotel_mockups/suite_presidencial_triptico.jpg',
+                title: 'Salón de Suite Presidencial / Gran Salón',
+                desc: 'El Tríptico del Puente suspendido sobre el sofá de diseño bajo iluminación de carril cálida.',
+                art: 'El Tríptico del Puente (3 Paneles)',
+                size: '240 x 120 cm (3 de 75x120 cm)'
             },
             lobby: {
                 img: 'assets/hotel_mockups/lobby_kuwait_ellos_bailan.jpg',
