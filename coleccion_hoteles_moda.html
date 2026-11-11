@@ -924,7 +924,10 @@
                     🛏️ Cabecero Dormitorio Suite
                 </button>
                 <button class="sim-tab" onclick="switchSim('pasillo')">
-                    🚪 Galería de Pasillos Nobles
+                    🚪 Pasillo: Ellos Bailan
+                </button>
+                <button class="sim-tab" onclick="switchSim('pasillo_bici')">
+                    🚲 Pasillo: Chica en Bici
                 </button>
                 <button class="sim-tab" onclick="switchSim('lobby')">
                     ✨ Lobby Monumental 7 Estrellas
@@ -1117,25 +1120,7 @@
                     </div>
                 </div>
 
-                <!-- 2. En la Floristería -->
-                <div class="art-card">
-                    <div class="art-thumb-box">
-                        <img src="assets/serie_moda/en la floristeria.jpg" alt="En la Floristería" class="art-img-primary" onclick="openLightbox(this.src)">
-                        <img src="assets/hotel_mockups/insitu_en_la_floristeria.jpg" alt="En la Floristería en Suite Penthouse" class="art-img-hover" onclick="openLightbox(this.src)">
-                        <span class="hover-pill-badge">🏨 Ver en Penthouse</span>
-                    </div>
-                    <div class="art-content">
-                        <h4 class="art-title">En la Floristería de París</h4>
-                        <div class="art-palette">Oro Rosa • Amarillo Cadmio • Farola Clásica</div>
-                        <p class="art-desc">Silueta femenina contemplando los puestos de flores bajo la luz de gas, con textura floral en relieve escultórico.</p>
-                        <div class="art-footer-meta">
-                            <span>Medida: <strong>75x110 cm</strong></span>
-                            <span>Uso: <strong>Rincón de Lectura</strong></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. La Chica en Bici -->
+                <!-- 4. La Chica en Bici -->
                 <div class="art-card">
                     <div class="art-thumb-box">
                         <img src="assets/serie_moda/la chica en bici.jpg" alt="La Chica en Bici" class="art-img-primary" onclick="openLightbox(this.src)">
@@ -1157,7 +1142,7 @@
                 <div class="art-card">
                     <div class="art-thumb-box">
                         <img src="assets/serie_moda/hombre cruzando.jpg" alt="Hombre Cruzando" class="art-img-primary" onclick="openLightbox(this.src)">
-                        <img src="assets/hotel_mockups/insitu_hombre_cruzando.jpg" alt="El Paso de la Gran Vía en Loft Suite Four Seasons" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_loft_suite_hombre_cruzando.jpg" alt="El Paso de la Gran Vía en Loft Suite Four Seasons" class="art-img-hover" onclick="openLightbox(this.src)">
                         <span class="hover-pill-badge">🏨 Ver en Loft Suite</span>
                     </div>
                     <div class="art-content">
@@ -1171,7 +1156,7 @@
                     </div>
                 </div>
 
-                <!-- 5. Modelo en el Banco -->
+                <!-- 6. Modelo en el Banco -->
                 <div class="art-card">
                     <div class="art-thumb-box">
                         <img src="assets/serie_moda/modelo en el banco.jpg" alt="Modelo en el Banco" class="art-img-primary" onclick="openLightbox(this.src)">
@@ -1185,24 +1170,6 @@
                         <div class="art-footer-meta">
                             <span>Medida: <strong>75x110 cm</strong></span>
                             <span>Uso: <strong>Cabecero Suite Junior</strong></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. La Chica de la Parada -->
-                <div class="art-card">
-                    <div class="art-thumb-box">
-                        <img src="assets/serie_moda/la chica de la parada.jpg" alt="La Chica de la Parada" class="art-img-primary" onclick="openLightbox(this.src)">
-                        <img src="assets/hotel_mockups/insitu_la_chica_de_la_parada.jpg" alt="La Chica de la Parada en Galería de Suites" class="art-img-hover" onclick="openLightbox(this.src)">
-                        <span class="hover-pill-badge">🏨 Ver en Pasillo</span>
-                    </div>
-                    <div class="art-content">
-                        <h4 class="art-title">La Espera de Medianoche</h4>
-                        <div class="art-palette">Rojo Rubí • Azabache • Gris Seda</div>
-                        <p class="art-desc">La soledad elegante de la noche urbana: un vestido escarlata en relieve que contrasta con la quietud de la parada.</p>
-                        <div class="art-footer-meta">
-                            <span>Medida: <strong>70x100 cm</strong></span>
-                            <span>Uso: <strong>Galería de Suites</strong></span>
                         </div>
                     </div>
                 </div>
@@ -1293,10 +1260,17 @@
             },
             pasillo: {
                 img: 'assets/hotel_mockups/pasillo_hotel_galeria.jpg',
-                title: 'Galería de Pasillos Nobles de Hotel 5 Estrellas',
-                desc: 'Obra en formato vertical integrada con fuga de perspectiva en las molduras del pasillo noble.',
+                title: 'Galería de Pasillos Nobles / Pared Izquierda',
+                desc: 'Ellos Bailan enmarcado con fuga de perspectiva en las molduras del pasillo parisino.',
                 art: 'Ellos Bailan (The London Dance)',
                 size: '80 x 120 cm'
+            },
+            pasillo_bici: {
+                img: 'assets/hotel_mockups/pasillo_hotel_chica_bici.jpg',
+                title: 'Galería de Pasillos Nobles / Puerta 202',
+                desc: 'Paseo Matinal en Bicicleta integrado en la pared derecha junto a la puerta noble 202 con aplique de luz cálida.',
+                art: 'Paseo Matinal en Bicicleta',
+                size: '70 x 100 cm / 80 x 120 cm'
             },
             salon: {
                 img: 'assets/hotel_mockups/suite_presidencial_triptico.jpg',
