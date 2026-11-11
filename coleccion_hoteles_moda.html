@@ -477,25 +477,6 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.4);
         }
 
-        .feature-img-wrap {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            border: 1px solid var(--border-soft);
-        }
-
-        .feature-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            cursor: zoom-in;
-            transition: transform 0.4s ease;
-        }
-
-        .feature-img:hover {
-            transform: scale(1.02);
-        }
 
         .feature-info h3 {
             font-family: var(--font-title);
@@ -575,18 +556,142 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
         }
 
         .art-thumb-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
             cursor: zoom-in;
-            transition: transform 0.5s ease;
+            transition: opacity 0.45s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .art-card:hover .art-thumb-box img {
-            transform: scale(1.05);
+        .art-img-primary {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .art-img-hover {
+            opacity: 0;
+            z-index: 2;
+            transform: scale(1.06);
+        }
+
+        .art-card:hover .art-img-hover {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .art-card:hover .art-img-primary {
+            opacity: 0;
+        }
+
+        .hover-pill-badge {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            z-index: 5;
+            background: rgba(10, 12, 18, 0.88);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+        }
+
+        .art-card:hover .hover-pill-badge,
+        .feature-img-wrap:hover .hover-pill-badge,
+        .triptych-hover-box:hover .hover-pill-badge {
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+            box-shadow: 0 0 15px var(--gold-glow);
+            font-weight: 700;
+        }
+
+        /* Hover para Man Descending */
+        .feature-img-wrap {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            border: 1px solid var(--border-soft);
+            min-height: 380px;
+            cursor: pointer;
+        }
+
+        .feature-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.45s ease, transform 0.6s ease;
+        }
+
+        .feature-img-wrap .art-img-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .feature-img-wrap:hover .art-img-hover {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .feature-img-wrap:hover .art-img-primary {
+            opacity: 0;
+        }
+
+        /* Hover para Tríptico */
+        .triptych-hover-box {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.85);
+            cursor: pointer;
+        }
+
+        .triptych-hover-box img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.45s ease, transform 0.6s ease;
+            cursor: zoom-in;
+        }
+
+        .triptych-hover-box .art-img-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .triptych-hover-box:hover .art-img-hover {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .triptych-hover-box:hover .art-img-primary {
+            opacity: 0;
         }
 
         .art-content {
@@ -778,10 +883,6 @@
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
                 Dossier PDF
             </button>
-            <a href="https://wa.me/34611818352?text=Hola%20Eduardo,%20estoy%20revisando%20el%20Dossier%20de%20la%20Colección%20Moda%20y%20deseo%20consultar%20disponibilidad%20para%20un%20proyecto%20hotelero." class="btn btn-gold" target="_blank">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.181-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
-                WhatsApp (+34 611 818 352)
-            </a>
         </div>
     </nav>
 
@@ -869,11 +970,19 @@
             </div>
 
             <div class="triptych-hero-display">
-                <img src="assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_Pareja_MOCKUP_COMPLETO_2K.png" 
-                     alt="El Tríptico del Puente - Vista de Conjunto" 
-                     class="triptych-composite-img"
-                     onclick="openLightbox(this.src)"
-                     title="Clic para ampliar en 2K">
+                <div class="triptych-hover-box">
+                    <img src="assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_Pareja_MOCKUP_COMPLETO_2K.png" 
+                         alt="El Tríptico del Puente - Vista de Conjunto" 
+                         class="triptych-composite-img art-img-primary"
+                         onclick="openLightbox(this.src)"
+                         title="Clic para ampliar en 2K">
+                    <img src="assets/hotel_mockups/suite_presidencial_triptico.jpg" 
+                         alt="El Tríptico en Salón de Suite Presidencial" 
+                         class="triptych-composite-img art-img-hover"
+                         onclick="openLightbox(this.src)"
+                         title="Clic para ampliar en alta definición">
+                    <span class="hover-pill-badge">🏨 Ver en Suite Presidencial</span>
+                </div>
             </div>
 
             <div class="size-banner">
@@ -909,8 +1018,13 @@
             <div class="feature-img-wrap">
                 <img src="assets/serie_moda/Man_descending_theatre_steps.jpg" 
                      alt="Man Descending Theatre Steps" 
-                     class="feature-img"
+                     class="feature-img art-img-primary"
                      onclick="openLightbox(this.src)">
+                <img src="assets/hotel_mockups/salon_vip_man_descending.jpg" 
+                     alt="Man Descending en Salón VIP & Club Lounge" 
+                     class="feature-img art-img-hover"
+                     onclick="openLightbox(this.src)">
+                <span class="hover-pill-badge">🏨 Ver en Salón VIP</span>
             </div>
             <div class="feature-info">
                 <span class="tag">Pieza Panorámica para Salones & Escaleras Principales</span>
@@ -946,7 +1060,9 @@
                 <!-- 1. Ellos Bailan -->
                 <div class="art-card">
                     <div class="art-thumb-box">
-                        <img src="assets/serie_moda/ellos bailan.jpg" alt="Ellos Bailan" onclick="openLightbox(this.src)">
+                        <img src="assets/serie_moda/ellos bailan.jpg" alt="Ellos Bailan" class="art-img-primary" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_ellos_bailan.jpg" alt="Ellos Bailan en Lobby de Lujo" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <span class="hover-pill-badge">🏨 Ver en Lobby 7★</span>
                     </div>
                     <div class="art-content">
                         <h4 class="art-title">Ellos Bailan</h4>
@@ -954,7 +1070,7 @@
                         <p class="art-desc">Abrazo íntimo frente a la cabina londinense envuelto en una cascada de óleo esmeralda y textura matérica en relieve.</p>
                         <div class="art-footer-meta">
                             <span>Medida: <strong>80x120 cm</strong></span>
-                            <span>Uso: <strong>Suite Deluxe</strong></span>
+                            <span>Uso: <strong>Suite Deluxe / Lobby</strong></span>
                         </div>
                     </div>
                 </div>
@@ -962,7 +1078,9 @@
                 <!-- 2. En la Floristería -->
                 <div class="art-card">
                     <div class="art-thumb-box">
-                        <img src="assets/serie_moda/en la floristeria.jpg" alt="En la Floristería" onclick="openLightbox(this.src)">
+                        <img src="assets/serie_moda/en la floristeria.jpg" alt="En la Floristería" class="art-img-primary" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_en_la_floristeria.jpg" alt="En la Floristería en Suite Penthouse" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <span class="hover-pill-badge">🏨 Ver en Penthouse</span>
                     </div>
                     <div class="art-content">
                         <h4 class="art-title">En la Floristería de París</h4>
@@ -978,7 +1096,9 @@
                 <!-- 3. La Chica en Bici -->
                 <div class="art-card">
                     <div class="art-thumb-box">
-                        <img src="assets/serie_moda/la chica en bici.jpg" alt="La Chica en Bici" onclick="openLightbox(this.src)">
+                        <img src="assets/serie_moda/la chica en bici.jpg" alt="La Chica en Bici" class="art-img-primary" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_la_chica_en_bici.jpg" alt="La Chica en Bici en Pasillo Noble" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <span class="hover-pill-badge">🏨 Ver en Pasillo</span>
                     </div>
                     <div class="art-content">
                         <h4 class="art-title">Paseo Matinal en Bicicleta</h4>
@@ -986,7 +1106,7 @@
                         <p class="art-desc">Lirismo y libertad sobre dos ruedas. La bufanda y vestido en relieve parecen cobrar vida al compás del pedaleo.</p>
                         <div class="art-footer-meta">
                             <span>Medida: <strong>70x100 cm</strong></span>
-                            <span>Uso: <strong>Habitación Doble</strong></span>
+                            <span>Uso: <strong>Pasillo de Suites</strong></span>
                         </div>
                     </div>
                 </div>
@@ -994,7 +1114,9 @@
                 <!-- 4. Hombre Cruzando -->
                 <div class="art-card">
                     <div class="art-thumb-box">
-                        <img src="assets/serie_moda/hombre cruzando.jpg" alt="Hombre Cruzando" onclick="openLightbox(this.src)">
+                        <img src="assets/serie_moda/hombre cruzando.jpg" alt="Hombre Cruzando" class="art-img-primary" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_hombre_cruzando.jpg" alt="Hombre Cruzando en Pasillo de Lujo" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <span class="hover-pill-badge">🏨 Ver en Pasillo</span>
                     </div>
                     <div class="art-content">
                         <h4 class="art-title">El Paso de la Gran Vía</h4>
@@ -1010,7 +1132,9 @@
                 <!-- 5. Modelo en el Banco -->
                 <div class="art-card">
                     <div class="art-thumb-box">
-                        <img src="assets/serie_moda/modelo en el banco.jpg" alt="Modelo en el Banco" onclick="openLightbox(this.src)">
+                        <img src="assets/serie_moda/modelo en el banco.jpg" alt="Modelo en el Banco" class="art-img-primary" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_modelo_en_el_banco.jpg" alt="Modelo en el Banco en Cabecero de Suite" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <span class="hover-pill-badge">🏨 Ver en Cabecero</span>
                     </div>
                     <div class="art-content">
                         <h4 class="art-title">Pausa en el Banco de Otoño</h4>
@@ -1018,7 +1142,7 @@
                         <p class="art-desc">Momento de descanso en la banca pública, con drapeado rico en relieve que se derrama hacia el suelo.</p>
                         <div class="art-footer-meta">
                             <span>Medida: <strong>75x110 cm</strong></span>
-                            <span>Uso: <strong>Suite Junior</strong></span>
+                            <span>Uso: <strong>Cabecero Suite Junior</strong></span>
                         </div>
                     </div>
                 </div>
@@ -1026,7 +1150,9 @@
                 <!-- 6. La Chica de la Parada -->
                 <div class="art-card">
                     <div class="art-thumb-box">
-                        <img src="assets/serie_moda/la chica de la parada.jpg" alt="La Chica de la Parada" onclick="openLightbox(this.src)">
+                        <img src="assets/serie_moda/la chica de la parada.jpg" alt="La Chica de la Parada" class="art-img-primary" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_la_chica_de_la_parada.jpg" alt="La Chica de la Parada en Galería de Suites" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <span class="hover-pill-badge">🏨 Ver en Pasillo</span>
                     </div>
                     <div class="art-content">
                         <h4 class="art-title">La Espera de Medianoche</h4>
