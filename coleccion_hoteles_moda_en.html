@@ -155,6 +155,20 @@
             font-weight: 700;
         }
 
+        /* Anti-Download Image Protection */
+        img {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+            -webkit-touch-callout: none;
+        }
+
         .btn-outline:hover {
             border-color: var(--gold);
             color: var(--gold);
@@ -1243,7 +1257,7 @@
             Direct curatorial consulting with artist Eduardo Ramírez de Cartagena, bespoke format adaptations, finishes sampling, and volume B2B contract pricing for full floor renovations and public spaces.
         </p>
         <div class="cta-buttons">
-            <a href="mailto:ramirex00@gmail.com?subject=Hospitality%20Dossier%20%26%20Contract%20Quote%20Request%20%7C%20Dudeduart%20Haute%20Couture%20Collection&body=Dear%20Eduardo,%0A%0AWe%20would%20like%20to%20request%20technical%20specifications%20and%20contract%20pricing%20for%20the%20Haute%20Couture%20%26%20Urban%20Noir%20Collection%20for%20an%20upcoming%20hotel%20project.%0A%0A-%20Hotel%20/%20Design%20Studio%20Name:%0A-%20Location:%0A-%20Spaces%20to%20furnish%20(Suites%20/%20Lobby%20/%20Corridors):%0A%0ABest%20regards," class="btn btn-gold">
+            <a href="mailto:eduardoramirez@edusse.es?subject=Hospitality%20Dossier%20%26%20Contract%20Quote%20Request%20%7C%20Dudeduart%20Haute%20Couture%20Collection&body=Dear%20Eduardo,%0A%0AWe%20would%20like%20to%20request%20technical%20specifications%20and%20contract%20pricing%20for%20the%20Haute%20Couture%20%26%20Urban%20Noir%20Collection%20for%20an%20upcoming%20hotel%20project.%0A%0A-%20Hotel%20/%20Design%20Studio%20Name:%0A-%20Location:%0A-%20Spaces%20to%20furnish%20(Suites%20/%20Lobby%20/%20Corridors):%0A%0ABest%20regards," class="btn btn-gold">
                 Request Project Dossier & Contract Quote by Email
             </a>
         </div>
@@ -1356,6 +1370,25 @@
 
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeLightbox();
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Anti-Download Protection (Block right-click context menu & image dragging)
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG' || e.target.closest('.art-thumb-box') || e.target.closest('.sim-viewport') || e.target.closest('.lightbox-modal') || e.target.closest('.feature-img-wrap') || e.target.closest('.triptych-hover-box') || e.target.closest('.panels-grid')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
         });
     </script>
 </body>

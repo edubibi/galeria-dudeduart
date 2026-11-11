@@ -155,6 +155,20 @@
             font-weight: 700;
         }
 
+        /* Bloqueo y Protección Anti-Descarga de Imágenes */
+        img {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+            -webkit-touch-callout: none;
+        }
+
         .btn-outline:hover {
             border-color: var(--gold);
             color: var(--gold);
@@ -1243,7 +1257,7 @@
             Facilitamos asesoramiento directo de comisariado, muestrarios de acabados y tarifas especiales B2B por volumen para renovación integral de plantas y zonas comunes.
         </p>
         <div class="cta-buttons">
-            <a href="mailto:ramirex00@gmail.com?subject=Solicitud%20de%20Dossier%20y%20Presupuesto%20Hotelero%20%7C%20Colección%20Moda%20Dudeduart&body=Estimado%20Eduardo,%0A%0ANos%20gustaría%20recibir%20información%20técnica%20y%20presupuesto%20de%20la%20Colección%20Alta%20Costura%20y%20Noir%20Urbano%20para%20un%20proyecto%20hotelero.%0A%0A-%20Nombre%20del%20Hotel%20/%20Estudio:%0A-%20Ubicación:%0A-%20Espacio%20a%20vestir%20(Suites%20/%20Recepción%20/%20Pasillos):%0A%0AUn%20cordial%20saludo," class="btn btn-gold">
+            <a href="mailto:eduardoramirez@edusse.es?subject=Solicitud%20de%20Dossier%20y%20Presupuesto%20Hotelero%20%7C%20Colección%20Moda%20Dudeduart&body=Estimado%20Eduardo,%0A%0ANos%20gustaría%20recibir%20información%20técnica%20y%20presupuesto%20de%20la%20Colección%20Alta%20Costura%20y%20Noir%20Urbano%20para%20un%20proyecto%20hotelero.%0A%0A-%20Nombre%20del%20Hotel%20/%20Estudio:%0A-%20Ubicación:%0A-%20Espacio%20a%20vestir%20(Suites%20/%20Recepción%20/%20Pasillos):%0A%0AUn%20cordial%20saludo," class="btn btn-gold">
                 Solicitar Dossier & Presupuesto por Email
             </a>
         </div>
@@ -1356,6 +1370,25 @@
 
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeLightbox();
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Protección Anti-Descarga (Click derecho y arrastre bloqueados en imágenes)
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG' || e.target.closest('.art-thumb-box') || e.target.closest('.sim-viewport') || e.target.closest('.lightbox-modal') || e.target.closest('.feature-img-wrap') || e.target.closest('.triptych-hover-box') || e.target.closest('.panels-grid')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
         });
     </script>
 </body>
