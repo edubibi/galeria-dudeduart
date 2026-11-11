@@ -127,6 +127,30 @@
             border: 1px solid var(--border-soft);
         }
 
+        
+        .nav-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #111 !important;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .nav-back-btn:hover {
+            background: linear-gradient(135deg, #ffffff 0%, var(--gold-light) 100%);
+            box-shadow: 0 0 18px var(--gold-glow);
+            transform: translateY(-2px);
+            color: #000 !important;
+        }
         .lang-switch-btn {
             display: inline-flex;
             align-items: center;
@@ -916,11 +940,14 @@
 
     <!-- Navegación Fija -->
     <nav class="top-nav">
-        <div class="brand-block">
+        <a href="index.html" class="brand-block" style="text-decoration: none;" title="Return to Dudeduart Gallery">
             <span class="brand-title">DUDEDUART</span>
             <span class="brand-sub">Hospitality & Contract Art</span>
-        </div>
+        </a>
         <div class="nav-actions">
+            <a href="index.html" class="nav-back-btn" title="Return to Gallery">
+                <span>← Back to Gallery</span>
+            </a>
             <a href="coleccion_hoteles_moda.html" class="lang-switch-btn" title="Cambiar a Español">
                 <span>🇪🇸 ES</span> &nbsp;|&nbsp; <span class="active-lang">EN</span>
             </a>
@@ -1256,9 +1283,12 @@
         <p>
             Direct curatorial consulting with artist Eduardo Ramírez de Cartagena, bespoke format adaptations, finishes sampling, and volume B2B contract pricing for full floor renovations and public spaces.
         </p>
-        <div class="cta-buttons">
-            <a href="mailto:eduardoramirez@edusse.es?subject=Hospitality%20Dossier%20%26%20Contract%20Quote%20Request%20%7C%20Dudeduart%20Haute%20Couture%20Collection&body=Dear%20Eduardo,%0A%0AWe%20would%20like%20to%20request%20technical%20specifications%20and%20contract%20pricing%20for%20the%20Haute%20Couture%20%26%20Urban%20Noir%20Collection%20for%20an%20upcoming%20hotel%20project.%0A%0A-%20Hotel%20/%20Design%20Studio%20Name:%0A-%20Location:%0A-%20Spaces%20to%20furnish%20(Suites%20/%20Lobby%20/%20Corridors):%0A%0ABest%20regards," class="btn btn-gold">
-                Request Project Dossier & Contract Quote by Email
+        <div class="cta-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="mailto:eduardoramirez@edusse.es?subject=Hospitality%20Dossier%20%26%20Quote%20Request%20%7C%20Fashion%20Collection%20Dudeduart&body=Dear%20Eduardo,%0A%0AWe%20would%20like%20to%20request%20technical%20specifications%20and%20contract%20pricing%20for%20the%20Haute%20Couture%20%26%20Urban%20Noir%20Collection.%0A%0A-%20Hotel%20/%20Design%20Studio%20Name:%0A-%20Location:%0A-%20Target%20Spaces%20(Suites%20/%20Lobby%20/%20Corridors):%0A%0ABest%20regards," class="btn btn-gold">
+                Request Dossier & Contract Quote via Email
+            </a>
+            <a href="index.html" class="btn btn-outline" style="border-color: rgba(212, 175, 55, 0.4); color: var(--gold-light);">
+                ← Return to Main Gallery
             </a>
         </div>
         <p style="margin-top: 45px; font-size: 0.8rem; color: var(--text-dim);">

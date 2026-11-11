@@ -9,3 +9,6 @@ assets/cinemagraphs/CINEMAGRAPH NEWS/
 *.tar
 *.gz
 
+
+*_backup_*.html
+assets/hotel_rooms/

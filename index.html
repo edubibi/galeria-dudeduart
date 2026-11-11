@@ -421,6 +421,149 @@
             pointer-events: none;
             z-index: 10;
         }
+    
+        /* --- BLOQUE EDITORIAL DESTACADO: HOTELES & CONTRACT --- */
+        .hospitality-banner-section {
+            padding: 40px 20px 60px;
+            background: #f8f9fa;
+        }
+
+        .hospitality-banner-container {
+            max-width: 1040px;
+            margin: 0 auto;
+            background: #0d0d0d;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hospitality-banner-container:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+
+        .hospitality-banner-visual {
+            flex: 1.1;
+            position: relative;
+            min-height: 380px;
+            overflow: hidden;
+        }
+
+        .hospitality-banner-visual img {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .hospitality-banner-container:hover .hospitality-banner-visual img {
+            transform: scale(1.04);
+        }
+
+        .hospitality-badge-gold {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background: rgba(13, 13, 13, 0.85);
+            border: 1px solid #D4AF37;
+            color: #D4AF37;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            text-transform: uppercase;
+        }
+
+        .hospitality-banner-info {
+            flex: 1;
+            padding: 45px 40px;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .hospitality-tag-fine {
+            display: inline-block;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #D4AF37;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .hospitality-banner-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.25;
+            margin: 0 0 16px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .hospitality-banner-desc {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.95rem;
+            color: #b0b0b0;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .btn-hospitality-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #D4AF37;
+            color: #0d0d0d;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.84rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 14px 26px;
+            border-radius: 30px;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .btn-hospitality-main:hover {
+            background: #ffffff;
+            color: #0d0d0d;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(255, 255, 255, 0.4);
+        }
+
+        @media (max-width: 900px) {
+            .hospitality-banner-container {
+                flex-direction: column;
+            }
+            .hospitality-banner-visual {
+                width: 100%;
+                min-height: 240px;
+            }
+            .hospitality-banner-visual img {
+                min-height: 240px;
+            }
+            .hospitality-banner-info {
+                padding: 30px 24px;
+                text-align: center;
+            }
+            .hospitality-banner-title {
+                font-size: 1.45rem;
+            }
+        }
+
     </style>
     <script>console.log("v2.4.1 Loaded");</script>
 </head>
@@ -449,12 +592,9 @@
 
         <ul class="nav-links" id="main-nav-links">
             <li><a href="index.html" class="active">Inicio</a></li>
-            <li><a href="sobre-mi.html">Sobre M&iacute;</a></li>
-            <li><a href="cuadroteca/index.html?v=2026_m5">Galería Digital</a></li>
-            <li><a href="viewing_room_international.html?v=2" style="color: #bfa15f; font-weight: 700;">VIP Viewing Room</a></li>
-            <li><a href="memorandum.html">Universo EDUSSE</a></li>
-            <li><a href="colecciones.html">Colecciones</a></li>
-            <li><a href="compra.html">Cómo Comprar</a></li>
+            <li><a href="cuadroteca/index.html?v=2026_m5">Galería de Obras</a></li>
+            <li><a href="coleccion_hoteles_moda.html" style="color: #D4AF37; font-weight: 700;">Hoteles & Suites</a></li>
+            <li><a href="sobre-mi.html">Sobre el Autor</a></li>
             <li><a href="contacto.html">Contacto</a></li>
             <li class="desktop-cart-item"><a href="carrito.html">Carrito <span class="cart-badge"></span></a></li>
         </ul>
@@ -500,6 +640,28 @@
                 </a>
             </div>
         </div>
+        <!-- ================================================================= -->
+        <!-- 🏨 TARJETA EDITORIAL: HOTELES & ALTA DECORACIÓN                   -->
+        <!-- ================================================================= -->
+        <div style="max-width: 1000px; margin: 45px auto 0 auto;">
+            <div class="hospitality-banner-container">
+                <div class="hospitality-banner-visual">
+                    <img src="assets/hotel_mockups/penthouse_lounge_crior.jpg" alt="Dossier Hoteles & Suites Dudeduart">
+                    <span class="hospitality-badge-gold">NUEVA COLECCIÓN CONTRACT 2026</span>
+                </div>
+                <div class="hospitality-banner-info">
+                    <span class="hospitality-tag-fine">HOSPITALITY & INTERIOR DESIGN</span>
+                    <h2 class="hospitality-banner-title">Arte para Hoteles de 5 Estrellas & Suites Presidenciales</h2>
+                    <p class="hospitality-banner-desc">
+                        Descubre cómo dialogan nuestras obras de gran formato y relieve matérico 3D con la arquitectura noble, las suites de diseño y los espacios de alta gama.
+                    </p>
+                    <a href="coleccion_hoteles_moda.html" class="btn-hospitality-main">
+                        Entrar al Simulador & Dossier →
+                    </a>
+                </div>
+            </div>
+        </div>
+
     </header>
 
     <!-- Transición al negro puro de la sección de Filosofía -->
