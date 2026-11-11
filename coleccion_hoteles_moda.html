@@ -127,6 +127,34 @@
             border: 1px solid var(--border-soft);
         }
 
+        .lang-switch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-muted);
+            border: 1px solid var(--border-soft);
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .lang-switch-btn:hover {
+            color: #fff;
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        .lang-switch-btn .active-lang {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
         .btn-outline:hover {
             border-color: var(--gold);
             color: var(--gold);
@@ -879,10 +907,9 @@
             <span class="brand-sub">Hospitality & Contract Art</span>
         </div>
         <div class="nav-actions">
-            <button class="btn btn-outline" onclick="window.print()">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
-                Dossier PDF
-            </button>
+            <a href="coleccion_hoteles_moda_en.html" class="lang-switch-btn" title="Switch to English">
+                <span class="active-lang">ES</span> &nbsp;|&nbsp; <span>EN 🇬🇧</span>
+            </a>
         </div>
     </nav>
 

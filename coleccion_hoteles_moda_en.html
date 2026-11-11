@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colección Moda & Noir Urbano | Dudeduart Hospitality & Contract Art</title>
+    
+    <!-- Metadatos de Lujo y Hotelería -->
+    <meta name="description" content="Propuesta exclusiva de arte contemporáneo de gran formato para hoteles boutique, suites presidenciales y proyectos contract por Eduardo Ramírez de Cartagena. Trípticos matéricos y relieves en pan de oro.">
+    <meta name="author" content="Eduardo Ramírez de Cartagena • Dudeduart">
+
+    <!-- Tipografías de Prestigio -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-deep: #08090d;
+            --bg-surface: #10121a;
+            --bg-card: #151824;
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --gold-glow: rgba(212, 175, 55, 0.25);
+            --gold-subtle: rgba(212, 175, 55, 0.08);
+            --text-main: #f0f2f5;
+            --text-muted: #9ba1b0;
+            --text-dim: #606775;
+            --border-soft: rgba(255, 255, 255, 0.07);
+            --border-gold: rgba(212, 175, 55, 0.35);
+            --font-title: 'Cinzel', serif;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.65;
+            font-size: 16px;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.04) 0%, transparent 45%),
+                radial-gradient(circle at 90% 80%, rgba(138, 43, 226, 0.03) 0%, transparent 50%);
+        }
+
+        /* Barra Superior */
+        .top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(8, 9, 13, 0.94);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-soft);
+            padding: 16px 36px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-block {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand-title {
+            font-family: var(--font-title);
+            font-size: 1.25rem;
+            letter-spacing: 3px;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .brand-sub {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            border-left: 1px solid var(--border-soft);
+            padding-left: 14px;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: none;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #c5a059 0%, #9e7d3b 100%);
+            color: #000;
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, var(--gold-light) 0%, #c5a059 100%);
+            box-shadow: 0 0 20px var(--gold-glow);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-soft);
+        }
+
+        .lang-switch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-muted);
+            border: 1px solid var(--border-soft);
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .lang-switch-btn:hover {
+            color: #fff;
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        .lang-switch-btn .active-lang {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* Hero Editorial */
+        .hero {
+            padding: 80px 24px 50px;
+            text-align: center;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            border: 1px solid var(--border-gold);
+            background: var(--gold-subtle);
+            padding: 6px 18px;
+            border-radius: 30px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-title);
+            font-size: 3.2rem;
+            letter-spacing: 3px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 760px;
+            margin: 0 auto 35px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-nav-pills {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .pill-jump {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            color: var(--text-muted);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .pill-jump:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* Container General */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ==================================================
+           SECCIÓN DESTACADA: EL SIMULADOR DE ESPACIOS REALES
+           ================================================== */
+        .simulator-section {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-gold);
+            border-radius: 14px;
+            padding: 50px 36px;
+            margin: 40px 0 80px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .section-tag {
+            color: var(--gold);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-title);
+            font-size: 2.2rem;
+            color: #fff;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 720px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+
+        /* Controles del Simulador */
+        .sim-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .sim-tab {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            color: var(--text-muted);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sim-tab.active, .sim-tab:hover {
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+            box-shadow: 0 0 20px var(--gold-glow);
+            transform: translateY(-2px);
+        }
+
+        /* Ventana de Simulación */
+        .sim-viewport {
+            position: relative;
+            max-width: 1080px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+            background: #000;
+            min-height: 480px;
+        }
+
+        .sim-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.4s ease, transform 0.5s ease;
+            cursor: zoom-in;
+        }
+
+        .sim-image:hover {
+            transform: scale(1.015);
+        }
+
+        .sim-info-bar {
+            background: rgba(14, 16, 24, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-soft);
+            padding: 18px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .sim-info-left h4 {
+            font-family: var(--font-title);
+            font-size: 1.15rem;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+
+        .sim-info-left p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .sim-info-specs {
+            display: flex;
+            gap: 20px;
+        }
+
+        .sim-spec-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sim-spec-item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+        }
+
+        .sim-spec-item .val {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* ==================================================
+           SECCIÓN 1: PIEZAS MONUMENTALES (TRÍPTICO DEL PUENTE)
+           ================================================== */
+        .monumental-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 80px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        .monumental-header {
+            padding: 40px 40px 20px;
+            text-align: center;
+        }
+
+        .monumental-header h2 {
+            font-family: var(--font-title);
+            font-size: 2.3rem;
+            color: #fff;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .monumental-header p {
+            color: var(--gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .triptych-hero-display {
+            padding: 20px 40px 40px;
+            text-align: center;
+        }
+
+        .triptych-composite-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.85);
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+        }
+
+        .triptych-composite-img:hover {
+            transform: scale(1.01);
+        }
+
+        /* Desglose de 3 Paneles */
+        .panels-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding: 0 40px 40px;
+        }
+
+        .panel-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .panel-box:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-4px);
+        }
+
+        .panel-box img {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            background: #0b0c10;
+            border-radius: 4px;
+            margin-bottom: 14px;
+            cursor: zoom-in;
+        }
+
+        .panel-box h4 {
+            font-family: var(--font-title);
+            font-size: 0.95rem;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .panel-box p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .size-banner {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-soft);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.85rem;
+        }
+
+        .size-banner strong {
+            color: var(--gold);
+        }
+
+        /* ==================================================
+           SECCIÓN 2: MAN DESCENDING THEATRE STEPS
+           ================================================== */
+        .feature-split {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: 14px;
+            padding: 40px;
+            margin-bottom: 80px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+
+        .feature-info h3 {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .feature-info .tag {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .feature-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .room-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .room-badge {
+            background: var(--gold-subtle);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            font-size: 0.75rem;
+            padding: 4px 14px;
+            border-radius: 20px;
+        }
+
+        /* ==================================================
+           SECCIÓN 3: GALERÍA DE OBRAS VERTICALES (SUITES & PASILLOS)
+           ================================================== */
+        .gallery-section {
+            margin-bottom: 80px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 35px;
+        }
+
+        .art-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.35s ease;
+        }
+
+        .art-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .art-thumb-box {
+            position: relative;
+            height: 380px;
+            background: #0b0c10;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .art-thumb-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: zoom-in;
+            transition: opacity 0.45s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .art-img-primary {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .art-img-hover {
+            opacity: 0;
+            z-index: 2;
+            transform: scale(1.06);
+        }
+
+        .art-card:hover .art-img-hover {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .art-card:hover .art-img-primary {
+            opacity: 0;
+        }
+
+        .hover-pill-badge {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            z-index: 5;
+            background: rgba(10, 12, 18, 0.88);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+        }
+
+        .art-card:hover .hover-pill-badge,
+        .feature-img-wrap:hover .hover-pill-badge,
+        .triptych-hover-box:hover .hover-pill-badge {
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+            box-shadow: 0 0 15px var(--gold-glow);
+            font-weight: 700;
+        }
+
+        /* Hover para Man Descending */
+        .feature-img-wrap {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            border: 1px solid var(--border-soft);
+            min-height: 380px;
+            cursor: pointer;
+        }
+
+        .feature-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.45s ease, transform 0.6s ease;
+        }
+
+        .feature-img-wrap .art-img-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .feature-img-wrap:hover .art-img-hover {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .feature-img-wrap:hover .art-img-primary {
+            opacity: 0;
+        }
+
+        /* Hover para Tríptico */
+        .triptych-hover-box {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.85);
+            cursor: pointer;
+        }
+
+        .triptych-hover-box img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.45s ease, transform 0.6s ease;
+            cursor: zoom-in;
+        }
+
+        .triptych-hover-box .art-img-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .triptych-hover-box:hover .art-img-hover {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .triptych-hover-box:hover .art-img-primary {
+            opacity: 0;
+        }
+
+        .art-content {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .art-title {
+            font-family: var(--font-title);
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .art-palette {
+            font-size: 0.75rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .art-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .art-footer-meta {
+            padding-top: 12px;
+            border-top: 1px solid var(--border-soft);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            color: var(--text-dim);
+        }
+
+        .art-footer-meta strong {
+            color: #ddd;
+        }
+
+        /* ==================================================
+           SECCIÓN 4: CALIDAD CONTRACT & CERTIFICACIÓN
+           ================================================== */
+        .specs-section {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: 14px;
+            padding: 50px 40px;
+            margin-bottom: 80px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 30px;
+            margin-top: 35px;
+        }
+
+        .spec-item {
+            border-left: 2px solid var(--gold);
+            padding-left: 20px;
+        }
+
+        .spec-item h4 {
+            font-family: var(--font-title);
+            font-size: 1.05rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .spec-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* Footer & CTA */
+        .cta-footer {
+            text-align: center;
+            padding: 70px 24px 90px;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            border-top: 1px solid var(--border-soft);
+        }
+
+        .cta-footer h2 {
+            font-family: var(--font-title);
+            font-size: 2.3rem;
+            color: #fff;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .cta-footer p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto 35px;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* Modal Lightbox */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 6, 9, 0.96);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+        }
+
+        .lightbox-img {
+            max-width: 92vw;
+            max-height: 88vh;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 0 60px rgba(0,0,0,0.9);
+            border: 1px solid var(--border-soft);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            color: #fff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--gold);
+        }
+
+        @media (max-width: 860px) {
+            .hero h1 { font-size: 2.2rem; }
+            .feature-split { grid-template-columns: 1fr; }
+            .panels-grid { grid-template-columns: 1fr; }
+            .top-nav { flex-direction: column; gap: 14px; padding: 14px 20px; }
+            .brand-sub { border-left: none; padding-left: 0; }
+            .sim-info-bar { flex-direction: column; align-items: flex-start; }
+        }
+
+        @media print {
+            .top-nav, .sim-tabs, .btn, .cta-footer, .lightbox-modal { display: none !important; }
+            body { background: #fff !important; color: #000 !important; }
+            .monumental-card, .feature-split, .art-card, .specs-section {
+                border: 1px solid #ccc !important;
+                background: #fff !important;
+                color: #000 !important;
+                page-break-inside: avoid;
+            }
+            h1, h2, h3, h4, .brand-title { color: #111 !important; -webkit-text-fill-color: initial !important; }
+            p, .art-desc { color: #333 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación Fija -->
+    <nav class="top-nav">
+        <div class="brand-block">
+            <span class="brand-title">DUDEDUART</span>
+            <span class="brand-sub">Hospitality & Contract Art</span>
+        </div>
+        <div class="nav-actions">
+            <a href="coleccion_hoteles_moda.html" class="lang-switch-btn" title="Cambiar a Español">
+                <span>🇪🇸 ES</span> &nbsp;|&nbsp; <span class="active-lang">EN</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Header Editorial -->
+    <header class="hero">
+        <span class="hero-badge">Contract Art Collection 2026 • Dudeduart Gallery</span>
+        <h1>HAUTE COUTURE & URBAN NOIR COLLECTION</h1>
+        <p>
+            European haute couture silhouettes emerging through dramatic 3D sculptural impasto and physical dripping in burnished gold, imperial purple, ruby, and emerald. Specially commissioned to define the aesthetic signature of grand reception lobbies, gala ballrooms, and presidential suites.
+        </p>
+        <div class="hero-nav-pills">
+            <a href="#simulador" class="pill-jump">🏛️ Real-Space Hotel Visualizer</a>
+            <a href="#triptico" class="pill-jump">🌉 The Bridge Triptych</a>
+            <a href="#panoramica" class="pill-jump">🎭 Man Descending</a>
+            <a href="#galeria" class="pill-jump">🚪 Suites & Hallways Gallery</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- ==================================================
+             1. SIMULADOR INTERACTIVO CON FOTOGRAFÍAS REALES
+             ================================================== -->
+        <section class="simulator-section" id="simulador">
+            <span class="section-tag">Architectural & Interior Design Visualizer</span>
+            <h2 class="section-title">REAL-SPACE HOSPITALITY INTEGRATION</h2>
+            <p class="section-subtitle">
+                Experience how textural art interacts with natural daylight, noble millwork, and 5-star hotel finishes. Select an environment:
+            </p>
+
+            <div class="sim-tabs">
+                <button class="sim-tab active" onclick="switchSim('penthouse')">
+                    🥂 Four Seasons Penthouse Lounge
+                </button>
+                <button class="sim-tab" onclick="switchSim('loft')">
+                    🏛️ Four Seasons Loft Suite
+                </button>
+                <button class="sim-tab" onclick="switchSim('dormitorio')">
+                    🛏️ Presidential Suite Headboard
+                </button>
+                <button class="sim-tab" onclick="switchSim('pasillo')">
+                    🚪 Hallway: The London Dance
+                </button>
+                <button class="sim-tab" onclick="switchSim('pasillo_bici')">
+                    🚲 Hallway: Morning Bike Ride
+                </button>
+                <button class="sim-tab" onclick="switchSim('lobby')">
+                    ✨ 7-Star Monumental Lobby
+                </button>
+                <button class="sim-tab" onclick="switchSim('salon')">
+                    🛋️ Presidential Suite Salon
+                </button>
+                <button class="sim-tab" onclick="switchSim('vip')">
+                    🍸 VIP Salon & Club Lounge
+                </button>
+            </div>
+
+            <!-- Viewport de la Simulación Fotográfica Real -->
+            <div class="sim-viewport">
+                <img src="assets/hotel_mockups/penthouse_lounge_crior.jpg" 
+                     alt="Luxury Hotel Art Visualization" 
+                     class="sim-image" 
+                     id="sim-display-img"
+                     onclick="openLightbox(this.src)"
+                     title="Click to enlarge in high definition">
+
+                <div class="sim-info-bar">
+                    <div class="sim-info-left">
+                        <h4 id="sim-info-title">Four Seasons Penthouse Lounge & Salon</h4>
+                        <p id="sim-info-desc">Haute Couture in Paris Boutique Window presiding over the central alcove between bespoke millwork shelving and contemporary dining.</p>
+                    </div>
+                    <div class="sim-info-specs">
+                        <div class="sim-spec-item">
+                            <span class="label">Exhibited Artwork</span>
+                            <span class="val" id="sim-spec-art">Haute Couture in Paris Boutique Window</span>
+                        </div>
+                        <div class="sim-spec-item">
+                            <span class="label">Suggested Dimensions</span>
+                            <span class="val" id="sim-spec-size">120 x 90 cm / 140 x 100 cm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+             2. EL TRÍPTICO DEL PUENTE (OBRA MONUMENTAL)
+             ================================================== -->
+        <section class="monumental-card" id="triptico">
+            <div class="monumental-header">
+                <span class="section-tag">Monumental Large-Scale Masterpiece</span>
+                <h2>THE BRIDGE TRIPTYCH</h2>
+                <p>Three-dimensional sculptural impasto, haute couture silhouettes, and burnished gold & imperial purple textural drape</p>
+            </div>
+
+            <div class="triptych-hero-display">
+                <div class="triptych-hover-box">
+                    <img src="assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_Pareja_MOCKUP_COMPLETO_2K.png" 
+                         alt="El Tríptico del Puente - Vista de Conjunto" 
+                         class="triptych-composite-img art-img-primary"
+                         onclick="openLightbox(this.src)"
+                         title="Clic para ampliar en 2K">
+                    <img src="assets/hotel_mockups/suite_presidencial_triptico.jpg" 
+                         alt="El Tríptico en Salón de Suite Presidencial" 
+                         class="triptych-composite-img art-img-hover"
+                         onclick="openLightbox(this.src)"
+                         title="Click to enlarge in high definition">
+                    <span class="hover-pill-badge">🏨 View in Presidential Suite</span>
+                </div>
+            </div>
+
+            <div class="size-banner">
+                <div>Standard Format: <strong>180 x 90 cm / 71"x36"</strong> (3 panels of 55x90 cm)</div>
+                <div>Grand Salon Format: <strong>240 x 120 cm / 95"x48"</strong> (3 panels of 75x120 cm)</div>
+                <div>Monumental Scale: <strong>300 x 150 cm / 118"x60"</strong> (3 panels of 95x150 cm)</div>
+            </div>
+
+            <!-- Desglose de Paneles Individuales -->
+            <div class="panels-grid">
+                <div class="panel-box">
+                    <img src="assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_01_Izquierda_2K.png" alt="Panel Izquierdo" onclick="openLightbox(this.src)">
+                    <h4>Panel I: The Golden Vortex</h4>
+                    <p>Textural impasto spiral fusing liquid gold and imperial purple cascading into physical sculptural dripping.</p>
+                </div>
+                <div class="panel-box">
+                    <h4>Panel II: The Couple on the Bridge</h4>
+                    <img src="assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_02_Centro_2K.png" alt="Panel Central" onclick="openLightbox(this.src)">
+                    <p>Synchronized stride across the classical stone bridge. Haute couture gown flowing with physical palpable texture.</p>
+                </div>
+                <div class="panel-box">
+                    <img src="assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_03_Derecha_2K.png" alt="Panel Derecho" onclick="openLightbox(this.src)">
+                    <h4>Panel III: The Wake and Repose</h4>
+                    <p>Classical bridge architectural finial with organic pigment splashes and natural downward sculptural drape.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+             3. MAN DESCENDING THEATRE STEPS (PANORÁMICA)
+             ================================================== -->
+        <section class="feature-split" id="panoramica">
+            <div class="feature-img-wrap">
+                <img src="assets/serie_moda/Man_descending_theatre_steps.jpg" 
+                     alt="Man Descending Theatre Steps" 
+                     class="feature-img art-img-primary"
+                     onclick="openLightbox(this.src)">
+                <img src="assets/hotel_mockups/salon_vip_man_descending.jpg" 
+                     alt="Man Descending en Salón VIP & Club Lounge" 
+                     class="feature-img art-img-hover"
+                     onclick="openLightbox(this.src)">
+                <span class="hover-pill-badge">🏨 View in VIP Lounge</span>
+            </div>
+            <div class="feature-info">
+                <span class="tag">Panoramic Statement Piece for Grand Salons & Main Staircases</span>
+                <h3>MAN DESCENDING THEATRE STEPS</h3>
+                <p>
+                    A gentleman in a bespoke tuxedo descends the grand staircase between two fluted golden classical columns. From his silhouette unfurls a majestic imperial cape sculpted in crimson and burnished gold physical impasto with three-dimensional dripping.
+                </p>
+                <div class="room-badges">
+                    <span class="room-badge">Gala Ballroom</span>
+                    <span class="room-badge">Grand Staircase</span>
+                    <span class="room-badge">VIP Club Lounge / Bar Noir</span>
+                </div>
+                <p style="font-size: 0.85rem; color: #fff; margin-bottom: 0;">
+                    Recommended Dimensions: <strong style="color: var(--gold);">160 x 90 cm</strong> &nbsp;|&nbsp; <strong style="color: var(--gold);">200 x 110 cm</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================================================
+             4. GALERÍA VERTICAL (SUITES & PASILLOS)
+             ================================================== -->
+        <section class="gallery-section" id="galeria">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <span class="section-tag">Individual Collection & Diptychs</span>
+                <h2 class="section-title">ART FOR SUITES & RESIDENTIAL HALLWAYS</h2>
+                <p class="section-subtitle">
+                    Vertical formats curated to establish rhythm, refined luxury, and distinctive personality across guestroom corridors and tranquil lounges.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+
+                <!-- 1. Ellos Bailan -->
+                <div class="art-card">
+                    <div class="art-thumb-box">
+                        <img src="assets/serie_moda/ellos bailan.jpg" alt="Ellos Bailan" class="art-img-primary" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_ellos_bailan.jpg" alt="Ellos Bailan en Pasillo Noble de Hotel" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <span class="hover-pill-badge">🏨 View in Noble Hallway</span>
+                    </div>
+                    <div class="art-content">
+                        <h4 class="art-title">Ellos Bailan</h4>
+                        <div class="art-palette">Emerald Green • Sterling Silver • Piano Black</div>
+                        <p class="art-desc">Intimate embrace before the vintage telephone booth, wrapped in a sculpted cascade of emerald impasto with rich dimensional relief.</p>
+                        <div class="art-footer-meta">
+                            <span>Size: <strong>80x120 cm / 32"x48"</strong></span>
+                            <span>Placement: <strong>Noble Hallway / Suite</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Haute Couture in Paris Boutique Window -->
+                <div class="art-card">
+                    <div class="art-thumb-box">
+                        <img src="assets/serie_moda/crior escaparete.jpg" alt="Haute Couture in Paris Boutique Window" class="art-img-primary" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_crior_escaparate.jpg" alt="Alta Costura en Penthouse Lounge Four Seasons" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <span class="hover-pill-badge">🏨 View in Penthouse Lounge</span>
+                    </div>
+                    <div class="art-content">
+                        <h4 class="art-title">Haute Couture in Paris Boutique Window</h4>
+                        <div class="art-palette">Emerald Green • Imperial Gold • Atelier Mannequin</div>
+                        <p class="art-desc">Feminine silhouette with parasol outside a Parisian haute couture window. Emerald and gold textural relief with three-dimensional sculptural dripping.</p>
+                        <div class="art-footer-meta">
+                            <span>Size: <strong>120x90 cm / 48"x36"</strong></span>
+                            <span>Placement: <strong>Penthouse Lounge / Living</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. The Emerald Gown Lady -->
+                <div class="art-card">
+                    <div class="art-thumb-box">
+                        <img src="assets/serie_moda/modelo .png" alt="The Emerald Gown Lady" class="art-img-primary" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_lobby_kuwait_4k.jpg" alt="The Emerald Gown Lady en Lobby 7 Estrellas" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <span class="hover-pill-badge">🏨 View in 7-Star Lobby</span>
+                    </div>
+                    <div class="art-content">
+                        <h4 class="art-title">The Emerald Gown Lady</h4>
+                        <div class="art-palette">Emerald Green • Sculpted Gold • Silk Jet Black</div>
+                        <p class="art-desc">High-fashion mermaid gown sculpted in 3D textural impasto, sparkling golden highlights, and monumental presence on marble architectural piers.</p>
+                        <div class="art-footer-meta">
+                            <span>Size: <strong>100x180 cm / 40"x71"</strong></span>
+                            <span>Placement: <strong>Monumental Lobby / Grand Salon</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. La Chica en Bici -->
+                <div class="art-card">
+                    <div class="art-thumb-box">
+                        <img src="assets/serie_moda/la chica en bici.jpg" alt="La Chica en Bici" class="art-img-primary" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_la_chica_en_bici.jpg" alt="La Chica en Bici en Pasillo Noble" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <span class="hover-pill-badge">🏨 View in Noble Hallway</span>
+                    </div>
+                    <div class="art-content">
+                        <h4 class="art-title">Morning Bicycle Ride</h4>
+                        <div class="art-palette">Turquoise • Burnished Copper • Urban Rhythm</div>
+                        <p class="art-desc">Poetic freedom on two wheels. The scarf and wind-blown skirt sculpted in physical impasto appear to catch the breeze as she pedals forward.</p>
+                        <div class="art-footer-meta">
+                            <span>Size: <strong>70x100 cm / 28"x40"</strong></span>
+                            <span>Placement: <strong>Suite Corridor / Gallery</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Hombre Cruzando -->
+                <div class="art-card">
+                    <div class="art-thumb-box">
+                        <img src="assets/serie_moda/hombre cruzando.jpg" alt="Hombre Cruzando" class="art-img-primary" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_loft_suite_hombre_cruzando.jpg" alt="Gran Vía Crossing (Man with Briefcase) en Loft Suite Four Seasons" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <span class="hover-pill-badge">🏨 View in Loft Suite</span>
+                    </div>
+                    <div class="art-content">
+                        <h4 class="art-title">Gran Vía Crossing (Man with Briefcase)</h4>
+                        <div class="art-palette">Golden Ochre • Graphite • Scarlet Crimson</div>
+                        <p class="art-desc">Architectural tailoring in motion: an executive stride across the city crossing with cinematic momentum and illuminated signal glow.</p>
+                        <div class="art-footer-meta">
+                            <span>Size: <strong>120x90 cm / 48"x36"</strong></span>
+                            <span>Placement: <strong>Loft Suite / Lounge Area</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Modelo en el Banco -->
+                <div class="art-card">
+                    <div class="art-thumb-box">
+                        <img src="assets/serie_moda/modelo en el banco.jpg" alt="Modelo en el Banco" class="art-img-primary" onclick="openLightbox(this.src)">
+                        <img src="assets/hotel_mockups/insitu_modelo_en_el_banco.jpg" alt="Modelo en el Banco en Cabecero de Suite" class="art-img-hover" onclick="openLightbox(this.src)">
+                        <span class="hover-pill-badge">🏨 View in Suite Headboard</span>
+                    </div>
+                    <div class="art-content">
+                        <h4 class="art-title">Autumn Bench Pause</h4>
+                        <div class="art-palette">Toasted Amber • Deep Violet • Warm Gold</div>
+                        <p class="art-desc">A contemplative repose in the autumn park. Heavy sculpted folds of the coat spill organically toward the floor under warm directional spotlights.</p>
+                        <div class="art-footer-meta">
+                            <span>Size: <strong>75x110 cm / 30"x44"</strong></span>
+                            <span>Placement: <strong>Junior Suite Headboard</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================================================
+             5. CALIDAD CONTRACT & CERTIFICACIÓN
+             ================================================== -->
+        <section class="specs-section">
+            <span class="section-tag">Hospitality Warranty & Specifications</span>
+            <h2 class="section-title">CONTRACT SPECIFICATIONS FOR LUXURY HOTELS</h2>
+            <p class="section-subtitle">
+                Certified original creations by Eduardo Ramírez de Cartagena, engineered to exceed hospitality durability and maintenance standards.
+            </p>
+
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h4>380g Organic Cotton Canvas</h4>
+                    <p>Heavyweight organic cotton support with acid-free matte gesso priming, ensuring deep pigment absorption and permanent physical 3D relief.</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Mineral UV Pigments</h4>
+                    <p>High-solidity mineral inks resistant to direct daylight and continuous 24/7 warm architectural LED downlighting.</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Anti-Glare Matte Varnish</h4>
+                    <p>Invisible protective seal that locks the 3D relief, enables dry microfiber cleaning, and eliminates harsh reflections from any viewing angle.</p>
+                </div>
+                <div class="spec-item">
+                    <h4>4cm Kiln-Dried Solid Pine Frame</h4>
+                    <p>Oven-dried Scandinavian pine stretcher bars with anti-torsion bracing, resilient to hotel climate control cycling.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- CTA & Contacto Final -->
+    <footer class="cta-footer">
+        <h2>Commission or License this Collection for Your Hotel Project</h2>
+        <p>
+            Direct curatorial consulting with artist Eduardo Ramírez de Cartagena, bespoke format adaptations, finishes sampling, and volume B2B contract pricing for full floor renovations and public spaces.
+        </p>
+        <div class="cta-buttons">
+            <a href="mailto:ramirex00@gmail.com?subject=Hospitality%20Dossier%20%26%20Contract%20Quote%20Request%20%7C%20Dudeduart%20Haute%20Couture%20Collection&body=Dear%20Eduardo,%0A%0AWe%20would%20like%20to%20request%20technical%20specifications%20and%20contract%20pricing%20for%20the%20Haute%20Couture%20%26%20Urban%20Noir%20Collection%20for%20an%20upcoming%20hotel%20project.%0A%0A-%20Hotel%20/%20Design%20Studio%20Name:%0A-%20Location:%0A-%20Spaces%20to%20furnish%20(Suites%20/%20Lobby%20/%20Corridors):%0A%0ABest%20regards," class="btn btn-gold">
+                Request Project Dossier & Contract Quote by Email
+            </a>
+        </div>
+        <p style="margin-top: 45px; font-size: 0.8rem; color: var(--text-dim);">
+            © 2026 Dudeduart • Eduardo Ramírez de Cartagena (SGAE Nº 29.751) • All rights reserved.
+        </p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Ampliación de Obra" class="lightbox-img" id="lightbox-img" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Script del Simulador con Ambientes Reales -->
+    <script>
+        const simData = {
+            penthouse: {
+                img: 'assets/hotel_mockups/penthouse_lounge_crior.jpg',
+                title: 'Four Seasons Penthouse Lounge & Salon',
+                desc: 'Haute Couture in Paris Boutique Window presiding over the central alcove between bespoke millwork shelving and contemporary dining.',
+                art: 'Haute Couture in Paris Boutique Window de París',
+                size: '120 x 90 cm / 140 x 100 cm'
+            },
+            loft: {
+                img: 'assets/hotel_mockups/fourseasons_loft_hombre_cruzando.jpg',
+                title: 'Loft Suite Four Seasons / Sala de Estar',
+                desc: 'Gran Vía Crossing (Man with Briefcase) presidiendo el salón sobre sofá curvo de terciopelo y sillones de piel bajo luz natural.',
+                art: 'Gran Vía Crossing (Man with Briefcase) (Hombre Cruzando)',
+                size: '120 x 90 cm / 140 x 100 cm'
+            },
+            dormitorio: {
+                img: 'assets/hotel_mockups/dormitorio_suite_banco.jpg',
+                title: 'Cabecero de Dormitorio Suite Presidencial',
+                desc: 'Autumn Bench Pause enmarcado en madera noble sobre cabecero de terciopelo y cama king-size.',
+                art: 'Autumn Bench Pause',
+                size: '140 x 90 cm / 160 x 100 cm'
+            },
+            pasillo: {
+                img: 'assets/hotel_mockups/pasillo_hotel_galeria.jpg',
+                title: 'Galería de Pasillos Nobles / Pared Izquierda',
+                desc: 'Ellos Bailan enmarcado con fuga de perspectiva en las molduras del pasillo parisino.',
+                art: 'Ellos Bailan (The London Dance)',
+                size: '80 x 120 cm'
+            },
+            pasillo_bici: {
+                img: 'assets/hotel_mockups/pasillo_hotel_chica_bici.jpg',
+                title: 'Galería de Pasillos Nobles / Puerta 202',
+                desc: 'Morning Bicycle Ride integrado en la pared derecha junto a la puerta noble 202 con aplique de luz cálida.',
+                art: 'Morning Bicycle Ride',
+                size: '70 x 100 cm / 80 x 120 cm'
+            },
+            salon: {
+                img: 'assets/hotel_mockups/suite_presidencial_triptico.jpg',
+                title: 'Salón de Suite Presidencial / Gran Salón',
+                desc: 'El Tríptico del Puente suspendido sobre el sofá de diseño bajo iluminación de carril cálida.',
+                art: 'El Tríptico del Puente (3 Paneles)',
+                size: '240 x 120 cm (3 de 75x120 cm)'
+            },
+            lobby: {
+                img: 'assets/hotel_mockups/lobby_kuwait_modelo_vestido_4k.jpg',
+                title: 'Lobby Monumental & Salón Doble Altura 7 Estrellas',
+                desc: 'The Emerald Gown Lady enmarcada en pan de oro sobre columna de mármol gris frente a ventanales panorámicos al skyline.',
+                art: 'The Emerald Gown Lady (Alta Costura)',
+                size: '120 x 200 cm (Gran Formato Vertical)'
+            },
+            vip: {
+                img: 'assets/hotel_mockups/salon_vip_man_descending.jpg',
+                title: 'Salón VIP & Club Lounge Noir',
+                desc: 'Man Descending Theatre Steps en caja americana flotante sobre pared de estuco beige y sofás de terciopelo.',
+                art: 'Man Descending Theatre Steps',
+                size: '160 x 90 cm / 200 x 110 cm'
+            }
+        };
+
+        function switchSim(key) {
+            const data = simData[key];
+            if (!data) return;
+
+            // Update Tabs
+            document.querySelectorAll('.sim-tab').forEach(t => t.classList.remove('active'));
+            if (window.event && window.event.target) {
+                window.event.target.classList.add('active');
+            }
+
+            // Crossfade Image
+            const img = document.getElementById('sim-display-img');
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.src = data.img;
+                img.style.opacity = '1';
+            }, 250);
+
+            // Update Info
+            document.getElementById('sim-info-title').textContent = data.title;
+            document.getElementById('sim-info-desc').textContent = data.desc;
+            document.getElementById('sim-spec-art').textContent = data.art;
+            document.getElementById('sim-spec-size').textContent = data.size;
+        }
+
+        // Lightbox
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
