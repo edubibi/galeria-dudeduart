@@ -445,7 +445,7 @@ function setupQuickNav(categories, grouped) {
     if (!select || !memoGrid) return;
 
     // Reset
-    select.innerHTML = '<option value="">-- Elige Colección (00 al 56) --</option>';
+    select.innerHTML = '<option value="">-- Elige Colección (00 al 59) --</option>';
     select.innerHTML += '<option value="ALL">🏛️ VER TODA LA GALERÍA (Todas las Obras)</option>';
     memoGrid.innerHTML = '';
 

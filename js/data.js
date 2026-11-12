@@ -6046,5 +6046,260 @@ const artworkData = [
         "price": "1.650,00",
         "tech_info": "Ver descripción detallada.",
         "sold": false
+    },
+
+    // === ESTILO 59: ALTA COSTURA & NOIR ===
+{
+        "id": "moda_001",
+        "title": "Pausa en el Banco de Otoño",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/modelo en el banco.jpg",
+        "description": "Silueta femenina de porte sereno envuelta en paño negro sobre banco urbano. Una bufanda de volúmenes escultóricos en amarillos y ocres cadmium contrasta con el fondo mineral gris, capturando la quietud reflexiva de una tarde otoñal europea.",
+        "size": "120 x 90 cm",
+        "price": "3.400,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_002",
+        "title": "Ellos Bailan en la Noche",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/ellos bailan.jpg",
+        "description": "Pareja enlazada en un movimiento grácil y fluido. El vestido escarlata de la dama emerge con un violento empaste matérico 3D que parece desprenderse del lienzo negro, celebrando la pasión y la complicidad en el corazón de la ciudad.",
+        "size": "120 x 90 cm",
+        "price": "3.600,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_003",
+        "title": "Paseo Matinal en Bicicleta",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/la chica en bici.jpg",
+        "description": "Elegancia urbana en movimiento. Una dama en bicicleta con tocado clásico y bufanda ondeante cruza el boulevard parisino, con toques de esmeralda y rubí que contrastan sobre la arquitectura neoclásica monocromática.",
+        "size": "120 x 90 cm",
+        "price": "3.200,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_004",
+        "title": "Alta Costura en el Escaparate de París",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/crior escaparete.jpg",
+        "description": "Una dama contempla la silueta estilizada de un vestido de gala en el escaparate de la Avenue Montaigne. Fusión de óleo con relieve texturizado y goteos en oro pálido que evocan la sofisticación atemporal del diseño de modas.",
+        "size": "140 x 100 cm",
+        "price": "4.200,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_005",
+        "title": "El Paso de la Gran Vía",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/hombre cruzando.jpg",
+        "description": "Figura masculina en abrigo largo cruzando la calzada bajo la atmósfera cambiante de la metrópoli. Trazo firme y sobrio que capta el paso decidido del urbanita solitario con un fondo de matices terrosos y carbón.",
+        "size": "120 x 90 cm",
+        "price": "3.400,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_006",
+        "title": "La Dama del Vestido Esmeralda",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/hotel_mockups/insitu_lobby_kuwait_4k.jpg",
+        "description": "Pieza monumental de escala arquitectónica. La caída majestuosa de un vestido de noche en seda esmeralda esculpido en óleo 3D preside el espacio con una presencia hipnótica y aristocrática.",
+        "size": "180 x 120 cm",
+        "price": "6.800,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_007",
+        "title": "El Refugio de la Lluvia",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/hombre con paraguas.jpg",
+        "description": "Composición atmosférica donde un paraguas oscuro y la luz reflejada en el asfalto mojado crean una sinfonía visual de misterio y nostalgia nocturna.",
+        "size": "100 x 80 cm",
+        "price": "2.800,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_008",
+        "title": "En la Floristería de Saint-Germain",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/en la floristeria.jpg",
+        "description": "Flores en relieve matérico que estallan de color frente a las siluetas sombrías de los transeúntes, capturando el aroma visual y la frescura de los mercados florales europeos.",
+        "size": "120 x 90 cm",
+        "price": "3.200,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_009",
+        "title": "La Llamada en la Cabina Roja",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/la chica de la cabin.jpg",
+        "description": "El icónico rojo londinense irrumpe con fuerza en una escena lluviosa. Una silueta femenina resguardada en el cristal conversa mientras el agua resbala por los paneles metálicos.",
+        "size": "110 x 85 cm",
+        "price": "2.950,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_010",
+        "title": "La Espera en la Parada",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/la chica de la parada.jpg",
+        "description": "El tiempo suspendido en la marquesina del tranvía. Elegancia sobria y quietud cinematográfica en una composición de ritmo vertical.",
+        "size": "100 x 80 cm",
+        "price": "2.800,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_011",
+        "title": "Bajo la Luz de la Farola",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/la chica de la farola.png",
+        "description": "El halo cálido de una farola histórica baña el contorno de una figura en gabardina, creando un sugerente contraste entre sombras profundas y destellos ámbar.",
+        "size": "100 x 80 cm",
+        "price": "2.700,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_012",
+        "title": "El Murmullo de la Fuente",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/la fuente y la chica.jpg",
+        "description": "La piedra de la fuente clásica y el fluir del agua se encuentran con la quietud de una dama que contempla la puesta de sol en los jardines reales.",
+        "size": "120 x 90 cm",
+        "price": "3.300,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_013",
+        "title": "Salida del Teatro de la Ópera",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/Man_descending_theatre_steps.jpg",
+        "description": "La escalinata monumental de mármol cobra vida al finalizar la función. Siluetas de gala que descienden entre sombras teatrales y destellos dorados.",
+        "size": "140 x 100 cm",
+        "price": "4.100,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_014",
+        "title": "La Dama de la Pamela",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/mi pamela.jpg",
+        "description": "Geometría pura y sensualidad gráfica. Las curvas sinuosas del sombrero de ala ancha ocultan la mirada, dejando al descubierto solo la elegancia de la línea y el cuello.",
+        "size": "100 x 100 cm",
+        "price": "3.100,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_015",
+        "title": "Silueta en la Pasarela",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/modelo paint pasarela.png",
+        "description": "La tensión y el dinamismo del desfile de alta costura capturados en un gesto escultórico de pintura aplicada con espátula y pincelada directa.",
+        "size": "110 x 80 cm",
+        "price": "2.850,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_016",
+        "title": "Encuentro en el Metro de Londres",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/una chica underground.jpg",
+        "description": "La estética underground y la arquitectura de azulejos blancos curvados acogen el paso furtivo de la juventud cosmopolita.",
+        "size": "120 x 90 cm",
+        "price": "3.100,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_017",
+        "title": "Viento de Noviembre y Bufanda de Seda",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/la bici y la bufanda.png",
+        "description": "El viento cobra forma en el movimiento helicoidal de una bufanda colorida que rompe la seriedad del traje sastre.",
+        "size": "100 x 80 cm",
+        "price": "2.600,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_018",
+        "title": "Meditación Nocturna en el Banco",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/en el banco noir.png",
+        "description": "Una interpretación introspectiva del descanso en el parque nocturno, donde el silencio se materializa en capas superpuestas de pigmento carbón.",
+        "size": "100 x 80 cm",
+        "price": "2.600,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_019",
+        "title": "Miradas en la Rue de Rivoli",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/la chica del escaparate.png",
+        "description": "El reflejo cruzado entre la modelo exterior y los maniquíes de la boutique, un juego de espejos sobre la belleza efímera y la perdurable.",
+        "size": "100 x 80 cm",
+        "price": "2.750,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_020",
+        "title": "Tríptico del Puente: Panel Izquierdo (La Llegada)",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_01_Izquierda_2K.png",
+        "description": "Primera sección del tríptico monumental. La barandilla de hierro forjado y la perspectiva del río bajo la bruma crepuscular.",
+        "size": "80 x 120 cm",
+        "price": "2.900,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_021",
+        "title": "Tríptico del Puente: Panel Central (El Encuentro)",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_02_Centro_2K.png",
+        "description": "Corazón del tríptico. La pareja se encuentra sobre el arco central del puente, rodeada por el resplandor de las luces fluviales y el empaste texturizado del agua.",
+        "size": "100 x 120 cm",
+        "price": "3.900,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_022",
+        "title": "Tríptico del Puente: Panel Derecho (La Despedida)",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_03_Derecha_2K.png",
+        "description": "Tercera sección del tríptico. La silueta que se aleja hacia los soportales históricos de la orilla opuesta.",
+        "size": "80 x 120 cm",
+        "price": "2.900,00",
+        "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
+        "sold": false
+    },
+    {
+        "id": "moda_023",
+        "title": "Tríptico Monumental del Puente (Obra Completa)",
+        "category": "59 ALTA COSTURA & NOIR",
+        "src": "assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_Pareja_MOCKUP_COMPLETO_2K.png",
+        "description": "Composición monumental continua en 3 paneles que suman 260 x 120 cm. Diseñada específicamente para salones de gala, vestíbulos de recepción hotelera o suites presidenciales.",
+        "size": "260 x 120 cm (Tríptico)",
+        "price": "9.200,00",
+        "tech_info": "Tríptico monumental en 3 paneles. Óleo matérico 3D, espátula y pigmentos metálicos. Bastidor de pino 4 cm. Acabado barniz mate protector.",
+        "sold": false
     }
 ];
