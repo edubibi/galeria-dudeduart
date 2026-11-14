@@ -231,13 +231,15 @@ body {
 .art-info {
     margin-top: 0.8rem;
     text-align: center;
-    opacity: 0.85;
+    opacity: 0.88;
     transition: all 0.3s;
-    height: 48px;
+    min-height: 48px;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 3px;
 }
 
 .art-title {
@@ -911,3 +913,58 @@ body {
     }
 }
 
+
+
+/* Barra de 5 Salas en Cuadroteca */
+.quick-salas-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 8px 12px;
+    background: rgba(15, 15, 20, 0.7);
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    margin: 8px 0;
+}
+
+.sala-pill-btn {
+    background: #14141e;
+    color: #e2e8f0;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-family: var(--font-secondary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.sala-pill-btn:hover {
+    background: var(--primary);
+    color: #000;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
+}
+
+.sala-pill-btn.active {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+
+.art-date {
+    font-family: var(--font-main, sans-serif);
+    font-size: 0.74rem;
+    font-weight: 500;
+    color: #d4af37;
+    opacity: 0.85;
+    letter-spacing: 0.8px;
+}

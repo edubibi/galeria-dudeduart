@@ -52,21 +52,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Si estamos en la página de COLECCIONES
+    // 2. Si estamos en la página de COLECCIONES: 5 GRANDES SALAS + MUESTRARIO VIVO
     const filtersContainer = document.getElementById('collection-filters');
     const resultsContainer = document.getElementById('collections-results');
 
     if (filtersContainer && resultsContainer) {
         // Obtenemos categorías únicas y ordenamos (Sellos siempre al final)
         const categories = [...new Set(artworkData.map(art => art.category))].sort((a, b) => {
-            if (a && a.includes('1000 SELLOS MAGICOS')) return 1;
-            if (b && b.includes('1000 SELLOS MAGICOS')) return -1;
+            if (a && (a.includes('1000 SELLOS MAGICOS') || a.includes('HISTORIA CINCELADA'))) return 1;
+            if (b && (b.includes('1000 SELLOS MAGICOS') || b.includes('HISTORIA CINCELADA'))) return -1;
             return a.localeCompare(b);
         });
-
-        // Limpiar área de filtros
-        filtersContainer.innerHTML = '';
-        filtersContainer.style.display = 'none';
 
         // Limpiar solo el mensaje de carga, mantener tarjetas estáticas
         const loadingMsg = resultsContainer.querySelector('p');
@@ -75,12 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Renderizar una TARJETA por CATEGORÍA
         const nftResultsContainer = document.getElementById('nft-collections-results');
         const nftSection = document.getElementById('nft-collections-section');
+        const renderedCards = [];
 
         if (categories.length === 0) {
             resultsContainer.innerHTML = '<p style="text-align:center; width:100%;">No hay colecciones disponibles.</p>';
         } else {
             categories.forEach(cat => {
-                // Find cover: check specific cover first, then fallback to first artwork
                 let coverImage = '';
                 if (typeof categoryCovers !== 'undefined') {
                     coverImage = categoryCovers[cat] || categoryCovers[cat.replace(/ /g, '_')] || '';
@@ -93,11 +89,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const card = document.createElement('div');
                 card.className = 'category-card';
+                card.dataset.category = cat;
+
+                // Asignar a qué Sala pertenece esta categoría
+                let assignedSala = 'todas';
+                if (typeof SALAS_CONFIG !== 'undefined') {
+                    for (const [sKey, sVal] of Object.entries(SALAS_CONFIG)) {
+                        if (sVal.categories && sVal.categories.includes(cat)) {
+                            assignedSala = sKey;
+                            break;
+                        }
+                    }
+                }
+                card.dataset.sala = assignedSala;
 
                 // Clean category for display
                 const displayCat = cat.replace(/^\d+/, '').replace(/_/g, ' ');
 
-                // Custom Badge and Link for Fursona
                 let badgeText = displayCat;
                 let badgeStyle = "background: rgba(0,0,0,0.5);";
                 let clickAction = () => window.location.href = `cuadroteca/index.html?category=${encodeURIComponent(cat)}`;
@@ -119,6 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3>${displayCat}</h3>
                 `;
 
+                renderedCards.push(card);
+
                 if (isNFT && nftResultsContainer) {
                     nftResultsContainer.appendChild(card);
                     if (nftSection) nftSection.style.display = 'block';
@@ -126,6 +136,86 @@ document.addEventListener('DOMContentLoaded', () => {
                     resultsContainer.appendChild(card);
                 }
             });
+        }
+
+        // =============================================================
+        // 🏛️ RENDERIZAR BOTONES DE LAS 5 GRANDES SALAS Y CURADURÍA
+        // =============================================================
+        if (typeof SALAS_CONFIG !== 'undefined') {
+            filtersContainer.innerHTML = '';
+            filtersContainer.style.display = 'flex';
+
+            const curatorialBanner = document.getElementById('sala-curatorial-banner');
+            const urlParams = new URLSearchParams(window.location.search);
+            let activeSala = urlParams.get('sala') || 'todas';
+            if (!SALAS_CONFIG[activeSala]) activeSala = 'todas';
+
+            function updateCuratorialBanner(salaKey) {
+                const sala = SALAS_CONFIG[salaKey];
+                if (!sala || !curatorialBanner) return;
+
+                const isAll = (salaKey === 'todas');
+                const totalCats = isAll ? categories.length : sala.categories.length;
+                const totalWorks = isAll ? artworkData.length : artworkData.filter(a => sala.categories.includes(a.category)).length;
+
+                curatorialBanner.style.display = 'block';
+                curatorialBanner.innerHTML = `
+                    <div class="sala-box-header">
+                        <span class="sala-box-badge">${sala.numeral} · ${sala.badge}</span>
+                        <span class="sala-box-period">${sala.period}</span>
+                    </div>
+                    <h2 class="sala-box-title">${sala.title}</h2>
+                    <p class="sala-box-desc">${sala.desc}</p>
+                    <div class="sala-box-meta">
+                        <div class="sala-box-stats">
+                            <span>📁 <strong>${totalCats}</strong> Series temáticas</span>
+                            <span>🎨 <strong>${totalWorks}</strong> Obras catalogadas</span>
+                        </div>
+                        <a href="cuadroteca/index.html?sala=${encodeURIComponent(salaKey)}" class="sala-btn-view-3d">
+                            🏛️ Entrar a la Sala en Visor 3D →
+                        </a>
+                    </div>
+                `;
+            }
+
+            function setFilter(salaKey) {
+                activeSala = salaKey;
+
+                // Actualizar estilo botones
+                filtersContainer.querySelectorAll('.sala-filter-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.sala === salaKey);
+                });
+
+                // Filtrar tarjetas
+                renderedCards.forEach(card => {
+                    const match = (salaKey === 'todas' || card.dataset.sala === salaKey);
+                    card.style.display = match ? '' : 'none';
+                });
+
+                // Actualizar banner curatorial
+                updateCuratorialBanner(salaKey);
+
+                // Actualizar URL sin recargar
+                const newUrl = (salaKey === 'todas') 
+                    ? window.location.pathname 
+                    : `${window.location.pathname}?sala=${encodeURIComponent(salaKey)}`;
+                window.history.replaceState({ sala: salaKey }, '', newUrl);
+            }
+
+            // Crear botones de sala
+            Object.keys(SALAS_CONFIG).forEach(salaKey => {
+                const s = SALAS_CONFIG[salaKey];
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'sala-filter-btn' + (salaKey === activeSala ? ' active' : '');
+                btn.dataset.sala = salaKey;
+                btn.innerHTML = `${s.shortTitle}`;
+                btn.onclick = () => setFilter(salaKey);
+                filtersContainer.appendChild(btn);
+            });
+
+            // Aplicar filtro inicial
+            setFilter(activeSala);
         }
     }
 

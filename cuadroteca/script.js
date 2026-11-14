@@ -40,6 +40,20 @@ function init() {
         }
     }
 
+    // Comprobar si hay filtro por SALA en la URL
+    const salaFilter = params.get('sala');
+    if (salaFilter && typeof SALAS_CONFIG !== 'undefined' && SALAS_CONFIG[salaFilter]) {
+        const s = SALAS_CONFIG[salaFilter];
+        if (salaFilter !== 'todas') {
+            console.log("Filtrando galería digital por Sala:", s.title);
+            dataToLoad = artworkData.filter(art => s.categories && s.categories.includes(art.category));
+            const titleEl = document.querySelector('.neon-title');
+            if (titleEl) {
+                titleEl.innerHTML = `${s.numeral}: <span class="highlight">${s.shortTitle.replace(/^[^\s]+\s*/, '').toUpperCase()}</span>`;
+            }
+        }
+    }
+
     renderGrid(dataToLoad);
     setupSearch();
     setupMusic();
@@ -204,6 +218,12 @@ function createCard(item) {
     title.innerText = item.title;
 
     info.appendChild(title);
+    if (item.date) {
+        const dateEl = document.createElement('div');
+        dateEl.className = 'art-date';
+        dateEl.innerText = item.date;
+        info.appendChild(dateEl);
+    }
     // El precio se muestra únicamente dentro del modal de la obra según preferencia del usuario
 
     card.appendChild(imgWrapper);
@@ -291,6 +311,11 @@ function openHero(item) {
     // Populate standard fields
     heroTitle.innerText = item.title;
     heroCat.innerText = item.category || 'Galería';
+    const heroDate = document.getElementById('hero-date');
+    if (heroDate) {
+        heroDate.innerText = item.date ? `📅 ${item.date}` : '';
+        heroDate.style.display = item.date ? 'inline-block' : 'none';
+    }
     heroPrice.innerText = (item.price && !item.price.toString().includes('€') && !item.price.toString().includes('EUR') && item.price.toLowerCase() !== 'consultar') ? `${item.price} €` : (item.price || 'Consultar');
     heroDesc.innerText = item.description || "Sin descripción disponible.";
     
@@ -590,4 +615,34 @@ window.toggleMemoIndex = function(forceState) {
     if (panel.style.display === 'block') {
         panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
+};
+
+window.jumpToSala = function(salaId) {
+    if (!salaId) return;
+    if (salaId === 'todas') {
+        window.location.href = 'index.html';
+        return;
+    }
+    if (typeof SALAS_CONFIG === 'undefined' || !SALAS_CONFIG[salaId]) return;
+    const sala = SALAS_CONFIG[salaId];
+    
+    // Si la página está actualmente filtrada a una sola categoría o sala distinta, navegar directamente
+    const currentParams = new URLSearchParams(window.location.search);
+    if (currentParams.has('category') || (currentParams.has('sala') && currentParams.get('sala') !== salaId)) {
+        window.location.href = `index.html?sala=${encodeURIComponent(salaId)}`;
+        return;
+    }
+
+    // Buscar la primera sección de esa Sala en el DOM y hacer scroll suave
+    for (const cat of sala.categories) {
+        const catSlug = 'cat-' + cat.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        const target = document.getElementById(catSlug);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+        }
+    }
+
+    // Fallback: navegar a la vista de la sala
+    window.location.href = `index.html?sala=${encodeURIComponent(salaId)}`;
 };

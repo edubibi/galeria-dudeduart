@@ -293,6 +293,18 @@
                 </select>
             </div>
 
+                        <!-- Barra de las 5 Grandes Salas -->
+            <div class="quick-salas-bar">
+                <span style="font-size: 0.72rem; color: #D4AF37; font-weight: bold; letter-spacing: 1px; margin-right: 4px;">🏛️ SALAS:</span>
+                <button type="button" class="sala-pill-btn" onclick="jumpToSala('sala_1')" title="Paleolítico al Siglo XVIII">🏛️ I. Clásico & Rupestre</button>
+                <button type="button" class="sala-pill-btn" onclick="jumpToSala('sala_2')" title="Siglo XIX">🌿 II. Romanticismo</button>
+                <button type="button" class="sala-pill-btn" onclick="jumpToSala('sala_3')" title="Vanguardias S. XX">🎨 III. Vanguardias</button>
+                <button type="button" class="sala-pill-btn" onclick="jumpToSala('sala_4')" title="Relieve 3D / B2B Magna">✨ IV. Relieve 3D (B2B)</button>
+                <button type="button" class="sala-pill-btn" onclick="jumpToSala('sala_5')" title="Alta Costura & Film Noir">🖤 V. Noir & Moda</button>
+                <button type="button" class="sala-pill-btn" onclick="jumpToSala('gabinete_postal')" title="Arte Postal Español">📮 Gabinete Filatélico</button>
+                <button type="button" class="sala-pill-btn" onclick="jumpToSala('todas')" title="Ver Todo el Catálogo" style="color: #94a3b8; border-color: #334155;">Todas</button>
+            </div>
+
             <!-- Botones de Décadas -->
             <div class="quick-decades-group">
                 <button type="button" class="decade-btn" onclick="jumpToDecade('0')">00s</button>
@@ -358,6 +370,7 @@
                 <h2 id="hero-title">Título de la Obra</h2>
                 <div class="hero-meta">
                     <span id="hero-category" class="tag">Categoría</span>
+                    <span id="hero-date" class="tag" style="display: none; background: rgba(212, 175, 55, 0.15); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.4); margin-left: 6px;"></span>
                     <span id="hero-price" class="price">Precio</span>
                 </div>
                 <p id="hero-desc">Descripción detallada de la obra...</p>
@@ -374,12 +387,13 @@
     </div>
 
     <!-- Pie de página con estadísticas de visitas -->
-    <footer id="visitor-footer" style="position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(15, 23, 42, 0.95); border-top: 1px solid #334155; padding: 0.4rem 2rem; font-size: 0.75rem; color: #64748b; text-align: center; z-index: 90; letter-spacing: 1px; font-family: sans-serif;">
-        <span id="footer-visitor-stats">Cargando estadísticas locales...</span>
+    <footer id="visitor-footer" style="position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(10, 10, 14, 0.96); border-top: 1px solid rgba(212, 175, 55, 0.3); padding: 0.35rem 1.5rem; font-size: 0.74rem; color: #94a3b8; text-align: center; z-index: 90; letter-spacing: 0.5px; font-family: sans-serif;">
+        &copy; 2026 · Web creada por <strong style="color: #ffffff;">Eduardo Ramírez de Cartagena</strong> para <span style="color: #D4AF37; font-weight: bold;">Khem Aura Creative</span>. Todos los derechos reservados.
     </footer>
 
     <script src="../js/data.js?v=353"></script>
     <script src="../js/cart.js?v=105"></script>
+    <script src="../js/salas_data.js?v=2026_m12"></script>
     <script src="script.js?v=2026_m9"></script>
     <script src="../js/protection.js"></script>
 </body>

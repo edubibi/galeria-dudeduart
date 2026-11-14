@@ -6045,5 +6045,38 @@
         "price": "3.700,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
         "sold": false
+    },
+    "rupesse_001": {
+        "id": "rupesse_001",
+        "title": "El Gran Mamut y las Manos Ancestrales",
+        "category": "61 RUPESSE",
+        "src": "assets/61RUPESSE/rupesse_001.jpg",
+        "description": "Evocación magdaleniense del arte parietal paleolítico. El relieve y las fracturas de la roca guían la anatomía del mamut, rodeado por huellas de manos dactilares en positivo y negativo con pigmentos de óxido de hierro, ocre y carbón vegetal.",
+        "size": "Consultar",
+        "price": "2.400,00",
+        "tech_info": "Pigmentos minerales puros (óxido de hierro, ocre natural) y carbón vegetal sobre soporte mineral con textura pétrea.",
+        "sold": false
+    },
+    "rupesse_002": {
+        "id": "rupesse_002",
+        "title": "Dientes de Sable en Acecho",
+        "category": "61 RUPESSE",
+        "src": "assets/61RUPESSE/rupesse_002.jpg",
+        "description": "Síntesis gráfica ancestral de máxima economía de trazo. La silueta del felino prehistórico se adapta a los estratos de la caverna, capturando la tensión muscular y el pulso depredador de la fauna cuaternaria.",
+        "size": "Consultar",
+        "price": "2.100,00",
+        "tech_info": "Trazo directo en carbón vegetal y veladuras de tierra sobre superficie de caliza mineral.",
+        "sold": false
+    },
+    "rupesse_003": {
+        "id": "rupesse_003",
+        "title": "El Pato Paleolítico (Génesis de Dudedu sobre Arpillera)",
+        "category": "61 RUPESSE",
+        "src": "assets/61RUPESSE/rupesse_003.jpg",
+        "description": "Obra conceptual y fundacional de la mitología Dudeduart. Pintada sobre tela de saco rústica y deshilachada, fusiona la huella de la mano paleolítica y las salpicaduras de tierra con la visión anacrónica del pato en el estanque urbano, su banco y su fuente.",
+        "size": "Consultar (Arpillera rústica)",
+        "price": "2.800,00",
+        "tech_info": "Pigmento natural, tierras ocres, carbón y huella dactilar de autor sobre tejido de arpillera/lino rústico deshilachado.",
+        "sold": false
     }
 }

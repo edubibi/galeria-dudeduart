@@ -10,7 +10,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "00edusse_002",
@@ -21,7 +22,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.700,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "00edusse_003",
@@ -32,7 +34,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.850,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "campo_solar",
@@ -42,7 +45,8 @@ const artworkData = [
         "description": "Energía de oro; mil soles de cristal recogen el aliento del día, un paisaje de futuro donde la luz se convierte en el latido de la tierra.",
         "price": "2.100,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "cervatillo",
@@ -52,7 +56,8 @@ const artworkData = [
         "description": "Inocencia silvestre; la mirada frágil del bosque capturada en un instante de calma, un soplo de vida entre la hojarasca.",
         "price": "1.800,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "javali edusse",
@@ -62,7 +67,8 @@ const artworkData = [
         "description": "Fuerza del sotobosque; el poder bruto y la determinación del jabalí, un retrato de la naturaleza indómita que respira en la espesura.",
         "price": "2.200,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "la botella de los astros",
@@ -71,7 +77,8 @@ const artworkData = [
         "src": "assets/00EDUSSE/La Botella de los Astros.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "2.400,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_001",
@@ -82,7 +89,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.120,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_002",
@@ -93,7 +101,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "640,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_003",
@@ -104,7 +113,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "840,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_004",
@@ -115,7 +125,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.160,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_005",
@@ -126,7 +137,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "880,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_005.jpg_202607201144",
@@ -135,7 +147,8 @@ const artworkData = [
         "src": "assets/01EXP_NEOCIRC/01exp_neocirc_005.jpg_202607201144.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "07/2026"
     },
     {
         "id": "01exp_neocirc_006",
@@ -146,7 +159,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "500,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_007",
@@ -157,7 +171,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "600,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_008",
@@ -168,7 +183,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "560,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_009",
@@ -179,7 +195,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "680,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_010",
@@ -190,7 +207,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "540,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_011",
@@ -201,7 +219,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.020,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_012",
@@ -212,7 +231,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.020,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_013",
@@ -223,7 +243,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "800,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_014",
@@ -234,7 +255,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "900,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_015",
@@ -245,7 +267,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.020,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_016",
@@ -256,7 +279,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_017",
@@ -267,7 +291,8 @@ const artworkData = [
         "size": "50x70 cm / 70x100 cm / 100x140 cm",
         "price": "1.060,00",
         "tech_info": "",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_018",
@@ -278,7 +303,8 @@ const artworkData = [
         "size": "50x70 cm / 70x100 cm / 100x140 cm",
         "price": "920,00",
         "tech_info": "",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "01exp_neocirc_019",
@@ -289,7 +315,8 @@ const artworkData = [
         "size": "50x70 cm / 70x100 cm / 100x140 cm",
         "price": "760,00",
         "tech_info": "",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "concentric_circular_strokes_past…_202607201149",
@@ -298,7 +325,8 @@ const artworkData = [
         "src": "assets/01EXP_NEOCIRC/Concentric_circular_strokes_past…_202607201149.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "07/2026"
     },
     {
         "id": "02cubesse_stilo_001",
@@ -309,7 +337,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "960,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "02cubesse_stilo_002",
@@ -320,7 +349,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "700,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "02cubesse_stilo_003",
@@ -331,7 +361,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.140,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "02cubesse_stilo_005",
@@ -342,7 +373,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "540,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "02cubesse_stilo_007",
@@ -353,7 +385,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "520,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "02cubesse_stilo_008",
@@ -364,7 +397,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.180,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "02cubesse_stilo_009",
@@ -375,7 +409,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "960,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "02cubesse_stilo_010",
@@ -386,7 +421,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.020,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "02cubesse_stilo_011",
@@ -397,7 +433,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "680,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "02cubesse_stilo_012",
@@ -408,7 +445,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.080,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "02cubesse_stilo_013",
@@ -419,7 +457,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "980,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "02cubesse_stilo_014",
@@ -430,7 +469,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "940,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "02cubesse_stilo_015",
@@ -441,7 +481,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "580,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "02cubesse_stilo_016",
@@ -452,7 +493,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "760,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "salto con pertiga",
@@ -461,7 +503,8 @@ const artworkData = [
         "src": "assets/02CUBESSE stilo/salto con pertiga.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "07/2026"
     },
     {
         "id": "03expneoplus_001",
@@ -472,7 +515,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "860,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_002",
@@ -483,7 +527,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "720,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_003",
@@ -494,7 +539,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "860,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_004",
@@ -505,7 +551,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "520,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_005",
@@ -516,7 +563,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.080,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_006",
@@ -527,7 +575,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "820,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_007",
@@ -538,7 +587,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.060,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_008",
@@ -549,7 +599,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "500,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_009",
@@ -560,7 +611,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "700,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_010",
@@ -571,7 +623,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.000,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_011",
@@ -582,7 +635,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "780,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_012",
@@ -593,7 +647,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "980,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_013",
@@ -604,7 +659,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "940,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_014",
@@ -615,7 +671,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "760,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_015",
@@ -626,7 +683,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.160,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_016",
@@ -637,7 +695,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "820,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_017",
@@ -648,7 +707,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "640,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_018",
@@ -659,7 +719,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "520,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_019",
@@ -670,7 +731,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.000,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_020",
@@ -681,7 +743,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "560,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_021",
@@ -692,7 +755,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.000,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_022",
@@ -703,7 +767,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "680,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_023",
@@ -714,7 +779,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.100,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_024",
@@ -725,7 +791,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "520,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_025",
@@ -736,7 +803,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "660,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_026",
@@ -747,7 +815,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "680,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_027",
@@ -758,7 +827,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.080,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_028",
@@ -769,7 +839,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.120,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_029",
@@ -780,7 +851,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "920,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_030",
@@ -791,7 +863,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_031",
@@ -802,7 +875,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.040,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_032",
@@ -813,7 +887,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_033",
@@ -824,7 +899,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "740,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_034",
@@ -835,7 +911,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "800,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_035",
@@ -846,7 +923,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.120,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_036",
@@ -857,7 +935,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "720,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_037",
@@ -868,7 +947,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.000,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_038",
@@ -879,7 +959,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "520,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_039",
@@ -890,7 +971,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "760,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "03expneoplus_040",
@@ -901,7 +983,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "760,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "04aplicc_001",
@@ -912,7 +995,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "285,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "04aplicc_002",
@@ -923,7 +1007,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "160,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "04aplicc_003",
@@ -934,7 +1019,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "245,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "04aplicc_004",
@@ -945,7 +1031,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "240,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "04aplicc_005",
@@ -956,7 +1043,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "260,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "04aplicc_006",
@@ -967,7 +1055,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "235,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "gemini_generated_image_110ba9110ba9110b",
@@ -976,7 +1065,8 @@ const artworkData = [
         "src": "assets/04APLICC/Gemini_Generated_Image_110ba9110ba9110b.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "250",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "07/2026"
     },
     {
         "id": "monasterio_del_escorial_oil_pain…_202607201524",
@@ -985,7 +1075,8 @@ const artworkData = [
         "src": "assets/04APLICC/Monasterio_del_Escorial_oil_pain…_202607201524.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "230",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "07/2026"
     },
     {
         "id": "05plumink_001",
@@ -996,7 +1087,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "380,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "05plumink_002",
@@ -1007,7 +1099,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "370,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "05plumink_003",
@@ -1018,7 +1111,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "340,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "05plumink_004",
@@ -1029,7 +1123,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "350,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "indigenous_woman_portrait",
@@ -1038,7 +1133,8 @@ const artworkData = [
         "src": "assets/05PLUMINK/indigenous_woman_portrait.jpg",
         "description": "Nueva obra añadida recientemente.",
         "price": "280",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "07/2026"
     },
     {
         "id": "06ide_classic_001",
@@ -1049,7 +1145,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "150,00",
         "tech_info": "Pintura digital tradicional (Wacom) emulando técnicas de óleo y barniz.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "06ide_classic_002",
@@ -1060,7 +1157,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "380,00",
         "tech_info": "Pintura digital tradicional (Wacom) emulando técnicas de óleo y barniz.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "06ide_classic_003",
@@ -1071,7 +1169,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "200,00",
         "tech_info": "Pintura digital tradicional (Wacom) emulando técnicas de óleo y barniz.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "06ide_classic_004",
@@ -1082,7 +1181,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "320,00",
         "tech_info": "Pintura digital tradicional (Wacom) emulando técnicas de óleo y barniz.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "flock_of_sheep_in_meadow_202607211214",
@@ -1091,7 +1191,8 @@ const artworkData = [
         "src": "assets/06IDE_CLASSIC/Flock_of_sheep_in_meadow_202607211214.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "260",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "07/2026"
     },
     {
         "id": "07neoink_stilo_001",
@@ -1102,7 +1203,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "260,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_002",
@@ -1113,7 +1215,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "170,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_003",
@@ -1124,7 +1227,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "210,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_004",
@@ -1135,7 +1239,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "350,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_005",
@@ -1146,7 +1251,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "230,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_006",
@@ -1157,7 +1263,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "390,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_007",
@@ -1168,7 +1275,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "180,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_008",
@@ -1179,7 +1287,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "400,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_009",
@@ -1190,7 +1299,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "390,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_010",
@@ -1201,7 +1311,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "290,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_011",
@@ -1212,7 +1323,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "210,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_012",
@@ -1223,7 +1335,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "180,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_013",
@@ -1234,7 +1347,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "240,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_014",
@@ -1245,7 +1359,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "330,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_015",
@@ -1256,7 +1371,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "210,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_016",
@@ -1267,7 +1383,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "150,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_017",
@@ -1278,7 +1395,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "270,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_018",
@@ -1289,7 +1407,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "150,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_020",
@@ -1300,7 +1419,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "380,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_021",
@@ -1311,7 +1431,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "320,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_022",
@@ -1322,7 +1443,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "150,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_023",
@@ -1333,7 +1455,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_024",
@@ -1344,7 +1467,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "230,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_025",
@@ -1355,7 +1479,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "220,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_026",
@@ -1366,7 +1491,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "350,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_027",
@@ -1377,7 +1503,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "270,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_028",
@@ -1388,7 +1515,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "390,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_029",
@@ -1399,7 +1527,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "350,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_030",
@@ -1410,7 +1539,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "160,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_031",
@@ -1421,7 +1551,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "370,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_032",
@@ -1432,7 +1563,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "250,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_033",
@@ -1443,7 +1575,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "170,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_034",
@@ -1454,7 +1587,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "07neoink_stilo_035",
@@ -1465,7 +1599,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "230,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "08boracarbon_001",
@@ -1476,7 +1611,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.140,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "08boracarbon_002",
@@ -1487,7 +1623,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "780,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "08boracarbon_003",
@@ -1498,7 +1635,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "08boracarbon_004",
@@ -1509,7 +1647,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.020,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "Kasar_Ouled_Soltane__Tunez",
@@ -1520,7 +1659,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.350,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "kasar_ouled_soltane__tunez.jpeg_202607211222",
@@ -1529,7 +1669,8 @@ const artworkData = [
         "src": "assets/08BORACARBON/Kasar_Ouled_Soltane__Tunez.jpeg_202607211222.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "07/2026"
     },
     {
         "id": "pastor_y-su-perro",
@@ -1538,7 +1679,8 @@ const artworkData = [
         "src": "assets/08BORACARBON/Pastor_y-su-perro.jpg",
         "description": "Nueva obra añadida recientemente.",
         "price": "",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "07/2026"
     },
     {
         "id": "09fracneo_001",
@@ -1549,7 +1691,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "190,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "09fracneo_002",
@@ -1560,7 +1703,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "230,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "09fracneo_003",
@@ -1571,7 +1715,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "240,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "09fracneo_004",
@@ -1582,7 +1727,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "09fracneo_005",
@@ -1593,7 +1739,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "250,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "09fracneo_006",
@@ -1604,7 +1751,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "190,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "09fracneo_007",
@@ -1615,7 +1763,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "09fracneo_008",
@@ -1626,7 +1775,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "220,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "10oleocubbo_001",
@@ -1637,7 +1787,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "860,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "10oleocubbo_002",
@@ -1648,7 +1799,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "800,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "10oleocubbo_003",
@@ -1659,7 +1811,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "720,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "10oleocubbo_004",
@@ -1670,7 +1823,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "540,00",
         "tech_info": "Simulación de física de fluidos viscosos (Impasto) aplicada sobre una malla geométrica cubista.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "10oleocubbo_005",
@@ -1681,7 +1835,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.180,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "10oleocubbo_006",
@@ -1692,7 +1847,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "580,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "10oleocubbo_007",
@@ -1703,7 +1859,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "760,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "10oleocubbo_008",
@@ -1714,7 +1871,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "820,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "10oleocubbo_009",
@@ -1725,7 +1883,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "520,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "11urbanspheric_001",
@@ -1736,7 +1895,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "330,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "11urbanspheric_002",
@@ -1747,7 +1907,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "330,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "11urbanspheric_003",
@@ -1758,7 +1919,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "230,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "11urbanspheric_004",
@@ -1769,7 +1931,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "370,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "11urbanspheric_005",
@@ -1780,7 +1943,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "230,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "12cristal_cubico_001",
@@ -1791,7 +1955,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.800,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "12cristal_cubico_002",
@@ -1802,7 +1967,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.800,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "13rectesse_001",
@@ -1813,7 +1979,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "160,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "14terexse_001",
@@ -1824,7 +1991,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "235,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "14terexse_002",
@@ -1833,7 +2001,8 @@ const artworkData = [
         "src": "assets/14TEREXSE/14terexse_002.jpg",
         "description": "Nueva obra añadida recientemente.",
         "price": "190,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "mas love tin",
@@ -1844,7 +2013,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "680,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "saga_cubesseplus_001",
@@ -1855,7 +2025,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.120,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "saga_cubesseplus_002",
@@ -1866,7 +2037,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.140,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "saga_cubesseplus_003",
@@ -1877,7 +2049,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "640,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "saga_cubesseplus_004",
@@ -1888,7 +2061,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "680,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "saga_cubesseplus_005",
@@ -1899,7 +2073,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.020,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "saga_cubesseplus_006",
@@ -1910,7 +2085,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "780,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "saga_cubesseplus_007",
@@ -1921,7 +2097,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "560,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "saga_cubesseplus_008",
@@ -1932,7 +2109,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "720,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "16expneo_001",
@@ -1943,7 +2121,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "330,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "16expneo_002",
@@ -1954,7 +2133,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "340,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "amigo fiel",
@@ -1965,7 +2145,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "370,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "17fuzztess_001",
@@ -1976,7 +2157,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "400,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "17fuzztess_002",
@@ -1987,7 +2169,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "320,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "18abstracto_confluencia_001",
@@ -1998,7 +2181,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "330,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "vortice-abisal",
@@ -2009,7 +2193,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "340,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "07/2026"
     },
     {
         "id": "19fuzzline_abs_001",
@@ -2020,7 +2205,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "160,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "19fuzzline_abs_002",
@@ -2031,7 +2217,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "180,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "19fuzzline_abs_003",
@@ -2042,7 +2229,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "270,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "19fuzzline_abs_004",
@@ -2053,7 +2241,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "390,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "19fuzzline_abs_005",
@@ -2064,7 +2253,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "340,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "19fuzzline_abs_006",
@@ -2075,7 +2265,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "320,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "19fuzzline_abs_007",
@@ -2086,7 +2277,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "190,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "19fuzzline_abs_008",
@@ -2097,7 +2289,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "400,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "19fuzzline_abs_009",
@@ -2108,7 +2301,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "400,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "in the desert",
@@ -2119,7 +2313,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "190,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "moe zue",
@@ -2130,7 +2325,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "320,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "molly pink",
@@ -2141,7 +2337,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "180,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "20borassie_001",
@@ -2152,7 +2349,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "560,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "20borassie_002",
@@ -2163,7 +2361,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.160,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "20borassie_003",
@@ -2174,7 +2373,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "600,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "20borassie_004",
@@ -2185,7 +2385,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.020,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "20borassie_005",
@@ -2196,7 +2397,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "960,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "20borassie_006",
@@ -2207,7 +2409,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "860,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "20borassie_007",
@@ -2218,7 +2421,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.100,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "20borassie_008",
@@ -2229,7 +2433,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "820,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "20borassie_009",
@@ -2240,7 +2445,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "700,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "20borassie_010",
@@ -2251,7 +2457,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "860,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "20borassie_011",
@@ -2262,7 +2469,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "560,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "20borassie_012",
@@ -2273,7 +2481,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "640,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "21oce_burst_001",
@@ -2284,7 +2493,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "600,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "21oce_burst_002",
@@ -2295,7 +2505,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "21oce_burst_003",
@@ -2306,7 +2517,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "640,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "21oce_burst_004",
@@ -2317,7 +2529,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "700,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "21oce_burst_005",
@@ -2328,7 +2541,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "960,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "21oce_burst_006",
@@ -2339,7 +2553,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "980,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "21oce_burst_007",
@@ -2350,7 +2565,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.140,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "21oce_burst_008",
@@ -2361,7 +2577,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "600,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "21oce_burst_009",
@@ -2372,7 +2589,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.120,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "21oce_burst_010",
@@ -2383,7 +2601,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "920,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "21oce_burst_011",
@@ -2394,7 +2613,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "660,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "21oce_burst_012",
@@ -2405,7 +2625,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "500,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "21oce_burst_013",
@@ -2416,7 +2637,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "680,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "22neo_lumina_001",
@@ -2427,7 +2649,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.700,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "22neo_lumina_002",
@@ -2438,7 +2661,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.700,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "22neo_lumina_003",
@@ -2449,7 +2673,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.750,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "23tridim_burst_001",
@@ -2460,7 +2685,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.800,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "23tridim_burst_002",
@@ -2471,7 +2697,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.800,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "23tridim_burst_003",
@@ -2482,7 +2709,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.780,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "23tridim_burst_004",
@@ -2493,7 +2721,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "7.790,00",
         "tech_info": "Sistemas de partículas 3D con fuerzas de explosión y gravedad simuladas.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "23tridim_burst_005",
@@ -2504,7 +2733,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.720,00",
         "tech_info": "Sistemas de partículas 3D con fuerzas de explosión y gravedad simuladas.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "23tridim_burst_006",
@@ -2515,7 +2745,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.890,00",
         "tech_info": "Sistemas de partículas 3D con fuerzas de explosión y gravedad simuladas.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "23tridim_burst_007",
@@ -2525,7 +2756,8 @@ const artworkData = [
         "description": "Velo de cristal; la caída del agua se fragmenta en mil destellos, una sinfonía de frescura que nace del corazón de la roca.",
         "price": "1.900,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "23tridim_burst_008",
@@ -2535,7 +2767,8 @@ const artworkData = [
         "description": "Fractura de acero; el drama de la industria capturado en un colapso geométrico, una visión de la fragilidad de nuestras obras frente a la entropía.",
         "price": "1.900,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "en el espigón",
@@ -2545,7 +2778,8 @@ const artworkData = [
         "description": "Límite de mundos; donde el hombre desafía al mar con piedra y cemento, un refugio de salitre que contempla el abrazo eterno de las olas.",
         "price": "1.950,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "boracarbon_mon_001",
@@ -2556,7 +2790,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "500,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "boracarbon_mon_002",
@@ -2567,7 +2802,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "900,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "boracarbon_mon_003",
@@ -2578,7 +2814,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "boracarbon_mon_004",
@@ -2589,7 +2826,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.020,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "boracarbon_mon_005",
@@ -2600,7 +2838,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "840,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "boracarbon_mon_006",
@@ -2611,7 +2850,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.040,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "boracarbon_mon_007",
@@ -2622,7 +2862,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "680,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "boracarbon_mon_008",
@@ -2633,7 +2874,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "780,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "boracarbon_mon_009",
@@ -2644,7 +2886,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "560,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "boracarbon_mon_010",
@@ -2655,7 +2898,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "700,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "ajustador",
@@ -2666,7 +2910,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "390,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "capitana caplive",
@@ -2677,7 +2922,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "310,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "herrero",
@@ -2688,7 +2934,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "260,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "tabernera",
@@ -2699,7 +2946,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "250,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "muchacho estudiante",
@@ -2710,7 +2958,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "230,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "panadera",
@@ -2721,7 +2970,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "350,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "prima martina",
@@ -2732,7 +2982,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "400,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "carnero",
@@ -2743,7 +2994,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "240,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "el amo de la casa",
@@ -2754,7 +3006,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "250,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "holandesa",
@@ -2763,7 +3016,8 @@ const artworkData = [
         "src": "assets/27LINEVORT/holandesa.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "150,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "molino_de_viento",
@@ -2772,7 +3026,8 @@ const artworkData = [
         "src": "assets/27LINEVORT/molino_de_viento.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "250,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "aldea china",
@@ -2782,7 +3037,8 @@ const artworkData = [
         "description": "Serenidad milenaria; la vida respira en los tejados curvos y el silencio de las montañas, un refugio donde el tiempo fluye como el agua del arroyo.",
         "price": "760,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "arando con bueyes",
@@ -2792,7 +3048,8 @@ const artworkData = [
         "description": "Fuerza del surco; la comunión entre el hombre y la bestia bajo el sol, el primer acto de la creación que convierte la tierra en sustento.",
         "price": "820,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "arrozal",
@@ -2802,7 +3059,8 @@ const artworkData = [
         "description": "Espejos de vida; el agua refleja la paciencia del cultivo, un damero de plata y verde que sustenta el alma de la tierra.",
         "price": "700,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "arrozales de yuanyang en yunnan",
@@ -2812,7 +3070,8 @@ const artworkData = [
         "description": "Escaleras al cielo; la montaña se fragmenta en terrazas de luz, una obra de arte labrada por manos humanas a lo largo de los siglos.",
         "price": "1.060,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "barco saliendo del puerto de algeciras",
@@ -2822,7 +3081,8 @@ const artworkData = [
         "description": "Rumbo al estrecho; la proa corta las aguas de dos mundos, una partida llena de salitre y la esperanza de nuevos horizontes.",
         "price": "620,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "barco_chino en alta mar",
@@ -2832,7 +3092,8 @@ const artworkData = [
         "description": "Viento de oriente; el junco desafía la inmensidad del océano, una silueta de madera y lona que guarda los secretos de las antiguas rutas de la seda.",
         "price": "560,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "buda de piedra",
@@ -2842,7 +3103,8 @@ const artworkData = [
         "description": "Paz eterna; la serenidad del iluminado grabada en la roca, una mirada compasiva que trasciende el ruido del mundo moderno.",
         "price": "620,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "bufalo",
@@ -2852,7 +3114,8 @@ const artworkData = [
         "description": "Poder de agua; la mirada profunda del gigante de los arrozales, un tótem de fuerza y paciencia sumergido en el espejo de la tierra inundada.",
         "price": "700,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "caballo_flaco",
@@ -2862,7 +3125,8 @@ const artworkData = [
         "description": "Elegancia desnuda; la pureza de la forma se revela en la escasez, un estudio de líneas y carácter donde la fuerza nace de la fragilidad aparente.",
         "price": "900,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "campesino chino con buey",
@@ -2872,7 +3136,8 @@ const artworkData = [
         "description": "Vínculo ancestral; la piel y el pelaje se funden en el esfuerzo compartido, un retrato de la dignidad que nace del surco y la esperanza.",
         "price": "540,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "el parque nacional de zhÄ ngjiÄ jiè",
@@ -2882,7 +3147,8 @@ const artworkData = [
         "description": "Pilares de leyenda; agujas de piedra que emergen de la niebla, un paisaje vertical donde las nubes descansan sobre la espalda de los gigantes.",
         "price": "1.200,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "elefante baby",
@@ -2891,7 +3157,8 @@ const artworkData = [
         "src": "assets/28ESPATAC/elefante baby.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "680,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "geisha",
@@ -2901,7 +3168,8 @@ const artworkData = [
         "description": "El arte del misterio; la delicadeza de la seda y el blanco de la piel esconden un universo de tradición, música y elegancia contenida.",
         "price": "680,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "gran buda de leshan",
@@ -2911,7 +3179,8 @@ const artworkData = [
         "description": "Coloso de piedra; el guardián de los ríos contempla el paso de los siglos, una presencia monumental que impone silencio al rugjir de las aguas.",
         "price": "540,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "hacienda_labriega",
@@ -2921,7 +3190,8 @@ const artworkData = [
         "description": "Raíces de sol; la casa grande rodeada de campos fértiles, un refugio de piedra y adobe donde late el corazón del mundo rural.",
         "price": "1.140,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "javali",
@@ -2931,7 +3201,8 @@ const artworkData = [
         "description": "Espíritu del monte; la fiereza y el instinto salvaje capturados en un gesto de poder, un centinela de los bosques que no conoce el miedo.",
         "price": "1.000,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "leopardo_de_las_nives",
@@ -2941,7 +3212,8 @@ const artworkData = [
         "description": "Fantasma de las cumbres; la mirada de hielo que vigila el techo del mundo, una presencia etérea camuflada en la soledad de la nieve infinita.",
         "price": "1.040,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "leopardo_en_asia",
@@ -2951,7 +3223,8 @@ const artworkData = [
         "description": "Acecho de sombra; el sigilo de la selva personificado en una silueta de manchas oscuras, el equilibrio perfecto entre la fuerza y la belleza salvaje.",
         "price": "620,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "los guerreros de xi'an",
@@ -2961,7 +3234,8 @@ const artworkData = [
         "description": "Ejército del silencio; soldados de terracota que guardan un imperio invisible, rostros únicos forjados en el barro de la inmortalidad.",
         "price": "1.000,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "mercado chino",
@@ -2971,7 +3245,8 @@ const artworkData = [
         "description": "Caos armonioso; un festival de aromas, colores y voces donde la vida bulle en cada puesto, tejiendo la red cotidiana de una cultura vibrante.",
         "price": "780,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "muralla china",
@@ -2981,7 +3256,8 @@ const artworkData = [
         "description": "El dragón de piedra; una línea infinita que recorre el lomo de las montañas, el abrazo defensivo de una civilización que desafía al tiempo.",
         "price": "1.180,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "oso_panda",
@@ -2990,7 +3266,8 @@ const artworkData = [
         "src": "assets/28ESPATAC/oso_panda.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.000,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "pagoda china",
@@ -3000,7 +3277,8 @@ const artworkData = [
         "description": "Ascenso espiritual; niveles de misticismo que se elevan hacia el sol, una estructura de equilibrio y paz en medio de la naturaleza exuberante.",
         "price": "620,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "playa en un puerto",
@@ -3010,7 +3288,8 @@ const artworkData = [
         "description": "Reflejos de industria; el contraste entre la calma del arenal y la fuerza del acero portuario, donde el mar lame las heridas del progreso.",
         "price": "700,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "puerto algeciras",
@@ -3020,7 +3299,8 @@ const artworkData = [
         "description": "Puerta de mares; el ajetreo de las grúas y la inmensidad de los contenedores, un latido de comercio global bajo el cielo del sur.",
         "price": "700,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "residencia china de pueblo",
@@ -3030,7 +3310,8 @@ const artworkData = [
         "description": "Hogar de madera y sol; el patio central donde el susurro de los antepasados convive con el ajetreo de la mañana, un refugio de identidad.",
         "price": "940,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "templo budista",
@@ -3040,7 +3321,8 @@ const artworkData = [
         "description": "Incienso y plegaria; la arquitectura de la devoción se viste de rojo y oro, un espacio sagrado donde el espíritu encuentra su centro.",
         "price": "1.000,00",
         "size": "Consultar",
-        "tech_info": "Ver descripción detallada."
+        "tech_info": "Ver descripción detallada.",
+        "date": "05/2026"
     },
     {
         "id": "zhouzhuang",
@@ -3050,7 +3332,8 @@ const artworkData = [
         "description": "Un canal tranquilo en Zhouzhuang con sauces llorones que acarician la superficie. Un pabellón tradicional se refleja en el agua, evocando una paz milenaria.",
         "price": "1.120,00",
         "size": "Consultar",
-        "tech_info": "Estilo ESPATAC (China): Técnica de espátula y óleo texturizado para capturar la majestuosidad de Asia. El uso del color y el relieve busca transmitir la vibración espiritual y la escala monumental."
+        "tech_info": "Estilo ESPATAC (China): Técnica de espátula y óleo texturizado para capturar la majestuosidad de Asia. El uso del color y el relieve busca transmitir la vibración espiritual y la escala monumental.",
+        "date": "05/2026"
     },
     {
         "id": "altamar_espatac-mat",
@@ -3060,7 +3343,8 @@ const artworkData = [
         "description": "Un robusto remolcador desafía el embate de las olas en un mar picado. La obra destaca por una técnica de espátula extremadamente matérica, donde bloques de color azul, gris y blanco construyen una sensación de fuerza y dinamismo oceánico.",
         "price": "520,00",
         "size": "Consultar",
-        "tech_info": "í“leo con espátula sobre lienzo. Serie ESPATAC-MAT: Enfoque en la textura física y la simplificación de formas mediante planos cromáticos rectangulares."
+        "tech_info": "í“leo con espátula sobre lienzo. Serie ESPATAC-MAT: Enfoque en la textura física y la simplificación de formas mediante planos cromáticos rectangulares.",
+        "date": "05/2026"
     },
     {
         "id": "el_parthenon_en_la_niebla_dorada",
@@ -3070,7 +3354,8 @@ const artworkData = [
         "description": "La icónica Acrópolis de Atenas emerge de una atmósfera onírica bañada en tonos sepia y dorados. La textura pesada imita la rugosidad del mármol antiguo y el paso de los milenios, creando un puente entre la historia y el sueño.",
         "price": "1.140,00",
         "size": "Consultar",
-        "tech_info": "Giclée retocado con textura manual. Serie ESPATAC-MAT: Técnica que enfatiza la tridimensionalidad de las ruinas clásicas."
+        "tech_info": "Giclée retocado con textura manual. Serie ESPATAC-MAT: Técnica que enfatiza la tridimensionalidad de las ruinas clásicas.",
+        "date": "05/2026"
     },
     {
         "id": "lago_batur_bali",
@@ -3080,7 +3365,8 @@ const artworkData = [
         "description": "Una vista panorámica de la arquitectura balinesa tradicional frente al volcán Batur. La obra utiliza pinceladas rectangulares a modo de mosaico para representar la exuberante vegetación y los reflejos en el agua.",
         "price": "1.160,00",
         "size": "Consultar",
-        "tech_info": "Técnica mixta €Mosaico Matérico€. Serie ESPATAC-MAT: Representación geométrica de paisajes naturales y sagrados."
+        "tech_info": "Técnica mixta €Mosaico Matérico€. Serie ESPATAC-MAT: Representación geométrica de paisajes naturales y sagrados.",
+        "date": "05/2026"
     },
     {
         "id": "pueblo_costero_de_santorini",
@@ -3090,7 +3376,8 @@ const artworkData = [
         "description": "Las cúpulas azules y la arquitectura escalonada de Santorini se presentan en una composición de alto relieve. La técnica resalta la blancura cegadora de las casas sobre los acantilados de roca volcánica.",
         "price": "640,00",
         "size": "Consultar",
-        "tech_info": "Pintura acrílica de alta viscosidad. Serie ESPATAC-MAT: Enfoque en el volumen arquitectónico y el contraste cromático de las islas griegas."
+        "tech_info": "Pintura acrílica de alta viscosidad. Serie ESPATAC-MAT: Enfoque en el volumen arquitectónico y el contraste cromático de las islas griegas.",
+        "date": "05/2026"
     },
     {
         "id": "templo_en_la_colina esp",
@@ -3100,7 +3387,8 @@ const artworkData = [
         "description": "Un antiguo templo se erige solitario sobre una formación rocosa. La paleta de tonos tierra y la textura escarpada evocan la soledad y la resistencia de los monumentos olvidados por el tiempo.",
         "price": "740,00",
         "size": "Consultar",
-        "tech_info": "í“leo sobre lienzo con carga matérica. Serie ESPATAC-MAT: Exploración de la simbiosis entre naturaleza y arquitectura antigua."
+        "tech_info": "í“leo sobre lienzo con carga matérica. Serie ESPATAC-MAT: Exploración de la simbiosis entre naturaleza y arquitectura antigua.",
+        "date": "05/2026"
     },
     {
         "id": "templo_ulun_danu_bali",
@@ -3110,7 +3398,8 @@ const artworkData = [
         "description": "Las pagodas flotantes del templo Ulun Danu Beratan se reflejan en las aguas quietas durante el crepúsculo. La luz dorada se filtra a través de capas de textura que aportan profundidad y espiritualidad a la escena.",
         "price": "900,00",
         "size": "Consultar",
-        "tech_info": "Pintura con espátula y veladuras. Serie ESPATAC-MAT: Captura de la serenidad asiática mediante relieve táctil."
+        "tech_info": "Pintura con espátula y veladuras. Serie ESPATAC-MAT: Captura de la serenidad asiática mediante relieve táctil.",
+        "date": "05/2026"
     },
     {
         "id": "colmar_francia",
@@ -3120,7 +3409,8 @@ const artworkData = [
         "description": "Los canales de la €Pequeña Venecia€ se iluminan al caer el sol. Las casas de entramado de madera se reflejan en el agua, creando una escena de cuento de hadas llena de luz cálida y sombras vibrantes.",
         "price": "760,00",
         "size": "Consultar",
-        "tech_info": "í“leo con matices luminiscentes. Serie OLONATUR-COLOR: Representación de la calidez nocturna en pueblos medievales."
+        "tech_info": "í“leo con matices luminiscentes. Serie OLONATUR-COLOR: Representación de la calidez nocturna en pueblos medievales.",
+        "date": "05/2026"
     },
     {
         "id": "cí´te de granit rose de francia",
@@ -3130,7 +3420,8 @@ const artworkData = [
         "description": "Un atardecer vibrante en la costa de Bretaña, donde las formaciones de granito rosa contrastan con un mar turquesa. Salpicaduras de pintura amarilla y roja aportan una energía expresionista y espontánea.",
         "price": "1.120,00",
         "size": "Consultar",
-        "tech_info": "í“leo impresionista con técnica de salpicado. Serie OLONATUR-COLOR: Paisajes naturales capturados con una paleta cromática intensa y libre."
+        "tech_info": "í“leo impresionista con técnica de salpicado. Serie OLONATUR-COLOR: Paisajes naturales capturados con una paleta cromática intensa y libre.",
+        "date": "05/2026"
     },
     {
         "id": "mont saint-michel francia",
@@ -3140,7 +3431,8 @@ const artworkData = [
         "description": "El Mont Saint-Michel se alza como una fortaleza entre reflejos acuosos. La obra juega con la luz de Normandía, utilizando rojos y amarillos audaces para romper la sobriedad del cielo nublado.",
         "price": "560,00",
         "size": "Consultar",
-        "tech_info": "í“leo sobre lienzo. Serie OLONATUR-COLOR: Reinterpretación colorista de monumentos históricos franceses."
+        "tech_info": "í“leo sobre lienzo. Serie OLONATUR-COLOR: Reinterpretación colorista de monumentos históricos franceses.",
+        "date": "05/2026"
     },
     {
         "id": "paris cerca de notrdame",
@@ -3150,7 +3442,8 @@ const artworkData = [
         "description": "Una vista de la catedral de París enmarcada por árboles en pleno estallido otoñal. La textura densa de las hojas y sus reflejos en el Sena crean un torbellino de color y nostalgia urbana.",
         "price": "1.040,00",
         "size": "Consultar",
-        "tech_info": "Pintura expresionista con espátula. Serie OLONATUR-COLOR: Captura de la atmósfera estacional en entornos urbanos icónicos."
+        "tech_info": "Pintura expresionista con espátula. Serie OLONATUR-COLOR: Captura de la atmósfera estacional en entornos urbanos icónicos.",
+        "date": "05/2026"
     },
     {
         "id": "paseo_por_bulevares",
@@ -3160,7 +3453,8 @@ const artworkData = [
         "description": "Una figura con chaqueta bicolor cruza un bulevar otoñal. La composición destaca por la explosión de rojos y dorados en los árboles y el dinamismo de la ciudad reflejada en el suelo mojado.",
         "price": "1.000,00",
         "size": "Consultar",
-        "tech_info": "Pintura expresionista. Serie OLONATUR-COLOR: Narrativa urbana centrada en el color y el movimiento estacional."
+        "tech_info": "Pintura expresionista. Serie OLONATUR-COLOR: Narrativa urbana centrada en el color y el movimiento estacional.",
+        "date": "05/2026"
     },
     {
         "id": "pont en royans de francia",
@@ -3170,7 +3464,8 @@ const artworkData = [
         "description": "Las pintorescas fachadas que parecen flotar sobre el río en Isère. La técnica libre y los colores saturados resaltan la vertiginosa verticalidad y el encanto rústico de este enclave.",
         "price": "800,00",
         "size": "Consultar",
-        "tech_info": "Técnica mixta sobre papel. Serie OLONATUR-COLOR: Estudio del color y la forma en la arquitectura vernácula francesa."
+        "tech_info": "Técnica mixta sobre papel. Serie OLONATUR-COLOR: Estudio del color y la forma en la arquitectura vernácula francesa.",
+        "date": "05/2026"
     },
     {
         "id": "acantilado_escocia",
@@ -3180,7 +3475,8 @@ const artworkData = [
         "description": "Un faro solitario en lo alto de un imponente acantilado escocés, desafiando la inmensidad del océano. La luz del atardecer tiñe las nubes de naranja y fuego, mientras los rayos del faro perforan la bruma que envuelve la costa.",
         "price": "780,00",
         "size": "Consultar",
-        "tech_info": "Estilo OLEO NATUR: Técnica de pincelada digital con acabado de óleo tradicional (impasto). Los colores vibrantes y la textura marcada buscan capturar la esencia de la luz y el movimiento en paisajes icónicos."
+        "tech_info": "Estilo OLEO NATUR: Técnica de pincelada digital con acabado de óleo tradicional (impasto). Los colores vibrantes y la textura marcada buscan capturar la esencia de la luz y el movimiento en paisajes icónicos.",
+        "date": "05/2026"
     },
     {
         "id": "arc du triumph",
@@ -3189,7 +3485,8 @@ const artworkData = [
         "src": "assets/31OLENATUR/ARC DU TRIUMPH.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "960,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "coliseum de roma",
@@ -3198,7 +3495,8 @@ const artworkData = [
         "src": "assets/31OLENATUR/coliseum de roma.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "900,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "en un dia en japon",
@@ -3207,7 +3505,8 @@ const artworkData = [
         "src": "assets/31OLENATUR/en un dia en japon.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "680,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "estatua_de_la_libertad",
@@ -3217,7 +3516,8 @@ const artworkData = [
         "description": "La Estatua de la Libertad se alza como un faro de esperanza sobre el puerto de Nueva York. El cielo y el agua se funden en un festival de azules y blancos, donde la pincelada expresionista da vida a la icónica silueta.",
         "price": "800,00",
         "size": "Consultar",
-        "tech_info": "Estilo OLEO NATUR: Técnica de pincelada digital con acabado de óleo tradicional (impasto). Los colores vibrantes y la textura marcada buscan capturar la esencia de la luz y el movimiento en paisajes icónicos."
+        "tech_info": "Estilo OLEO NATUR: Técnica de pincelada digital con acabado de óleo tradicional (impasto). Los colores vibrantes y la textura marcada buscan capturar la esencia de la luz y el movimiento en paisajes icónicos.",
+        "date": "05/2026"
     },
     {
         "id": "new york bridge olo",
@@ -3226,7 +3526,8 @@ const artworkData = [
         "src": "assets/31OLENATUR/new york bridge OLO.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "600,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "pareja en el parque",
@@ -3235,7 +3536,8 @@ const artworkData = [
         "src": "assets/31OLENATUR/PAREJA EN EL PARQUE.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "500,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "parque impresion",
@@ -3244,7 +3546,8 @@ const artworkData = [
         "src": "assets/31OLENATUR/parque impresion.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "960,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "paseando por monmatre",
@@ -3253,7 +3556,8 @@ const artworkData = [
         "src": "assets/31OLENATUR/paseando por monmatre.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "900,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "torre_eifel",
@@ -3263,7 +3567,8 @@ const artworkData = [
         "description": "La Torre Eiffel preside el Sena al atardecer. La luz cálida del sol poniente ilumina la estructura de hierro y se refleja en las aguas del río, en una vista clásica y evocadora de la Ciudad de la Luz.",
         "price": "1.020,00",
         "size": "Consultar",
-        "tech_info": "Estilo OLEO NATUR: Técnica de pincelada digital con acabado de óleo tradicional (impasto). Los colores vibrantes y la textura marcada buscan capturar la esencia de la luz y el movimiento en paisajes icónicos."
+        "tech_info": "Estilo OLEO NATUR: Técnica de pincelada digital con acabado de óleo tradicional (impasto). Los colores vibrantes y la textura marcada buscan capturar la esencia de la luz y el movimiento en paisajes icónicos.",
+        "date": "05/2026"
     },
     {
         "id": "banco de piedra",
@@ -3272,7 +3577,8 @@ const artworkData = [
         "src": "assets/32SINNOIR/banco de piedra.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "320,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "fuente_parque",
@@ -3281,7 +3587,8 @@ const artworkData = [
         "src": "assets/32SINNOIR/fuente_parque.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "280,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "amor_y_perdida",
@@ -3291,7 +3598,8 @@ const artworkData = [
         "description": "Una poderosa alegoría visual que representa la unión y la fractura. Dos manos entrelazadas formadas por raíces se alzan sobre un corazón agrietado, simbolizando la dualidad entre el afecto y el dolor.",
         "price": "280,00",
         "size": "Consultar",
-        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional."
+        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional.",
+        "date": "05/2026"
     },
     {
         "id": "el_eterno_suspiro_del_tiempo",
@@ -3301,7 +3609,8 @@ const artworkData = [
         "description": "Un árbol de luz que emerge de un tocón ancestral, conectado por un haz de energía pura en el centro de un vórtice oscuro. Reflexiona sobre la continuidad de la memoria más allá de la existencia física.",
         "price": "240,00",
         "size": "Consultar",
-        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional."
+        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional.",
+        "date": "05/2026"
     },
     {
         "id": "el_ojo_del_cazador",
@@ -3311,7 +3620,8 @@ const artworkData = [
         "description": "Una mirada penetrante que emerge de las sombras, capturando la esencia de la vigilancia y el instinto. Invita a cuestionar quién es el observador y quién el observado en el ciclo de la vida.",
         "price": "370,00",
         "size": "Consultar",
-        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional."
+        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional.",
+        "date": "05/2026"
     },
     {
         "id": "el_primer_suspiro_del_cielo",
@@ -3321,7 +3631,8 @@ const artworkData = [
         "description": "Un punto de luz central que irradia energía en un firmamento de partículas cósmicas. Representa el nacimiento de una idea o el origen de un nuevo mundo en una explosión de fuerza elemental.",
         "price": "220,00",
         "size": "Consultar",
-        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional."
+        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional.",
+        "date": "05/2026"
     },
     {
         "id": "golpe_de_una_gota_en_el_oceano",
@@ -3331,7 +3642,8 @@ const artworkData = [
         "description": "La caligrafía del alma se funde con el movimiento del agua. Trazos gestuales que evocan palabras perdidas en el flujo del tiempo, recordándonos que cada pequeña acción genera ondas en la inmensidad.",
         "price": "350,00",
         "size": "Consultar",
-        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional."
+        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional.",
+        "date": "05/2026"
     },
     {
         "id": "la_arquitectura_respira",
@@ -3341,7 +3653,8 @@ const artworkData = [
         "description": "Una torre estilizada que se eleva hacia un cielo turbulento, actuando como un faro de conciencia. Sugiere la resistencia de la voluntad humana frente al caos orgánico del infinito.",
         "price": "230,00",
         "size": "Consultar",
-        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional."
+        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional.",
+        "date": "05/2026"
     },
     {
         "id": "suspiro_cosmico_del_ser",
@@ -3351,7 +3664,8 @@ const artworkData = [
         "description": "Un cerebro formado por constelaciones de estrellas y redes neuronales celestes que flotan sobre nubes. Explora la conexión íntima entre el pensamiento humano y el tejido del universo.",
         "price": "330,00",
         "size": "Consultar",
-        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional."
+        "tech_info": "Estilo MINIGESTPOETIC: Arte conceptual de corte gestual y poético. Utiliza una paleta restringida y un lenguaje simbólico para explorar temas existenciales. El contraste entre el vacío y la forma busca generar una respuesta emocional.",
+        "date": "05/2026"
     },
     {
         "id": "expterico manchas",
@@ -3361,7 +3675,8 @@ const artworkData = [
         "description": "Una explosión abstracta de pigmento donde el rosa, el naranja y el azul luchan por el espacio. Líneas negras dinámicas serpentean sobre la superficie, sugiriendo un flujo de energía vital incontrolable.",
         "price": "250,00",
         "size": "Consultar",
-        "tech_info": "Abstracción gestual profunda. Serie EXPTERICO: Exploración de las emociones puras a través de la mancha y el gesto automático."
+        "tech_info": "Abstracción gestual profunda. Serie EXPTERICO: Exploración de las emociones puras a través de la mancha y el gesto automático.",
+        "date": "05/2026"
     },
     {
         "id": "face",
@@ -3371,7 +3686,8 @@ const artworkData = [
         "description": "Retrato masculino de rasgos marcados, reconstruido mediante planos de color crema, tostado y violeta. La mirada introspectiva y el uso audaz del relieve revelan la complejidad del pensamiento humano.",
         "price": "390,00",
         "size": "Consultar",
-        "tech_info": "Retrato contemporáneo matérico. Serie EXPTERICO: Humanismo abstracto enfocado en la arquitectura del rostro."
+        "tech_info": "Retrato contemporáneo matérico. Serie EXPTERICO: Humanismo abstracto enfocado en la arquitectura del rostro.",
+        "date": "05/2026"
     },
     {
         "id": "manchas",
@@ -3381,7 +3697,8 @@ const artworkData = [
         "description": "Densa acumulación de materia pictórica en tonos oscuros y cálidos. La obra invita a la exploración táctil del óleo, representando la creación de un universo a partir del caos del color.",
         "price": "390,00",
         "size": "Consultar",
-        "tech_info": "Impasto extremo. Serie EXPTERICO: El color como entidad física y emocional autónoma."
+        "tech_info": "Impasto extremo. Serie EXPTERICO: El color como entidad física y emocional autónoma.",
+        "date": "05/2026"
     },
     {
         "id": "san francisco expterico",
@@ -3391,7 +3708,8 @@ const artworkData = [
         "description": "El puente de San Francisco envuelto en un cielo psicodélico de espirales vibrantes. La ciudad se funde con el cosmos en un torbellino de color que desafía la realidad física del paisaje.",
         "price": "350,00",
         "size": "Consultar",
-        "tech_info": "Paisaje visionario. Serie EXPTERICO: Integración del paisaje urbano en visiones dinámicas y celestiales."
+        "tech_info": "Paisaje visionario. Serie EXPTERICO: Integración del paisaje urbano en visiones dinámicas y celestiales.",
+        "date": "05/2026"
     },
     {
         "id": "tranvia",
@@ -3401,7 +3719,8 @@ const artworkData = [
         "description": "Un tranvía icónico atraviesa una atmósfera eléctrica de colores cálidos. El vehículo se convierte en un símbolo de estabilidad en medio de un torbellino de luz y pinceladas audaces.",
         "price": "360,00",
         "size": "Consultar",
-        "tech_info": "Expresionismo urbano dinámico. Serie EXPTERICO: Fusión de elementos cotidianos con atmósferas oníricas."
+        "tech_info": "Expresionismo urbano dinámico. Serie EXPTERICO: Fusión de elementos cotidianos con atmósferas oníricas.",
+        "date": "05/2026"
     },
     {
         "id": "admiración",
@@ -3411,7 +3730,8 @@ const artworkData = [
         "description": "Una entrañable escena rural donde un hombre contempla a su fiel caballo en un prado verde frente a imponentes montañas nevadas. La técnica de relieve resalta la textura de la hierba y el pelaje del animal.",
         "price": "350,00",
         "size": "Consultar",
-        "tech_info": "Estilo PAPERCHIN: Técnica de simulación de relieve y capas de papel aplicada digitalmente. Se enfoca en la profundidad visual y la simplificación de formas para crear escenas con gran impacto táctil."
+        "tech_info": "Estilo PAPERCHIN: Técnica de simulación de relieve y capas de papel aplicada digitalmente. Se enfoca en la profundidad visual y la simplificación de formas para crear escenas con gran impacto táctil.",
+        "date": "06/2026"
     },
     {
         "id": "arco del triunfo paperchin",
@@ -3420,7 +3740,8 @@ const artworkData = [
         "src": "assets/35PAPERCHIN/arco del triunfo PAPERCHIN.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "370,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "bufalos",
@@ -3430,7 +3751,8 @@ const artworkData = [
         "description": "Una manada de búfalos pastando en la pradera americana bajo un cielo inmenso de nubes algodonosas. La pincelada gruesa captura la fuerza bruta de los animales y la vastedad del paisaje del viejo oeste.",
         "price": "290,00",
         "size": "Consultar",
-        "tech_info": "Estilo PAPERCHIN: Técnica de simulación de relieve y capas de papel aplicada digitalmente. Se enfoca en la profundidad visual y la simplificación de formas para crear escenas con gran impacto táctil."
+        "tech_info": "Estilo PAPERCHIN: Técnica de simulación de relieve y capas de papel aplicada digitalmente. Se enfoca en la profundidad visual y la simplificación de formas para crear escenas con gran impacto táctil.",
+        "date": "05/2026"
     },
     {
         "id": "elefantes",
@@ -3440,7 +3762,8 @@ const artworkData = [
         "description": "Imponente retrato de una madre elefante y su cría en la selva. La técnica de capas resalta la rugosidad de la piel y los colmillos, mientras el fondo de vegetación tropical añade profundidad y misterio.",
         "price": "350,00",
         "size": "Consultar",
-        "tech_info": "Estilo PAPERCHIN: Técnica de simulación de relieve y capas de papel aplicada digitalmente. Se enfoca en la profundidad visual y la simplificación de formas para crear escenas con gran impacto táctil."
+        "tech_info": "Estilo PAPERCHIN: Técnica de simulación de relieve y capas de papel aplicada digitalmente. Se enfoca en la profundidad visual y la simplificación de formas para crear escenas con gran impacto táctil.",
+        "date": "05/2026"
     },
     {
         "id": "en el oeste",
@@ -3449,7 +3772,8 @@ const artworkData = [
         "src": "assets/35PAPERCHIN/en el oeste.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "260,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "monumentos_ del_mundo",
@@ -3458,7 +3782,8 @@ const artworkData = [
         "src": "assets/35PAPERCHIN/monumentos_ del_mundo.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "170,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "caballo_mirada",
@@ -3467,7 +3792,8 @@ const artworkData = [
         "price": "290,00",
         "category": "36 LINEART",
         "title": "caballo mirada",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "chica_joven_posando",
@@ -3476,7 +3802,8 @@ const artworkData = [
         "price": "360,00",
         "category": "36 LINEART",
         "title": "chica joven posando",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "la flor y la mujer",
@@ -3485,7 +3812,8 @@ const artworkData = [
         "src": "assets/36LINEART/la flor y la mujer.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "220,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "lina triste",
@@ -3494,7 +3822,8 @@ const artworkData = [
         "src": "assets/36LINEART/lina triste.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "160,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "seduction_face",
@@ -3503,7 +3832,8 @@ const artworkData = [
         "price": "250,00",
         "category": "36 LINEART",
         "title": "seduction face",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "woman_in_love",
@@ -3512,7 +3842,8 @@ const artworkData = [
         "price": "290,00",
         "category": "36 LINEART",
         "title": "woman in love",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "woman_minimal",
@@ -3521,7 +3852,8 @@ const artworkData = [
         "price": "170,00",
         "category": "36 LINEART",
         "title": "woman minimal",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "abuelo_paseando",
@@ -3530,7 +3862,8 @@ const artworkData = [
         "price": "760,00",
         "category": "37 IMPASTUS PAINT",
         "title": "Abuelo Paseando",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "abuelo_suave",
@@ -3539,7 +3872,8 @@ const artworkData = [
         "price": "1.080,00",
         "category": "37 IMPASTUS PAINT",
         "title": "abuelo suave",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "alberta_street",
@@ -3548,7 +3882,8 @@ const artworkData = [
         "price": "1.020,00",
         "category": "37 IMPASTUS PAINT",
         "title": "alberta street",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "arreglado_barcos",
@@ -3557,7 +3892,8 @@ const artworkData = [
         "price": "620,00",
         "category": "37 IMPASTUS PAINT",
         "title": "arreglado barcos",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "barco_transatlantico_impastus",
@@ -3566,7 +3902,8 @@ const artworkData = [
         "price": "780,00",
         "category": "37 IMPASTUS PAINT",
         "title": "Barco Transatlántico",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "canada_alberta_port1",
@@ -3575,7 +3912,8 @@ const artworkData = [
         "price": "840,00",
         "category": "37 IMPASTUS PAINT",
         "title": "Canadá Alberta Puerto I",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "canada_alberta_port2",
@@ -3584,7 +3922,8 @@ const artworkData = [
         "price": "500,00",
         "category": "37 IMPASTUS PAINT",
         "title": "Canadá Alberta Puerto II",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "canada_alberta_streets",
@@ -3593,7 +3932,8 @@ const artworkData = [
         "price": "1.060,00",
         "category": "37 IMPASTUS PAINT",
         "title": "Canadá Alberta Calles",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "five_avenue_ny",
@@ -3602,7 +3942,8 @@ const artworkData = [
         "price": "960,00",
         "category": "37 IMPASTUS PAINT",
         "title": "five avenue NY",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "ladera_en_evolución",
@@ -3611,7 +3952,8 @@ const artworkData = [
         "price": "1.040,00",
         "category": "37 IMPASTUS PAINT",
         "title": "ladera en evolución",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "manhattan",
@@ -3620,7 +3962,8 @@ const artworkData = [
         "price": "1.200,00",
         "category": "37 IMPASTUS PAINT",
         "title": "Tormenta en Manhattan",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "mountain_mistery",
@@ -3629,7 +3972,8 @@ const artworkData = [
         "price": "1.200,00",
         "category": "37 IMPASTUS PAINT",
         "title": "mountain mistery",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "new_york",
@@ -3638,7 +3982,8 @@ const artworkData = [
         "price": "1.140,00",
         "category": "37 IMPASTUS PAINT",
         "title": "new york",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "new_york_pasage",
@@ -3647,7 +3992,8 @@ const artworkData = [
         "price": "740,00",
         "category": "37 IMPASTUS PAINT",
         "title": "new york pasage",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "paseo_montañoso",
@@ -3656,7 +4002,8 @@ const artworkData = [
         "price": "960,00",
         "category": "37 IMPASTUS PAINT",
         "title": "paseo montañoso",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "puerto_hermitaño",
@@ -3665,7 +4012,8 @@ const artworkData = [
         "price": "1.200,00",
         "category": "37 IMPASTUS PAINT",
         "title": "puerto hermitaño",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "sin_pesca",
@@ -3674,7 +4022,8 @@ const artworkData = [
         "price": "920,00",
         "category": "37 IMPASTUS PAINT",
         "title": "sin pesca",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "sky_top",
@@ -3683,7 +4032,8 @@ const artworkData = [
         "price": "660,00",
         "category": "37 IMPASTUS PAINT",
         "title": "sky top",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_001",
@@ -3694,7 +4044,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.750,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_002",
@@ -3705,7 +4056,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.600,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_003",
@@ -3716,7 +4068,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.200,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_004",
@@ -3727,7 +4080,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.700,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_005",
@@ -3738,7 +4092,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.000,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_006",
@@ -3749,7 +4104,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.500,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_007",
@@ -3760,7 +4116,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.300,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_008",
@@ -3771,7 +4128,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.700,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_009",
@@ -3782,7 +4140,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.600,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_010",
@@ -3793,7 +4152,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.500,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_011",
@@ -3804,7 +4164,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.450,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_012",
@@ -3815,7 +4176,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.750,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_013",
@@ -3826,7 +4188,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.800,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_014",
@@ -3837,7 +4200,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.700,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_015",
@@ -3848,7 +4212,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.600,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_016",
@@ -3859,7 +4224,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.700,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_017",
@@ -3870,7 +4236,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.500,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_018",
@@ -3881,7 +4248,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.000,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_019",
@@ -3892,7 +4260,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.600,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_020",
@@ -3903,7 +4272,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.500,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_021",
@@ -3914,7 +4284,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.750,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_022",
@@ -3925,7 +4296,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.750,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "39materdigisse_023",
@@ -3936,7 +4308,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.750,00",
         "tech_info": "Técnica MATERDIGISSE (Digital Impasto)",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "40mechpastosse_001",
@@ -3947,7 +4320,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.750,00",
         "tech_info": "Estilo pictórico-mecánico autónomo.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "40mechpastosse_002",
@@ -3958,7 +4332,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.850,00",
         "tech_info": "Estilo pictórico-mecánico autónomo.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "40mechpastosse_003",
@@ -3969,7 +4344,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.550,00",
         "tech_info": "Estilo pictórico-mecánico autónomo.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "41gessolux_001",
@@ -3980,7 +4356,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.650,00",
         "tech_info": "Fusión de yeso, espátula e impasto suave.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "41gessolux_002",
@@ -3991,7 +4368,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.950,00",
         "tech_info": "Fusión de yeso, espátula e impasto suave.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "41gessolux_003",
@@ -4002,7 +4380,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.000,00",
         "tech_info": "Fusión de yeso, espátula e impasto suave.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "41gessolux_004",
@@ -4013,7 +4392,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.050,00",
         "tech_info": "Fusión de yeso, espátula e impasto suave.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "41gessolux_005",
@@ -4024,7 +4404,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.250,00",
         "tech_info": "Fusión de yeso, espátula e impasto suave.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "42gessolux_extremum_001",
@@ -4035,7 +4416,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.200,00",
         "tech_info": "Técnica de luz seca y relieve de yeso pulido.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "42gessolux_extremum_002",
@@ -4046,7 +4428,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.150,00",
         "tech_info": "Técnica de luz seca y relieve de yeso pulido.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "44gessolux_azurite_002",
@@ -4057,7 +4440,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.350,00",
         "tech_info": "Sustitución del blanco por azul mineral.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "45gessolux_iris_001",
@@ -4068,7 +4452,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.150,00",
         "tech_info": "Luz prismática con pincelada rítmica espiralada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "45gessolux_iris_002",
@@ -4079,7 +4464,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.500,00",
         "tech_info": "Luz prismática con pincelada rítmica espiralada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "46espatac_extreme_002",
@@ -4090,7 +4476,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.700,00",
         "tech_info": "Iluminación brutalista con sombras internas generadas por el propio relieve.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "46espatac_extreme_003",
@@ -4101,7 +4488,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.750,00",
         "tech_info": "Textura de bulto redondo aplicada a la anatomía animal.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "ait benhaddou_ marruecos",
@@ -4110,7 +4498,8 @@ const artworkData = [
         "src": "assets/46ESPATAC-EXTREME/Ait Benhaddou_ Marruecos.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.650,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "ardez_switzerland",
@@ -4121,7 +4510,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.250,00",
         "tech_info": "Nueva obra añadida recientemente.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "iseltwald_switzerland",
@@ -4132,7 +4522,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.600,00",
         "tech_info": "Nueva obra añadida recientemente.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "ravine and waterfalls_glen state park_ ny",
@@ -4141,7 +4532,8 @@ const artworkData = [
         "src": "assets/46ESPATAC-EXTREME/Ravine and waterfalls_Glen State Park_ NY.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "2.850,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "06/2026"
     },
     {
         "id": "volcanic eifel nature park_alemania",
@@ -4150,7 +4542,8 @@ const artworkData = [
         "src": "assets/46ESPATAC-EXTREME/volcanic eifel nature park_alemania.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "2.850,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "06/2026"
     },
     {
         "id": "volcanic eifel nature park_green_alemania",
@@ -4159,7 +4552,8 @@ const artworkData = [
         "src": "assets/46ESPATAC-EXTREME/volcanic eifel nature park_green_alemania.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "3.000,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "06/2026"
     },
     {
         "id": "47nebulinico_001",
@@ -4170,7 +4564,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "320,00",
         "tech_info": "Paleta gris-azulada con acentos cálidos táctiles sobre relieve brumoso.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "agathla_peak_arizona",
@@ -4181,7 +4576,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "170,00",
         "tech_info": "Nueva obra añadida recientemente.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "jama masjid_champaner_india",
@@ -4190,7 +4586,8 @@ const artworkData = [
         "src": "assets/47NEBULÍNICO/Jama Masjid_Champaner_India.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "250,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "panda_rojo_sichuan_china",
@@ -4199,7 +4596,8 @@ const artworkData = [
         "src": "assets/47NEBULÍNICO/panda rojo_Sichuan_China.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "260,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "puerto pueblo noruego nevado",
@@ -4208,7 +4606,8 @@ const artworkData = [
         "src": "assets/47NEBULÍNICO/puerto pueblo noruego nevado.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "190,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "salinas de maras_peru",
@@ -4217,7 +4616,8 @@ const artworkData = [
         "src": "assets/47NEBULÍNICO/salinas de maras_peru.jpg",
         "description": "Nueva obra añadida recientemente.",
         "price": "230,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "tiwanaku_bolivia",
@@ -4226,7 +4626,8 @@ const artworkData = [
         "src": "assets/47NEBULÍNICO/tiwanaku_bolivia.jpg",
         "description": "Nueva obra añadida recientemente.",
         "price": "280,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "05/2026"
     },
     {
         "id": "dessau-worlitz garden_germany",
@@ -4235,7 +4636,8 @@ const artworkData = [
         "src": "assets/48BESSELUXY_L/Dessau-Worlitz Garden_Germany.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "2.800,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "06/2026"
     },
     {
         "id": "hay_carmela_li",
@@ -4246,7 +4648,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.000,00",
         "tech_info": "Técnica alla prima, modelado orgánico de acabado mate y figura recortada sobre soporte neutro.",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "indian white eye bird",
@@ -4255,7 +4658,8 @@ const artworkData = [
         "src": "assets/48BESSELUXY_L/Indian white eye bird.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.650,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "06/2026"
     },
     {
         "id": "mahori",
@@ -4266,7 +4670,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.750,00",
         "tech_info": "Técnica alla prima, modelado orgánico de acabado mate y figura recortada sobre soporte neutro.",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "mahori_en_casa",
@@ -4277,7 +4682,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.000,00",
         "tech_info": "Técnica alla prima, modelado orgánico de acabado mate y figura recortada sobre soporte neutro.",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "marama",
@@ -4288,7 +4694,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.200,00",
         "tech_info": "Técnica alla prima, modelado orgánico de acabado mate y figura recortada sobre soporte neutro.",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "verdin",
@@ -4297,7 +4704,8 @@ const artworkData = [
         "src": "assets/48BESSELUXY_L/verdin.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.500,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_001",
@@ -4308,7 +4716,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.250,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_002",
@@ -4319,7 +4728,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.250,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_003",
@@ -4330,7 +4740,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.200,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_004",
@@ -4341,7 +4752,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.180,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_005",
@@ -4352,7 +4764,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.300,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_006",
@@ -4363,7 +4776,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.200,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_007",
@@ -4374,7 +4788,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.350,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_008",
@@ -4385,7 +4800,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.400,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_009",
@@ -4396,7 +4812,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.380,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_010",
@@ -4407,7 +4824,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.290,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_011",
@@ -4418,7 +4836,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.290,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_012",
@@ -4429,7 +4848,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.600,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_013",
@@ -4440,7 +4860,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.550,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_014",
@@ -4451,7 +4872,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.110,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_015",
@@ -4462,7 +4884,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.350,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_016",
@@ -4473,7 +4896,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.520,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_017",
@@ -4484,7 +4908,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.440,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_018",
@@ -4495,7 +4920,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.600,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_019",
@@ -4506,7 +4932,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1,620,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "49arte_cibernetico_020",
@@ -4517,7 +4944,8 @@ const artworkData = [
         "size": "Digital",
         "price": "1.700,00",
         "tech_info": "Arte Digital - Universo EDUSSE (Colección Quantum & Vortex)",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "daigo ji templo en kioto matise",
@@ -4526,7 +4954,8 @@ const artworkData = [
         "src": "assets/50NEO_FAUVE/daigo ji templo en kioto matise.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.950,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "06/2026"
     },
     {
         "id": "molinos_mat",
@@ -4535,7 +4964,8 @@ const artworkData = [
         "src": "assets/50NEO_FAUVE/molinos_mat.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "2.000,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "06/2026"
     },
     {
         "id": "mujer_sentada_posando",
@@ -4546,7 +4976,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.150,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "07/2026"
     },
     {
         "id": "pueblo_italiano",
@@ -4557,7 +4988,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.200,00",
         "tech_info": "Óleo Neo-Clásico digital y animación metaverso.",
-        "sold": false
+        "sold": false,
+        "date": "08/2026"
     },
     {
         "id": "ardilla roja_sciurus vulgaris",
@@ -4566,7 +4998,8 @@ const artworkData = [
         "src": "assets/52EDUSSE_CLASSIC/Ardilla roja_Sciurus vulgaris.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.950,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "07/2026"
     },
     {
         "id": "capibara_hidrochoerus",
@@ -4575,7 +5008,8 @@ const artworkData = [
         "src": "assets/52EDUSSE_CLASSIC/Capibara_Hidrochoerus.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.800,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "07/2026"
     },
     {
         "id": "rana ",
@@ -4584,7 +5018,8 @@ const artworkData = [
         "src": "assets/52EDUSSE_CLASSIC/rana .jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.750,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "07/2026"
     },
     {
         "id": "urraca_ pica pica",
@@ -4593,7 +5028,8 @@ const artworkData = [
         "src": "assets/52EDUSSE_CLASSIC/Urraca_ Pica pica.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.900,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "07/2026"
     },
     {
         "id": "bateria",
@@ -4602,7 +5038,8 @@ const artworkData = [
         "src": "assets/53MONETESSE/bateria.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.200,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "guitarra",
@@ -4611,7 +5048,8 @@ const artworkData = [
         "src": "assets/53MONETESSE/guitarra.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.200,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "piano acustico",
@@ -4620,7 +5058,8 @@ const artworkData = [
         "src": "assets/53MONETESSE/piano acustico.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.300,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "pueblo atrani",
@@ -4629,7 +5068,8 @@ const artworkData = [
         "src": "assets/53MONETESSE/pueblo Atrani.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.500,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "reloj violin",
@@ -4638,7 +5078,8 @@ const artworkData = [
         "src": "assets/53MONETESSE/reloj violin.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "1.800,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "ball in play",
@@ -4647,7 +5088,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Ball in play.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "250,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "bass stand yeah",
@@ -4656,7 +5098,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Bass stand yeah.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "260,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "bloody lukas",
@@ -4665,7 +5108,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/bloody lukas.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "250,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "books forever",
@@ -4674,7 +5118,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Books forever.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "255,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "bruma",
@@ -4683,7 +5128,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Bruma.jpg",
         "description": "Nueva obra añadida recientemente.",
         "price": "275,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "chrome rhythms",
@@ -4692,7 +5138,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Chrome Rhythms.jpg",
         "description": "Nueva obra añadida recientemente.",
         "price": "270,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "deprisa, ven despacio",
@@ -4701,7 +5148,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Deprisa, ven despacio.jpg",
         "description": "Nueva obra añadida recientemente.",
         "price": "240,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "dragon lands",
@@ -4710,7 +5158,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Dragon lands.jpg",
         "description": "Nueva obra añadida recientemente.",
         "price": "280,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "feel your dreams",
@@ -4719,7 +5168,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Feel your dreams.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "240,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "lotus play",
@@ -4728,7 +5178,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Lotus play.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "290,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "macao no es lao",
@@ -4737,7 +5188,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Macao no es Lao.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "285,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "much time ago",
@@ -4746,7 +5198,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Much time ago.jpg",
         "description": "Nueva obra añadida recientemente.",
         "price": "270,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "plastic hard",
@@ -4755,7 +5208,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Plastic hard.jpg",
         "description": "Nueva obra añadida recientemente.",
         "price": "255,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "running apes",
@@ -4764,7 +5218,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Running Apes.jpeg",
         "description": "Bajorrelieve de presencia escultórica en capas gruesas de madera de ébano tallada, arcilla polimérica mate, biseles táctiles y sombras proyectadas. Máscara simétrica tribal primal con grandes ojos azul cian retroiluminados, cintas fluidas onduladas en relieve con espirales Maori y hocico tallado en madera negra con colmillos.",
         "price": "250,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "tatum",
@@ -4773,7 +5228,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Tatum.png",
         "description": "Nueva obra añadida recientemente.",
         "price": "265,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "without a trace of barbarism",
@@ -4782,7 +5238,8 @@ const artworkData = [
         "src": "assets/54 LUNIORNAT/Without a trace of barbarism.jpeg",
         "description": "Nueva obra añadida recientemente.",
         "price": "245,00",
-        "size": "Consultar"
+        "size": "Consultar",
+        "date": "08/2026"
     },
     {
         "id": "55vorggipah_autum_in_the_street",
@@ -4793,7 +5250,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.850,00",
         "tech_info": "Óleo y técnica mixta digital sobre lienzo de la serie 55 VORGGIPAH.",
-        "sold": false
+        "sold": false,
+        "date": "08/2026"
     },
     {
         "id": "55vorggipah_estanque_del_dragon_negro_china",
@@ -4804,7 +5262,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.100,00",
         "tech_info": "Óleo y técnica mixta digital sobre lienzo de la serie 55 VORGGIPAH.",
-        "sold": false
+        "sold": false,
+        "date": "08/2026"
     },
     {
         "id": "55vorggipah_icebergs_on_jokulsarlon_islandia",
@@ -4815,7 +5274,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.300,00",
         "tech_info": "Óleo y técnica mixta digital sobre lienzo de la serie 55 VORGGIPAH.",
-        "sold": false
+        "sold": false,
+        "date": "08/2026"
     },
     {
         "id": "55vorggipah_kasar_ouled_soltane_tunez",
@@ -4826,7 +5286,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "1.950,00",
         "tech_info": "Óleo y técnica mixta digital sobre lienzo de la serie 55 VORGGIPAH.",
-        "sold": false
+        "sold": false,
+        "date": "08/2026"
     },
     {
         "id": "55vorggipah_kirkjufell_islandia",
@@ -4837,7 +5298,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "2.400,00",
         "tech_info": "Óleo y técnica mixta digital sobre lienzo de la serie 55 VORGGIPAH.",
-        "sold": false
+        "sold": false,
+        "date": "08/2026"
     },
     {
         "id": "56naturalexsse_los_yayos",
@@ -4848,7 +5310,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.200,00",
         "tech_info": "Técnica mixta y óleo digital sobre lienzo de la serie 56 NATURALEXSSE.",
-        "sold": false
+        "sold": false,
+        "date": "09/2026"
     },
     {
         "id": "56naturalexsse_pianista_de_maiz",
@@ -4859,7 +5322,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.850,00",
         "tech_info": "Técnica mixta y óleo digital sobre lienzo de la serie 56 NATURALEXSSE.",
-        "sold": false
+        "sold": false,
+        "date": "09/2026"
     },
     {
         "id": "56naturalexsse_pianista_mineral",
@@ -4870,7 +5334,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.200,00",
         "tech_info": "Técnica mixta y óleo digital sobre lienzo de la serie 56 NATURALEXSSE.",
-        "sold": false
+        "sold": false,
+        "date": "09/2026"
     },
     {
         "id": "56naturalexsse_tendencia_y_profesiones",
@@ -4881,7 +5346,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.500,00",
         "tech_info": "Técnica mixta y óleo digital sobre lienzo de la serie 56 NATURALEXSSE.",
-        "sold": false
+        "sold": false,
+        "date": "09/2026"
     },
     {
         "id": "57stuckedu_animales_de_la_tierra",
@@ -4892,7 +5358,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.600,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_bosque_de_piedra_shilin",
@@ -4903,7 +5370,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.700,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_colinas_rio_guilin",
@@ -4914,7 +5382,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.100,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_columnas_flotantes_zhangjiajie",
@@ -4925,7 +5394,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.200,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_cuevas_de_longmen",
@@ -4936,7 +5406,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.000,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_el_pescador_ming",
@@ -4947,7 +5418,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.600,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_gran_buda_de_leshan",
@@ -4958,7 +5430,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.400,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_guanyin_mar_del_sur_sanya",
@@ -4969,7 +5442,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.300,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_guerreros_de_terracota_pasaje_natural",
@@ -4980,7 +5454,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.900,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_mujer_en_la_habitacion",
@@ -4991,7 +5466,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.800,00",
         "tech_info": "Óleo y técnica mixta sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_pelicano",
@@ -5002,7 +5478,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.400,00",
         "tech_info": "Técnica de autor y óleo sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_pueblo_tibetano",
@@ -5013,7 +5490,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.500,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_templo_colgante_de_hengshan",
@@ -5024,7 +5502,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.100,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_terrazas_agua_huanglong",
@@ -5035,7 +5514,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.800,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_the_cats",
@@ -5046,7 +5526,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.500,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_valle_jiuzhaigou_cascadas",
@@ -5057,7 +5538,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.900,00",
         "tech_info": "Óleo y técnica de autor sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "57stuckedu_yaks_en_el_tibet",
@@ -5068,7 +5550,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.100,00",
         "tech_info": "Óleo y empaste sobre lienzo de la serie 57 STUCKEDU (obra personal y entrañable pintada por Eduardo Ramírez de Cartagena bajo la creación de este pintor).",
-        "sold": false
+        "sold": false,
+        "date": "10/2026"
     },
     {
         "id": "58vg_stilo_arco_iris_tras_el_aguacero",
@@ -5079,7 +5562,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.800,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_arroyos_torrentes_y_cascadas",
@@ -5090,7 +5574,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.900,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_barro_hojas_mojadas_y_musgo_en_el_retiro",
@@ -5101,7 +5586,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.700,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_charco_en_el_pueblo",
@@ -5112,7 +5598,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.600,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_charcos_y_sus_reflejos",
@@ -5123,7 +5610,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.000,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_despues_de_la_sequia",
@@ -5134,7 +5622,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.900,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_el_paraguas_rojo",
@@ -5145,7 +5634,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.200,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_gente_con_paraguas",
@@ -5156,7 +5646,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.100,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_gente_en_el_paseo_con_paraguas",
@@ -5167,7 +5658,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.200,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_gotas_sobre_hojas_petalos_y_telaranas",
@@ -5178,7 +5670,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.600,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_granizo_y_llovizna_londres",
@@ -5189,7 +5682,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.900,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_lluvia_en_el_bosque",
@@ -5200,7 +5694,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.800,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_neon_bajo_el_aguacero",
@@ -5211,7 +5706,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.200,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_niebla_bruma_y_vapor_del_asfalto",
@@ -5222,7 +5718,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.900,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_reencuentro_en_la_estacion",
@@ -5233,7 +5730,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.100,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_tormenta_en_la_dehesa",
@@ -5244,7 +5742,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.300,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_torre_eiffel_vg",
@@ -5255,7 +5754,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "4.200,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "58vg_stilo_ventana_con_gotas",
@@ -5266,7 +5766,8 @@ const artworkData = [
         "size": "Consultar",
         "price": "3.700,00",
         "tech_info": "Neo-impresionismo atmosférico y pintura a espátula (impasto contemporáneo) sobre lienzo de la serie 58 VG STILO (obra original creada por Eduardo Ramírez de Cartagena).",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "b2b_magna_001",
@@ -5276,7 +5777,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "4.500,00",
         "size": "180 x 90 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_002",
@@ -5286,7 +5788,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "3.600,00",
         "size": "180 x 90 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_003",
@@ -5296,7 +5799,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "2.900,00",
         "size": "150 x 150 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_004",
@@ -5306,7 +5810,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "3.900,00",
         "size": "150 x 150 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_005",
@@ -5316,7 +5821,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "3.200,00",
         "size": "110 x 160 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_006",
@@ -5326,7 +5832,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "5.100,00",
         "size": "240 x 110 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_007",
@@ -5336,7 +5843,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "4.400,00",
         "size": "180 x 90 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_008",
@@ -5346,7 +5854,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "3.500,00",
         "size": "150 x 150 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_009",
@@ -5356,7 +5865,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "3.000,00",
         "size": "150 x 150 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_010",
@@ -5366,7 +5876,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "4.200,00",
         "size": "150 x 150 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_011",
@@ -5376,7 +5887,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "2.900,00",
         "size": "150 x 150 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_012",
@@ -5386,7 +5898,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "4.700,00",
         "size": "180 x 90 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_013",
@@ -5396,7 +5909,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "4.900,00",
         "size": "180 x 90 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_014",
@@ -5406,7 +5920,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "4.800,00",
         "size": "180 x 90 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_015",
@@ -5416,7 +5931,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "5.700,00",
         "size": "180 x 90 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_016",
@@ -5426,7 +5942,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "6.000,00",
         "size": "240 x 110 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_017",
@@ -5436,7 +5953,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "5.800,00",
         "size": "180 x 90 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_018",
@@ -5446,7 +5964,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "6.100,00",
         "size": "240 x 110 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_019",
@@ -5456,7 +5975,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "5.600,00",
         "size": "180 x 90 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_020",
@@ -5466,7 +5986,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "5.300,00",
         "size": "240 x 110 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_021",
@@ -5476,7 +5997,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "6.200,00",
         "size": "240 x 110 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_022",
@@ -5486,7 +6008,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "5.700,00",
         "size": "180 x 90 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_023",
@@ -5496,7 +6019,8 @@ const artworkData = [
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "5.800,00",
         "size": "180 x 90 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_024",
@@ -5506,7 +6030,8 @@ const artworkData = [
         "description": "Obra de gran formato exclusiva para proyectos de interiorismo de alto nivel y cadenas hoteleras de lujo.",
         "price": "6.000,00",
         "size": "240 x 110 cm",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_danza_de_color",
@@ -5518,7 +6043,8 @@ const artworkData = [
         "price": "8.800,00",
         "tech_info": "Mosaico vítreo y técnica mixta digital sobre lienzo fine art de museo con acabado de barniz protector UV.",
         "b2b_only": true,
-        "sold": false
+        "sold": false,
+        "date": "09/2026"
     },
     {
         "id": "b2b_magna_golden_river_marble_mountain",
@@ -5527,7 +6053,8 @@ const artworkData = [
         "src": "assets/B2B_MAGNA/golden_river_marble_mountain.jpg",
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "8.400,00",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "08/2026"
     },
     {
         "id": "b2b_magna_iriaigloo",
@@ -5536,7 +6063,8 @@ const artworkData = [
         "src": "assets/B2B_MAGNA/iria en el igloo.png",
         "description": "Nueva obra añadida",
         "price": "6.150,00",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_malladolly",
@@ -5545,7 +6073,8 @@ const artworkData = [
         "src": "assets/B2B_MAGNA/malladolly.png",
         "description": "Obra exclusiva de la colección Magna B2B.",
         "price": "8.400,00",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_paraiso_tropical",
@@ -5557,7 +6086,8 @@ const artworkData = [
         "price": "8.600,00",
         "tech_info": "Mosaico vítreo y técnica mixta digital sobre lienzo fine art de museo con acabado de barniz protector UV.",
         "b2b_only": true,
-        "sold": false
+        "sold": false,
+        "date": "09/2026"
     },
     {
         "id": "b2b_magna_pianista_mineral",
@@ -5569,7 +6099,8 @@ const artworkData = [
         "price": "4.200,00",
         "tech_info": "Óleo y técnica mixta digital sobre lienzo de gran formato con acabado de museo.",
         "b2b_only": true,
-        "sold": false
+        "sold": false,
+        "date": "09/2026"
     },
     {
         "id": "b2b_magna_puertopesquero",
@@ -5578,7 +6109,8 @@ const artworkData = [
         "src": "assets/B2B_MAGNA/puerto pesquero en la patagonia.png",
         "description": "Nueva obra añadida",
         "price": "6.000,00",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_selvachina",
@@ -5587,7 +6119,8 @@ const artworkData = [
         "src": "assets/B2B_MAGNA/selva china.png",
         "description": "Nueva obra añadida",
         "price": "5.800,00",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_sinlimite",
@@ -5596,7 +6129,8 @@ const artworkData = [
         "src": "assets/B2B_MAGNA/sin limite.png",
         "description": "Nueva obra añadida",
         "price": "8.300,00",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "b2b_magna_sintropiaterrenal",
@@ -5605,7 +6139,8 @@ const artworkData = [
         "src": "assets/B2B_MAGNA/sintropia terrenal.png",
         "description": "Nueva obra añadida",
         "price": "8.500,00",
-        "b2b_only": true
+        "b2b_only": true,
+        "date": "06/2026"
     },
     {
         "id": "sello_magico_001",
@@ -5616,7 +6151,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.550,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_002",
@@ -5627,7 +6163,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.700,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_003",
@@ -5638,7 +6175,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.600,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_004",
@@ -5649,7 +6187,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_005",
@@ -5660,7 +6199,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.550,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_006",
@@ -5671,7 +6211,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.300,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_007",
@@ -5682,7 +6223,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.800,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_008",
@@ -5693,7 +6235,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.700,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_009",
@@ -5704,7 +6247,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.450,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_010",
@@ -5715,7 +6259,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.250,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_011",
@@ -5726,7 +6271,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.400,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_012",
@@ -5737,7 +6283,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.300,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_013",
@@ -5748,7 +6295,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.250,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_014",
@@ -5759,7 +6307,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.250,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_015",
@@ -5770,7 +6319,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.350,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_016",
@@ -5781,7 +6331,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.650,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_017",
@@ -5792,7 +6343,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.250,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_018",
@@ -5803,7 +6355,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.800,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_019",
@@ -5814,7 +6367,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.700,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_020",
@@ -5825,7 +6379,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.350,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_021",
@@ -5836,7 +6391,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.400,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_022",
@@ -5847,7 +6403,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_023",
@@ -5858,7 +6415,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.250,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_024",
@@ -5869,7 +6427,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_025",
@@ -5880,7 +6439,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.500,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_026",
@@ -5891,7 +6451,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.400,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_027",
@@ -5902,7 +6463,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.300,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_028",
@@ -5913,7 +6475,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.800,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_029",
@@ -5924,7 +6487,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.450,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_030",
@@ -5935,7 +6499,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_031",
@@ -5946,7 +6511,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.200,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_032",
@@ -5957,7 +6523,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.650,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "05/2026"
     },
     {
         "id": "sello_magico_033",
@@ -5968,7 +6535,8 @@ const artworkData = [
         "size": "13 x 15 cm (Original)",
         "price": "4.000,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "sello_magico_034",
@@ -5979,7 +6547,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.400,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "sello_magico_035",
@@ -5990,7 +6559,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.800,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "sello_magico_036",
@@ -6001,7 +6571,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.300,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "sello_magico_037",
@@ -6012,7 +6583,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.700,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "sello_magico_038",
@@ -6023,7 +6595,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.300,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "sello_magico_039",
@@ -6034,7 +6607,8 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.600,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
     {
         "id": "sello_magico_040",
@@ -6045,64 +6619,68 @@ const artworkData = [
         "size": "30 x 40 cm (Giclée)",
         "price": "1.650,00",
         "tech_info": "Ver descripción detallada.",
-        "sold": false
+        "sold": false,
+        "date": "06/2026"
     },
-
-    // === ESTILO 59: ALTA COSTURA & NOIR ===
-{
+    {
         "id": "moda_001",
         "title": "Pausa en el Banco de Otoño",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/modelo en el banco.jpg",
+        "src": "assets/59_ALTA_COSTURA_NOIR/modelo en el banco.jpg",
         "description": "Silueta femenina de porte sereno envuelta en paño negro sobre banco urbano. Una bufanda de volúmenes escultóricos en amarillos y ocres cadmium contrasta con el fondo mineral gris, capturando la quietud reflexiva de una tarde otoñal europea.",
         "size": "120 x 90 cm",
         "price": "3.400,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_002",
         "title": "Ellos Bailan en la Noche",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/ellos bailan.jpg",
+        "src": "assets/59_ALTA_COSTURA_NOIR/ellos bailan.jpg",
         "description": "Pareja enlazada en un movimiento grácil y fluido. El vestido escarlata de la dama emerge con un violento empaste matérico 3D que parece desprenderse del lienzo negro, celebrando la pasión y la complicidad en el corazón de la ciudad.",
         "size": "120 x 90 cm",
         "price": "3.600,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_003",
         "title": "Paseo Matinal en Bicicleta",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/la chica en bici.jpg",
+        "src": "assets/59_ALTA_COSTURA_NOIR/la chica en bici.jpg",
         "description": "Elegancia urbana en movimiento. Una dama en bicicleta con tocado clásico y bufanda ondeante cruza el boulevard parisino, con toques de esmeralda y rubí que contrastan sobre la arquitectura neoclásica monocromática.",
         "size": "120 x 90 cm",
         "price": "3.200,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_004",
         "title": "Alta Costura en el Escaparate de París",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/crior escaparete.jpg",
+        "src": "assets/59_ALTA_COSTURA_NOIR/crior escaparete.jpg",
         "description": "Una dama contempla la silueta estilizada de un vestido de gala en el escaparate de la Avenue Montaigne. Fusión de óleo con relieve texturizado y goteos en oro pálido que evocan la sofisticación atemporal del diseño de modas.",
         "size": "140 x 100 cm",
         "price": "4.200,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_005",
         "title": "El Paso de la Gran Vía",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/hombre cruzando.jpg",
+        "src": "assets/59_ALTA_COSTURA_NOIR/hombre cruzando.jpg",
         "description": "Figura masculina en abrigo largo cruzando la calzada bajo la atmósfera cambiante de la metrópoli. Trazo firme y sobrio que capta el paso decidido del urbanita solitario con un fondo de matices terrosos y carbón.",
         "size": "120 x 90 cm",
         "price": "3.400,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_006",
@@ -6113,193 +6691,247 @@ const artworkData = [
         "size": "180 x 120 cm",
         "price": "6.800,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_007",
         "title": "El Refugio de la Lluvia",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/hombre con paraguas.jpg",
+        "src": "assets/59_ALTA_COSTURA_NOIR/hombre con paraguas.jpg",
         "description": "Composición atmosférica donde un paraguas oscuro y la luz reflejada en el asfalto mojado crean una sinfonía visual de misterio y nostalgia nocturna.",
         "size": "100 x 80 cm",
         "price": "2.800,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_008",
         "title": "En la Floristería de Saint-Germain",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/en la floristeria.jpg",
+        "src": "assets/59_ALTA_COSTURA_NOIR/en la floristeria.jpg",
         "description": "Flores en relieve matérico que estallan de color frente a las siluetas sombrías de los transeúntes, capturando el aroma visual y la frescura de los mercados florales europeos.",
         "size": "120 x 90 cm",
         "price": "3.200,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_009",
         "title": "La Llamada en la Cabina Roja",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/la chica de la cabin.jpg",
+        "src": "assets/59_ALTA_COSTURA_NOIR/la chica de la cabin.jpg",
         "description": "El icónico rojo londinense irrumpe con fuerza en una escena lluviosa. Una silueta femenina resguardada en el cristal conversa mientras el agua resbala por los paneles metálicos.",
         "size": "110 x 85 cm",
         "price": "2.950,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_010",
         "title": "La Espera en la Parada",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/la chica de la parada.jpg",
+        "src": "assets/59_ALTA_COSTURA_NOIR/la chica de la parada.jpg",
         "description": "El tiempo suspendido en la marquesina del tranvía. Elegancia sobria y quietud cinematográfica en una composición de ritmo vertical.",
         "size": "100 x 80 cm",
         "price": "2.800,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_011",
         "title": "Bajo la Luz de la Farola",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/la chica de la farola.png",
+        "src": "assets/59_ALTA_COSTURA_NOIR/la chica de la farola.png",
         "description": "El halo cálido de una farola histórica baña el contorno de una figura en gabardina, creando un sugerente contraste entre sombras profundas y destellos ámbar.",
         "size": "100 x 80 cm",
         "price": "2.700,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_012",
         "title": "El Murmullo de la Fuente",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/la fuente y la chica.jpg",
+        "src": "assets/59_ALTA_COSTURA_NOIR/la fuente y la chica.jpg",
         "description": "La piedra de la fuente clásica y el fluir del agua se encuentran con la quietud de una dama que contempla la puesta de sol en los jardines reales.",
         "size": "120 x 90 cm",
         "price": "3.300,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_013",
         "title": "Salida del Teatro de la Ópera",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/Man_descending_theatre_steps.jpg",
+        "src": "assets/59_ALTA_COSTURA_NOIR/Man_descending_theatre_steps.jpg",
         "description": "La escalinata monumental de mármol cobra vida al finalizar la función. Siluetas de gala que descienden entre sombras teatrales y destellos dorados.",
         "size": "140 x 100 cm",
         "price": "4.100,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_014",
         "title": "La Dama de la Pamela",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/mi pamela.jpg",
+        "src": "assets/59_ALTA_COSTURA_NOIR/mi pamela.jpg",
         "description": "Geometría pura y sensualidad gráfica. Las curvas sinuosas del sombrero de ala ancha ocultan la mirada, dejando al descubierto solo la elegancia de la línea y el cuello.",
         "size": "100 x 100 cm",
         "price": "3.100,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_015",
         "title": "Silueta en la Pasarela",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/modelo paint pasarela.png",
+        "src": "assets/59_ALTA_COSTURA_NOIR/modelo paint pasarela.png",
         "description": "La tensión y el dinamismo del desfile de alta costura capturados en un gesto escultórico de pintura aplicada con espátula y pincelada directa.",
         "size": "110 x 80 cm",
         "price": "2.850,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_016",
         "title": "Encuentro en el Metro de Londres",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/una chica underground.jpg",
+        "src": "assets/59_ALTA_COSTURA_NOIR/una chica underground.jpg",
         "description": "La estética underground y la arquitectura de azulejos blancos curvados acogen el paso furtivo de la juventud cosmopolita.",
         "size": "120 x 90 cm",
         "price": "3.100,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_017",
         "title": "Viento de Noviembre y Bufanda de Seda",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/la bici y la bufanda.png",
+        "src": "assets/59_ALTA_COSTURA_NOIR/la bici y la bufanda.png",
         "description": "El viento cobra forma en el movimiento helicoidal de una bufanda colorida que rompe la seriedad del traje sastre.",
         "size": "100 x 80 cm",
         "price": "2.600,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_018",
         "title": "Meditación Nocturna en el Banco",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/en el banco noir.png",
+        "src": "assets/59_ALTA_COSTURA_NOIR/en el banco noir.png",
         "description": "Una interpretación introspectiva del descanso en el parque nocturno, donde el silencio se materializa en capas superpuestas de pigmento carbón.",
         "size": "100 x 80 cm",
         "price": "2.600,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_019",
         "title": "Miradas en la Rue de Rivoli",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/la chica del escaparate.png",
+        "src": "assets/59_ALTA_COSTURA_NOIR/la chica del escaparate.png",
         "description": "El reflejo cruzado entre la modelo exterior y los maniquíes de la boutique, un juego de espejos sobre la belleza efímera y la perdurable.",
         "size": "100 x 80 cm",
         "price": "2.750,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_020",
         "title": "Tríptico del Puente: Panel Izquierdo (La Llegada)",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_01_Izquierda_2K.png",
+        "src": "assets/59_ALTA_COSTURA_NOIR/TRIPTICO PUENTE/Triptico_Puente_01_Izquierda_2K.png",
         "description": "Primera sección del tríptico monumental. La barandilla de hierro forjado y la perspectiva del río bajo la bruma crepuscular.",
         "size": "80 x 120 cm",
         "price": "2.900,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_021",
         "title": "Tríptico del Puente: Panel Central (El Encuentro)",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_02_Centro_2K.png",
+        "src": "assets/59_ALTA_COSTURA_NOIR/TRIPTICO PUENTE/Triptico_Puente_02_Centro_2K.png",
         "description": "Corazón del tríptico. La pareja se encuentra sobre el arco central del puente, rodeada por el resplandor de las luces fluviales y el empaste texturizado del agua.",
         "size": "100 x 120 cm",
         "price": "3.900,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_022",
         "title": "Tríptico del Puente: Panel Derecho (La Despedida)",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_03_Derecha_2K.png",
+        "src": "assets/59_ALTA_COSTURA_NOIR/TRIPTICO PUENTE/Triptico_Puente_03_Derecha_2K.png",
         "description": "Tercera sección del tríptico. La silueta que se aleja hacia los soportales históricos de la orilla opuesta.",
         "size": "80 x 120 cm",
         "price": "2.900,00",
         "tech_info": "Óleo matérico 3D y relieve escultórico sobre lienzo de lino belga. Bastidor de pino macizo 4 cm. Barniz mate antirreflejos.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
     },
     {
         "id": "moda_023",
-        "title": "Tríptico Monumental del Puente (Obra Completa)",
+        "title": "Dance on the Bridge (Tríptico Monumental)",
         "category": "59 ALTA COSTURA & NOIR",
-        "src": "assets/serie_moda/TRIPTICO PUENTE/Triptico_Puente_Pareja_MOCKUP_COMPLETO_2K.png",
+        "src": "assets/59_ALTA_COSTURA_NOIR/TRIPTICO PUENTE/Triptico_Puente_Pareja_MOCKUP_COMPLETO_2K.png",
         "description": "Composición monumental continua en 3 paneles que suman 260 x 120 cm. Diseñada específicamente para salones de gala, vestíbulos de recepción hotelera o suites presidenciales.",
         "size": "260 x 120 cm (Tríptico)",
         "price": "9.200,00",
         "tech_info": "Tríptico monumental en 3 paneles. Óleo matérico 3D, espátula y pigmentos metálicos. Bastidor de pino 4 cm. Acabado barniz mate protector.",
-        "sold": false
+        "sold": false,
+        "date": "11/2026"
+    },
+    {
+        "id": "rupesse_001",
+        "title": "El Gran Mamut y las Manos Ancestrales",
+        "category": "61 RUPESSE",
+        "src": "assets/61RUPESSE/rupesse_001.jpg",
+        "description": "Evocación magdaleniense del arte parietal paleolítico. El relieve y las fracturas de la roca guían la anatomía del mamut, rodeado por huellas de manos dactilares en positivo y negativo con pigmentos de óxido de hierro, ocre y carbón vegetal.",
+        "size": "Consultar",
+        "price": "2.400,00",
+        "tech_info": "Pigmentos minerales puros (óxido de hierro, ocre natural) y carbón vegetal sobre soporte mineral con textura pétrea.",
+        "sold": false,
+        "date": "11/2026"
+    },
+    {
+        "id": "rupesse_002",
+        "title": "Dientes de Sable en Acecho",
+        "category": "61 RUPESSE",
+        "src": "assets/61RUPESSE/rupesse_002.jpg",
+        "description": "Síntesis gráfica ancestral de máxima economía de trazo. La silueta del felino prehistórico se adapta a los estratos de la caverna, capturando la tensión muscular y el pulso depredador de la fauna cuaternaria.",
+        "size": "Consultar",
+        "price": "2.100,00",
+        "tech_info": "Trazo directo en carbón vegetal y veladuras de tierra sobre superficie de caliza mineral.",
+        "sold": false,
+        "date": "11/2026"
+    },
+    {
+        "id": "rupesse_003",
+        "title": "El Pato Paleolítico (Génesis de Dudedu sobre Arpillera)",
+        "category": "61 RUPESSE",
+        "src": "assets/61RUPESSE/rupesse_003.jpg",
+        "description": "Obra conceptual y fundacional de la mitología Dudeduart. Pintada sobre tela de saco rústica y deshilachada, fusiona la huella de la mano paleolítica y las salpicaduras de tierra con la visión anacrónica del pato en el estanque urbano, su banco y su fuente.",
+        "size": "Consultar (Arpillera rústica)",
+        "price": "2.800,00",
+        "tech_info": "Pigmento natural, tierras ocres, carbón y huella dactilar de autor sobre tejido de arpillera/lino rústico deshilachado.",
+        "sold": false,
+        "date": "11/2026"
     }
 ];
