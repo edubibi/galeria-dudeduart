@@ -271,8 +271,9 @@
     <div class="app-container">
         <!-- Header / Controls -->
         <header class="neon-header">
-            <div class="header-left">
-                <a href="../index.html" class="nav-btn" title="Volver a la Portada de la Galería">⬅ Volver a Inicio</a>
+            <div class="header-left" style="display: flex; gap: 8px; align-items: center;">
+                <a href="javascript:void(0)" onclick="if(window.history.length > 1){ window.history.back(); } else { window.location.href='../index.html'; }" class="nav-btn" title="Volver a la página anterior">⬅ Atrás</a>
+                <a href="../index.html" class="nav-btn" title="Volver a la Portada de la Galería">🏛️ Inicio</a>
             </div>
 
             <div class="header-center">
@@ -305,17 +306,7 @@
                 <button type="button" class="sala-pill-btn" onclick="jumpToSala('todas')" title="Ver Todo el Catálogo" style="color: #94a3b8; border-color: #334155;">Todas</button>
             </div>
 
-            <!-- Botones de Décadas -->
-            <div class="quick-decades-group">
-                <button type="button" class="decade-btn" onclick="jumpToDecade('0')">00s</button>
-                <button type="button" class="decade-btn" onclick="jumpToDecade('1')">10s</button>
-                <button type="button" class="decade-btn" onclick="jumpToDecade('2')">20s</button>
-                <button type="button" class="decade-btn" onclick="jumpToDecade('3')">30s</button>
-                <button type="button" class="decade-btn" onclick="jumpToDecade('4')">40s</button>
-                <button type="button" class="decade-btn highlight-50" onclick="jumpToDecade('5')">50s (59)</button>
-                <button type="button" class="decade-btn b2b-btn" onclick="jumpToB2B()">👑 B2B MAGNA</button>
-                <button type="button" class="decade-btn sellos-btn" onclick="jumpToSellos()">✨ SELLOS</button>
-            </div>
+            <!-- Botones de Décadas eliminados por redundancia (se usan Salto Rápido e Índice Memorándum) -->
 
             <!-- Botón Índice Memorándum -->
             <div class="quick-memo-btn-wrapper">
