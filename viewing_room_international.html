@@ -814,7 +814,7 @@
     <!-- MAIN CINEMA: LIVING ART LOOP SHOWCASE -->
     <section class="cinema-container" id="living-art">
         <div class="cinema-viewport">
-            <video id="mainCinemaPlayer" autoplay loop muted playsinline controls poster="assets/b2b_mockup_bg.jpg">
+            <video id="mainCinemaPlayer" autoplay loop muted playsinline controls style="transition: opacity 0.22s ease-in-out; background: #000;">
                 <source id="videoSource" src="assets/cinemagraphs/marea_web.mp4" type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
@@ -827,8 +827,9 @@
                     </p>
                     <div class="cinema-tags">
                         <span class="cinema-tag" id="cinemaDuration">40.0s Palindrome Loop</span>
-                        <span class="cinema-tag" id="cinemaResolution">Native 4K / 8K Master</span>
-                        <span class="cinema-tag">Architectural Video Wall / The Frame</span>
+                        <span class="cinema-tag" style="background: rgba(251, 191, 36, 0.2); border-color: #fbbf24; color: #fde68a;">💎 4K Ultra-HD Master Stream</span>
+                        <span class="cinema-tag" style="background: rgba(59, 130, 246, 0.2); border-color: #60a5fa; color: #93c5fd;">👑 Licencia B2B: Entrega en 8K Nativo / ProRes 422</span>
+                        <span class="cinema-tag">Architectural Video Wall / The Frame / OLED</span>
                     </div>
                 </div>
                 
@@ -844,6 +845,21 @@
                     </button>
                 </div>
             </div>
+        </div>
+
+        <!-- Curatorial B2B 8K Master Notice -->
+        <div style="max-width: 1400px; margin: 1.2rem auto 2.2rem; background: rgba(16, 18, 24, 0.85); border: 1px solid rgba(197, 160, 89, 0.35); border-radius: 12px; padding: 1rem 1.6rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; backdrop-filter: blur(10px);">
+            <div style="flex: 1; min-width: 280px;">
+                <span style="color: #fbbf24; font-weight: 700; font-size: 0.92rem; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 6px;">
+                    🏛️ ESPECIFICACIÓN CURATORIAL PARA ARQUITECTURA & HOTELES
+                </span>
+                <p style="color: #9ca3af; font-size: 0.86rem; margin: 0.3rem 0 0; line-height: 1.4;">
+                    Esta sala transmite en directo a <strong style="color: #fff;">4K Ultra-HD Master Stream</strong>. Las licencias de adquisición exclusiva y contract para proyectos hoteleros incluyen los archivos originales definitivos en <strong style="color: #fbbf24;">8K Nativo (7680×4320 / 5760×4320)</strong> sin compresión web y máster ProRes / HEVC para servidores dedicados de visualización mural.
+                </p>
+            </div>
+            <a href="mailto:eduardoramirez@edusse.es?subject=Solicitud%20Master%208K%20para%20Hotel%20%7C%20Dudeduart" class="btn-gold" style="font-size: 0.82rem; padding: 0.6rem 1.2rem; white-space: nowrap; text-decoration: none;">
+                ✉️ Solicitar Dossier Máster 8K
+            </a>
         </div>
 
         <!-- Cinemagraph Strip Selection -->
@@ -1268,19 +1284,27 @@
                 cardEl.classList.add('active');
             }
 
-            // Update Video Player with smooth fade
-            player.style.opacity = '0.3';
+            // Cinema Crossfade to pure black (NO flash of any poster)
+            player.style.opacity = '0';
             setTimeout(() => {
-                videoSource.src = src;
-                player.load();
-                player.play().catch(e => console.log('Autoplay handled:', e));
-                player.style.opacity = '1';
-                
-                // Update Metadata
+                // Update Metadata during fade
                 titleEl.textContent = title;
                 descEl.textContent = desc;
                 durationEl.textContent = duration;
-            }, 250);
+
+                // Load and play new video
+                videoSource.src = src;
+                player.load();
+                
+                // Fade in once first frame is ready
+                const reveal = () => { player.style.opacity = '1'; };
+                player.addEventListener('playing', reveal, { once: true });
+                player.addEventListener('loadeddata', reveal, { once: true });
+                player.play().catch(e => console.log('Autoplay handled:', e));
+                
+                // Fallback guarantee fade-in
+                setTimeout(reveal, 350);
+            }, 220);
         }
 
         function toggleCinemaAudio() {
